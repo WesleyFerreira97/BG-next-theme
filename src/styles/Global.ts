@@ -3,10 +3,11 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Aquire';
-        src: url('/fonts/Aquire-BW0ox.otf') format('otf');
+        src: url('/fonts/Aquire-BW0ox.otf'),
+             url('/fonts/Aquire-BW0ox.otf'), format('otf');
         font-style: normal;
         font-weight: 400;
-        font-display: swap;
+        /* font-display: swap; */
     }
 
      *, body, html {
