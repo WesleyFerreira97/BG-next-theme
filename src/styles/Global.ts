@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+    @font-face {
+        font-family: 'Aquire';
+        src: url('/fonts/Aquire-BW0ox.otf') format('otf');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+    }
+
      *, body, html {
         margin: 0;
         padding: 0;
@@ -16,10 +24,6 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
-    body {
-        background-color: #15133C;
-    }
-
     /* Ajusts For Responsivity */
     @media (max-width: 1024px) {
         html {
@@ -33,5 +37,6 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 `;
+
 
 
