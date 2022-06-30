@@ -7,6 +7,10 @@ export const theme = {
 		tertiary: "#DF0054",
 		neutral: "#fff",
 		neutralAlt: "#7a7a7a",
+		categories: {
+			conjuntos: "#7a7a7a",
+			regatas: "#df0054"
+		}
 	},
 	spacing: {
 		xs: ".5rem",
