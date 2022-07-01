@@ -78,13 +78,21 @@ class MyDocument extends Document {
                     <meta name="viewport"
                         content="width=device-width, height=device-height, initial-scale=1"></meta>
                     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
-                    <link
+                    {/* <link
                         rel="preload"
                         href="/fonts/Aquire-BW0ox.otf"
                         as="font"
                         type="font/otf"
                         crossOrigin=""
                     />
+                    <link
+                        rel="preload"
+                        href="/fonts/AquireBold-8Ma60.otf"
+                        as="font"
+                        type="font/otf"
+                        crossOrigin=""
+                    /> */}
+
                 </Head>
                 <body>
                     <Main />
