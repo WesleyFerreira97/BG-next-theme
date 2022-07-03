@@ -8,16 +8,15 @@ export function MainContent() {
     return (
         <MainContentWrap>
             <MainContentImage>
-                <Image
+                {/* <Image
                     src={Woman1}
                     alt="Woman1"
                     width={'100%'}
                     height={'100%'}
                     layout='responsive'
-                    // objectFit="cover"
+                    // objectFit="cover"'
                     quality={10}
-                />
-                Image
+                /> */}
             </MainContentImage>
             <Container>
                 MainContent
