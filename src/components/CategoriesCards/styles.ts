@@ -7,5 +7,7 @@ export const CategoriesCardWrap = styled.div`
     
     
     > * {
+        display: flex;
+        gap: .5rem;
     }
 `;

@@ -3,7 +3,7 @@ import { CategoryCardWrap } from './styles'
 
 export function CategoryCard() {
     return (
-        <CategoryCardWrap>
+        <CategoryCardWrap style={{ background: 'black' }}>
             Card
         </CategoryCardWrap>
     )
