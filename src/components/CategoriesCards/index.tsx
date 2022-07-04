@@ -4,6 +4,12 @@ import { Container } from '../Container'
 import { CategoriesCardWrap } from './styles'
 import { theme } from '../../styles/theme'
 
+type CategoryData = {
+    title: string,
+    subTitle: string,
+    bg: string,
+}
+
 const categoriesData = {
     cat1: {
         title: 'Regatas',
@@ -26,11 +32,17 @@ export function CategoriesCards() {
     return (
         <CategoriesCardWrap>
             <Container>
-                {categoriesData.map((category: any) => (
+                {Object.keys(categoriesData).map((category) => (
+                    <CategoryCard
+                        key={category.title}
+                    // bgColor={category.}
+                    />
+                ))}
+                {/* {categoriesData.map((category: any) => (
                     <CategoryCard
                         key={category.title}
                     />
-                ))}
+                ))} */}
             </Container>
         </CategoriesCardWrap>
     )

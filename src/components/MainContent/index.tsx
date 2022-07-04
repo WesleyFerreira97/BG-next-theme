@@ -19,7 +19,9 @@ export function MainContent() {
                 /> */}
             </MainContentImage>
             <Container>
-                MainContent
+                {/* <div className='opa'>
+                    MainContent
+                </div> */}
             </Container>
         </MainContentWrap>
     )

@@ -5,6 +5,6 @@ export const ContainerWrap = styled.div`
     max-width: 1200px;
 
     > * {
-        width: 100%;
+        /* width: 100%; */
     }
 `;
