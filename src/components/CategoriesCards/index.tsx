@@ -3,6 +3,7 @@ import { CategoryCard } from '../CategoryCard'
 import { Container } from '../Container'
 import { CategoriesCardWrap } from './styles'
 import { theme } from '../../styles/theme'
+import { Grid } from '../Grid'
 
 type CategoryData = {
     title: string,
@@ -41,13 +42,27 @@ export function CategoriesCards() {
     return (
         <CategoriesCardWrap>
             <Container>
-                {Object.values(categoriesData).map((cat, index) => {
-                    return (
-                        <CategoryCard
-                            key={index}
-                        />
-                    )
-                })}
+                <Grid container>
+                    {Object.values(categoriesData).map((cat, index) => {
+                        return (
+                            <Grid
+                                item
+                                key={index}
+                                xs={4}
+                                gap={{
+                                    xs: 1,
+                                    sm: 2,
+                                }}
+                                col={{
+                                    xs: 1,
+                                    sm: 2,
+                                }}
+                            >
+                                <CategoryCard />
+                            </Grid>
+                        )
+                    })}
+                </Grid>
             </Container>
         </CategoriesCardWrap>
     )
