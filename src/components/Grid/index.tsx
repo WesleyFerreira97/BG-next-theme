@@ -1,6 +1,12 @@
-import React from 'react'
+import { info, log } from 'console';
+import React, { ReactNode } from 'react'
 import styled from 'styled-components';
 import { GridContainerWrap, GridItemWrap } from './styles';
+
+type GridContainerProps = {
+    children: ReactNode,
+    gap: number,
+}
 
 const gridColSize = {
     1: '8.33333333%',
@@ -17,8 +23,16 @@ const gridColSize = {
     12: '100%',
 }
 
-export function GridContainer(props: any) {
-    console.log('GridContainer');
+const gridItemProps = {
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+}
+
+export function GridContainer(props: GridContainerProps) {
+    console.log(props);
 
     return (
         <GridContainerWrap>
@@ -28,7 +42,6 @@ export function GridContainer(props: any) {
 }
 
 export function GridItem(props: any) {
-    console.log('GridItem');
 
     return (
         <GridItemWrap>
@@ -37,8 +50,15 @@ export function GridItem(props: any) {
     )
 }
 
+
 export function Grid(props: any) {
+    const propsByComponent = {}
     const Component = props.container ? GridContainer : GridItem;
+
+    if (Component.name === 'GridItem') {
+    }
+
+
 
     return <Component {...props} />
 }

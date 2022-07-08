@@ -48,12 +48,9 @@ export function GridCards() {
                             <Grid
                                 item
                                 key={index}
-                                xs={4}
+                                xs={2}
+                                md={4}
                                 gap={{
-                                    xs: 1,
-                                    sm: 2,
-                                }}
-                                col={{
                                     xs: 1,
                                     sm: 2,
                                 }}
