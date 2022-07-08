@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styled from 'styled-components';
-import { CategoriesCards } from '../components/CategoriesCards';
+import { GridCards } from '../components/GridCards';
 import { MainContent } from '../components/MainContent'
 
 const HomeWrap = styled.div`
@@ -14,8 +14,8 @@ const HomeWrap = styled.div`
 const Home: NextPage = () => {
   return (
     <HomeWrap>
-      <MainContent />
-      <CategoriesCards />
+      {/* <MainContent /> */}
+      <GridCards />
     </HomeWrap>
   )
 }

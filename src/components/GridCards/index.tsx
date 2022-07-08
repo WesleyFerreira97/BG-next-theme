@@ -1,5 +1,5 @@
 import React from 'react'
-import { CategoryCard } from '../CategoryCard'
+import { Card } from '../Card'
 import { Container } from '../Container'
 import { CategoriesCardWrap } from './styles'
 import { theme } from '../../styles/theme'
@@ -38,7 +38,7 @@ const categoriesData = {
     },
 }
 
-export function CategoriesCards() {
+export function GridCards() {
     return (
         <CategoriesCardWrap>
             <Container>
@@ -58,7 +58,7 @@ export function CategoriesCards() {
                                     sm: 2,
                                 }}
                             >
-                                <CategoryCard />
+                                <Card />
                             </Grid>
                         )
                     })}

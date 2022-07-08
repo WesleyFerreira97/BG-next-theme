@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const GridContainer = styled.div`
+export const GridContainerWrap = styled.div`
     width: 100%;
     display: flex;
     /* flex-wrap: wrap; */
@@ -8,7 +8,7 @@ export const GridContainer = styled.div`
     overflow: hidden;
 `;
 
-export const GridItem = styled.div`
+export const GridItemWrap = styled.div`
     flex: 0 0 auto;
     width: 33.33333333%;
     display: flex;
