@@ -1,25 +1,7 @@
 import { info } from 'console';
 import React from 'react'
 import styled from 'styled-components';
-
-const GridContainer = styled.div`
-    width: 100%;
-    display: flex;
-    /* flex-wrap: wrap; */
-    background-color: blue;
-    overflow: hidden;
-`;
-
-const GridItem = styled.div`
-    flex: 0 0 auto;
-    width: 33.33333333%;
-    display: flex;
-    background-color: blue;
-
-    > * {
-        width: 100%;
-    }
-`;
+import { GridContainerWrap, GridItemWrap } from './styles';
 
 const gridColSize = {
     1: '8.33333333%',
@@ -36,33 +18,36 @@ const gridColSize = {
     12: '100%',
 }
 
-
-export function Grid(props: any) {
-    console.log(props);
-
-    if (props.container) {
-        return (
-            <GridContainer>
-                {props.children}
-            </GridContainer>
-        )
-    }
+export function GridContainer(props: any) {
+    console.log('GridContainer');
 
     return (
-        <GridItem>
+        <GridContainerWrap>
             {props.children}
-        </GridItem>
+        </GridContainerWrap>
     )
 }
 
+export function GridItem(props: any) {
+    console.log('GridItem');
 
+    return (
+        <GridItemWrap>
+            {props.children}
+        </GridItemWrap>
+    )
+}
+
+export function Grid(props: any) {
+    const Component = props.container ? GridContainer : GridItem;
+
+    return <Component {...props} />
+}
 
 
 // Options
 
 // 1* - Type ( Container Item)
-
-// 2 - Direction ( Flex direction ) - Only Container
-// 3 - Breakpoints ( xs, sm, md, lg, xl) - Only Item
-// 4 - Gap - Only Item
+// 2 - Breakpoints ( xs, sm, md, lg, xl) - Only Item
+// 3 - Gap - Only Item
 
