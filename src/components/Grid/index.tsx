@@ -1,4 +1,3 @@
-import { info, log } from 'console';
 import React, { ReactNode } from 'react'
 import styled from 'styled-components';
 import { GridContainerWrap, GridItemWrap } from './styles';
@@ -23,16 +22,12 @@ const gridColSize = {
     12: '100%',
 }
 
-const gridItemProps = {
-    xs: null,
-    sm: null,
-    md: null,
-    lg: null,
-    xl: null,
+const getPropsByComponent = (componentName: string) => {
+    console.log(componentName);
+
 }
 
-export function GridContainer(props: GridContainerProps) {
-    console.log(props);
+function GridContainer(props: GridContainerProps) {
 
     return (
         <GridContainerWrap>
@@ -41,7 +36,7 @@ export function GridContainer(props: GridContainerProps) {
     )
 }
 
-export function GridItem(props: any) {
+function GridItem(props: any) {
 
     return (
         <GridItemWrap>
@@ -50,15 +45,12 @@ export function GridItem(props: any) {
     )
 }
 
-
 export function Grid(props: any) {
-    const propsByComponent = {}
     const Component = props.container ? GridContainer : GridItem;
 
     if (Component.name === 'GridItem') {
+        getPropsByComponent('GridItem')
     }
-
-
 
     return <Component {...props} />
 }
