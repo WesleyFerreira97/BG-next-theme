@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+type GridItemProps = {
+    container: string;
+}
 
 export const GridContainerWrap = styled.div`
     width: 100%;
@@ -8,7 +12,7 @@ export const GridContainerWrap = styled.div`
     overflow: hidden;
 `;
 
-export const GridItemWrap = styled.div`
+export const GridItemWrap = styled.div<GridItemProps>`
     flex: 0 0 auto;
     width: 33.33333333%;
     display: flex;
@@ -16,5 +20,13 @@ export const GridItemWrap = styled.div`
 
     > * {
         width: 100%;
+    }
+
+    
+    ${(props) =>
+        props.container &&
+        css`
+        background-color: black;
+    `
     }
 `;
