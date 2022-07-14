@@ -6,6 +6,10 @@ import ThemeProvider from '../providers/ThemeProvider'
 import { GlobalStyle } from '../styles/Global'
 import { NextUIProvider } from '@nextui-org/react'
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 function MyApp({ Component, pageProps }: AppProps) {
 
   return (
@@ -19,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <GlobalStyle />
           {/* <MainNavbar /> */}
           <Component {...pageProps} />
-          <Footer />
+          {/* <Footer /> */}
         </ThemeProvider>
       </NextUIProvider>
     </>

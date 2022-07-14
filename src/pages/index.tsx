@@ -3,14 +3,16 @@ import Head from 'next/head'
 import styled from 'styled-components';
 import { GridCards } from '../components/GridCards';
 import { GridMainCategories } from '../components/GridMainCategories';
-import { MainContent } from '../components/MainContent'
+import { HomeCarousel } from '../components/HomeCarousel'
+
+
+
 
 const Home: NextPage = () => {
   return (
     <>
       {/* <MainContent /> */}
-      {/* <GridCards /> */}
-      <GridMainCategories />
+      <HomeCarousel />
     </>
   )
 }
