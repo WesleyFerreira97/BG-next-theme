@@ -4,6 +4,7 @@ export const CarouselItemWrap = styled.div`
     height: 75vh;
     position: relative;
     display: block;
+    width: 100%;
     /* background-color: ${props => props.theme.colors.primary}; */
     background: linear-gradient(0deg, rgba(255, 0, 150, 0.6), rgba(255, 0, 150, 0.6)), url('https://images.unsplash.com/photo-1489939078242-0a1dc4a08f06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
     overflow: hidden;
