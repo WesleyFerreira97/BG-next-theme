@@ -4,7 +4,8 @@ import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { CarouselItem } from '../CarouselItem';
 import Image from 'next/image';
-import { Container } from '@nextui-org/react';
+import { Button, Container, red } from '@nextui-org/react';
+import { theme } from '../../styles/theme';
 
 const carouselItemsData = {
     item1: {
@@ -72,6 +73,32 @@ export function HomeCarousel() {
                                 <CarouselItem.Buttons>
                                     {/* {item.buttons.previewButton}
                                 {item.buttons.seeMore} */}
+                                    <Button
+                                        color={'secondary'}
+                                        rounded={false}
+                                        css={{
+                                            bg: theme.colors.neutral,
+                                            padding: '1.5rem 2.5rem',
+                                            border: '5px solid #fff',
+                                        }}
+                                    >
+                                        <span className='button__text'>
+                                            Veja Mais
+                                        </span>
+                                    </Button>
+                                    <Button
+                                        color={'secondary'}
+                                        rounded={false}
+                                        css={{
+                                            bg: 'transparent',
+                                            border: '5px solid #fff',
+                                            padding: '1.5rem 2.5rem'
+                                        }}
+                                    >
+                                        <span className='button__text-outline'>
+                                            + Categorias
+                                        </span>
+                                    </Button>
                                 </CarouselItem.Buttons>
                             </Container>
                         </CarouselItem>

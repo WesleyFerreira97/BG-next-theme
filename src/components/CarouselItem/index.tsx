@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Button, CarouselItemWrap, ImageBackground, Text, Title } from './styles'
+import { Buttons, CarouselItemWrap, ImageBackground, Text, Title } from './styles'
 
 type ChildrenProps = {
     children: ReactNode;
@@ -18,7 +18,7 @@ const ItemText = ({ children }: ChildrenProps) => {
 }
 
 const ItemButtons = ({ children }: ChildrenProps) => {
-    return <Button>{children}</Button>
+    return <Buttons>{children}</Buttons>
 }
 
 function CarouselItem(props: ChildrenProps) {

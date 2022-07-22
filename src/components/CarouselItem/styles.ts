@@ -31,8 +31,28 @@ export const Text = styled.h1`
     ${typography.Text}
 `;
 
-export const Button = styled.h1`
-    font-size: 3rem;
+export const Buttons = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 2.5rem;
+
+    .button__text {
+        ${typography.TextLg}
+        font-weight: 400;
+        /* color: ${({ theme }) => theme.colors.neutralAlt};; */
+        color: #000;
+
+        &-outline {
+            color: #fff;
+            ${typography.TextLg}
+        }
+    }
+
+
+    > * {
+        border-radius: 0;
+    }
 `;
 
 export const ImageBackground = styled.div`
