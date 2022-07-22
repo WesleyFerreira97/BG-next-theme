@@ -1,10 +1,12 @@
 import React from 'react'
-import Woman1 from '../../../public/images/woman1.jpg'
+import Woman1 from '../../../public/images/woman1.png'
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { CarouselItem } from '../CarouselItem';
+import Image from 'next/image';
 
 export function HomeCarousel() {
+
     return (
         <>
             <Swiper
@@ -19,6 +21,16 @@ export function HomeCarousel() {
             >
                 <SwiperSlide>
                     <CarouselItem>
+                        <CarouselItem.Image>
+                            <Image
+                                width={'100%'}
+                                height={'100%'}
+                                alt="Image"
+                                src={Woman1}
+                                objectFit='cover'
+                            />
+                            {/* <img src={Woman1.src} /> */}
+                        </CarouselItem.Image>
                         <CarouselItem.Title>
                             Title
                         </CarouselItem.Title>
@@ -37,7 +49,6 @@ export function HomeCarousel() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <CarouselItem>
-
                     </CarouselItem>
                 </SwiperSlide>
             </Swiper>
