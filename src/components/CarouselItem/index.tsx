@@ -1,36 +1,35 @@
-import { Card } from '@nextui-org/react'
-import React from 'react'
-import { CarouselItemWrap } from './styles'
+import React, { ReactNode } from 'react'
+import { Button, CarouselItemWrap, Text, Title } from './styles'
 
-const ItemTitle = ({ children }: any) => {
-    console.log(children);
-
-    return (
-        <>
-            {children}
-        </>
-    )
+type ChildrenProps = {
+    children: ReactNode;
 }
 
-CarouselItem.Title = ItemTitle;
+const ItemTitle = ({ children }: ChildrenProps) => {
+    return <Title>{children}</Title>
+}
 
-function CarouselItem(props: any) {
-    console.log(props);
+const ItemText = ({ children }: ChildrenProps) => {
+    return <Text>{children}</Text>
+}
+const ItemButtons = ({ children }: ChildrenProps) => {
+    return <Button>{children}</Button>
+}
+
+function CarouselItem(props: ChildrenProps) {
 
     return (
         <CarouselItemWrap>
-            <CarouselItem.Title />
-            {/* {props.children.map((item) => (
-                <>
-                aa
-                </>
-            )} */}
-            {props.children}
+            <div className='item__content'>
+                {props.children}
+            </div>
         </CarouselItemWrap>
     )
 }
 
-// Title, Text and Buttons
 
+CarouselItem.Title = ItemTitle;
+CarouselItem.Text = ItemText;
+CarouselItem.Buttons = ItemButtons;
 
 export { CarouselItem }

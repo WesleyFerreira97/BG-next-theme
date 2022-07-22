@@ -15,10 +15,12 @@ export const CarouselItemWrap = styled.div`
     align-items: flex-end;
 
 
-    .opa {
+    .item__content {
         height: 100%;
-        width: 100%;
-        background-color: blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 `
 
@@ -27,4 +29,14 @@ export const MainContentImage = styled.div`
     width: 100%;
     z-index: 30;
     position: absolute; */
+`;
+
+export const Title = styled.h1`
+    font-size: 3rem;
+`;
+export const Text = styled.h1`
+    font-size: 3rem;
+`;
+export const Button = styled.h1`
+    font-size: 3rem;
 `;

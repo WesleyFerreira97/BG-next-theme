@@ -20,18 +20,25 @@ export function HomeCarousel() {
                 <SwiperSlide>
                     <CarouselItem>
                         <CarouselItem.Title>
-                            Teste
+                            Title
                         </CarouselItem.Title>
-                        <CarouselItem.Title>
-                            Teste 2
-                        </CarouselItem.Title>
+                        <CarouselItem.Text>
+                            Text
+                        </CarouselItem.Text>
+                        <CarouselItem.Buttons>
+                            Buttons
+                        </CarouselItem.Buttons>
                     </CarouselItem>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <CarouselItem />
+                    <CarouselItem>
+
+                    </CarouselItem>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <CarouselItem />
+                    <CarouselItem>
+
+                    </CarouselItem>
                 </SwiperSlide>
             </Swiper>
         </>
