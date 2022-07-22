@@ -2,6 +2,15 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+    
+    @font-face {
+        font-family: 'Aquire';
+        src: url('/fonts/Aquire-BW0ox.otf'),
+            url('/fonts/Aquire-BW0ox.otf'), format('otf');
+        font-style: normal;
+        font-weight: 800;
+    }
 
      *, body, html {
         margin: 0;
@@ -31,22 +40,3 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 `;
-
-
-
-// @font-face {
-//     font-family: 'Aquire';
-//     src: url('/fonts/Aquire-BW0ox.otf'),
-//          url('/fonts/Aquire-BW0ox.otf'), format('otf');
-//     font-style: normal;
-//     font-weight: 400;
-//     /* font-display: swap; */
-// }
-// @font-face {
-//     font-family: 'Aquire-Bold';
-//     src: url('/fonts/AquireBold-8Ma60.otf'),
-//          url('/fonts/AquireBold-8Ma60.otf'), format('otf');
-//     font-style: normal;
-//     font-weight: 800;
-//     /* font-display: swap; */
-// }

@@ -19,11 +19,18 @@ export const CarouselItemWrap = styled.div`
     }
 `
 export const Title = styled.h1`
-    font-size: 3rem;
+    font-size: 5rem;
+    color: #fff;
+    font-family: 'Aquire', sans-serif;
+    font-weight: 800;
 `;
 
 export const Text = styled.h1`
-    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: .01rem;
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors.neutral};
 `;
 
 export const Button = styled.h1`
