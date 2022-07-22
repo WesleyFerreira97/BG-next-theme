@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { typography } from "../../styles/typography";
 
 export const CarouselItemWrap = styled.div`
-    height: 75vh;
+    height: 85vh;
     width: 100%;
     position: relative;
     display: flex;
@@ -16,21 +17,18 @@ export const CarouselItemWrap = styled.div`
         justify-content: center;
         align-items: center;
         z-index: 2;
+        text-align: center;
     }
 `
+
 export const Title = styled.h1`
-    font-size: 5rem;
-    color: #fff;
-    font-family: 'Aquire', sans-serif;
-    font-weight: 800;
+    color: ${({ theme }) => theme.colors.neutral};
+    ${typography.TitleLg}
 `;
 
 export const Text = styled.h1`
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    letter-spacing: .01rem;
-    font-size: 1rem;
     color: ${({ theme }) => theme.colors.neutral};
+    ${typography.Text}
 `;
 
 export const Button = styled.h1`

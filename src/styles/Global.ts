@@ -40,3 +40,5 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 `;
+
+

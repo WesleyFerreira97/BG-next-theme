@@ -4,6 +4,7 @@ import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { CarouselItem } from '../CarouselItem';
 import Image from 'next/image';
+import { Container } from '@nextui-org/react';
 
 const carouselItemsData = {
     item1: {
@@ -16,7 +17,7 @@ const carouselItemsData = {
         image: "Woman1"
     },
     item2: {
-        title: "MISTERIO DO BAGULHO LOKO",
+        title: "Regatas",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
         buttons: {
             seeMore: 'see something',
@@ -64,13 +65,15 @@ export function HomeCarousel() {
                             <CarouselItem.Title>
                                 {item.title}
                             </CarouselItem.Title>
-                            <CarouselItem.Text>
-                                {item.text}
-                            </CarouselItem.Text>
-                            <CarouselItem.Buttons>
-                                {/* {item.buttons.previewButton}
+                            <Container xs>
+                                <CarouselItem.Text>
+                                    {item.text}
+                                </CarouselItem.Text>
+                                <CarouselItem.Buttons>
+                                    {/* {item.buttons.previewButton}
                                 {item.buttons.seeMore} */}
-                            </CarouselItem.Buttons>
+                                </CarouselItem.Buttons>
+                            </Container>
                         </CarouselItem>
                     </SwiperSlide>
                 ))}
