@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { MainNavbarWrap } from './styles'
 import { List, ShoppingCartSimple } from 'phosphor-react'
-import { Container } from '../Container'
+import { Container } from '@nextui-org/react'
 
 export function MainNavbar() {
     return (
         <MainNavbarWrap>
-            <Container>
+            <Container lg>
                 <div className='navbar__menu'>
                     <div className='menu-icon'>
                         <List />

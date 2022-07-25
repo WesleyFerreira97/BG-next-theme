@@ -32,6 +32,7 @@ export const Text = styled.h1`
 `;
 
 export const Buttons = styled.div`
+    height: 1rem;
     display: flex;
     justify-content: center;
     gap: 1rem;

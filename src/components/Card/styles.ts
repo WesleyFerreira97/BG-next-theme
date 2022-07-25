@@ -7,4 +7,5 @@ export const CategoryCardWrap = styled.div`
     /* width: 100%; */
     aspect-ratio: 16/9;
     border: 1px solid red;
+    width: 100%;
 `;

@@ -1,26 +1,45 @@
-import { Card, Container, Row } from '@nextui-org/react'
+import { Col, Container, Grid, Row } from '@nextui-org/react'
 import React from 'react'
 import { GridWrap } from './styles'
-import { Card as CardNative } from '../Card';
+import { Card } from '../Card';
+
+const carouselItemsData = {
+    item1: {
+        title: "Conjuntos",
+        text: "But like any other object, you can scale the object the Image fills.",
+        image: "Woman1"
+    },
+    item2: {
+        title: "Regatas",
+        text: "But like any other object, you can scale the object the Image fills.",
+        image: "Woman1"
+    },
+    item3: {
+        title: "É ISSO MEMO TIO",
+        text: "But like any other object, you can scale the object the Image fills. ",
+        image: "Woman1"
+    },
+}
+
 
 export function GridMainCategories() {
     return (
         <GridWrap>
-            <Container md direction='column'>
-                <CardNative />
-                <Row>
-                    <Card>
-                        <Card.Body>
-                            Card Body
-                        </Card.Body>
-                    </Card>
-                    <Card>
-                        <Card.Body>
-                            Card Body
-                        </Card.Body>
-                    </Card>
-                </Row>
-            </Container>
+            <Grid.Container
+                gap={.3}
+                justify="center"
+                css={{ color: 'red' }}
+            >
+                <Grid xs={4}>
+                    <Card />
+                </Grid>
+                <Grid xs={4}>
+                    <Card />
+                </Grid>
+                <Grid xs={4} >
+                    <Card />
+                </Grid>
+            </Grid.Container>
         </GridWrap>
     )
 }

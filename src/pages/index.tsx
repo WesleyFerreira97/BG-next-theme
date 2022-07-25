@@ -1,18 +1,14 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import styled from 'styled-components';
-import { GridCards } from '../components/GridCards';
-import { GridMainCategories } from '../components/GridMainCategories';
+import { GridMainCategories } from '../components/GridMainCategories'
 import { HomeCarousel } from '../components/HomeCarousel'
-
-
-
+import { MainNavbar } from '../components/MainNavbar'
 
 const Home: NextPage = () => {
   return (
     <>
-      {/* <MainContent /> */}
+      <MainNavbar />
       <HomeCarousel />
+      <GridMainCategories />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import Woman1 from '../../../public/images/woman1.png'
-import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
+import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { CarouselItem } from '../CarouselItem';
 import Image from 'next/image';
@@ -42,10 +42,12 @@ export function HomeCarousel() {
     return (
         <>
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
-                // onSwiper={(swiper) => (window.swiper = swiper)}
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 slidesPerView={1}
-                // spaceBetween={50}
+                autoplay={{
+                    delay: 3500,
+                    disableOnInteraction: false,
+                }}
                 navigation
                 loop
                 scrollbar={{ draggable: true }}
@@ -72,14 +74,12 @@ export function HomeCarousel() {
                                 </CarouselItem.Text>
                                 <CarouselItem.Buttons>
                                     {/* {item.buttons.previewButton}
-                                {item.buttons.seeMore} */}
+                                    {item.buttons.seeMore} */}
                                     <Button
-                                        color={'secondary'}
-                                        rounded={false}
                                         css={{
                                             bg: theme.colors.neutral,
-                                            padding: '1.5rem 2.5rem',
-                                            border: '5px solid #fff',
+                                            padding: '1.5rem 2rem',
+                                            border: '3px solid #fff',
                                         }}
                                     >
                                         <span className='button__text'>
@@ -87,12 +87,10 @@ export function HomeCarousel() {
                                         </span>
                                     </Button>
                                     <Button
-                                        color={'secondary'}
-                                        rounded={false}
                                         css={{
                                             bg: 'transparent',
-                                            border: '5px solid #fff',
-                                            padding: '1.5rem 2.5rem'
+                                            border: '3px solid #fff',
+                                            padding: '1.5rem 2rem',
                                         }}
                                     >
                                         <span className='button__text-outline'>
