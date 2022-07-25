@@ -1,7 +1,9 @@
 import { Col, Container, Grid, Row } from '@nextui-org/react'
+import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from 'swiper';
 import React from 'react'
 import { GridWrap } from './styles'
 import { Card } from '../Card';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const carouselItemsData = {
     item1: {

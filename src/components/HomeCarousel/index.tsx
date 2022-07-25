@@ -45,11 +45,12 @@ export function HomeCarousel() {
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 slidesPerView={1}
                 autoplay={{
-                    delay: 3500,
+                    delay: 1500,
                     disableOnInteraction: false,
                 }}
                 navigation
                 loop
+                watchOverflow
                 scrollbar={{ draggable: true }}
                 pagination={{ clickable: true }}
             >
