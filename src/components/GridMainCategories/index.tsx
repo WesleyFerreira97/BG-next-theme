@@ -1,11 +1,10 @@
-import { Col, Container, Grid, Row } from '@nextui-org/react'
-import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from 'swiper';
+import { A11y, Scrollbar, Autoplay } from 'swiper';
 import React from 'react'
 import { GridWrap } from './styles'
-import { Card } from '../Card';
+import { CardCategory } from '../Cards/CardCategory';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const carouselItemsData = {
+const gridItemsData = {
     item1: {
         title: "Conjuntos",
         text: "But like any other object, you can scale the object the Image fills.",
@@ -27,21 +26,41 @@ const carouselItemsData = {
 export function GridMainCategories() {
     return (
         <GridWrap>
-            <Grid.Container
-                gap={.3}
-                justify="center"
-                css={{ color: 'red' }}
+            <Swiper
+                modules={[Scrollbar, A11y, Autoplay]}
+                slidesPerView={'auto'}
+                autoplay={{
+                    delay: 7000,
+                    disableOnInteraction: false,
+                }}
+                loop
+                watchOverflow
+                scrollbar={{ draggable: true }}
+                spaceBetween={6}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1
+                    },
+                    550: {
+                        slidesPerView: 2,
+                        noSwiping: true,
+                        allowSlidePrev: true,
+                        allowSlideNext: true
+                    },
+                    1280: {
+                        slidesPerView: 3,
+                        noSwiping: true,
+                        allowSlidePrev: false,
+                        allowSlideNext: false
+                    }
+                }}
             >
-                <Grid xs={4}>
-                    <Card />
-                </Grid>
-                <Grid xs={4}>
-                    <Card />
-                </Grid>
-                <Grid xs={4} >
-                    <Card />
-                </Grid>
-            </Grid.Container>
+                {Object.values(gridItemsData).map((item, index) => (
+                    <SwiperSlide key={index}>
+                        <CardCategory />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </GridWrap>
     )
 }

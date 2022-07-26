@@ -42,14 +42,14 @@ export const GlobalStyle = createGlobalStyle`
 
     .swiper-button-prev,
     .swiper-button-next {
-    margin-top: -40px;
-    border-radius: 6px;
-    padding: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    color: #E4DCCF !important;
-    fill: #E4DCCF 0.5 !important;
-    opacity: .5;
+        margin-top: -40px;
+        border-radius: 6px;
+        padding: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        color: #E4DCCF !important;
+        fill: #E4DCCF 0.5 !important;
+        opacity: .3;
     }
 
     .swiper-pagination-bullet {

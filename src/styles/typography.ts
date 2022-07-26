@@ -45,14 +45,14 @@ typography.TitleSm = css`
 
 typography.TextLg = css`
     font-family: ${secondaryFont};
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.2rem;
     line-height: 120%;
 `;
 
 typography.Text = css`
     font-family: ${secondaryFont};
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1rem;
     line-height: 145%;
     letter-spacing: .01rem;
@@ -60,7 +60,7 @@ typography.Text = css`
 
 typography.TextSm = css`
     font-family: ${secondaryFont};
-    font-weight: 300;
+    font-weight: 400;
     font-size: .8rem;
     line-height: 120%;
 `;

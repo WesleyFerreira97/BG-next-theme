@@ -45,7 +45,7 @@ export function HomeCarousel() {
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 slidesPerView={1}
                 autoplay={{
-                    delay: 1500,
+                    delay: 7000,
                     disableOnInteraction: false,
                 }}
                 navigation
