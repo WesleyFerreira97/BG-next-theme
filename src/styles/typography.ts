@@ -41,6 +41,7 @@ typography.TitleSm = css`
     font-weight: 700;
     font-size: 2rem;
     line-height: 120%;
+    letter-spacing: .003rem;
 `;
 
 typography.TextLg = css`

@@ -1,7 +1,7 @@
 import { A11y, Scrollbar, Autoplay } from 'swiper';
 import React from 'react'
 import { GridWrap } from './styles'
-import { CardCategory } from '../Cards/CardCategory';
+import { CardCategory } from '../../Cards/CardCategory';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const gridItemsData = {

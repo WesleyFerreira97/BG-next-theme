@@ -1,11 +1,11 @@
 import React from 'react'
-import Woman1 from '../../../public/images/woman1.png'
+import Woman1 from '../../../../public/images/woman1.png'
 import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { CarouselItem } from '../CarouselItem';
+import { CarouselItem } from '../../CarouselItem';
 import Image from 'next/image';
 import { Button, Container, red } from '@nextui-org/react';
-import { theme } from '../../styles/theme';
+import { theme } from '../../../styles/theme';
 
 const carouselItemsData = {
     item1: {
