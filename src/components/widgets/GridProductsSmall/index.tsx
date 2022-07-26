@@ -1,8 +1,11 @@
+import { A11y, Scrollbar, Autoplay } from 'swiper';
 import React from 'react'
 import { GridProductWrap } from './styles'
-import { Container, Grid, Row } from '@nextui-org/react';
-import { Header } from '../../WidgetsHeader';
+import { CardCategory } from '../../Cards/CardCategory';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { CardProduct } from '../../Cards/CardProduct';
+import { Container, Row } from '@nextui-org/react';
+import { Header } from '../../WidgetsHeader';
 
 const gridItemsData = {
     item1: {
@@ -38,14 +41,11 @@ const gridItemsData = {
 }
 
 
-export function GridProducts() {
+export function GridProductsSmall() {
     return (
         <GridProductWrap>
-            <Container sm css={{
-                "@smMax": {
-                    maxWidth: '600px',
-                }
-            }}>
+            <Container md>
+
                 <Row style={{ margin: '0 auto 1.5rem' }}>
                     <Header>
                         <Header.SubTitle>A Subtitle</Header.SubTitle>
@@ -54,14 +54,54 @@ export function GridProducts() {
                     </Header>
                 </Row>
 
-                <Grid.Container gap={1}>
+                <Swiper
+                    modules={[Scrollbar, A11y, Autoplay]}
+                    slidesPerView={'auto'}
+                    autoplay={{
+                        delay: 7000,
+                        disableOnInteraction: false,
+                    }}
+                    loop
+                    watchOverflow
+                    scrollbar={{ draggable: true }}
+                    spaceBetween={6}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 2
+                        },
+                        960: {
+                            slidesPerView: 5,
+                            noSwiping: true,
+                            allowSlidePrev: true,
+                            allowSlideNext: true
+                        },
+                        // 1280: {
+                        //     slidesPerView: 5,
+                        //     noSwiping: true,
+                        //     allowSlidePrev: false,
+                        //     allowSlideNext: false
+                        // }
+                    }}
+                >
                     {Object.values(gridItemsData).map((item, index) => (
-                        <Grid key={index} xs={6} sm={4}>
+                        <SwiperSlide key={index}>
                             <CardProduct />
-                        </Grid>
+                        </SwiperSlide>
                     ))}
-                </Grid.Container>
+                </Swiper>
             </Container>
         </GridProductWrap>
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+{/* <CardProduct /> */ }
