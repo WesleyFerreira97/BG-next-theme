@@ -1,18 +1,29 @@
 import styled from 'styled-components'
+import { typography } from '../../styles/typography';
 
 export const TitleWrap = styled.h3`
-    display: block;
+    ${typography.TitleSm}
+    margin: 1rem auto;
 `;
 
 export const SubTitleWrap = styled.span`
-    display: block;
+    ${typography.TextLg}
+    color: ${({ theme }) => theme.colors.neutralAlt};
 `;
 
 export const ParagraphWrap = styled.p`
-    display: block;
+    ${typography.Text}
+    color: ${({ theme }) => theme.colors.neutralAlt};
 `;
 
 export const WidgetHeaderWrap = styled.div`
-    display: block;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin: 1.5rem auto;
 `;
 
