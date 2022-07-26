@@ -5,6 +5,7 @@ import { MainNavbar } from '../components/MainNavbar'
 import { Header } from '../components/WidgetsHeader'
 import { GridProducts } from '../components/widgets/GridProducts'
 import { GridProductsSmall } from '../components/widgets/GridProductsSmall'
+import { GridOtherCategories } from '../components/widgets/GridOtherCategories'
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
       <GridMainCategories />
 
       <GridProducts />
+      <GridOtherCategories />
       <GridProductsSmall />
     </>
   )
