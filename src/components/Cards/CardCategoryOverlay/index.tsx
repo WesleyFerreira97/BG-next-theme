@@ -3,7 +3,6 @@ import { CardWrap, CategoryBackground } from './styles'
 
 import People1 from '../../../../public/images/people2.jpg'
 import Image from 'next/image'
-import { Row } from '@nextui-org/react'
 
 export function CardCategoryOverlay(props: any) {
     return (
@@ -26,7 +25,7 @@ export function CardCategoryOverlay(props: any) {
     )
 }
 
-
+// => != !== != !== <=
 // BG Color?
 // Title
 // SubTitle

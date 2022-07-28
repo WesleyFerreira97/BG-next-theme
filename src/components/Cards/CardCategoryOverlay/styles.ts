@@ -34,8 +34,8 @@ export const CardWrap = styled.div`
         }
 
         &__subtitle {
-            ${typography.Text};
             color: ${({ theme }) => theme.colors.neutral};
+            ${typography.Text};
             display: none;
         }
     }
