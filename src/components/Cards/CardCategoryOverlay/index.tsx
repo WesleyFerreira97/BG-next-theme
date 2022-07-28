@@ -25,7 +25,6 @@ export function CardCategoryOverlay(props: any) {
     )
 }
 
-// => != !== != !== <=
 // BG Color?
 // Title
 // SubTitle
