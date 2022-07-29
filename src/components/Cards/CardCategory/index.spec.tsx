@@ -1,3 +1,9 @@
+import { CardCategory } from '.'
+import { render, screen } from '@testing-library/react';
+
 test('jus test', () => {
-    expect(2 + 2).toEqual(4)
+    const { getByText } = render(<CardCategory />)
+
+    expect(getByText('O Subtitulo')).toBeInTheDocument()
 })
+

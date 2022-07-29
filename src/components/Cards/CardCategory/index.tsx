@@ -19,7 +19,7 @@ export function CardCategory(props: any) {
                 />
             </CategoryBackground>
             <div className='card-info'>
-                <h4 className='card-info__title'> APENAS UM TITULO</h4>
+                <h4 className='card-info__title'>APENAS UM TITULO</h4>
                 <span className='card-info__subtitle'>O Subtitulo</span>
             </div>
         </CategoryCardWrap>
