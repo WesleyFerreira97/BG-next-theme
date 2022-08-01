@@ -19,14 +19,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Bela Garota</title>
       </Head>
 
-      <NextUIProvider>
-        <ThemeProvider>
+      <ThemeProvider>
+        <NextUIProvider>
           <GlobalStyle />
           {/* <MainNavbar /> */}
           <Component {...pageProps} />
           {/* <Footer /> */}
-        </ThemeProvider>
-      </NextUIProvider>
+        </NextUIProvider>
+      </ThemeProvider>
     </>
   )
 }

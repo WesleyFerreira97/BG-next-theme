@@ -49,7 +49,6 @@ export const CategoryCardWrap = styled.div`
     }
 `;
 
-
 export const CategoryBackground = styled.div`
     height: 130%;
     width: 115%;

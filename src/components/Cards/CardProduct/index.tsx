@@ -10,8 +10,6 @@ export function CardProduct(props: any) {
         <CardWrap style={{ background: props?.bg }}>
             <CardBackground>
                 <Image
-                    width={'100%'}
-                    height={'100%'}
                     alt="Image"
                     src={People2}
                     objectFit='cover'

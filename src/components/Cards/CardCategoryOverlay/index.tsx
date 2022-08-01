@@ -9,8 +9,6 @@ export function CardCategoryOverlay(props: any) {
         <CardWrap style={{ background: props?.bg }}>
             <CategoryBackground>
                 <Image
-                    width={'100%'}
-                    height={'100%'}
                     alt="Image"
                     src={People1}
                     objectFit='cover'
