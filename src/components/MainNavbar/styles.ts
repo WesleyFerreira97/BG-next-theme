@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const MainNavbarWrap = styled.nav`
     width: 100%;
@@ -37,12 +38,26 @@ export const MainNavbarWrap = styled.nav`
             font-size: 1.5rem;
         }
 
-        &__brand {
+        &__brand > * {
             font-size: 2rem;
             font-family: 'Aquire';
             font-style: normal;
             font-weight: 700;
             color: ${props => props.theme.colors.neutral};
+        }
+    }
+
+    .brand--desktop {
+        display: none;
+    }
+
+    @media (min-width: ${theme.breakpoints.md}) {
+        .brand--desktop {
+            display: block;
+        }
+
+        .brand--mobile {
+            display: none;
         }
     }
 `;

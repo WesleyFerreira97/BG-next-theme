@@ -14,7 +14,8 @@ export function MainNavbar() {
                     </div>
                 </div>
                 <div className='navbar__brand'>
-                    Bela Garota
+                    <span className='brand--desktop'>Bela Garota</span>
+                    <span className='brand--mobile'>BG</span>
                 </div>
                 <div className='navbar__cart'>
                     <div className='cart-icon'>
