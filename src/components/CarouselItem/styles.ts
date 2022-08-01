@@ -18,6 +18,7 @@ export const CarouselItemWrap = styled.div`
         align-items: center;
         z-index: 2;
         text-align: center;
+        padding: 0 2rem;
     }
 `
 

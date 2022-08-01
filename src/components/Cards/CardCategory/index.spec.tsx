@@ -1,14 +1,10 @@
 import { CardCategory } from '.'
 import { render, screen } from '@testing-library/react';
-import { theme } from '../../../styles/theme';
-
-import ThemeProvider from '../../../providers/ThemeProvider';
+import { renderWithTheme } from '../../../utils/tests/helpers';
 
 test('jus test', () => {
-    const { getByText } = render(
-        <ThemeProvider>
-            <CardCategory />
-        </ThemeProvider>
+    const { getByText } = renderWithTheme(
+        <CardCategory />
     )
 
     expect(getByText('O Subtitulo')).toBeInTheDocument()
