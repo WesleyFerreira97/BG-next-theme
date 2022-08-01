@@ -5,8 +5,8 @@ export const MainNavbarWrap = styled.nav`
     position: absolute;
     display: flex;
     justify-content: center;
-    padding: 1.25rem;
-    
+    padding: 1.25rem 0;
+
     &:after {
         content: '';
         position: absolute;
@@ -23,6 +23,7 @@ export const MainNavbarWrap = styled.nav`
         align-items: center;
         gap: .5rem;
         z-index: 10;
+        line-height: 0;
     }
 
     .navbar {
