@@ -76,7 +76,8 @@ export function HomeCarousel() {
                                     {item.buttons.seeMore} */}
                                     <Button
                                         css={{
-                                            bg: theme.colors.neutral,
+                                            backgroundColor: theme.colors.neutral,
+                                            color: theme.colors.secondary,
                                             padding: '1.5rem 2rem',
                                             border: '3px solid #fff',
                                         }}
@@ -87,7 +88,7 @@ export function HomeCarousel() {
                                     </Button>
                                     <Button
                                         css={{
-                                            bg: 'transparent',
+                                            backgroundColor: 'transparent',
                                             border: '3px solid #fff',
                                             padding: '1.5rem 2rem',
                                         }}

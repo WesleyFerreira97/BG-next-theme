@@ -51,7 +51,6 @@ export const Buttons = styled.div`
         }
     }
 
-
     > * {
         border-radius: 0;
     }
@@ -67,5 +66,4 @@ export const ImageBackground = styled.div`
         width: 100% !important;
         height: 100% !important;
     }
-
 `;
