@@ -17,7 +17,7 @@ const gridItemsData = {
         image: "Woman1"
     },
     item3: {
-        title: "É ISSO MEMO TIO",
+        title: "Shorts",
         text: "But like any other object, you can scale the object the Image fills. ",
         image: "Woman1"
     },
@@ -29,7 +29,7 @@ export function GridMainCategories() {
         <GridWrap>
             <Container fluid css={{ padding: '.3rem !important' }}>
                 <Swiper
-                    modules={[Scrollbar, A11y, Autoplay]}
+                    modules={[Scrollbar, A11y]}
                     slidesPerView={'auto'}
                     autoplay={{
                         delay: 7000,
@@ -59,7 +59,12 @@ export function GridMainCategories() {
                 >
                     {Object.values(gridItemsData).map((item, index) => (
                         <SwiperSlide key={index}>
-                            <CardCategory />
+                            <CardCategory
+                                title={item.title}
+                                subTitle={item.text}
+                                link={"linkToPage"}
+                                image={item.image}
+                            />
                         </SwiperSlide>
                     ))}
                 </Swiper>

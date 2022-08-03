@@ -15,16 +15,18 @@ export const CategoryCardWrap = styled.div`
     }
 
     .card-info {
-        z-index: 4;
         height: 100%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 2rem;
+        z-index: 4;
 
         &__title {
             color: ${({ theme }) => theme.colors.neutral};
             ${typography.TitleSm}
+            font-size: 2.5rem;
         }
 
         &__subtitle {
@@ -34,14 +36,11 @@ export const CategoryCardWrap = styled.div`
         }
     }
 
-    
-    &:hover .card-info__title {
-        /* transform: scale(1.1); */
-        transform: scaleX(1.1);
-    }
-
     @media (min-width: ${theme.breakpoints.lg}) { 
         .card-info {
+            &__title {
+                font-size: 3rem;
+            }
             &__subtitle {
                 display: block;
             }

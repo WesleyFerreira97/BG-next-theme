@@ -9,7 +9,7 @@ import { theme } from '../../../styles/theme';
 
 const carouselItemsData = {
     item1: {
-        title: "Conjuntos",
+        title: "wConjuntos",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
         buttons: {
             seeMore: 'see something',
