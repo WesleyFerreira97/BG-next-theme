@@ -9,7 +9,7 @@ import { theme } from '../../../styles/theme';
 
 const carouselItemsData = {
     item1: {
-        title: "wConjuntos",
+        title: "Conjuntos",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
         buttons: {
             seeMore: 'see something',
@@ -27,7 +27,7 @@ const carouselItemsData = {
         image: "Woman1"
     },
     item3: {
-        title: "É ISSO MEMO TIO",
+        title: "Corpped",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
         buttons: {
             seeMore: 'see something',
@@ -78,8 +78,9 @@ export function HomeCarousel() {
                                         css={{
                                             backgroundColor: theme.colors.neutral,
                                             color: theme.colors.secondary,
-                                            padding: '1.5rem 2rem',
+                                            padding: '1.5rem .5rem',
                                             border: '3px solid #fff',
+                                            width: '50px',
                                         }}
                                     >
                                         <span className='button__text'>
@@ -90,7 +91,7 @@ export function HomeCarousel() {
                                         css={{
                                             backgroundColor: 'transparent',
                                             border: '3px solid #fff',
-                                            padding: '1.5rem 2rem',
+                                            padding: '1.5rem .5rem',
                                         }}
                                     >
                                         <span className='button__text-outline'>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { typography } from "../../styles/typography";
 
 export const CarouselItemWrap = styled.div`
-    height: 85vh;
+    height: 75vh;
     width: 100%;
     position: relative;
     display: flex;

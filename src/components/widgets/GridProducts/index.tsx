@@ -43,7 +43,7 @@ export function GridProducts() {
         <GridProductWrap>
             <Container sm css={{
                 "@smMax": {
-                    maxWidth: '600px',
+                    // maxWidth: '500px',
                 }
             }}>
                 <Row style={{ margin: '0 auto 1.5rem' }}>
@@ -56,7 +56,7 @@ export function GridProducts() {
 
                 <Grid.Container gap={1}>
                     {Object.values(gridItemsData).map((item, index) => (
-                        <Grid key={index} xs={6} sm={4}>
+                        <Grid key={index} xs={6} sm={4} >
                             <CardProduct />
                         </Grid>
                     ))}

@@ -775,7 +775,7 @@
 
 "@nextui-org/react@^1.0.0-beta.9":
   version "1.0.0-beta.9"
-  resolved "https://registry.npmjs.org/@nextui-org/react/-/react-1.0.0-beta.9.tgz"
+  resolved "https://registry.yarnpkg.com/@nextui-org/react/-/react-1.0.0-beta.9.tgz#e91b48abdc0f360e94e9e9784e1ac17c0c44f892"
   integrity sha512-V8SmkdcCKcPZsF2BWV2rXi2e4Q+5c8r3G1QjvIhyRdm81xicbZFMzIga0KMrccj8lshDSoa8pErxQdnzosjyTg==
   dependencies:
     "@babel/runtime" "7.9.6"
