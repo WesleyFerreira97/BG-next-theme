@@ -5,11 +5,11 @@ import { typography } from "../../../styles/typography";
 export const CardWrap = styled.div`
     height: 100%;
     width: 100%;
-    max-height: 350px;
+    /* max-height: 350px; */
     position: relative;
     display: flex;
     flex-direction: column;
-    aspect-ratio: 4/6;
+    aspect-ratio: 9/12;
     overflow: hidden;
 
     &:hover img {

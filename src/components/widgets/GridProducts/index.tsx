@@ -37,18 +37,19 @@ const gridItemsData = {
     },
 }
 
-
 export function GridProducts() {
     return (
         <GridProductWrap>
             <Container sm css={{
-                "@smMax": {
-                    // maxWidth: '500px',
-                }
+                '@sm': {
+                    color: "red !important",
+                    maxWidth: '500px',
+                    display: 'none',
+                },
             }}>
                 <Row style={{ margin: '0 auto 1.5rem' }}>
                     <Header>
-                        <Header.SubTitle>A Subtitle</Header.SubTitle>
+                        <Header.SubTitle>A Subtitle 3</Header.SubTitle>
                         <Header.Title>Novidades</Header.Title>
                         <Header.Paragraph>Veja nossas principais ofertas separadas para você</Header.Paragraph>
                     </Header>
@@ -56,7 +57,14 @@ export function GridProducts() {
 
                 <Grid.Container gap={1}>
                     {Object.values(gridItemsData).map((item, index) => (
-                        <Grid key={index} xs={6} sm={4} >
+                        <Grid key={index} xs={4} sm={4} css={{
+                            "@xsMax": {
+                                // maxWidth: '500px',
+                                display: 'none !important   ',
+                                flexBasis: '50%',
+                                maxWidth: '50%',
+                            }
+                        }}>
                             <CardProduct />
                         </Grid>
                     ))}

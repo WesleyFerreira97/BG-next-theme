@@ -49,7 +49,21 @@ export function GridOtherCategories() {
                 </Row>
                 <Swiper
                     modules={[Scrollbar, A11y, Autoplay]}
-                    slidesPerView={5}
+                    slidesPerView={'auto'}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 2
+                        },
+                        960: {
+                            slidesPerView: 4,
+                            noSwiping: true,
+                            allowSlidePrev: true,
+                            allowSlideNext: true
+                        },
+                        1200: {
+                            slidesPerView: 5,
+                        }
+                    }}
                     autoplay={{
                         delay: 7000,
                         disableOnInteraction: false,

@@ -3,7 +3,6 @@ import { CategoryBackground, CategoryCardWrap } from './styles'
 
 import People1 from '../../../../public/images/people1.jpg'
 import Image from 'next/image'
-import { Row } from '@nextui-org/react'
 
 interface CardCategoryProps {
     title: string,

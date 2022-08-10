@@ -27,7 +27,7 @@ const carouselItemsData = {
         image: "Woman1"
     },
     item3: {
-        title: "Corpped",
+        title: "Camisas",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
         buttons: {
             seeMore: 'see something',

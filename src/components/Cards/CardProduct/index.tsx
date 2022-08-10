@@ -3,7 +3,6 @@ import { CardWrap, CardBackground } from './styles'
 
 import People2 from '../../../../public/images/people4.jpg'
 import Image from 'next/image'
-import { Row } from '@nextui-org/react'
 
 export function CardProduct(props: any) {
     return (
