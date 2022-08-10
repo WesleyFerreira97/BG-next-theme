@@ -4,9 +4,14 @@ import { MainNavbarWrap } from './styles'
 import { List, ShoppingCartSimple } from 'phosphor-react'
 import { Container } from '@nextui-org/react'
 
-export function MainNavbar() {
+export type MainNavbarProps = {
+    bgColor?: string,
+    position?: string,
+}
+
+export function MainNavbar(props: MainNavbarProps) {
     return (
-        <MainNavbarWrap>
+        <MainNavbarWrap {...props}>
             <Container lg>
                 <div className='navbar__menu'>
                     <div className='menu-icon'>

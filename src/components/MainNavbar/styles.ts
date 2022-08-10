@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
+import { MainNavbarProps } from ".";
 
-export const MainNavbarWrap = styled.nav`
+export const MainNavbarWrap = styled.nav<MainNavbarProps>`
     width: 100%;
-    position: absolute;
+    position: ${props => props.position};
     display: flex;
     justify-content: center;
     padding: 1.25rem 0;
+    background-color: ${props => props.bgColor};;
 
     &:after {
         content: '';
@@ -61,3 +63,8 @@ export const MainNavbarWrap = styled.nav`
         }
     }
 `;
+
+MainNavbarWrap.defaultProps = {
+    bgColor: 'inherit',
+    position: 'absolute',
+}
