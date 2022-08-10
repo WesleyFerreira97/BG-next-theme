@@ -7,6 +7,7 @@ export type BreakpointProps = {
     md?: number;
     lg?: number;
     xl?: number;
+    css?: any
 }
 
 type ContainerGeneralProps = {
@@ -15,10 +16,10 @@ type ContainerGeneralProps = {
 
 type ContainerProps = ContainerGeneralProps & BreakpointProps;
 
-export function Container({ children, ...rest }: ContainerProps) {
+export function Container({ children, css, ...rest }: ContainerProps) {
 
     return (
-        <ContainerWrap {...rest}>
+        <ContainerWrap {...rest} style={css}>
             {children}
         </ContainerWrap>
     )

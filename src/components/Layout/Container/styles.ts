@@ -3,13 +3,7 @@ import { BreakpointProps } from ".";
 
 export const ContainerWrap = styled.div<BreakpointProps>`
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: #1F1D36;
-
+    
     > * {
         width: ${props => props.xs + '%'};
     }
