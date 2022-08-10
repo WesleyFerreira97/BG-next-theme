@@ -6,12 +6,16 @@ import { Header } from '../components/WidgetsHeader'
 import { GridProducts } from '../components/widgets/GridProducts'
 import { GridProductsSmall } from '../components/widgets/GridProductsSmall'
 import { GridOtherCategories } from '../components/widgets/GridOtherCategories'
+import { useRouter } from 'next/router'
 
 import { supaDb } from '../services/supadb';
 import { useEffect, useState } from 'react'
 
 const Home: NextPage = () => {
-  const [dbData, setDbData] = useState<any>();
+  const [dbData, setDbData] = useState();
+  const router = useRouter();
+  console.log(router);
+
 
   useEffect(() => {
     supaDb.from("products")
@@ -28,7 +32,7 @@ const Home: NextPage = () => {
       <MainNavbar />
       <HomeCarousel />
       <GridMainCategories />
-
+      <button onClick={() => router.push("/single")}>Go single</button>
       <GridProducts />
       <GridOtherCategories />
       <GridProductsSmall />
