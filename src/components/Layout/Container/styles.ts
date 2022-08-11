@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { BreakpointProps } from ".";
 
-export const ContainerWrap = styled.div<BreakpointProps>`
+export const ContainerWrap = styled.div<Partial<BreakpointProps>>`
     width: 100%;
     
     > * {
