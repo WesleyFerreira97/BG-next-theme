@@ -12,6 +12,14 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 800;
     }
 
+    @font-face {
+        font-family: 'Britney';
+        src: url('/fonts/Britney-Hills.otf'),
+            url('/fonts/Britney-Hills.otf'), format('otf');
+        font-style: normal;
+        font-weight: 800;
+    }
+
      *, body, html {
         margin: 0;
         padding: 0;

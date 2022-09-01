@@ -3,7 +3,10 @@ import { BreakpointProps } from ".";
 
 export const ContainerWrap = styled.div<Partial<BreakpointProps>>`
     width: 100%;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     > * {
         width: ${props => props.xs + '%'};
     }
@@ -34,11 +37,7 @@ export const ContainerWrap = styled.div<Partial<BreakpointProps>>`
 
 `;
 
-
 ContainerWrap.defaultProps = {
     xs: 95,
-    sm: 95,
-    md: 85,
     lg: 80,
-    xl: 80,
 }

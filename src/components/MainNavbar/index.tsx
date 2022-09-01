@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { MainNavbarWrap } from './styles'
 import { List, ShoppingCartSimple } from 'phosphor-react'
-import { Container } from '@nextui-org/react'
+import { Container } from '@nextui-org/react';
 
 export type MainNavbarProps = {
     bgColor?: string,
@@ -31,3 +31,4 @@ export function MainNavbar(props: MainNavbarProps) {
         </MainNavbarWrap>
     )
 }
+

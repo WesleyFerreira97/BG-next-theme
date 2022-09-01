@@ -42,7 +42,7 @@ export const MainNavbarWrap = styled.nav<MainNavbarProps>`
 
         &__brand > * {
             font-size: 2rem;
-            font-family: 'Aquire';
+            font-family: 'Aquire' ;
             font-style: normal;
             font-weight: 700;
             color: ${props => props.theme.colors.neutral};

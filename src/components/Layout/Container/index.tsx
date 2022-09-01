@@ -3,11 +3,11 @@ import React from 'react'
 import { ContainerWrap } from './styles'
 
 export type BreakpointProps = {
-    xs: number;
-    sm: number;
-    md: number;
-    lg: number;
-    xl: number;
+    xs: number | string;
+    sm: number | string;
+    md: number | string;
+    lg: number | string;
+    xl: number | string;
 }
 
 type ContainerGeneralProps = {

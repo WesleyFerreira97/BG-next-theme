@@ -14,8 +14,6 @@ import { useEffect, useState } from 'react'
 const Home: NextPage = () => {
   const [dbData, setDbData] = useState();
   const router = useRouter();
-  console.log(router);
-
 
   useEffect(() => {
     supaDb.from("products")
@@ -23,7 +21,6 @@ const Home: NextPage = () => {
       .order('id', { ascending: true })
       .then(({ data }) => {
         // setDbData(data);
-        console.log(data)
       })
   }, [])
 
