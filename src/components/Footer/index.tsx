@@ -5,10 +5,14 @@ import { FooterContainers, FooterCredits, FooterWrap } from './styles'
 export function Footer() {
     return (
         <FooterWrap>
-            <Container css={{ height: '100%' }}>
+            <div className='footer__logo-bar'>
+                <h1 className='title'>Bela Garota</h1>
+            </div>
+            <Container css={{ height: '100%', flexGrow: '1' }}>
                 <FooterContainers>
                     <div className='footer-container'>
-                        Container 1
+                        <p>Condimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturieCondimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturient.</p>
+                        <p>Condimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturieCondimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturient.</p>
                     </div>
                     <div className='footer-container'>
                         Container 1
