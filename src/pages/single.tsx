@@ -1,7 +1,14 @@
 import React from 'react'
-import { Container } from '../../components/Layout/Container'
-import { MainNavbar } from '../../components/MainNavbar'
-import { SingleWrap } from './styles'
+import { Container } from '../components/Layout/Container'
+import { MainNavbar } from '../components/MainNavbar'
+import styled from "styled-components";
+
+const SingleWrap = styled.div`
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+`
 
 export default function Single() {
     return (

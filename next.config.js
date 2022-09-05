@@ -5,6 +5,7 @@ const { parsed: myEnv } = require('dotenv').config({
 
 const nextConfig = {
   reactStrictMode: true,
+  pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
   compiler: {
     styledComponents: true,
   },
@@ -15,5 +16,4 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
-
 
