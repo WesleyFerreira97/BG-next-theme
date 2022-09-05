@@ -1,6 +1,6 @@
 import { Clock, MapPinLine } from 'phosphor-react'
 import React from 'react'
-import { Container } from '../Layout/Container'
+import { Container } from '../Layout/Container';
 import { FooterContainers, FooterCredits, FooterWrap } from './styles'
 
 export function Footer() {
