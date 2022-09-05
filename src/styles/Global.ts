@@ -35,6 +35,10 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
+    ul {
+        margin: 0;
+    }
+
     /* Ajusts For Responsivity */
     @media (max-width: 1024px) {
         html {

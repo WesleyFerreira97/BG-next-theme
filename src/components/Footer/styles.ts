@@ -9,12 +9,11 @@ export const FooterWrap = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 25rem;
+    margin-top: 5rem;
     background-color: #E2E2E2;
-    /* border-top: 12px solid #D4D4D4; */
 
     .footer__logo-bar {
-        height: 80px;
+        height: 100px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -22,8 +21,8 @@ export const FooterWrap = styled.div`
         justify-content: center;
         border-top: 15px solid #D4D4D4;
         border-bottom: 1px solid #D4D4D4;
-        padding-top: 1.25rem;
-        padding-bottom: .75rem;
+        padding-top: 1.75rem;
+        padding-bottom: 1rem;
 
         .footer__logo-wrap {
             display: flex;
@@ -60,28 +59,62 @@ export const FooterContainers = styled.div`
 
     .container-1 {
         max-width: 450px;
+    }
 
-        .info {
-            
-                        &__item {
-                            display: flex;
-                            align-items: center;
-                            margin: 1.25rem 0;
-                        }
+    .info {
         
-            &__text {
+        &__item {
+            display: flex;
+            align-items: center;
+            margin: 1.25rem 0;
+        }
+    
+        &__text {
+            ${typography.TextSm}
+            line-height: 165%;
+            color: ${theme.colors.neutralAlt};
+        }
+
+        &__icon {
+            padding-right: 1rem;
+            color: ${theme.colors.neutralAlt};
+        }
+    }
+
+    .container-2 {
+        display: flex;
+        justify-content: center;
+    }
+ 
+    .menu {
+
+        &__container {
+            display: block;
+            padding: 0 2rem;
+        }
+
+        &__title {
+            ${typography.Text}
+            font-weight: 500;
+        }
+
+        &__wrap {
+            
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            li {
                 ${typography.TextSm}
                 line-height: 165%;
                 color: ${theme.colors.neutralAlt};
             }
-
-            &__icon {
-                padding-right: 1rem;
-                color: ${theme.colors.neutralAlt};
-            }
-    	}
+        }
     }
     
+
+
     @media(min-width: ${theme.breakpoints.lg}) {
         flex-direction: row;
     }

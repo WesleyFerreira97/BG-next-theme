@@ -39,11 +39,61 @@ export function Footer() {
 
 
                     </div>
-                    <div className='footer-container'>
-                        Container 1
+                    <div className='footer-container container-2'>
+                        <div className='menu__container'>
+                            <div>
+                                <h5 className='menu__title'>Category Title</h5>
+                                <ul className='menu__wrap'>
+                                    <li>Collectibles</li>
+                                    <li>Domain Names</li>
+                                    <li>Photography</li>
+                                    <li>Sports</li>
+                                    <li>Trading Cards</li>
+                                    <li>Utility</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className='menu__container'>
+                            <div>
+                                <h5 className='menu__title'>Category Title</h5>
+                                <ul className='menu__wrap'>
+                                    <li>Domain Names</li>
+                                    <li>Sports</li>
+                                    <li>Utility</li>
+                                    <li>Photography</li>
+                                    <li>Collectibles</li>
+                                    <li>Trading Cards</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className='menu__container'>
+                            <div>
+                                <h5 className='menu__title'>Category Title</h5>
+                                <ul className='menu__wrap'>
+                                    <li>Domain Names</li>
+                                    <li>Sports</li>
+                                    <li>Utility</li>
+                                    <li>Photography</li>
+                                    <li>Collectibles</li>
+                                    <li>Trading Cards</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div className='footer-container'>
-
+                        <div className='menu__container'>
+                            <div>
+                                <h5 className='menu__title'>Category Title</h5>
+                                <ul className='menu__wrap'>
+                                    <li>Domain Names</li>
+                                    <li>Sports</li>
+                                    <li>Utility</li>
+                                    <li>Photography</li>
+                                    <li>Collectibles</li>
+                                    <li>Trading Cards</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </FooterContainers>
             </Container>
@@ -54,7 +104,7 @@ export function Footer() {
                     </span>
                 </Container>
             </FooterCredits>
-        </FooterWrap>
+        </FooterWrap >
     )
 }
 
