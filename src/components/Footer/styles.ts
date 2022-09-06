@@ -83,7 +83,9 @@ export const FooterContainers = styled.div`
 
     .container-2 {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        text-align: center;
     }
  
     .menu {
@@ -91,6 +93,7 @@ export const FooterContainers = styled.div`
         &__container {
             display: block;
             padding: 0 2rem;
+            margin: 1.25rem 0;
         }
 
         &__title {
@@ -117,6 +120,11 @@ export const FooterContainers = styled.div`
 
     @media(min-width: ${theme.breakpoints.lg}) {
         flex-direction: row;
+
+        .container-2 { 
+            flex-direction: row;
+            text-align: left;
+        }
     }
 `;
 

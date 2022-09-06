@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from '../components/Layout/Container'
 import { MainNavbar } from '../components/MainNavbar'
 import styled from "styled-components";
+import { NavbarCategories } from '../components/NavbarCategories';
 
 const SingleWrap = styled.div`
     min-height: 100vh;
@@ -13,11 +14,8 @@ const SingleWrap = styled.div`
 export default function Single() {
     return (
         <SingleWrap>
-            <MainNavbar position="relative" bgColor="#1F1D36" />
-
-            <Container css={{ flexGrow: '1' }} lg={70}>
-                <h1 style={{ background: 'gray' }}>Single page</h1>
-            </Container>
+            <MainNavbar position="relative" bgColor="#520476" />
+            <NavbarCategories />
         </SingleWrap>
     )
 }

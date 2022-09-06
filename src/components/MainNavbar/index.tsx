@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { MainNavbarWrap } from './styles'
 import { List, ShoppingCartSimple } from 'phosphor-react'
-import { Container } from '@nextui-org/react';
+import { Container } from '../Layout/Container'
 
 export type MainNavbarProps = {
     bgColor?: string,
@@ -12,7 +12,7 @@ export type MainNavbarProps = {
 export function MainNavbar(props: MainNavbarProps) {
     return (
         <MainNavbarWrap {...props}>
-            <Container lg>
+            <Container>
                 <div className='navbar__menu'>
                     <div className='menu-icon'>
                         <List />

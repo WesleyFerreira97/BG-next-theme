@@ -35,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
-    ul {
+    ul, li {
         margin: 0;
     }
 

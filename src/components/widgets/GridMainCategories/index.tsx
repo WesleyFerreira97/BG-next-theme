@@ -21,6 +21,21 @@ const gridItemsData = {
         text: "But like any other object, you can scale the object the Image fills. ",
         image: "Woman1"
     },
+    item4: {
+        title: "Conjuntos",
+        text: "But like any other object, you can scale the object the Image fills.",
+        image: "Woman1"
+    },
+    item5: {
+        title: "Regatas",
+        text: "But like any other object, you can scale the object the Image fills.",
+        image: "Woman1"
+    },
+    item6: {
+        title: "Shorts",
+        text: "But like any other object, you can scale the object the Image fills. ",
+        image: "Woman1"
+    },
 }
 
 
