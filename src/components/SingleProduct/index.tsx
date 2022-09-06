@@ -4,6 +4,7 @@ import { ComponentBehavior, ProductGallery, ProductInfo, SingleProductWrap } fro
 import Woman2 from '../../../public/images/woman2.jpg'
 import Image from 'next/future/image'
 import { Button } from '@nextui-org/react'
+import { ShoppingCartSimple } from 'phosphor-react'
 
 export function SingleProduct() {
     return (
@@ -11,46 +12,78 @@ export function SingleProduct() {
             <Container xs={100}>
                 <ComponentBehavior>
                     <ProductGallery>
-                        <div className='temp'>
+                        <div className='grid-thumbnails'>
+                            <div className='grid-thumbnails__item'>
+                                <Image
+                                    src={Woman2.src}
+                                    alt="Main product image"
+                                    fill={true}
+                                />
+                            </div>
+                            <div className='grid-thumbnails__item'>
+                                <Image
+                                    src={Woman2.src}
+                                    alt="Main product image"
+                                    fill={true}
+                                />
+                            </div>
+                            <div className='grid-thumbnails__item'>
+                                <Image
+                                    src={Woman2.src}
+                                    alt="Main product image"
+                                    fill={true}
+                                />
+                            </div>
+                        </div>
+                        <div className='main-image'>
                             <Image
                                 src={Woman2.src}
                                 alt="Main product image"
                                 fill={true}
                             />
                         </div>
+
                     </ProductGallery>
                     <ProductInfo>
-                        <h1 className='product-info__title'>
-                            Top de malha transparente com brilho e borda alface
-                        </h1>
-                        <span className='product-info__price'>
-                            R$39,90
-                        </span>
-                        <span className='product-info__payment-info'>
-                            Parcelamos no cartão em até 12x, aceitamos Pix
-                        </span>
-
-                        <div className='product-info__color'>
-                            <span className='product-info__color-selected'>
-                                Color: &nbsp;
-                                <span className='current-color'>Preto</span>
+                        <div className='product-info__div'>
+                            <h1 className='product-info__title'>
+                                Top de malha transparente com brilho e borda alface
+                            </h1>
+                            <span className='product-info__price'>
+                                R$39,90
                             </span>
-                            <div className='product-info__color-available'>
-                                <span className='color-button'> </span>
-                                <span className='color-button'> </span>
-                                <span className='color-button'> </span>
+                            <span className='product-info__payment-info'>
+                                Parcelamos no cartão em até 12x, aceitamos Pix
+                            </span>
+                        </div>
+
+                        <div className='product-info__div'>
+                            <div className='product-info__color'>
+                                <span className='product-info__label'>
+                                    Color: &nbsp;
+                                    <span className='product-info__label--thin'>
+                                        Preto
+                                    </span>
+                                </span>
+                                <div className='product-info__color-available'>
+                                    <span className='color-button'> </span>
+                                    <span className='color-button'> </span>
+                                    <span className='color-button'> </span>
+                                </div>
                             </div>
                         </div>
 
-                        <div className='product-info__size'>
-                            <span className='product-info__size-label'>
-                                Tamanhos :
-                            </span>
-                            <div className='product-info__size-available'>
-                                <span className='size-button'> P </span>
-                                <span className='size-button'> M </span>
-                                <span className='size-button'> G </span>
-                                <span className='size-button'> GG </span>
+                        <div className='product-info__div'>
+                            <div className='product-info__size'>
+                                <span className='product-info__label'>
+                                    Tamanhos :
+                                </span>
+                                <div className='product-info__size-available'>
+                                    <span className='size-button'> P </span>
+                                    <span className='size-button'> M </span>
+                                    <span className='size-button'> G </span>
+                                    <span className='size-button'> GG </span>
+                                </div>
                             </div>
                         </div>
 
@@ -60,8 +93,9 @@ export function SingleProduct() {
                                 css={{
                                     background: '#27AE60',
                                     borderRadius: '4px',
-                                    padding: '18px 24px',
+                                    padding: '24px 32px',
                                 }} >
+                                <ShoppingCartSimple size={24} />
                                 <span>Adicionar ao carrinho</span>
                             </Button>
                         </div>
