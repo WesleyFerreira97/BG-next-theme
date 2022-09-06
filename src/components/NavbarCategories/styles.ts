@@ -3,7 +3,7 @@ import { typography } from "../../styles/typography";
 
 export const NavbarCategoriesWrap = styled.div`
     height: 35px;
-    display: flex;
+    display: none;
     justify-content: center;
     background-color: #D9D9D9;
     overflow: hidden;
@@ -28,6 +28,10 @@ export const NavbarCategoriesWrap = styled.div`
             }
         }
         
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        display: flex;
     }
 `;
 

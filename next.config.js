@@ -12,7 +12,12 @@ const nextConfig = {
   webpack(config) {
     config.plugins.push(new webpack.EnvironmentPlugin(myEnv))
     return config
-  }
+  },
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 }
 
 module.exports = nextConfig

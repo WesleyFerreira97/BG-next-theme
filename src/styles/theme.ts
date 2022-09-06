@@ -2,9 +2,9 @@ export const theme = {
 	colors: {
 		primary: "#FF5101",
 		primaryAlt: "#FF6500",
-		secondary: "#003A6A",
+		secondary: "#3F3351",
 		secondaryAlt: "#0060B1",
-		tertiary: "#DF0054",
+		tertiary: "#D22779",
 		neutral: "#fff",
 		neutralAlt: "#7a7a7a",
 		categories: {
