@@ -11,8 +11,6 @@ export function CardProduct(props: any) {
                 <Image
                     alt="Image"
                     src={People2}
-                    objectFit='cover'
-                    layout='fill'
                 />
             </CardBackground>
             <div className='card-info'>

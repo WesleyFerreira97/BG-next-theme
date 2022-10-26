@@ -4,7 +4,7 @@ import { supaDb } from "../services/supadb";
 
 type UseSelectProps = {
     select: string[];
-    match: string;
+    match?: string;
 }
 
 export function useSelect<T>({ select, match }: UseSelectProps) {
@@ -17,15 +17,15 @@ export function useSelect<T>({ select, match }: UseSelectProps) {
         async function selectData() {
             const { data, error } = await supaDb
                 .from("products")
-                .select(selectedColumns)
-                .match({ id: match });
+                .select(selectedColumns);
+            // .match(match);
 
             setSelectResponse(data as T);
             setSelectResponseError(error as PostgrestError);
         }
 
         selectData();
-    }, []);
+    }, [match, selectedColumns]);
 
     return { selectResponse, selectResponseError };
 }

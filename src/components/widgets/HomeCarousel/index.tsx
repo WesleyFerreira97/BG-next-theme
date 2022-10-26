@@ -61,7 +61,6 @@ export function HomeCarousel() {
                                 <Image
                                     alt="Image"
                                     src={Woman1}
-                                    objectFit='cover'
                                 />
                             </CarouselItem.Image>
                             <CarouselItem.Title>

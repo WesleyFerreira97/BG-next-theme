@@ -8,21 +8,9 @@ import { GridProductsSmall } from "../components/widgets/GridProductsSmall";
 import { GridOtherCategories } from "../components/widgets/GridOtherCategories";
 import { useRouter } from "next/router";
 
-import { supaDb } from "../services/supadb";
-import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
-    const [dbData, setDbData] = useState();
     const router = useRouter();
-
-    useEffect(() => {
-        supaDb.from("products")
-            .select("*")
-            .order("id", { ascending: true })
-            .then(({ data }) => {
-                // setDbData(data);
-            });
-    }, []);
 
     return (
         <>
