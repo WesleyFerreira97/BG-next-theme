@@ -20,7 +20,7 @@ export function CardCategory(props: CardCategoryProps) {
                     <Image
                         alt="Image"
                         src={People1}
-                        objectFit='cover'
+                        // objectFit='cover'
                         layout='fill'
                     />
                 </CategoryBackground>
