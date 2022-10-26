@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from "@supabase/supabase-js";
 
 const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY_ENV;
 const SUPABASE_URL = process.env.SUPABASE_URL_ENV;

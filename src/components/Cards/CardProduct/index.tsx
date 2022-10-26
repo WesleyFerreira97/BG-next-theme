@@ -1,8 +1,8 @@
-import React from 'react'
-import { CardWrap, CardBackground } from './styles'
+import React from "react";
+import { CardWrap, CardBackground } from "./styles";
 
-import People2 from '../../../../public/images/people4.jpg'
-import Image from 'next/image'
+import People2 from "../../../../public/images/people4.jpg";
+import Image from "next/image";
 
 export function CardProduct(props: any) {
     return (
@@ -21,7 +21,7 @@ export function CardProduct(props: any) {
                 <span className='card-info__price'>R$120,00</span>
             </div>
         </CardWrap>
-    )
+    );
 }
 
 

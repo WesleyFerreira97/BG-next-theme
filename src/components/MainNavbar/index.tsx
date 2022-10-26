@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { MainNavbarWrap } from './styles'
-import { List, ShoppingCartSimple } from 'phosphor-react'
-import { Container } from '../Layout/Container'
+import React from "react";
+import styled from "styled-components";
+import { MainNavbarWrap } from "./styles";
+import { List, ShoppingCartSimple } from "phosphor-react";
+import { Container } from "../Layout/Container";
 
 export type MainNavbarProps = {
     bgColor?: string,
@@ -29,6 +29,6 @@ export function MainNavbar(props: MainNavbarProps) {
                 </div>
             </Container>
         </MainNavbarWrap>
-    )
+    );
 }
 

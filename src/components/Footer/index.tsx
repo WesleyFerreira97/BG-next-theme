@@ -1,7 +1,7 @@
-import { Clock, MapPinLine } from 'phosphor-react'
-import React from 'react'
-import { Container } from '../Layout/Container';
-import { FooterContainers, FooterCredits, FooterWrap } from './styles'
+import { Clock, MapPinLine } from "phosphor-react";
+import React from "react";
+import { Container } from "../Layout/Container";
+import { FooterContainers, FooterCredits, FooterWrap } from "./styles";
 
 export function Footer() {
     return (
@@ -13,7 +13,7 @@ export function Footer() {
                     </span>
                 </Container>
             </div>
-            <Container css={{ height: '100%', flexGrow: '1' }}>
+            <Container css={{ height: "100%", flexGrow: "1" }}>
                 <FooterContainers>
                     <div className='footer-container container-1'>
                         <p className='info__text'>Sua loja de moda feminina em Itabuna, encontre aqui produtos de diversas categorais, Condimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturieCondimentum  </p>
@@ -105,6 +105,6 @@ export function Footer() {
                 </Container>
             </FooterCredits>
         </FooterWrap >
-    )
+    );
 }
 

@@ -1,6 +1,6 @@
-import { } from '@nextui-org/react';
-import React from 'react'
-import { ContainerWrap } from './styles'
+import { } from "@nextui-org/react";
+import React from "react";
+import { ContainerWrap } from "./styles";
 
 export type BreakpointProps = {
     xs: number | string;
@@ -23,5 +23,5 @@ export function Container({ children, css, ...rest }: ContainerProps) {
         <ContainerWrap {...rest} style={css}>
             {children}
         </ContainerWrap>
-    )
+    );
 }

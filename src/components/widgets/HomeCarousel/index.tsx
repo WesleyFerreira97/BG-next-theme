@@ -1,19 +1,19 @@
-import React from 'react'
-import Woman1 from '../../../../public/images/woman1.png'
-import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { CarouselItem } from '../../CarouselItem';
-import Image from 'next/image';
-import { Button, Container, red } from '@nextui-org/react';
-import { theme } from '../../../styles/theme';
+import React from "react";
+import Woman1 from "../../../../public/images/woman1.png";
+import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { CarouselItem } from "../../CarouselItem";
+import Image from "next/image";
+import { Button, Container, red } from "@nextui-org/react";
+import { theme } from "../../../styles/theme";
 
 const carouselItemsData = {
     item1: {
         title: "Conjuntos",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
         buttons: {
-            seeMore: 'see something',
-            previewButton: 'preview',
+            seeMore: "see something",
+            previewButton: "preview",
         },
         image: "Woman1"
     },
@@ -21,8 +21,8 @@ const carouselItemsData = {
         title: "Regatas",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
         buttons: {
-            seeMore: 'see something',
-            previewButton: 'preview',
+            seeMore: "see something",
+            previewButton: "preview",
         },
         image: "Woman1"
     },
@@ -30,12 +30,12 @@ const carouselItemsData = {
         title: "Camisas",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
         buttons: {
-            seeMore: 'see something',
-            previewButton: 'preview',
+            seeMore: "see something",
+            previewButton: "preview",
         },
         image: "Woman1"
     },
-}
+};
 
 export function HomeCarousel() {
 
@@ -78,9 +78,9 @@ export function HomeCarousel() {
                                         css={{
                                             backgroundColor: theme.colors.neutral,
                                             color: theme.colors.secondary,
-                                            padding: '1.5rem .5rem',
-                                            border: '3px solid #fff',
-                                            width: '50px',
+                                            padding: "1.5rem .5rem",
+                                            border: "3px solid #fff",
+                                            width: "50px",
                                         }}
                                     >
                                         <span className='button__text'>
@@ -89,9 +89,9 @@ export function HomeCarousel() {
                                     </Button>
                                     <Button
                                         css={{
-                                            backgroundColor: 'transparent',
-                                            border: '3px solid #fff',
-                                            padding: '1.5rem .5rem',
+                                            backgroundColor: "transparent",
+                                            border: "3px solid #fff",
+                                            padding: "1.5rem .5rem",
                                         }}
                                     >
                                         <span className='button__text-outline'>
@@ -106,5 +106,5 @@ export function HomeCarousel() {
 
             </Swiper>
         </>
-    )
+    );
 }

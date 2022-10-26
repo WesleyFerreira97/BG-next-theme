@@ -4,7 +4,7 @@ import { typography } from "../../styles/typography";
 const borderBottomDashed = css`
     padding: .5rem 0 .75rem;
     border-bottom: 1px dashed #D7D7D7;
-`
+`;
 
 export const SingleProductWrap = styled.div`
     display: flex;

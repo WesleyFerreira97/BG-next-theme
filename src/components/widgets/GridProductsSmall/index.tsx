@@ -1,11 +1,11 @@
-import { A11y, Scrollbar, Autoplay } from 'swiper';
-import React from 'react'
-import { GridProductWrap } from './styles'
-import { CardCategory } from '../../Cards/CardCategory';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { CardProduct } from '../../Cards/CardProduct';
-import { Container, Row } from '@nextui-org/react';
-import { Header } from '../../WidgetsHeader';
+import { A11y, Scrollbar, Autoplay } from "swiper";
+import React from "react";
+import { GridProductWrap } from "./styles";
+import { CardCategory } from "../../Cards/CardCategory";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { CardProduct } from "../../Cards/CardProduct";
+import { Container, Row } from "@nextui-org/react";
+import { Header } from "../../WidgetsHeader";
 
 const gridItemsData = {
     item1: {
@@ -38,7 +38,7 @@ const gridItemsData = {
         text: "But like any other object, you can scale the object the Image fills. ",
         image: "Woman1"
     },
-}
+};
 
 
 export function GridProductsSmall() {
@@ -46,7 +46,7 @@ export function GridProductsSmall() {
         <GridProductWrap>
             <Container md>
 
-                <Row style={{ margin: '0 auto 1.5rem' }}>
+                <Row style={{ margin: "0 auto 1.5rem" }}>
                     <Header>
                         <Header.SubTitle>A Subtitle</Header.SubTitle>
                         <Header.Title>Novidades</Header.Title>
@@ -56,7 +56,7 @@ export function GridProductsSmall() {
 
                 <Swiper
                     modules={[Scrollbar, A11y, Autoplay]}
-                    slidesPerView={'auto'}
+                    slidesPerView={"auto"}
                     autoplay={{
                         delay: 7000,
                         disableOnInteraction: false,
@@ -91,7 +91,7 @@ export function GridProductsSmall() {
                 </Swiper>
             </Container>
         </GridProductWrap>
-    )
+    );
 }
 
 

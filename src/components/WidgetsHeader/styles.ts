@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { typography } from '../../styles/typography';
+import styled from "styled-components";
+import { typography } from "../../styles/typography";
 
 export const TitleWrap = styled.h3`
     ${typography.TitleSm}

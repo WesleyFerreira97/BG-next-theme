@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { typography } from "../../styles/typography";
 
 export const NavbarCategoriesWrap = styled.div`

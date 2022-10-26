@@ -1,8 +1,8 @@
-import React from 'react'
-import { CategoryBackground, CategoryCardWrap } from './styles'
+import React from "react";
+import { CategoryBackground, CategoryCardWrap } from "./styles";
 
-import People1 from '../../../../public/images/people1.jpg'
-import Image from 'next/image'
+import People1 from "../../../../public/images/people1.jpg";
+import Image from "next/image";
 
 interface CardCategoryProps {
     title: string,
@@ -31,7 +31,7 @@ export function CardCategory(props: CardCategoryProps) {
                 </div>
             </a>
         </CategoryCardWrap>
-    )
+    );
 }
 
 

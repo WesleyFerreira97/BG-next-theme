@@ -65,6 +65,6 @@ export const MainNavbarWrap = styled.nav<MainNavbarProps>`
 `;
 
 MainNavbarWrap.defaultProps = {
-    bgColor: 'inherit',
-    position: 'absolute',
-}
+    bgColor: "inherit",
+    position: "absolute",
+};

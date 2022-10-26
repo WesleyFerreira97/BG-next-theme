@@ -1,6 +1,6 @@
-import React from 'react'
-import { Container } from '../Layout/Container'
-import { NavbarCategoriesWrap } from './styles'
+import React from "react";
+import { Container } from "../Layout/Container";
+import { NavbarCategoriesWrap } from "./styles";
 
 export function NavbarCategories() {
     return (
@@ -18,5 +18,5 @@ export function NavbarCategories() {
                 </ul>
             </Container>
         </NavbarCategoriesWrap>
-    )
+    );
 }

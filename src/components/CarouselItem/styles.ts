@@ -20,7 +20,7 @@ export const CarouselItemWrap = styled.div`
         text-align: center;
         padding: 0 2rem;
     }
-`
+`;
 
 export const Title = styled.h1`
     color: ${({ theme }) => theme.colors.neutral};

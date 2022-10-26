@@ -1,7 +1,7 @@
-import 'styled-components';
-import { theme } from './theme'
+import "styled-components";
+import { theme } from "./theme";
 
-declare module 'styled-components' {
+declare module "styled-components" {
     export interface DefaultTheme {
         colors: typeof theme.colors,
         spacing: typeof theme.spacing;

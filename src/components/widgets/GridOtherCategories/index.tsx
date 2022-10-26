@@ -1,11 +1,11 @@
-import { A11y, Scrollbar, Autoplay } from 'swiper';
-import React from 'react'
-import { GridWrap } from './styles'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Container, Row } from '@nextui-org/react';
-import { Header } from '../../WidgetsHeader';
-import { CardCategoryOverlay } from '../../Cards/CardCategoryOverlay';
-import { Columns } from 'phosphor-react';
+import { A11y, Scrollbar, Autoplay } from "swiper";
+import React from "react";
+import { GridWrap } from "./styles";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Container, Row } from "@nextui-org/react";
+import { Header } from "../../WidgetsHeader";
+import { CardCategoryOverlay } from "../../Cards/CardCategoryOverlay";
+import { Columns } from "phosphor-react";
 
 const gridItemsData = {
     item1: {
@@ -33,14 +33,14 @@ const gridItemsData = {
         text: "But like any other object, you can scale the object the Image fills. ",
         image: "Woman1"
     },
-}
+};
 
 
 export function GridOtherCategories() {
     return (
         <GridWrap>
-            <Container fluid css={{ padding: '.3rem !important' }}>
-                <Row style={{ margin: '0 auto 1.5rem' }}>
+            <Container fluid css={{ padding: ".3rem !important" }}>
+                <Row style={{ margin: "0 auto 1.5rem" }}>
                     <Header>
                         <Header.SubTitle>A Subtitle</Header.SubTitle>
                         <Header.Title>Novidades</Header.Title>
@@ -49,7 +49,7 @@ export function GridOtherCategories() {
                 </Row>
                 <Swiper
                     modules={[Scrollbar, A11y, Autoplay]}
-                    slidesPerView={'auto'}
+                    slidesPerView={"auto"}
                     breakpoints={{
                         0: {
                             slidesPerView: 2
@@ -81,5 +81,5 @@ export function GridOtherCategories() {
                 </Swiper>
             </Container>
         </GridWrap>
-    )
+    );
 }

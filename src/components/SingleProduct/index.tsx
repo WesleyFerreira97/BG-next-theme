@@ -1,10 +1,10 @@
-import React from 'react'
-import { Container } from '../Layout/Container'
-import { ComponentBehavior, ProductGallery, ProductInfo, SingleProductWrap } from './styles'
-import Woman2 from '../../../public/images/woman2.jpg'
-import Image from 'next/future/image'
-import { Button } from '@nextui-org/react'
-import { ShoppingCartSimple } from 'phosphor-react'
+import React from "react";
+import { Container } from "../Layout/Container";
+import { ComponentBehavior, ProductGallery, ProductInfo, SingleProductWrap } from "./styles";
+import Woman2 from "../../../public/images/woman2.jpg";
+import Image from "next/future/image";
+import { Button } from "@nextui-org/react";
+import { ShoppingCartSimple } from "phosphor-react";
 
 export function SingleProduct() {
     return (
@@ -91,9 +91,9 @@ export function SingleProduct() {
                             <Button
                                 className='cart-button'
                                 css={{
-                                    background: '#27AE60',
-                                    borderRadius: '4px',
-                                    padding: '24px 32px',
+                                    background: "#27AE60",
+                                    borderRadius: "4px",
+                                    padding: "24px 32px",
                                 }} >
                                 <ShoppingCartSimple size={24} />
                                 <span>Adicionar ao carrinho</span>
@@ -103,5 +103,5 @@ export function SingleProduct() {
                 </ComponentBehavior>
             </Container>
         </SingleProductWrap>
-    )
+    );
 }
