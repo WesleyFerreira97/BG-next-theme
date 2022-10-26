@@ -11,8 +11,8 @@ export function CardCategoryOverlay(props: any) {
                 <Image
                     alt="Image"
                     src={People1}
-                    // objectFit='cover'
-                    layout='fill'
+                // objectFit='cover'
+                // layout='fill'
                 />
             </CategoryBackground>
             <div className='card-info'>
