@@ -2,16 +2,16 @@ import { PostgrestError } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import { supaDb } from "../services/supadb";
 
-type UseSelectProps = {
-    select: string[];
-    match?: string;
+type UseSelectProps<T> = {
+    select: T[];
+    match?: T[];
 }
 
-export function useSelect<T>({ select, match }: UseSelectProps) {
+export function useSelect<T>({ select, match }: UseSelectProps<T>) {
     const [selectResponse, setSelectResponse] = useState<T | null>(null);
     const [selectResponseError, setSelectResponseError] = useState<PostgrestError>();
 
-    const selectedColumns = select.join(",");
+    const selectedColumns = Array.isArray(select) ? select.join(",") : select;
 
     useEffect(() => {
         async function selectData() {

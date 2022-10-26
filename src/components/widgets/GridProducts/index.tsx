@@ -4,12 +4,12 @@ import { Container, Grid, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
 import { CardProduct } from "../../Cards/CardProduct";
 import { useSelect } from "../../../hooks/useSelect";
+import { ProductProps } from "../../../@types/product";
 
 export function GridProducts() {
-    const { selectResponse: products, selectResponseError } = useSelect<any>({
-        select: ["*"],
+    const { selectResponse: products, selectResponseError } = useSelect<keyof ProductProps>({
+        select: ["title", "description", "description"],
     });
-    console.log(products);
 
     return (
         <GridProductWrap>
@@ -31,14 +31,17 @@ export function GridProducts() {
                 <Grid.Container gap={1}>
                     {products &&
                         products.map((item, index) => (
-                            <Grid key={index} xs={4} sm={4} css={{
-                                "@xsMax": {
-                                    // maxWidth: '500px',
-                                    display: "none !important   ",
-                                    flexBasis: "50%",
-                                    maxWidth: "50%",
-                                }
-                            }}>
+                            <Grid
+                                key={index}
+                                xs={4} sm={4}
+                                css={{
+                                    "@xsMax": {
+                                        // maxWidth: '500px',
+                                        display: "none !important   ",
+                                        flexBasis: "50%",
+                                        maxWidth: "50%",
+                                    }
+                                }}>
                                 <h1>{item.title}</h1>
                                 {/* <CardProduct /> */}
                             </Grid>

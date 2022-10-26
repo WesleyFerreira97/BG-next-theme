@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 import { typography } from "../../../styles/typography";
 
-
 export const CardWrap = styled.div`
     width: 100%;
     height: 100%;
