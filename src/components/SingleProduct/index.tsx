@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductGallery, ProductInfo, SingleProductWrap } from "./styles";
 import Woman2 from "../../../public/images/woman2.jpg";
-import Image from "next/future/image";
+import Image from "next/image";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
 
