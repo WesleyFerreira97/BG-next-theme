@@ -26,13 +26,13 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <MainNavbar />
-      <HomeCarousel />
+      {/* <MainNavbar />
+      <HomeCarousel /> */}
       <GridMainCategories />
-      <button onClick={() => router.push("/single")}>Go single</button>
-      <GridProducts />
+      {/* <button onClick={() => router.push("/single")}>Go single</button> */}
+      {/* <GridProducts />
       <GridOtherCategories />
-      <GridProductsSmall />
+      <GridProductsSmall /> */}
     </>
   )
 }

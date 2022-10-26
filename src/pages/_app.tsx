@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <GlobalStyle />
           {/* <MainNavbar /> */}
           <Component {...pageProps} />
-          <Footer />
+          {/* <Footer /> */}
         </ThemeProvider>
       </NextUIProvider>
     </>
