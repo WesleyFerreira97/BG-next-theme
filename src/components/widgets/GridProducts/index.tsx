@@ -5,11 +5,19 @@ import { Header } from "../../WidgetsHeader";
 import { CardProduct } from "../../Cards/CardProduct";
 import { useSelect } from "../../../hooks/useSelect";
 import { ProductProps } from "../../../@types/product";
+import { fakeProducts } from "../../../utils/fakeProducts";
+
+type FakeProps = {
+
+}
 
 export function GridProducts() {
-    const { selectResponse: products, selectResponseError } = useSelect<ProductProps>({
-        select: ["title"],
-    });
+    // const { selectResponse: products, selectResponseError } = useSelect<ProductProps>({
+    //     select: ["title", "description", "price"],
+    // });
+
+    // TEMP
+    const products: Pick<ProductProps, "title" | "description" | "price">[] = fakeProducts;
 
     return (
         <GridProductWrap>
@@ -31,7 +39,7 @@ export function GridProducts() {
 
                 <Grid.Container gap={1}>
                     {products &&
-                        products.map((item, index) => (
+                        products.map((product, index) => (
                             <Grid
                                 key={index}
                                 xs={4} sm={4}
@@ -43,8 +51,11 @@ export function GridProducts() {
                                         maxWidth: "50%",
                                     }
                                 }}>
-                                <h1>{item.title}</h1>
-                                {/* <CardProduct /> */}
+                                <CardProduct
+                                    title={product.title}
+                                    description={product.description}
+                                    price={product.price}
+                                />
                             </Grid>
                         ))}
                 </Grid.Container>

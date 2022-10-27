@@ -34,8 +34,21 @@ export const CardWrap = styled.div`
     }
 `;
 
-export const CardBackground = styled.div`
+export const CardImageContainer = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
+    background-color: black;
+
+    .card-image {
+        height: 100%;
+        width: 100%;
+        display: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 `;
