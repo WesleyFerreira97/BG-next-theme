@@ -17,21 +17,18 @@ export function SingleProduct() {
                                 <Image
                                     src={Woman2.src}
                                     alt="Main product image"
-                                    fill={true}
                                 />
                             </div>
                             <div className='grid-thumbnails__item'>
                                 <Image
                                     src={Woman2.src}
                                     alt="Main product image"
-                                    fill={true}
                                 />
                             </div>
                             <div className='grid-thumbnails__item'>
                                 <Image
                                     src={Woman2.src}
                                     alt="Main product image"
-                                    fill={true}
                                 />
                             </div>
                         </div>
@@ -39,7 +36,6 @@ export function SingleProduct() {
                             <Image
                                 src={Woman2.src}
                                 alt="Main product image"
-                                fill={true}
                             />
                         </div>
 

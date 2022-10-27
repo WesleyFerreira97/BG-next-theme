@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { supaDb } from "../services/supadb";
 
 type UseSelectProps<T> = {
-    select: T[];
+    select: (keyof T)[] | "*";
     match?: T[];
 }
 
 export function useSelect<T>({ select, match }: UseSelectProps<T>) {
-    const [selectResponse, setSelectResponse] = useState<T | null>(null);
+    const [selectResponse, setSelectResponse] = useState<T[] | null>(null);
     const [selectResponseError, setSelectResponseError] = useState<PostgrestError>();
 
     const selectedColumns = Array.isArray(select) ? select.join(",") : select;
@@ -20,7 +20,7 @@ export function useSelect<T>({ select, match }: UseSelectProps<T>) {
                 .select(selectedColumns);
             // .match(match);
 
-            setSelectResponse(data as T);
+            setSelectResponse(data);
             setSelectResponseError(error as PostgrestError);
         }
 

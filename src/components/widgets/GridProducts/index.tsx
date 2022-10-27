@@ -7,12 +7,13 @@ import { useSelect } from "../../../hooks/useSelect";
 import { ProductProps } from "../../../@types/product";
 
 export function GridProducts() {
-    const { selectResponse: products, selectResponseError } = useSelect<keyof ProductProps>({
-        select: ["title", "description", "description"],
+    const { selectResponse: products, selectResponseError } = useSelect<ProductProps>({
+        select: ["title"],
     });
 
     return (
         <GridProductWrap>
+            {/* {console.log(products)} */}
             <Container sm css={{
                 "@sm": {
                     color: "red !important",
