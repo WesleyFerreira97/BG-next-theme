@@ -18,7 +18,8 @@ export function CardProduct({ title, ...props }: CardProductProps) {
                 <Image
                     alt="Image"
                     src={People2}
-                    className="card-image"
+                    className='card-image'
+                    placeholder="blur"
                 />
             </CardImageContainer>
             <div className='card-info'>
@@ -29,10 +30,3 @@ export function CardProduct({ title, ...props }: CardProductProps) {
         </CardWrap>
     );
 }
-
-
-// BG Color?
-// Title
-// SubTitle
-// Image
-// Link

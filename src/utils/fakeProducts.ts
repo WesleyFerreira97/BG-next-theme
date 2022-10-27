@@ -6,7 +6,7 @@ export const fakeProducts = [
     },
     {
         title: "Regatas",
-        description: "But like any other object, you can scale the object the Image fills.",
+        description: "But like any other object, you can scale the object the Image fills. But like any other object, you can scale the object the Image fills But like any other object, you can scale the object the Image fills But like any other object, you can scale the object the Image fills",
         price: 5000
     },
     {

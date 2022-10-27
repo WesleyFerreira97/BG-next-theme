@@ -7,10 +7,6 @@ import { useSelect } from "../../../hooks/useSelect";
 import { ProductProps } from "../../../@types/product";
 import { fakeProducts } from "../../../utils/fakeProducts";
 
-type FakeProps = {
-
-}
-
 export function GridProducts() {
     // const { selectResponse: products, selectResponseError } = useSelect<ProductProps>({
     //     select: ["title", "description", "price"],

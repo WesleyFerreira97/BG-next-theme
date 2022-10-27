@@ -35,7 +35,6 @@ const gridItemsData = {
     },
 };
 
-
 export function GridOtherCategories() {
     return (
         <GridWrap>
