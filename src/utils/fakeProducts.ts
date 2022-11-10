@@ -1,27 +1,50 @@
 export const fakeProducts = [
     {
-        title: "Conjuntos",
+        title: "BLUSA SAYUR GREEN",
+        subTitle: "Other object, you can scale",
         description: "But like any other object, you can scale the object the Image fills.",
-        price: 5000
+        price: 500,
+        monthlyInstallments: "4x de R$ 122,00",
+        categories: ["Camisas"]
     },
     {
-        title: "Regatas",
+        title: "BLUSA PLUM BLACK",
+        subTitle: "Other object, you can scale",
         description: "But like any other object, you can scale the object the Image fills. But like any other object, you can scale the object the Image fills But like any other object, you can scale the object the Image fills But like any other object, you can scale the object the Image fills",
-        price: 5000
+        price: 130,
+        monthlyInstallments: "4x de R$ 22,00",
+        categories: ["Camisas"]
     },
     {
-        title: "Jaquetas",
+        title: "VESTIDO EMERYT BLUSH PINK",
+        subTitle: "Other object, you can scale can scale",
         description: "But like any other object, you can scale the object the Image fills. ",
-        price: 5000
+        price: 250,
+        monthlyInstallments: "4x de R$ 32,00",
+        categories: ["Camisas"]
     },
     {
-        title: "Bolsas",
+        title: "VESTIDO DEAN OFF WHITE",
+        subTitle: "Other object, you can scale",
         description: "But like any other object, you can scale the object the Image fills. ",
-        price: 5000
+        price: 180,
+        monthlyInstallments: "4x de R$ 40,00",
+        categories: ["Camisas"]
     },
     {
-        title: "Calças",
+        title: "BLUSA GRUMARI THRIFT PINK",
+        subTitle: "Other object, you can scale, object like",
         description: "But like any other object, you can scale the object the Image fills. ",
-        price: 5000
+        price: 80,
+        monthlyInstallments: "4x de R$ 15,00",
+        categories: ["Camisas"]
+    },
+    {
+        title: "VESTIDO EMERYT BLUSH PINK",
+        subTitle: "Other object, you can scale can scale",
+        description: "But like any other object, you can scale the object the Image fills. ",
+        price: 250,
+        monthlyInstallments: "4x de R$ 15,00",
+        categories: ["Camisas"]
     },
 ];

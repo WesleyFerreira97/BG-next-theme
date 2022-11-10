@@ -6,9 +6,10 @@ import Image from "next/image";
 
 type CardProductProps = {
     title: string;
-    description?: string;
+    subTitle?: string;
     price?: number;
     bg?: string;
+    monthlyInstallments?: string;
 }
 
 export function CardProduct({ title, ...props }: CardProductProps) {
@@ -24,8 +25,9 @@ export function CardProduct({ title, ...props }: CardProductProps) {
             </CardImageContainer>
             <div className='card-info'>
                 <h4 className='card-info__title'>{title}</h4>
-                <span className='card-info__subtitle'>{props.description}</span>
+                <span className='card-info__subtitle'>{props.subTitle}</span>
                 <span className='card-info__price'>R${props.price}</span>
+                <span className='card-info__price-monthly'>R${props.monthlyInstallments}</span>
             </div>
         </CardWrap>
     );

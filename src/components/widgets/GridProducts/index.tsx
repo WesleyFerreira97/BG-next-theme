@@ -13,16 +13,14 @@ export function GridProducts() {
     // });
 
     // TEMP
-    const products: Pick<ProductProps, "title" | "description" | "price">[] = fakeProducts;
+    const products: any[] = fakeProducts;
 
     return (
         <GridProductWrap>
-            {/* {console.log(products)} */}
             <Container sm css={{
                 "@sm": {
                     color: "red !important",
-                    maxWidth: "500px",
-                    display: "none",
+                    maxWidth: "600px",
                 },
             }}>
                 <Row style={{ margin: "0 auto 1.5rem" }}>
@@ -33,24 +31,33 @@ export function GridProducts() {
                     </Header>
                 </Row>
 
-                <Grid.Container gap={1}>
+                <Grid.Container
+                    gap={2}
+                // style={{ rowGap: "2rem" }}
+                // xs={3}
+                >
                     {products &&
                         products.map((product, index) => (
                             <Grid
+                                style={{ backgroundColor: "black", }}
                                 key={index}
-                                xs={4} sm={4}
+                                xs={6} sm={4}
                                 css={{
-                                    "@xsMax": {
+                                    "@xs": {
+
                                         // maxWidth: '500px',
-                                        display: "none !important   ",
-                                        flexBasis: "50%",
-                                        maxWidth: "50%",
-                                    }
+                                        // display: "none !important",
+                                        // background: "black",
+                                        // flexBasis: "50%",
+                                        // maxWidth: "0%",
+                                    },
+
                                 }}>
                                 <CardProduct
                                     title={product.title}
-                                    description={product.description}
+                                    subTitle={product.subTitle}
                                     price={product.price}
+                                    monthlyInstallments={product.monthlyInstallments}
                                 />
                             </Grid>
                         ))}

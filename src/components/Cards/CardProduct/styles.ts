@@ -10,7 +10,7 @@ export const CardWrap = styled.div`
     .card-info {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        /* align-items: center; */
         padding-top: .5rem;
 
         &__title {
@@ -29,6 +29,12 @@ export const CardWrap = styled.div`
             margin-top: .5rem;
             ${typography.Text}
             color: #7DCE13;
+
+            &-monthly {
+                ${typography.Text}
+                font-size: .8rem;
+                color: ${theme.colors.neutralAlt}
+            }
         }
     }
 `;
