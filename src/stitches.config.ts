@@ -1,6 +1,5 @@
 import { createStitches } from "@stitches/react";
-import { ColumnsRange } from "./components/GridSC/types";
-import { GapValues } from "./components/GridStitches/types";
+import { GapValues, ColumnsRange } from "./types/grid";
 
 export const spacing = {
     1: "8px",
