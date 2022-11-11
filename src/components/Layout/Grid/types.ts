@@ -1,5 +1,5 @@
-import { ReactNode } from "react"
-import { spacing } from "../../stitches.config";
+import { ReactNode } from "react";
+import { spacing } from "stitches.config";
 
 type Breakpoints = "xs" | "sm" | "md" | "lg" | "xl";
 type ColumnsRange = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
@@ -25,4 +25,4 @@ type GridProps = {
 export type {
     GridProps,
     GapValues
-}
+};

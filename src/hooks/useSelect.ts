@@ -20,7 +20,7 @@ export function useSelect<T>({ select, match }: UseSelectProps<T>) {
                 .select(selectedColumns);
             // .match(match);
 
-            setSelectResponse(data);
+            setSelectResponse(data as T[]);
             setSelectResponseError(error as PostgrestError);
         }
 

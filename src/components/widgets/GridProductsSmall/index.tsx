@@ -85,7 +85,7 @@ export function GridProductsSmall() {
                 >
                     {Object.values(gridItemsData).map((item, index) => (
                         <SwiperSlide key={index}>
-                            <CardProduct />
+                            {/* <CardProduct /> */}
                         </SwiperSlide>
                     ))}
                 </Swiper>
