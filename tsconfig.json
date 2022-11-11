@@ -18,9 +18,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
     "paths": {
-      "@mui/styled-engine": [
-        "./node_modules/@mui/styled-engine-sc"
+      "@layout/*": [
+        "src/components/Layout",
+        "src/components/Layout/*"
       ]
     }
   },
@@ -32,4 +34,4 @@
   "exclude": [
     "node_modules"
   ]
-}
+} 
