@@ -20,7 +20,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@layout/*": [
+      "@theme/layout/*": [
         "src/components/Layout",
         "src/components/Layout/*"
       ]

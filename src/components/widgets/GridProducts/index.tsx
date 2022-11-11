@@ -6,7 +6,7 @@ import { CardProduct } from "../../Cards/CardProduct";
 import { useSelect } from "../../../hooks/useSelect";
 import { ProductProps } from "../../../types/product";
 import { fakeProducts } from "../../../utils/fakeProducts";
-import { Grid } from "@layout/Grid";
+import { } from "@theme/layout/Grid";
 
 export function GridProducts() {
     // const { selectResponse: products, selectResponseError } = useSelect<ProductProps>({
