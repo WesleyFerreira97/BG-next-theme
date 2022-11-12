@@ -5,6 +5,7 @@ import { MainNavbar } from "../components/MainNavbar";
 import ThemeProvider from "../providers/ThemeProvider";
 import { GlobalStyle } from "../styles/Global";
 import { NextUIProvider } from "@nextui-org/react";
+import { getCssText } from "stitches.config";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
             <Head>
+                <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
                 <title>Bela Garota</title>
             </Head>
 
