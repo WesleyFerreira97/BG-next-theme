@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { GridProductWrap } from "./styles";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
@@ -7,6 +7,16 @@ import { useSelect } from "../../../hooks/useSelect";
 import { ProductProps } from "../../../types/product";
 import { fakeProducts } from "../../../utils/fakeProducts";
 import { Grid } from "@theme/layout/Grid";
+
+const HeaderGridProducts = () => {
+    return (
+        <Header>
+            <Header.SubTitle>A Subtitle 3</Header.SubTitle>
+            <Header.Title>Novidades</Header.Title>
+            <Header.Paragraph>Veja nossas principais ofertas separadas para você</Header.Paragraph>
+        </Header>
+    );
+};
 
 export function GridProducts() {
     // const { selectResponse: products, selectResponseError } = useSelect<ProductProps>({
@@ -18,21 +28,9 @@ export function GridProducts() {
 
     return (
         <GridProductWrap>
-            <Container sm css={{
-                "@sm": {
-                    color: "red !important",
-                    maxWidth: "800px",
-                },
-            }}>
-                <Row style={{ margin: "0 auto 1.5rem" }}>
-                    <Header>
-                        <Header.SubTitle>A Subtitle 3</Header.SubTitle>
-                        <Header.Title>Novidades</Header.Title>
-                        <Header.Paragraph>Veja nossas principais ofertas separadas para você</Header.Paragraph>
-                    </Header>
-                </Row>
-
-                <Grid columns={2}>
+            <Container sm>
+                <HeaderGridProducts />
+                <Grid columns={{ xs: 2, sm: 2 }}>
                     {products &&
                         products.map((product, index) => (
                             <Grid.Item
@@ -53,4 +51,4 @@ export function GridProducts() {
             </Container>
         </GridProductWrap>
     );
-}
+}   

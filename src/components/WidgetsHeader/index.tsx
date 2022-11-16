@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { TitleWrap, SubTitleWrap, ParagraphWrap, WidgetHeaderWrap } from "./styles";
 
 type ChildrenProps = {
-    children: ReactNode;
+    children?: ReactNode | ReactNode[];
 }
 
 const Title = ({ children }: ChildrenProps) =>
@@ -14,12 +14,15 @@ const SubTitle = ({ children }: ChildrenProps) =>
 const Paragraph = ({ children }: ChildrenProps) =>
     <ParagraphWrap>{children}</ParagraphWrap>;
 
-Header.Title = Title;
-Header.SubTitle = SubTitle;
-Header.Paragraph = Paragraph;
 
-export function Header({ children }: ChildrenProps) {
+function Header({ children }: ChildrenProps) {
     return (
         <WidgetHeaderWrap>{children}</WidgetHeaderWrap>
     );
 }
+
+Header.Title = Title;
+Header.SubTitle = SubTitle;
+Header.Paragraph = Paragraph;
+
+export { Header };

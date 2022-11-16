@@ -1,5 +1,10 @@
 import { createStitches } from "@stitches/react";
-import { GapValues, ColumnsRange } from "./src/types/grid";
+import {
+    GapValues,
+    ColumnsRange,
+    ColumnsWithBreakpoints,
+    GapWithBreakpoints
+} from "./src/types/grid";
 
 export const spacing = {
     1: "8px",
@@ -23,7 +28,7 @@ export const { styled, getCssText, config } = createStitches({
         xl: "(min-width: 1400px)",
     },
     utils: {
-        gapXY: (value: GapValues) => {
+        gapXY: (value: GapWithBreakpoints) => {
             // When input number
             if (typeof value === "number") {
                 return { gap: spacing[value] };
@@ -32,7 +37,7 @@ export const { styled, getCssText, config } = createStitches({
             // When input object with Breakpoints
             const finalStyle: { [key: string]: {} } = {};
 
-            Object.keys(value).forEach(item => {
+            Object.keys(value).forEach((item: GapWithBreakpoints) => {
                 const breakpointValue = value[item];
                 const gapSize = spacing[breakpointValue];
 
@@ -42,7 +47,7 @@ export const { styled, getCssText, config } = createStitches({
 
             return finalStyle;
         },
-        columns: (value: ColumnsRange) => {
+        columns: (value: ColumnsWithBreakpoints) => {
             if (typeof value === "number") {
                 return {
                     display: "grid",

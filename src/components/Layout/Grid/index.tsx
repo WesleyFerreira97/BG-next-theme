@@ -2,7 +2,7 @@ import { css } from "@stitches/react";
 import React from "react";
 import { GridItem } from "./GridItem";
 import { GridWrap } from "./styles";
-import { GridProps } from "./types";
+import { GridProps } from "../../../types/grid";
 
 
 function Grid({ children, ...props }: GridProps) {
