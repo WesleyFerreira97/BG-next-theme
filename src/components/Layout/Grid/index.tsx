@@ -9,7 +9,7 @@ function Grid({ children, ...props }: GridProps) {
     return (
         <GridWrap
             css={{
-                gapXY: props.gap || 2,
+                // gapXY: props.gap || 2,
                 columns: props.columns || 4,
             }}
         >

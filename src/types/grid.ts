@@ -16,8 +16,8 @@ type GapWithBreakpoints = {
 
 type GridProps = {
     children?: ReactNode | ReactNode[];
-    gap?: GapValues | Partial<GapWithBreakpoints>
-    columns?: ColumnsRange | Partial<ColumnsWithBreakpoints>
+    gap?: Partial<GapWithBreakpoints> | GapValues;
+    columns?: ColumnsRange | Partial<ColumnsWithBreakpoints>;
 }
 
 export type {

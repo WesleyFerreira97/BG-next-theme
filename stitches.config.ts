@@ -28,16 +28,17 @@ export const { styled, getCssText, config } = createStitches({
         xl: "(min-width: 1400px)",
     },
     utils: {
-        gapXY: (value: GapWithBreakpoints) => {
+        gapXY: (value: GapWithBreakpoints | GapValues) => {
             // When input number
             if (typeof value === "number") {
                 return { gap: spacing[value] };
             }
 
             // When input object with Breakpoints
-            const finalStyle: { [key: string]: {} } = {};
+            // const finalStyle: { [key: string]: {} } = {};
+            const finalStyle: Partial<GapWithBreakpoints> = {};
 
-            Object.keys(value).forEach((item: GapWithBreakpoints) => {
+            Object.keys(value).forEach((item) => {
                 const breakpointValue = value[item];
                 const gapSize = spacing[breakpointValue];
 
@@ -59,6 +60,7 @@ export const { styled, getCssText, config } = createStitches({
 
             Object.keys(value).forEach(item => {
                 const amountColumns = value[item];
+                console.log("value");
 
                 return finalStyle[`@${item}`] = {
                     display: "grid",
