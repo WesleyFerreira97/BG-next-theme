@@ -17,7 +17,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
             <Head>
-                <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
                 <title>Bela Garota</title>
             </Head>
 

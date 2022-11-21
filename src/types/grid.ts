@@ -14,17 +14,21 @@ type GapWithBreakpoints = {
     [Key in Breakpoints]: GapValues;
 }
 
+type ColumnsProps = ColumnsRange | Partial<ColumnsWithBreakpoints>;
+type GapProps = GapValues | Partial<GapWithBreakpoints>;
+
 type GridProps = {
     children?: ReactNode | ReactNode[];
-    gap?: Partial<GapWithBreakpoints> | GapValues;
-    columns?: ColumnsRange | Partial<ColumnsWithBreakpoints>;
+    gap?: GapProps;
+    columns?: ColumnsProps;
 }
 
 export type {
-    GridProps,
     GapValues,
     SpacingProps,
     ColumnsRange,
-    ColumnsWithBreakpoints,
-    GapWithBreakpoints
+    ColumnsProps,
+    GapProps,
+    GridProps,
+    Breakpoints
 };

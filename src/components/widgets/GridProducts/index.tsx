@@ -5,8 +5,8 @@ import { Header } from "../../WidgetsHeader";
 import { CardProduct } from "../../Cards/CardProduct";
 import { useSelect } from "../../../hooks/useSelect";
 import { ProductProps } from "../../../types/product";
-import { fakeProducts } from "../../../utils/fakeProducts";
 import { Grid } from "@theme/layout/Grid";
+import { fakeProducts } from "../../../utils/fakeProducts";
 
 const HeaderGridProducts = () => {
     return (
@@ -30,14 +30,14 @@ export function GridProducts() {
         <GridProductWrap>
             <Container sm>
                 <HeaderGridProducts />
-                <Grid columns={{ xs: 2, sm: 2 }}>
+                <Grid columns={{ xs: 2, sm: 2 }} gap={6}>
                     {products &&
                         products.map((product, index) => (
                             <Grid.Item
                                 key={index}
                             >
                                 {/* <CardProduct
-                                    title={product.title}
+                                        title={product.title}
                                     subTitle={product.subTitle}
                                     price={product.price}
                                     monthlyInstallments={product.monthlyInstallments}
@@ -51,4 +51,4 @@ export function GridProducts() {
             </Container>
         </GridProductWrap>
     );
-}   
+}

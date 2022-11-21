@@ -2,6 +2,7 @@ import React from "react";
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 import { CssBaseline } from "@nextui-org/react";
 import { ServerStyleSheet } from "styled-components";
+import { getCssText } from "stitches.config";
 
 class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
@@ -18,7 +19,15 @@ class MyDocument extends Document {
             const initialProps = await Document.getInitialProps(ctx);
             return {
                 ...initialProps,
-                styles: React.Children.toArray([initialProps.styles, sheet.getStyleElement()])
+                styles: (
+                    <>
+                        {React.Children.toArray([initialProps.styles, sheet.getStyleElement()])}
+                        <style
+                            id="stitches"
+                            dangerouslySetInnerHTML={{ __html: getCssText() }}
+                        />
+                    </>
+                )
             };
         } finally {
             sheet.seal();

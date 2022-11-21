@@ -14,13 +14,13 @@ const Home: NextPage = () => {
 
     return (
         <>
-            <MainNavbar />
+            {/* <MainNavbar />
             <HomeCarousel />
             <GridMainCategories />
-            <button onClick={() => router.push("/single")}>Go single</button>
+            <button onClick={() => router.push("/single")}>Go single</button> */}
             <GridProducts />
-            <GridOtherCategories />
-            <GridProductsSmall />
+            {/* <GridOtherCategories />
+            <GridProductsSmall /> */}
         </>
     );
 };

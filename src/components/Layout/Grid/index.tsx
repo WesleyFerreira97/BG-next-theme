@@ -1,4 +1,3 @@
-import { css } from "@stitches/react";
 import React from "react";
 import { GridItem } from "./GridItem";
 import { GridWrap } from "./styles";
@@ -9,9 +8,10 @@ function Grid({ children, ...props }: GridProps) {
     return (
         <GridWrap
             css={{
-                // gapXY: props.gap || 2,
-                columns: props.columns || 4,
+                gapXY: props.gap || 2,
+                gridColumns: props.columns || 4,
             }}
+
         >
             {children}
         </GridWrap>
