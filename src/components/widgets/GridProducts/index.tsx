@@ -7,6 +7,7 @@ import { useSelect } from "../../../hooks/useSelect";
 import { ProductProps } from "../../../types/product";
 import { Grid } from "@theme/layout/Grid";
 import { fakeProducts } from "../../../utils/fakeProducts";
+import { Card } from "src/components/Card";
 
 const HeaderGridProducts = () => {
     return (
@@ -30,21 +31,19 @@ export function GridProducts() {
         <GridProductWrap>
             <Container sm>
                 <HeaderGridProducts />
-                <Grid columns={{ xs: 2, sm: 3 }} gap={{ xs: 1 }}>
+                <Grid columns={{ xs: 2, sm: 3 }} gap={{ xs: 1, sm: 2 }}>
                     {products &&
                         products.map((product, index) => (
                             <Grid.Item
                                 key={index}
                             >
                                 {/* <CardProduct
-                                        title={product.title}
+                                    title={product.title}
                                     subTitle={product.subTitle}
                                     price={product.price}
                                     monthlyInstallments={product.monthlyInstallments}
                                 /> */}
-                                <div className="bloco">
-                                    Item
-                                </div>
+                                <Card title="sdf" />
                             </Grid.Item>
                         ))}
                 </Grid>

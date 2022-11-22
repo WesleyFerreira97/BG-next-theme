@@ -6,10 +6,10 @@ export const GridProductWrap = styled("div", {
 
     ".bloco": {
         background: "black",
-        height: "100% */",
+        height: "100%",
         width: "100%",
         color: "#fff",
-        border: "2px solid red",
-        aspectRatio: "2/3",
+        border: "2px solid blue",
+        aspectRatio: "9/12",
     }
 });
