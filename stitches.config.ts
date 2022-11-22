@@ -16,6 +16,15 @@ export const spacing = {
 
 export const { styled, getCssText, config, css } = createStitches({
     theme: {
+        colors: {
+            primary: "#FF5101",
+            primaryAlt: "#FF6500",
+            secondary: "#3F3351",
+            secondaryAlt: "#0060B1",
+            tertiary: "#D22779",
+            neutral: "#fff",
+            neutralAlt: "#7a7a7a",
+        },
         spacing,
     },
     media: {

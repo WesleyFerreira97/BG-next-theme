@@ -1,11 +1,8 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { NextUIProvider } from "@nextui-org/react";
 import { Footer } from "../components/Footer";
 import { MainNavbar } from "../components/MainNavbar";
-import ThemeProvider from "../providers/ThemeProvider";
-import { GlobalStyle } from "../styles/Global";
-import { NextUIProvider } from "@nextui-org/react";
-import { getCssText } from "stitches.config";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -21,12 +18,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Head>
 
             <NextUIProvider>
-                <ThemeProvider>
-                    <GlobalStyle />
-                    {/* <MainNavbar /> */}
-                    <Component {...pageProps} />
-                    {/* <Footer /> */}
-                </ThemeProvider>
+                {/* <MainNavbar /> */}
+                <Component {...pageProps} />
+                {/* <Footer /> */}
             </NextUIProvider>
         </>
     );
