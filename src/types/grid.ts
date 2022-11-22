@@ -30,5 +30,7 @@ export type {
     ColumnsProps,
     GapProps,
     GridProps,
-    Breakpoints
+    Breakpoints,
+    GapWithBreakpoints,
+    ColumnsWithBreakpoints
 };

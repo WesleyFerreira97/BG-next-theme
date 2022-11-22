@@ -1,7 +1,24 @@
 import { createGlobalStyle } from "styled-components";
-import { globalCss } from "@stitches/react";
+import { globalCss } from "stitches.config";
 
-const globalStyles = globalCss({
+export const globalStyles = globalCss({
+    "*, body, html": {
+        margin: "0",
+        padding: "0",
+        border: "0",
+        listStyle: "none",
+        fontFamily: "Arial",
+        boxSizing: "border-box",
+    },
+
+    a: {
+        color: "inherit",
+        textDecoration: "none",
+    },
+
+    "ul, li": {
+        margin: "0",
+    },
 
     ".swiper-button-prev, .swiper-button-next": {
         marginTop: "-40px",
@@ -40,24 +57,7 @@ const globalStyles = globalCss({
 //     font-weight: 800;
 // }
 
-//  *, body, html {
-//     margin: 0;
-//     padding: 0;
-//     border: 0;
-//     list-style: none;
-//     /* font-family: Open-Sans, Helvetica, Sans-Serif; */
-//     font-family: Arial;
-//     box-sizing: border-box;
-// }
 
-// a {
-//     color: inherit;
-//     text-decoration: none;
-// }
-
-// ul, li {
-//     margin: 0;
-// }
 
 // /* Ajusts For Responsivity */
 // @media (max-width: 1024px) {

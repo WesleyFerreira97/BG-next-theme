@@ -2,7 +2,10 @@ import { createStitches, PropertyValue } from "@stitches/react";
 import {
     Breakpoints,
     ColumnsProps,
-    GapProps
+    ColumnsWithBreakpoints,
+    GapProps,
+    GapValues,
+    GapWithBreakpoints
 } from "./src/types/grid";
 
 export const spacing = {
@@ -14,7 +17,7 @@ export const spacing = {
     6: "48px",
 };
 
-export const { styled, getCssText, config, css } = createStitches({
+export const { styled, getCssText, config, css, globalCss } = createStitches({
     theme: {
         colors: {
             primary: "#FF5101",
@@ -43,12 +46,11 @@ export const { styled, getCssText, config, css } = createStitches({
             }
 
             // When input object with Breakpoints
-            // const finalStyle: { [key: string]: {} } = {};
-            const finalStyle: GapProps = {};
+            const usedBreakpoints = Object.keys(value) as Breakpoints[];
+            const finalStyle: { [key: string]: {} } = {};
 
-            console.log(value);
-            Object.keys(value).forEach((item) => {
-                const breakpointValue = value[item];
+            usedBreakpoints.forEach((item) => {
+                const breakpointValue = value[item] as GapValues;
                 const gapSize = spacing[breakpointValue];
 
                 // Return object with breakpoint pattern stitches
@@ -65,11 +67,11 @@ export const { styled, getCssText, config, css } = createStitches({
                 };
             }
 
+            const usedBreakpoints = Object.keys(value) as Breakpoints[];
             const finalStyle: { [key: string]: {} } = {};
 
-            Object.keys(value).forEach(item => {
+            usedBreakpoints.forEach((item) => {
                 const amountColumns = value[item];
-                console.log("value");
 
                 return finalStyle[`@${item}`] = {
                     display: "grid",
