@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import { styled } from "stitches.config";
 
-export const MainContentWrap = styled.div`
+export const MainContentWrap = styled("div", {
 
 
-`;
+});
 
 

@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { CarouselItem } from "../../CarouselItem";
 import Image from "next/image";
 import { Button, Container, red } from "@nextui-org/react";
-import { theme } from "../../../styles/theme";
 
 const carouselItemsData = {
     item1: {
@@ -75,8 +74,8 @@ export function HomeCarousel() {
                                     {item.buttons.seeMore} */}
                                     <Button
                                         css={{
-                                            backgroundColor: theme.colors.neutral,
-                                            color: theme.colors.secondary,
+                                            // backgroundColor: theme.colors.neutral,
+                                            // color: theme.colors.secondary,
                                             padding: "1.5rem .5rem",
                                             border: "3px solid #fff",
                                             width: "50px",

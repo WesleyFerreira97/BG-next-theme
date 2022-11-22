@@ -1,4 +1,3 @@
-// import styled from "styled-components";
 import { typography } from "../../styles/typography";
 import { styled } from "stitches.config";
 
@@ -24,7 +23,6 @@ export const WidgetHeaderWrap = styled("div", {
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-
     margin: "1.5rem auto",
 });
 

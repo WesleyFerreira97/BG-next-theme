@@ -5,7 +5,6 @@ import { getCssText } from "stitches.config";
 
 class MyDocument extends Document {
 
-
     render() {
         return (
             <Html lang="pt-br">

@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import { styled } from "stitches.config";
 
-export const GridWrap = styled.div`
-    display: flex;
-    justify-content: center;
-    margin: 3rem auto 2rem;
-`;
+export const GridWrap = styled("div", {
+    display: "flex",
+    justifyContent: "center",
+    margin: "3rem auto 2rem",
+});
