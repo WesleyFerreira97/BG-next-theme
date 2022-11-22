@@ -30,7 +30,7 @@ export function GridProducts() {
         <GridProductWrap>
             <Container sm>
                 <HeaderGridProducts />
-                <Grid columns={{ xs: 2, sm: 2 }} gap={6}>
+                <Grid columns={{ xs: 2, sm: 3 }} gap={1}>
                     {products &&
                         products.map((product, index) => (
                             <Grid.Item

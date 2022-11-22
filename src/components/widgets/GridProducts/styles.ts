@@ -10,6 +10,6 @@ export const GridProductWrap = styled("div", {
         width: "100%",
         color: "#fff",
         border: "2px solid red",
-        aspectRatio: "2/4",
+        aspectRatio: "2/3",
     }
 });
