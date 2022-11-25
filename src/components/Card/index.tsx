@@ -1,8 +1,5 @@
 import React from "react";
-import people1 from "public/images/people1.jpg";
-import { CardImage, CardInfoWrap, CardOverlay, CardWrap } from "./styles";
-import type * as Stitches from "@stitches/react";
-import { theme } from "stitches.config";
+import { CardImage, CardInfoWrap, CardWrap } from "./styles";
 import Image from "next/image";
 
 type CardInfoProps = {
