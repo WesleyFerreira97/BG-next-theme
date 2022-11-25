@@ -1,4 +1,3 @@
-import { createGlobalStyle } from "styled-components";
 import { globalCss } from "stitches.config";
 
 export const globalStyles = globalCss({

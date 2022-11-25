@@ -8,7 +8,7 @@ import { ProductProps } from "../../../types/product";
 import { Grid } from "@theme/layout/Grid";
 import { fakeProducts } from "../../../utils/fakeProducts";
 import { Card } from "src/components/Card";
-import PersonImage from "public/images/woman1.png";
+import PersonImage from "public/images/people4.jpg";
 
 const HeaderGridProducts = () => {
     return (
@@ -38,16 +38,10 @@ export function GridProducts() {
                             <Grid.Item
                                 key={index}
                             >
-                                {/* <CardProduct
-                                    title={product.title}
-                                    subTitle={product.subTitle}
-                                    price={product.price}
-                                    monthlyInstallments={product.monthlyInstallments}
-                                /> */}
                                 <Card
                                     cardInfo={{
                                         ...product,
-                                        image: PersonImage.src
+                                        image: PersonImage
                                     }}
                                     cardStyle={{
                                         aspectRatio: "9/14",

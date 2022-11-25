@@ -1,11 +1,11 @@
 import React from "react";
 import people1 from "public/images/people1.jpg";
-import { CardImage, CardWrap } from "./styles";
+import { CardImage, CardInfoWrap, CardWrap } from "./styles";
 import type * as Stitches from "@stitches/react";
 import { theme } from "stitches.config";
 import Image from "next/image";
 
-type CardInfo = {
+type CardInfoProps = {
     title: string,
     subTitle?: string,
     image: string,
@@ -24,13 +24,30 @@ type StyleProps =
 type CardStyle = Record<StyleProps, string>;
 
 type CardProps = {
-    cardInfo: CardInfo,
+    cardInfo: CardInfoProps,
     cardStyle?: Partial<CardStyle> & {
         // Refact: Identify token theme color
         bgColor?: string
     }
-
 }
+
+const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
+    return (
+        <CardInfoWrap>
+            <div className="card-info">
+                <h3 className="card-info__title">
+                    {cardInfo.title}
+                </h3>
+                <span className="card-info__price">
+                    R$ {cardInfo.price}
+                </span>
+                <span className="card-info__installments">
+                    {cardInfo.monthlyInstallments}
+                </span>
+            </div>
+        </CardInfoWrap>
+    );
+};
 
 export function Card({ cardInfo, cardStyle }: CardProps) {
 
@@ -42,12 +59,10 @@ export function Card({ cardInfo, cardStyle }: CardProps) {
                 <Image
                     src={cardInfo.image}
                     alt="Woman image"
-                    width="100"
-                    height="100"
-                // className="card-image"
+                    quality={100}
                 />
             </CardImage>
-            {cardInfo.title}
+            <CardInfo cardInfo={cardInfo} />
         </CardWrap>
     );
 }
