@@ -64,3 +64,14 @@ export const CategoryBackground = styled.div`
         width: 100%;
    }
 `;
+
+
+
+export const CardOverlay = styled("div", {
+    height: "100%",
+    width: "100%",
+    position: "absolute",
+    background: "black",
+    opacity: .2,
+    zIndex: 1,
+});

@@ -1,6 +1,6 @@
 import React from "react";
 import people1 from "public/images/people1.jpg";
-import { CardImage, CardInfoWrap, CardWrap } from "./styles";
+import { CardImage, CardInfoWrap, CardOverlay, CardWrap } from "./styles";
 import type * as Stitches from "@stitches/react";
 import { theme } from "stitches.config";
 import Image from "next/image";
@@ -28,7 +28,7 @@ type CardProps = {
     cardStyle?: Partial<CardStyle> & {
         // Refact: Identify token theme color
         bgColor?: string
-    }
+    },
 }
 
 const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
@@ -52,9 +52,7 @@ const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
 export function Card({ cardInfo, cardStyle }: CardProps) {
 
     return (
-        <CardWrap
-            css={cardStyle}
-        >
+        <CardWrap css={cardStyle} >
             <CardImage>
                 <Image
                     src={cardInfo.image}

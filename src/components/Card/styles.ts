@@ -11,7 +11,6 @@ export const CardWrap = styled("div", {
 export const CardImage = styled("div", {
     height: "100%",
     width: "100%",
-    // position: "absolute",
 
     img: {
         height: "100%",
@@ -21,8 +20,9 @@ export const CardImage = styled("div", {
 });
 
 export const CardInfoWrap = styled("div", {
-    padding: "1rem",
+    position: "relative",
     zIndex: "2",
+    padding: "1rem",
 
     ".card-info": {
         display: "flex",
