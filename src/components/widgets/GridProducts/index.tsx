@@ -43,7 +43,15 @@ export function GridProducts() {
                                     price={product.price}
                                     monthlyInstallments={product.monthlyInstallments}
                                 /> */}
-                                <Card title="sdf" />
+                                <Card
+                                    cardInfo={product}
+                                    cardStyle={{
+                                        aspectRatio: "9/14",
+                                        bgColor: "$primary"
+
+                                    }}
+
+                                />
                             </Grid.Item>
                         ))}
                 </Grid>
@@ -51,3 +59,4 @@ export function GridProducts() {
         </GridProductWrap>
     );
 }
+

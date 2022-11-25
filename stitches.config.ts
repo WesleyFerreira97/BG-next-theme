@@ -17,7 +17,8 @@ export const spacing = {
     6: "48px",
 };
 
-export const { styled, getCssText, config, css, globalCss } = createStitches({
+export const { styled, getCssText, config, css, globalCss, theme, } = createStitches({
+    prefix: "bg-theme",
     theme: {
         colors: {
             primary: "#FF5101",
@@ -81,5 +82,8 @@ export const { styled, getCssText, config, css, globalCss } = createStitches({
 
             return finalStyle;
         },
+        bgColor: (value: string) => ({
+            backgroundColor: value
+        })
     }
 });
