@@ -1,7 +1,9 @@
 import { styled } from "stitches.config";
 
 export const CardWrap = styled("div", {
-    display: "block",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     position: "relative",
     aspectRatio: "4/5",
     overflow: "hidden",
@@ -13,7 +15,10 @@ export const CardWrap = styled("div", {
 });
 
 export const CardInfoWrap = styled("div", {
-
+    position: "relative",
+    color: "#fff",
+    textAlign: "center",
+    zIndex: 5
 });
 
 export const CardImage = styled("div", {
@@ -45,6 +50,6 @@ export const CardOverlay = styled("div", {
     },
 
     "@sm": {
-        opacity: 0,
+        opacity: .1,
     }
 });

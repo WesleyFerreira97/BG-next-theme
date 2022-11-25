@@ -34,8 +34,8 @@ export function CardOverlayInfo({ cardInfo, }: any) {
                     quality={100}
                 />
             </CardImage>
-            <CardOverlay />
             <CardInfo cardInfo={cardInfo} />
+            <CardOverlay />
         </CardWrap>
     );
 }

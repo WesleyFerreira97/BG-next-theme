@@ -40,11 +40,11 @@ export function GridOtherCategories() {
                             slidesPerView: 5,
                         }
                     }}
-                    autoplay={{
-                        delay: 7000,
-                        disableOnInteraction: false,
-                    }}
-                    loop
+                    // autoplay={{
+                    //     delay: 7000,
+                    //     disableOnInteraction: false,
+                    // }}
+                    // loop
                     watchOverflow
                     scrollbar={{ draggable: true }}
                     spaceBetween={6}
