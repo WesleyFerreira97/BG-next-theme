@@ -4,42 +4,16 @@ import { GridWrap } from "./styles";
 import { CardCategory } from "../../Cards/CardCategory";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Container } from "@nextui-org/react";
-
-const gridItemsData = {
-    item1: {
-        title: "Conjuntos",
-        text: "But like any other object, you can scale the object the Image fills.",
-        image: "Woman1"
-    },
-    item2: {
-        title: "Regatas",
-        text: "But like any other object, you can scale the object the Image fills.",
-        image: "Woman1"
-    },
-    item3: {
-        title: "Shorts",
-        text: "But like any other object, you can scale the object the Image fills. ",
-        image: "Woman1"
-    },
-    item4: {
-        title: "Conjuntos",
-        text: "But like any other object, you can scale the object the Image fills.",
-        image: "Woman1"
-    },
-    item5: {
-        title: "Regatas",
-        text: "But like any other object, you can scale the object the Image fills.",
-        image: "Woman1"
-    },
-    item6: {
-        title: "Shorts",
-        text: "But like any other object, you can scale the object the Image fills. ",
-        image: "Woman1"
-    },
-};
+import { fakeProducts } from "src/utils/fakeProducts";
+import { Card } from "src/components/Card";
+import PersonImage from "public/images/woman2.jpg";
 
 
 export function GridMainCategories() {
+    // TEMP
+    const products: any[] = fakeProducts;
+
+
     return (
         <GridWrap>
             <Container fluid css={{ padding: ".3rem !important" }}>
@@ -72,14 +46,12 @@ export function GridMainCategories() {
                         }
                     }}
                 >
-                    {Object.values(gridItemsData).map((item, index) => (
+                    {Object.values(products).map((item, index) => (
                         <SwiperSlide key={index}>
-                            <CardCategory
-                                title={item.title}
-                                subTitle={item.text}
-                                link={"linkToPage"}
-                                image={item.image}
-                            />
+                            <Card cardInfo={{
+                                ...item,
+                                image: PersonImage
+                            }} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

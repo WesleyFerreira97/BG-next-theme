@@ -1,6 +1,7 @@
 import { styled } from "stitches.config";
 
 export const CardWrap = styled("div", {
+    position: "relative",
     // background: "#282A3A",
     aspectRatio: "9/16",
     borderRadius: "15px",
@@ -10,6 +11,7 @@ export const CardWrap = styled("div", {
 export const CardImage = styled("div", {
     height: "100%",
     width: "100%",
+    // position: "absolute",
 
     img: {
         height: "100%",
@@ -20,6 +22,7 @@ export const CardImage = styled("div", {
 
 export const CardInfoWrap = styled("div", {
     padding: "1rem",
+    zIndex: "2",
 
     ".card-info": {
         display: "flex",
@@ -29,6 +32,7 @@ export const CardInfoWrap = styled("div", {
 
         "&__title": {
             fontSize: "1rem",
+            color: "$secondary"
         },
         "&__price": {
             color: "$primary",
@@ -36,7 +40,7 @@ export const CardInfoWrap = styled("div", {
         },
         "&__installments": {
             color: "$secondary",
-            fontWeight: "400"
+            fontWeight: "600"
         }
     }
 });

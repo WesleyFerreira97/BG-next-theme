@@ -6,42 +6,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { CardProduct } from "../../Cards/CardProduct";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
-
-const gridItemsData = {
-    item1: {
-        title: "Conjuntos",
-        text: "But like any other object, you can scale the object the Image fills.",
-        image: "Woman1"
-    },
-    item2: {
-        title: "Regatas",
-        text: "But like any other object, you can scale the object the Image fills.",
-        image: "Woman1"
-    },
-    item3: {
-        title: "É ISSO MEMO TIO",
-        text: "But like any other object, you can scale the object the Image fills. ",
-        image: "Woman1"
-    },
-    item4: {
-        title: "É ISSO MEMO TIO",
-        text: "But like any other object, you can scale the object the Image fills. ",
-        image: "Woman1"
-    },
-    item5: {
-        title: "É ISSO MEMO TIO",
-        text: "But like any other object, you can scale the object the Image fills. ",
-        image: "Woman1"
-    },
-    item6: {
-        title: "É ISSO MEMO TIO",
-        text: "But like any other object, you can scale the object the Image fills. ",
-        image: "Woman1"
-    },
-};
+import { Card } from "src/components/Card";
+import { fakeProducts } from "src/utils/fakeProducts";
+import PersonImage from "public/images/people2.jpg";
 
 
 export function GridProductsSmall() {
+    // TEMP
+    const products: any[] = fakeProducts;
+
     return (
         <GridProductWrap>
             <Container md>
@@ -83,9 +56,13 @@ export function GridProductsSmall() {
                         // }
                     }}
                 >
-                    {Object.values(gridItemsData).map((item, index) => (
+                    {Object.values(products).map((item, index) => (
                         <SwiperSlide key={index}>
                             {/* <CardProduct /> */}
+                            <Card cardInfo={{
+                                ...item,
+                                image: PersonImage
+                            }} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

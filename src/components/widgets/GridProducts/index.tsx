@@ -44,7 +44,7 @@ export function GridProducts() {
                                         image: PersonImage
                                     }}
                                     cardStyle={{
-                                        aspectRatio: "9/14",
+                                        aspectRatio: "3/4",
                                     }}
                                 />
                             </Grid.Item>

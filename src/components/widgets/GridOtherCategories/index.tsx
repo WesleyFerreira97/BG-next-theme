@@ -6,36 +6,14 @@ import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
 import { CardCategoryOverlay } from "../../Cards/CardCategoryOverlay";
 import { Columns } from "phosphor-react";
-
-const gridItemsData = {
-    item1: {
-        title: "Conjuntos",
-        text: "But like any other object, you can scale the object the Image fills.",
-        image: "Woman1"
-    },
-    item2: {
-        title: "Regatas",
-        text: "But like any other object, you can scale the object the Image fills.",
-        image: "Woman1"
-    },
-    item3: {
-        title: "Jaquetas",
-        text: "But like any other object, you can scale the object the Image fills. ",
-        image: "Woman1"
-    },
-    item4: {
-        title: "Bolsas",
-        text: "But like any other object, you can scale the object the Image fills. ",
-        image: "Woman1"
-    },
-    item5: {
-        title: "Calças",
-        text: "But like any other object, you can scale the object the Image fills. ",
-        image: "Woman1"
-    },
-};
+import { Card } from "src/components/Card";
+import { fakeProducts } from "src/utils/fakeProducts";
+import PersonImage from "public/images/people1.jpg";
 
 export function GridOtherCategories() {
+    // TEMP
+    const products: any[] = fakeProducts;
+
     return (
         <GridWrap>
             <Container fluid css={{ padding: ".3rem !important" }}>
@@ -72,9 +50,12 @@ export function GridOtherCategories() {
                     scrollbar={{ draggable: true }}
                     spaceBetween={6}
                 >
-                    {Object.values(gridItemsData).map((item, index) => (
+                    {Object.values(products).map((item, index) => (
                         <SwiperSlide key={index}>
-                            <CardCategoryOverlay />
+                            <Card cardInfo={{
+                                ...item,
+                                image: PersonImage
+                            }} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

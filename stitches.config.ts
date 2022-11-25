@@ -21,7 +21,7 @@ export const { styled, getCssText, config, css, globalCss, theme, } = createStit
     prefix: "bg-theme",
     theme: {
         colors: {
-            primary: "#FF5101",
+            primary: "#68B984",
             primaryAlt: "#FF6500",
             secondary: "#3F3351",
             secondaryAlt: "#0060B1",
