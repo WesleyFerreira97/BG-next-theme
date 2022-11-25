@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { CardProduct } from "../../Cards/CardProduct";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
-import { Card } from "src/components/Card";
+import { Card } from "src/components/Cards/CardOutsideInfo";
 import { fakeProducts } from "src/utils/fakeProducts";
 import PersonImage from "public/images/people2.jpg";
 

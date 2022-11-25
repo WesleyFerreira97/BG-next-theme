@@ -6,7 +6,7 @@ import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
 import { CardCategoryOverlay } from "../../Cards/CardCategoryOverlay";
 import { Columns } from "phosphor-react";
-import { Card } from "src/components/Card";
+import { Card } from "src/components/Cards/CardOutsideInfo";
 import { fakeProducts } from "src/utils/fakeProducts";
 import PersonImage from "public/images/people1.jpg";
 

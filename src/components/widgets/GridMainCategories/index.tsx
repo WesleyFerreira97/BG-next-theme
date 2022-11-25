@@ -5,7 +5,7 @@ import { CardCategory } from "../../Cards/CardCategory";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Container } from "@nextui-org/react";
 import { fakeProducts } from "src/utils/fakeProducts";
-import { Card } from "src/components/Card";
+import { Card } from "src/components/Cards/CardOutsideInfo";
 import PersonImage from "public/images/woman2.jpg";
 
 

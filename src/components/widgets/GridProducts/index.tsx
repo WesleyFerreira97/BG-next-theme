@@ -7,7 +7,7 @@ import { useSelect } from "../../../hooks/useSelect";
 import { ProductProps } from "../../../types/product";
 import { Grid } from "@theme/layout/Grid";
 import { fakeProducts } from "../../../utils/fakeProducts";
-import { Card } from "src/components/Card";
+import { Card } from "src/components/Cards/CardOutsideInfo";
 import PersonImage from "public/images/people4.jpg";
 
 const HeaderGridProducts = () => {
