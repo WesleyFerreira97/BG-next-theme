@@ -4,9 +4,8 @@ import { GridWrap } from "./styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
-import { CardCategoryOverlay } from "../../Cards/CardCategoryOverlay";
+import { CardOverlayInfo } from "../../Cards/CardOverlayInfo";
 import { Columns } from "phosphor-react";
-import { Card } from "src/components/Cards/CardOutsideInfo";
 import { fakeProducts } from "src/utils/fakeProducts";
 import PersonImage from "public/images/people1.jpg";
 
@@ -52,7 +51,7 @@ export function GridOtherCategories() {
                 >
                     {Object.values(products).map((item, index) => (
                         <SwiperSlide key={index}>
-                            <Card cardInfo={{
+                            <CardOverlayInfo cardInfo={{
                                 ...item,
                                 image: PersonImage
                             }} />

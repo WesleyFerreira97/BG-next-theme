@@ -1,8 +1,7 @@
 import React from "react";
-import { CardImage, CardInfoWrap, CardWrap } from "./styles";
+import { CardWrap, CardOverlay, CardImage, CardInfoWrap } from "./styles";
 import Image from "next/image";
 import { CardProps } from "../types";
-
 
 const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
     return (
@@ -11,21 +10,23 @@ const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
                 <h3 className="card-info__title">
                     {cardInfo.title}
                 </h3>
-                <span className="card-info__price">
-                    R$ {cardInfo.price}
+                <span className="card-info__subtitle">
+                    {cardInfo.subtitle}
                 </span>
-                <span className="card-info__installments">
-                    {cardInfo.monthlyInstallments}
+                <span className="card-info__category">
+                    {cardInfo.categories}
+                </span>
+                <span className="card-info__link">
+                    {cardInfo.link}
                 </span>
             </div>
         </CardInfoWrap>
     );
 };
 
-export function CardOutsideInfo({ cardInfo, cardStyle }: CardProps) {
-
+export function CardOverlayInfo({ cardInfo, }: any) {
     return (
-        <CardWrap css={cardStyle} >
+        <CardWrap>
             <CardImage>
                 <Image
                     src={cardInfo.image}
@@ -33,7 +34,9 @@ export function CardOutsideInfo({ cardInfo, cardStyle }: CardProps) {
                     quality={100}
                 />
             </CardImage>
+            <CardOverlay />
             <CardInfo cardInfo={cardInfo} />
         </CardWrap>
     );
 }
+

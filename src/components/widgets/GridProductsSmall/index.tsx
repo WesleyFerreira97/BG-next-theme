@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { CardProduct } from "../../Cards/CardProduct";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
-import { Card } from "src/components/Cards/CardOutsideInfo";
+import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
 import { fakeProducts } from "src/utils/fakeProducts";
 import PersonImage from "public/images/people2.jpg";
 
@@ -59,7 +59,7 @@ export function GridProductsSmall() {
                     {Object.values(products).map((item, index) => (
                         <SwiperSlide key={index}>
                             {/* <CardProduct /> */}
-                            <Card cardInfo={{
+                            <CardOutsideInfo cardInfo={{
                                 ...item,
                                 image: PersonImage
                             }} />
