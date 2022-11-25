@@ -32,7 +32,7 @@ export const { styled, getCssText, config, css, globalCss, theme, } = createStit
         spacing,
     },
     media: {
-        // xs: '(max-width: 650px)',
+        xsMax: "(max-width: 650px)",
         xs: "",
         sm: "(min-width: 650px)",
         md: "(min-width: 960px)",
