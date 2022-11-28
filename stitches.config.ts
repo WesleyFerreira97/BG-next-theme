@@ -37,7 +37,7 @@ export const { styled, getCssText, config, css, globalCss, theme, } = createStit
         sm: "(min-width: 650px)",
         md: "(min-width: 960px)",
         lg: "(min-width: 1280px)",
-        xl: "(min-width: 1400px)",
+        xl: "(min-wi f  ff  f   f   f   f   f   fdth: 1400px)",
     },
     utils: {
         gapXY: (value: GapProps) => {
