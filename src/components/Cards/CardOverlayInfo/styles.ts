@@ -13,12 +13,12 @@ export const CardWrap = styled("div", {
         transition: ".5s ease-in-out",
     },
 
-    "&:hover .card-info": {
+    "&:hover .card-info__title": {
         fontSize: "1.4rem"
     },
 
-    "&:hover .ops": {
-        opacity: .35,
+    "&:hover .card-overlay": {
+        opacity: .55,
         transition: ".5s ease-in-out",
     },
 
@@ -29,6 +29,10 @@ export const CardInfoWrap = styled("div", {
     color: "#fff",
     textAlign: "center",
     zIndex: 5,
+
+    ".card-info__title": {
+        paddingBottom: "$6",
+    }
 });
 
 export const CardImage = styled("div", {

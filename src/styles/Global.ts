@@ -1,6 +1,22 @@
 import { globalCss } from "stitches.config";
 
 export const globalStyles = globalCss({
+    "@font-face": [
+        {
+            fontFamily: "Aquire",
+            src: "local('Aquire'), url('/public/fonts/Aquire-BW0ox.otf')",
+            fontStyle: "normal",
+            fontWeight: "800",
+        },
+        {
+            fontFamily: "Poppins",
+            src: "local('Poppins'), url('/public/fonts/Poppins-Medium.ttf'), format('otf')",
+            fontStyle: "normal",
+            fontWeight: "800",
+        }
+    ],
+
+
     "*, body, html": {
         margin: "0",
         padding: "0",
@@ -40,13 +56,6 @@ export const globalStyles = globalCss({
 
 // /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap'); */
 
-// @font-face {
-//     font-family: 'Aquire';
-//     src: url('/fonts/Aquire-BW0ox.otf'),
-//         url('/fonts/Aquire-BW0ox.otf'), format('otf');
-//     font-style: normal;
-//     font-weight: 800;
-// }
 
 // @font-face {
 //     font-family: 'Britney';

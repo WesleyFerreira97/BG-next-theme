@@ -17,7 +17,7 @@ export const spacing = {
     6: "48px",
 };
 
-export const { styled, getCssText, config, css, globalCss, theme, } = createStitches({
+export const { styled, getCssText, config, css, globalCss, theme } = createStitches({
     prefix: "bg-theme",
     theme: {
         colors: {
@@ -37,7 +37,7 @@ export const { styled, getCssText, config, css, globalCss, theme, } = createStit
         sm: "(min-width: 650px)",
         md: "(min-width: 960px)",
         lg: "(min-width: 1280px)",
-        xl: "(min-wi f  ff  f   f   f   f   f   fdth: 1400px)",
+        xl: "(min-width: 1400px)",
     },
     utils: {
         gapXY: (value: GapProps) => {

@@ -35,7 +35,7 @@ export function CardOverlayInfo({ cardInfo, }: any) {
                 />
             </CardImage>
             <CardInfo cardInfo={cardInfo} />
-            <CardOverlay className="ops" />
+            <CardOverlay className="card-overlay" />
         </CardWrap>
     );
 }
