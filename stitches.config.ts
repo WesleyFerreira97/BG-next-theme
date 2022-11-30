@@ -1,20 +1,23 @@
-import { createStitches, PropertyValue } from "@stitches/react";
+import { createStitches } from "@stitches/react";
 import {
     Breakpoints,
     ColumnsProps,
-    ColumnsWithBreakpoints,
     GapProps,
     GapValues,
-    GapWithBreakpoints
 } from "./src/types/grid";
 
-export const spacing = {
-    1: "8px",
-    2: "12px",
-    3: "16px",
-    4: "24px",
-    5: "32px",
-    6: "48px",
+export const themeSizes: { [key: number]: string } = {
+    1: "0.5rem",  // 8px
+    2: "0.75rem", // 12px
+    3: "1rem",    // 16px
+    4: "1.25rem", // 20px
+    5: "1.5rem",  // 24px
+    6: "1.75rem", // 28px
+    7: "2rem",    // 32px
+    8: "2.25rem", // 36px
+    9: "2.5rem",  // 40px
+    10: "2.75rem",// 44px
+    11: "3rem",   // 48px
 };
 
 export const { styled, getCssText, config, css, globalCss, theme } = createStitches({
@@ -25,11 +28,16 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
             primaryAlt: "#FF6500",
             secondary: "#3F3351",
             secondaryAlt: "#0060B1",
-            tertiary: "#D22779",
-            neutral: "#fff",
+            "$tertiary": "#D22779",
+            "$neutral": "#fff",
             neutralAlt: "#7a7a7a",
         },
-        spacing,
+        fontSizes: { ...themeSizes },
+        sizes: { ...themeSizes },
+        fonts: {
+            primaryFont: "Aquire",
+            secondaryFont: "Poppins",
+        }
     },
     media: {
         xsMax: "(max-width: 650px)",
@@ -43,7 +51,7 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
         gapXY: (value: GapProps) => {
             // When input number
             if (typeof value === "number") {
-                return { gap: spacing[value] };
+                return { gap: themeSizes[value] };
             }
 
             // When input object with Breakpoints
@@ -52,7 +60,7 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
 
             usedBreakpoints.forEach((item) => {
                 const breakpointValue = value[item] as GapValues;
-                const gapSize = spacing[breakpointValue];
+                const gapSize = themeSizes[breakpointValue];
 
                 // Return object with breakpoint pattern stitches
                 return finalStyle[`@${item}`] = { gap: gapSize };

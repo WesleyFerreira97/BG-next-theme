@@ -23,6 +23,7 @@ export const globalStyles = globalCss({
         border: "0",
         listStyle: "none",
         fontFamily: "Arial",
+        fontSize: "16px",
         boxSizing: "border-box",
     },
 

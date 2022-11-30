@@ -24,6 +24,7 @@ export const CardInfoWrap = styled("div", {
     position: "relative",
     zIndex: "2",
     padding: "1rem",
+    paddding: "$",
 
     ".card-info": {
         display: "flex",
@@ -31,10 +32,11 @@ export const CardInfoWrap = styled("div", {
         justifyContent: "center",
         textAlign: "center",
 
+
         "&__title": {
-            fontSize: "1rem",
+            fontSize: "$xxl",
             color: "$secondary",
-            fontFamily: "Poppins",
+            fontFamily: "$secondaryFont",
         },
         "&__price": {
             color: "$primary",

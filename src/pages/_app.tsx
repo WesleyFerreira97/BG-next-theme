@@ -17,11 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <title>Bela Garota</title>
             </Head>
 
-            <NextUIProvider>
-                {/* <MainNavbar /> */}
-                <Component {...pageProps} />
-                {/* <Footer /> */}
-            </NextUIProvider>
+            {/* <NextUIProvider> */}
+            {/* <MainNavbar /> */}
+            <Component {...pageProps} />
+            {/* <Footer /> */}
+            {/* </NextUIProvider> */}
         </>
     );
 }
