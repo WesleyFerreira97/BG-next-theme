@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
-import { ergftedfrgdfr } from "stitches.config";
+import { themeSizes } from "stitches.config";
 
 type Breakpoints = "xs" | "sm" | "md" | "lg" | "xl";
 type SpacingProps = "8px" | "12px" | "16px" | "24px" | "32px" | "48px";
 type ColumnsRange = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-type GapValues = keyof typeof ergftedfrgdfr;
+type GapValues = keyof typeof themeSizes;
 
 type ColumnsWithBreakpoints = {
     [Key in Breakpoints]: ColumnsRange;
