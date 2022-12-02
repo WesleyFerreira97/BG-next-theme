@@ -8,8 +8,7 @@ import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
 import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
 import { fakeProducts } from "src/utils/fakeProducts";
-import PersonImage from "public/images/people2.jpg";
-
+import PersonImage from "public/images/woman2.jpg";
 
 export function GridProductsSmall() {
     // TEMP

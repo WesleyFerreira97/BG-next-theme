@@ -6,6 +6,12 @@ import {
     GapValues,
 } from "./src/types/grid";
 
+type ThemeFontProps = {
+    font: "title" | "text",
+    size: "sm" | "md" | "lg",
+    fontWeight?: number,
+}
+
 export const themeSizes: { [key: number]: string } = {
     1: "0.5rem",  // 8px
     2: "0.75rem", // 12px
@@ -92,6 +98,31 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
         },
         bgColor: (value: string) => ({
             backgroundColor: value
-        })
+        }),
+        themeFont: ({ font, size, fontWeight }: ThemeFontProps) => {
+            const selectedFont = (font === "title") ? "Aquire" : "Poppins";
+            const selectedWeight = fontWeight ? fontWeight : "500";
+            const selectedSize = { sm: "1rem", md: "1rem", lg: "1rem" };
+
+            if (font === "title") {
+                selectedSize.sm = "2rem";
+                selectedSize.md = "2rem";
+                selectedSize.lg = "2rem";
+            } else {
+                selectedSize.sm = ".5rem";
+                selectedSize.md = ".5rem";
+                selectedSize.lg = ".5rem";
+            }
+
+
+            return {
+                fontFamily: selectedFont,
+                fontWeight: selectedWeight,
+                fontSize: "3rem",
+                "@sm": {
+                    fontSize: ".8rem",
+                }
+            };
+        }
     }
 });

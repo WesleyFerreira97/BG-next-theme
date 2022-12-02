@@ -24,14 +24,13 @@ export const CardInfoWrap = styled("div", {
     position: "relative",
     zIndex: "2",
     padding: "1rem",
-    paddding: "$",
+
 
     ".card-info": {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         textAlign: "center",
-
 
         "&__title": {
             fontSize: "$xxl",
@@ -47,7 +46,12 @@ export const CardInfoWrap = styled("div", {
             color: "$neutralAlt",
             fontWeight: "500",
             fontFamily: "Poppins",
-            fontSize: ".8rem"
+            fontSize: ".8rem",
+            themeFont: {
+                font: "title",
+                size: "md",
+                fontWeight: "100",
+            },
         }
     }
 });
