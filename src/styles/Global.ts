@@ -48,36 +48,17 @@ export const globalStyles = globalCss({
     },
     ".swiper-pagination-bullet": {
         color: "red !important",
+    },
+
+    "@md": {
+        html: {
+            fontSize: "93.75%",
+        }
+    },
+
+    "@sm": {
+        html: {
+            fontSize: "87.5%",
+        }
     }
 });
-
-
-
-
-
-// /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap'); */
-
-
-// @font-face {
-//     font-family: 'Britney';
-//     src: url('/fonts/Britney-Hills.otf'),
-//         url('/fonts/Britney-Hills.otf'), format('otf');
-//     font-style: normal;
-//     font-weight: 800;
-// }
-
-
-
-// /* Ajusts For Responsivity */
-// @media (max-width: 1024px) {
-//     html {
-//         font-size: 93.75%;
-//     }
-// }
-
-// @media (max-width: 768px) {
-//     html {
-//         font-size: 87.5%;
-//     }
-// }
-

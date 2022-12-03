@@ -106,8 +106,8 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
 
             if (font === "title") {
                 selectedSize.sm = "2rem";
-                selectedSize.md = "2rem";
-                selectedSize.lg = "2rem";
+                selectedSize.md = "3rem";
+                selectedSize.lg = "6rem";
             } else {
                 selectedSize.sm = ".5rem";
                 selectedSize.md = ".5rem";
@@ -118,10 +118,16 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
             return {
                 fontFamily: selectedFont,
                 fontWeight: selectedWeight,
-                fontSize: "3rem",
+                // fontSize: selectedSize.sm,
+                fontSize: "1rem",
+
                 "@sm": {
-                    fontSize: ".8rem",
-                }
+                    // fontSize: selectedSize.md,
+                    fontSize: "calc(100% - 20%)"
+                },
+                "@md": {
+                    // fontSize: selectedSize.lg,
+                },
             };
         }
     }

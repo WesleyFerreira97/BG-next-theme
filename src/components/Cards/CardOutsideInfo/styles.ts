@@ -50,7 +50,6 @@ export const CardInfoWrap = styled("div", {
             themeFont: {
                 font: "title",
                 size: "md",
-                fontWeight: "100",
             },
         }
     }
