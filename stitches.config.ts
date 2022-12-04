@@ -6,12 +6,6 @@ import {
     GapValues,
 } from "./src/types/grid";
 
-type ThemeFontProps = {
-    font: "title" | "text",
-    size: "sm" | "md" | "lg",
-    fontWeight?: number,
-}
-
 export const themeSizes: { [key: number]: string } = {
     1: "0.5rem",  // 8px
     2: "0.75rem", // 12px
@@ -99,36 +93,32 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
         bgColor: (value: string) => ({
             backgroundColor: value
         }),
-        themeFont: ({ font, size, fontWeight }: ThemeFontProps) => {
-            const selectedFont = (font === "title") ? "Aquire" : "Poppins";
-            const selectedWeight = fontWeight ? fontWeight : "500";
-            const selectedSize = { sm: "1rem", md: "1rem", lg: "1rem" };
-
-            if (font === "title") {
-                selectedSize.sm = "2rem";
-                selectedSize.md = "3rem";
-                selectedSize.lg = "6rem";
-            } else {
-                selectedSize.sm = ".5rem";
-                selectedSize.md = ".5rem";
-                selectedSize.lg = ".5rem";
-            }
-
+        themeFont: (fontType: string) => {
+            const selectedFont = (fontType === "title") ? "Aquire" : "Poppins";
 
             return {
                 fontFamily: selectedFont,
-                fontWeight: selectedWeight,
-                // fontSize: selectedSize.sm,
-                fontSize: "1rem",
-
-                "@sm": {
-                    // fontSize: selectedSize.md,
-                    fontSize: "calc(100% - 20%)"
-                },
-                "@md": {
-                    // fontSize: selectedSize.lg,
-                },
             };
-        }
+        },
+        themeFontSize: (value: any) => {
+            const usedBreakpoints = Object.keys(value) as Breakpoints[];
+            const finalStyle: { [key: string]: {} } = {};
+
+            if (value.default) {
+                finalStyle["fontSize"] = value.default;
+            };
+
+            usedBreakpoints.forEach((item) => {
+                if (item as string === "default") return {};
+
+                return finalStyle[`@${item}`] = {
+                    fontSize: value[item],
+                };
+            });
+
+            console.log(finalStyle);
+
+            return finalStyle;
+        },
     }
 });

@@ -46,11 +46,14 @@ export const CardInfoWrap = styled("div", {
             color: "$neutralAlt",
             fontWeight: "500",
             fontFamily: "Poppins",
-            fontSize: ".8rem",
             themeFont: {
                 font: "title",
                 size: "md",
             },
+            themeFontSize: {
+                default: "$1",
+                sm: "$1"
+            }
         }
     }
 });
