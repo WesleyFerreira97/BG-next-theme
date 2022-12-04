@@ -98,6 +98,7 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
 
             return {
                 fontFamily: selectedFont,
+                fontSmooth: "always"
             };
         },
         themeFontSize: (value: any) => {
@@ -115,8 +116,6 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
                     fontSize: value[item],
                 };
             });
-
-            console.log(finalStyle);
 
             return finalStyle;
         },
