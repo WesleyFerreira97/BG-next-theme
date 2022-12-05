@@ -1,19 +1,20 @@
-import { typography } from "../../styles/typography";
 import { styled } from "stitches.config";
 
 export const TitleWrap = styled("h3", {
-    /* ${typography.TitleSm} */
+    themeFontSize: {
+        // default: "$11",
+        lg: "$1",
+        md: "$10",
+        sm: "$9",
+        xs: "$8",
+    },
     margin: "1rem auto",
 });
 
 export const SubTitleWrap = styled("span", {
-    /* ${typography.TextLg}
-    color: ${({ theme }) => theme.colors.neutralAlt}; */
 });
 
 export const ParagraphWrap = styled("p", {
-    /* ${typography.Text}
-    color: ${({ theme }) => theme.colors.neutralAlt}; */
 });
 
 export const WidgetHeaderWrap = styled("div", {

@@ -28,8 +28,8 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
             primaryAlt: "#FF6500",
             secondary: "#3F3351",
             secondaryAlt: "#0060B1",
-            "$tertiary": "#D22779",
-            "$neutral": "#fff",
+            tertiary: "#D22779",
+            neutral: "#fff",
             neutralAlt: "#7a7a7a",
         },
         fontSizes: { ...themeSizes },
@@ -44,7 +44,7 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
         xs: "",
         sm: "(min-width: 650px)",
         md: "(min-width: 960px)",
-        lg: "(min-width: 1280px)",
+        lg: "(min-width: 1200px)",
         xl: "(min-width: 1400px)",
     },
     utils: {
@@ -104,6 +104,7 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
         themeFontSize: (value: any) => {
             const usedBreakpoints = Object.keys(value) as Breakpoints[];
             const finalStyle: { [key: string]: {} } = {};
+            console.log(value);
 
             if (value.default) {
                 finalStyle["fontSize"] = value.default;
