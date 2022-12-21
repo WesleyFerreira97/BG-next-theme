@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { CssBaseline, NextUIProvider } from "@nextui-org/react";
+import { CssBaseline, NextUIProvider, Pagination } from "@nextui-org/react";
 import { Footer } from "../components/Footer";
 import { MainNavbar } from "../components/MainNavbar";
 
@@ -24,13 +24,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                     name="viewport"
                 />
             </Head>
-
-            <NextUIProvider>
-                {/* <MainNavbar /> */}
-                <h1>Wesley</h1>
-                <Component {...pageProps} />
-                {/* <Footer /> */}
-            </NextUIProvider>
+            {/* <NextUIProvider> */}
+            {/* <MainNavbar /> */}
+            <Component {...pageProps} />
+            {/* <Footer /> */}
+            {/* </NextUIProvider> */}
         </>
     );
 }

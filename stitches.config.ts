@@ -1,14 +1,29 @@
 import { createStitches } from "@stitches/react";
+import { Poppins } from "@next/font/google";
+import localFont from "@next/font/local";
 import {
     Breakpoints,
     ColumnsProps,
     GapProps,
     GapValues,
 } from "./src/types/grid";
-import { Poppins } from "@next/font/google";
+
+const aquire = localFont({
+    src: [
+        {
+            path: "/public/fonts/Aquire-BW0ox.otf",
+            style: "normal",
+            weight: "600"
+        },
+        {
+            path: "/public/fonts/AquireBold-8Ma60.otf",
+            style: "normal",
+            weight: "800"
+        },
+    ]
+});
 
 const poppins = Poppins({ weight: ["600"], });
-console.log(poppins.style.fontFamily);
 
 export const themeSizes: { [key: number]: string } = {
     1: "0.5rem",  // 8px
@@ -38,8 +53,9 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
         },
         fontSizes: { ...themeSizes },
         sizes: { ...themeSizes },
+        space: { ...themeSizes },
         fonts: {
-            primaryFont: "Aquire",
+            primaryFont: aquire.style.fontFamily,
             secondaryFont: poppins.style.fontFamily,
         }
     },
@@ -99,7 +115,7 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
         }),
         themeFont: (fontType: string) => {
             const selectedFont = (fontType === "title")
-                ? "$secondaryFont"
+                ? "$primaryFont"
                 : "$secondaryFont";
 
             return {
