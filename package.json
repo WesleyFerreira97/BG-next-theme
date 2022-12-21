@@ -10,11 +10,12 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "@next/font": "^13.0.7",
     "@nextui-org/react": "^1.0.0-beta.10",
     "@stitches/react": "^1.2.8",
     "@supabase/supabase-js": "^2.1.0",
     "eslint-plugin-testing-library": "^5.9.1",
-    "next": "^13.0.4",
+    "next": "^13.0.7",
     "phosphor-react": "^1.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -5,6 +5,10 @@ import {
     GapProps,
     GapValues,
 } from "./src/types/grid";
+import { Poppins } from "@next/font/google";
+
+const poppins = Poppins({ weight: ["600"], });
+console.log(poppins.style.fontFamily);
 
 export const themeSizes: { [key: number]: string } = {
     1: "0.5rem",  // 8px
@@ -36,7 +40,7 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
         sizes: { ...themeSizes },
         fonts: {
             primaryFont: "Aquire",
-            secondaryFont: "Poppins",
+            secondaryFont: poppins.style.fontFamily,
         }
     },
     media: {
@@ -94,7 +98,9 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
             backgroundColor: value
         }),
         themeFont: (fontType: string) => {
-            const selectedFont = (fontType === "title") ? "Aquire" : "Poppins";
+            const selectedFont = (fontType === "title")
+                ? "$secondaryFont"
+                : "$secondaryFont";
 
             return {
                 fontFamily: selectedFont,
@@ -104,7 +110,6 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
         themeFontSize: (value: any) => {
             const usedBreakpoints = Object.keys(value) as Breakpoints[];
             const finalStyle: { [key: string]: {} } = {};
-            console.log(value);
 
             if (value.default) {
                 finalStyle["fontSize"] = value.default;

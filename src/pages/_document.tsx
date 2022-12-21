@@ -11,10 +11,6 @@ export default function MyDocument() {
         <Html lang="pt-br">
             <Head>
                 {CssBaseline.flush()}
-                <meta
-                    content="minimum-scale=1, initial-scale=1, width=device-width"
-                    name="viewport"
-                />
                 <style
                     id="stitches"
                     dangerouslySetInnerHTML={{ __html: getCssText() }}
