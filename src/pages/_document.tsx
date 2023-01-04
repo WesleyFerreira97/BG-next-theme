@@ -22,4 +22,4 @@ export default function MyDocument() {
             </body>
         </Html>
     );
-}
+};

@@ -22,6 +22,13 @@ export const CardWrap = styled("div", {
         transition: ".5s ease-in-out",
     },
 
+    "card-info": {
+
+        "&__subtitle": {
+            themeFont: "title"
+        }
+    }
+
 });
 
 export const CardInfoWrap = styled("div", {
@@ -32,6 +39,11 @@ export const CardInfoWrap = styled("div", {
 
     ".card-info__title": {
         paddingBottom: "$6",
+        themeFont: "title",
+        themeFontSize: {
+            default: "$4"
+        },
+        letterSpacing: "0.02rem"
     }
 });
 
@@ -39,7 +51,6 @@ export const CardImage = styled("div", {
     height: "100%",
     width: "100%",
     position: "absolute",
-
 
     img: {
         height: "100%",

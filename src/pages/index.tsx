@@ -8,7 +8,6 @@ import { GridProducts } from "../components/widgets/GridProducts";
 import { GridProductsSmall } from "../components/widgets/GridProductsSmall";
 import { GridOtherCategories } from "../components/widgets/GridOtherCategories";
 
-
 const Home: NextPage = () => {
     const router = useRouter();
 

@@ -1,20 +1,6 @@
 import { globalCss } from "stitches.config";
 
 export const globalStyles = globalCss({
-    "@font-face": [
-        {
-            fontFamily: "Aquire",
-            src: "local('Aquire'), url('/public/fonts/Aquire-BW0ox.otf'), format('otf')",
-            fontStyle: "normal",
-            fontWeight: "800",
-        },
-        {
-            fontFamily: "Poppins",
-            src: "local('Poppins'), url('public/fonts/a.ttf'), format('ttf')",
-            fontStyle: "normal",
-            fontWeight: "800",
-        }
-    ],
     "*, body, html": {
         margin: "0",
         padding: "0",
@@ -47,7 +33,6 @@ export const globalStyles = globalCss({
     ".swiper-pagination-bullet": {
         color: "red !important",
     },
-
     "@md": {
         html: {
             fontSize: "93.75%",

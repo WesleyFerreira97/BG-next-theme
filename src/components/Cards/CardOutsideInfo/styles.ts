@@ -21,7 +21,7 @@ export const CardImage = styled("div", {
 export const CardInfoWrap = styled("div", {
     position: "relative",
     zIndex: "2",
-    padding: "1rem",
+    padding: "0 1rem 1rem",
 
     ".card-info": {
         display: "flex",
@@ -33,19 +33,15 @@ export const CardInfoWrap = styled("div", {
             themeFont: "text",
             fontWeight: "600",
             themeFontSize: {
-                default: "$2",
-                sm: "$2",
-                md: "$3"
+                // default: "$3",
+                xs: "12px",
+                // md: "14px"
             }
         },
         "&__title": {
             color: "#4F4F4F",
-            marginBottom: "$1",
-            themeFontSize: {
-                default: "$3",
-                sm: "$3",
-                md: "$3"
-            }
+            paddingBottom: "8px",
+            paddingTop: "12px",
         },
         "&__price": {
             color: "$primary",
@@ -54,6 +50,9 @@ export const CardInfoWrap = styled("div", {
         },
         "&__installments": {
             color: "$neutralAlt",
+            fontWeight: "500",
+            fontSize: "$2"
         }
     }
 });
+

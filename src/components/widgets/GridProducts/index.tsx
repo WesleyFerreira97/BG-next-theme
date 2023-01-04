@@ -2,7 +2,6 @@ import React from "react";
 import { GridProductWrap } from "./styles";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
-import { CardProduct } from "../../Cards/CardProduct";
 import { useSelect } from "../../../hooks/useSelect";
 import { ProductProps } from "../../../types/product";
 import { Grid } from "@theme/layout/Grid";

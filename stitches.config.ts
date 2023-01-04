@@ -139,6 +139,8 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
                 };
             });
 
+            console.log(finalStyle);
+
             return finalStyle;
         },
     }
