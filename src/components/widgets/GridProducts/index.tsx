@@ -3,7 +3,7 @@ import { GridProductWrap } from "./styles";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
 import { useSelect } from "../../../hooks/useSelect";
-import { ProductProps } from "../../../types/product";
+import type { ProductProps, BucketProps } from "../../../types/product";
 import { Grid } from "@theme/layout/Grid";
 import { fakeProducts } from "../../../utils/fakeProducts";
 import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
@@ -20,12 +20,13 @@ const HeaderGridProducts = () => {
 };
 
 export function GridProducts() {
-    // const { selectResponse: products, selectResponseError } = useSelect<ProductProps>({
-    //     select: ["title", "description", "price"],
-    // });
+    const { selectResponse: products, selectResponseError } = useSelect<ProductProps & BucketProps>({
+        select: ["title", "description", "price", "product_categories", "bucket_name"],
+    });
 
     // TEMP
-    const products: any[] = fakeProducts;
+    // const products: any[] = fakeProducts;
+    console.log(products);
 
     return (
         <GridProductWrap>
@@ -37,7 +38,8 @@ export function GridProducts() {
                             <Grid.Item
                                 key={index}
                             >
-                                <CardOutsideInfo
+                                {product.title}
+                                {/* <CardOutsideInfo
                                     cardInfo={{
                                         ...product,
                                         image: PersonImage
@@ -45,7 +47,7 @@ export function GridProducts() {
                                     cardStyle={{
                                         aspectRatio: "3/4",
                                     }}
-                                />
+                                /> */}
                             </Grid.Item>
                         ))}
                 </Grid>
