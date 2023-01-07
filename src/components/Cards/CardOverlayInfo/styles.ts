@@ -14,7 +14,7 @@ export const CardWrap = styled("div", {
     },
 
     "&:hover .card-info__title": {
-        fontSize: "1.4rem"
+        fontSize: "1.7rem"
     },
 
     "&:hover .card-overlay": {
@@ -28,7 +28,6 @@ export const CardWrap = styled("div", {
             themeFont: "title"
         }
     }
-
 });
 
 export const CardInfoWrap = styled("div", {
@@ -37,13 +36,15 @@ export const CardInfoWrap = styled("div", {
     textAlign: "center",
     zIndex: 5,
 
+
     ".card-info__title": {
         paddingBottom: "$6",
-        themeFont: "title",
+        themeFont: "text",
+        fontWeight: "800",
         themeFontSize: {
-            default: "$4"
+            default: "$6"
         },
-        letterSpacing: "0.02rem"
+        letterSpacing: "0.1rem"
     }
 });
 
@@ -65,10 +66,10 @@ export const CardOverlay = styled("div", {
     position: "absolute",
     background: "#000",
     // Mobile default opacity 
-    opacity: .25,
+    opacity: .65,
     zIndex: 1,
 
     "@sm": {
-        opacity: .1,
+        opacity: .2,
     }
 });

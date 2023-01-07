@@ -48,3 +48,47 @@ export const fakeProducts = [
         categories: ["Camisas"]
     },
 ];
+
+
+export const fakeCategories = [
+    {
+        title: "Blusas",
+        subTitle: "25 Produtos",
+        description: "But like any other object, you can scale the object the Image fills.",
+        price: 500,
+        monthlyInstallments: "4x de R$ 122,00",
+        categories: ["25 Produtos"]
+    },
+    {
+        title: "Camisetas",
+        subTitle: "16 Produtos",
+        description: "But like any other object, you can scale the object the Image fills.",
+        price: 500,
+        monthlyInstallments: "4x de R$ 122,00",
+        categories: ["16 Produtos"]
+    },
+    {
+        title: "Conjuntos",
+        subTitle: "29 Produtos",
+        description: "But like any other object, you can scale the object the Image fills.",
+        price: 500,
+        monthlyInstallments: "4x de R$ 122,00",
+        categories: ["29 Produtos"]
+    },
+    {
+        title: "Outros",
+        subTitle: "85 Produtos",
+        description: "But like any other object, you can scale the object the Image fills.",
+        price: 500,
+        monthlyInstallments: "4x de R$ 122,00",
+        categories: ["85 Produtos"]
+    },
+    {
+        title: "Sandalias",
+        subTitle: "17 Produtos",
+        description: "But like any other object, you can scale the object the Image fills.",
+        price: 500,
+        monthlyInstallments: "4x de R$ 122,00",
+        categories: ["17 Produtos"]
+    },
+];

@@ -6,12 +6,12 @@ import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
 import { CardOverlayInfo } from "../../Cards/CardOverlayInfo";
 import { Columns } from "phosphor-react";
-import { fakeProducts } from "src/utils/fakeProducts";
-import PersonImage from "public/images/people1.jpg";
+import { fakeCategories } from "src/utils/fakeProducts";
+import PersonImage from "public/images/people3.jpg";
 
 export function GridOtherCategories() {
     // TEMP
-    const products: any[] = fakeProducts;
+    const products: any[] = fakeCategories;
 
     return (
         <GridWrap>
