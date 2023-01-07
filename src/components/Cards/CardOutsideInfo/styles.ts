@@ -50,8 +50,9 @@ export const CardInfoWrap = styled("div", {
         },
         "&__installments": {
             color: "$neutralAlt",
-            fontWeight: "500",
-            fontSize: "$2"
+            fontWeight: "600",
+            fontSize: "12px",
+            letterSpacing: "0.025rem"
         }
     }
 });

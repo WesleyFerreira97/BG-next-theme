@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     const router = useRouter();
 
     return (
-        <>
+        <div style={{ background: "#DBD8EA" }}>
             {/* <MainNavbar />
             <HomeCarousel /> */}
             <button onClick={() => router.push("/single")}>Go single</button>
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
             <GridProducts />
             <GridOtherCategories />
             <GridProductsSmall />
-        </>
+        </div>
     );
 };
 

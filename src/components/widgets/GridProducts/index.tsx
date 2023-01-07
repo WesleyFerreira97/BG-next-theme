@@ -20,13 +20,12 @@ const HeaderGridProducts = () => {
 };
 
 export function GridProducts() {
-    const { selectResponse: products, selectResponseError } = useSelect<ProductProps & BucketProps>({
-        select: ["title", "description", "price", "product_categories", "bucket_name"],
-    });
+    // const { selectResponse: products, selectResponseError } = useSelect<ProductProps & BucketProps>({
+    //     select: ["title", "description", "price", "product_categories", "bucket_name"],
+    // });
 
     // TEMP
-    // const products: any[] = fakeProducts;
-    console.log(products);
+    const products: any[] = fakeProducts;
 
     return (
         <GridProductWrap>
@@ -38,8 +37,8 @@ export function GridProducts() {
                             <Grid.Item
                                 key={index}
                             >
-                                {product.title}
-                                {/* <CardOutsideInfo
+                                {/* {product.title} */}
+                                <CardOutsideInfo
                                     cardInfo={{
                                         ...product,
                                         image: PersonImage
@@ -47,7 +46,7 @@ export function GridProducts() {
                                     cardStyle={{
                                         aspectRatio: "3/4",
                                     }}
-                                /> */}
+                                />
                             </Grid.Item>
                         ))}
                 </Grid>
