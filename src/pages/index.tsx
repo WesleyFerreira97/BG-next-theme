@@ -13,8 +13,8 @@ const Home: NextPage = () => {
 
     return (
         <div style={{ background: "#DBD8EA" }}>
-            {/* <MainNavbar />
-            <HomeCarousel /> */}
+            {/* <MainNavbar /> */}
+            <HomeCarousel />
             <button onClick={() => router.push("/single")}>Go single</button>
             {/* <GridMainCategories /> */}
             <GridProducts />
