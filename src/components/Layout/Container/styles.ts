@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import { styled } from "stitches.config";
 import { BreakpointProps } from ".";
 
-export const ContainerWrap = styled.div<Partial<BreakpointProps>>`
-    width: ${props => props.xs + "%"};
+export const ContainerWrap = styled("div", {
+    /* width: ${props => props.xs + "%"};
 
     @media (min-width: 650px) {
         width: ${props => props.sm + "%"};
@@ -18,10 +18,7 @@ export const ContainerWrap = styled.div<Partial<BreakpointProps>>`
 
     @media (min-width: 1400px) {
         width: ${props => props.sm + "%"};
-    }
-`;
+    } */
+});
 
-ContainerWrap.defaultProps = {
-    xs: 95,
-    lg: 80,
-};
+

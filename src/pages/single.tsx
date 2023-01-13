@@ -1,16 +1,16 @@
 import React from "react";
 import { Container } from "../components/Layout/Container";
 import { MainNavbar } from "../components/MainNavbar";
-import styled from "styled-components";
+import { styled } from "stitches.config";
 import { NavbarCategories } from "../components/NavbarCategories";
 import { SingleProduct } from "../components/SingleProduct";
 
-const SingleWrap = styled.div`
-    min-height: 100vh;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-`;
+export const SingleWrap = styled("div", {
+    minHeight: "100vh",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+});
 
 export default function Single() {
     return (

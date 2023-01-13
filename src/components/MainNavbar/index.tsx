@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { MainNavbarWrap } from "./styles";
 import { List, ShoppingCartSimple } from "phosphor-react";
 import { Container } from "../Layout/Container";
