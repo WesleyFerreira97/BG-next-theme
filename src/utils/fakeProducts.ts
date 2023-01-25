@@ -92,3 +92,33 @@ export const fakeCategories = [
         categories: ["17 Produtos"]
     },
 ];
+
+export const carouselItemsData = {
+    item1: {
+        title: "Conjuntos",
+        text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
+        buttons: {
+            seeMore: "see something",
+            previewButton: "preview",
+        },
+        image: "Woman1"
+    },
+    item2: {
+        title: "Regatas",
+        text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
+        buttons: {
+            seeMore: "see something",
+            previewButton: "preview",
+        },
+        image: "Woman1"
+    },
+    item3: {
+        title: "Camisas",
+        text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
+        buttons: {
+            seeMore: "see something",
+            previewButton: "preview",
+        },
+        image: "Woman1"
+    },
+};

@@ -7,6 +7,7 @@ import { Header } from "../components/WidgetsHeader";
 import { GridProducts } from "../components/widgets/GridProducts";
 import { GridProductsSmall } from "../components/widgets/GridProductsSmall";
 import { GridOtherCategories } from "../components/widgets/GridOtherCategories";
+import { carouselItemsData } from "src/utils/fakeProducts";
 
 const Home: NextPage = () => {
     const router = useRouter();
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
     return (
         <div style={{ background: "#DBD8EA" }}>
             {/* <MainNavbar /> */}
-            <HomeCarousel />
+            <HomeCarousel carouselItemsData={carouselItemsData} />
             {/* <button onClick={() => router.push("/single")}>Go single</button> */}
             {/* <GridMainCategories /> */}
             <GridProducts />

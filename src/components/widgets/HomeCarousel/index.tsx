@@ -1,42 +1,28 @@
 import React from "react";
-import Woman1 from "../../../../public/images/woman1.png";
+import Image from "next/image";
+import { CarouselItem } from "../../CarouselItem";
+import { Button, Container, red } from "@nextui-org/react";
 import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { CarouselItem } from "../../CarouselItem";
-import Image from "next/image";
-import { Button, Container, red } from "@nextui-org/react";
 
-const carouselItemsData = {
-    item1: {
-        title: "Conjuntos",
-        text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
-        buttons: {
-            seeMore: "see something",
-            previewButton: "preview",
-        },
-        image: "Woman1"
-    },
-    item2: {
-        title: "Regatas",
-        text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
-        buttons: {
-            seeMore: "see something",
-            previewButton: "preview",
-        },
-        image: "Woman1"
-    },
-    item3: {
-        title: "Camisas",
-        text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
-        buttons: {
-            seeMore: "see something",
-            previewButton: "preview",
-        },
-        image: "Woman1"
-    },
-};
+import { carouselItemsData } from "src/utils/fakeProducts";
+import Woman1 from "../../../../public/images/people1.jpg";
 
-export function HomeCarousel() {
+type CarouselDataProps = {
+    carouselItemsData: {
+        [key: string]: {
+            title: string;
+            text: string;
+            buttons: {
+                seeMore: string;
+                previewButton?: string;
+            }
+        }
+    }
+
+}
+
+export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
 
     return (
         <>
@@ -60,6 +46,7 @@ export function HomeCarousel() {
                                 <Image
                                     alt="Image"
                                     src={Woman1}
+                                    quality={100}
                                 />
                             </CarouselItem.Image>
                             <CarouselItem.Title>

@@ -166,7 +166,7 @@ export const ProductInfo = styled.div`
     .cart-button {
         background-color: #27AE60 !important;
         border-radius: 0 !important;
-
+ 
         span {
             margin-left: .5rem;
         }
