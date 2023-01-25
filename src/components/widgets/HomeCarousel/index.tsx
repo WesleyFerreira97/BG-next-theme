@@ -6,7 +6,7 @@ import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { carouselItemsData } from "src/utils/fakeProducts";
-import Woman1 from "../../../../public/images/people1.jpg";
+import Woman1 from "../../../../public/images/woman1.png";
 
 type CarouselDataProps = {
     carouselItemsData: {
@@ -47,6 +47,9 @@ export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
                                     alt="Image"
                                     src={Woman1}
                                     quality={100}
+                                    // TEMP TEMP TEMP  TEMP TEMP TEMP 
+                                    // TEMP TEMP TEMP  TEMP TEMP TEMP 
+                                    unoptimized={true}
                                 />
                             </CarouselItem.Image>
                             <CarouselItem.Title>
@@ -61,7 +64,7 @@ export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
                                     {item.buttons.seeMore} */}
                                     <Button
                                         css={{
-                                            // backgroundColor: theme.colors.neutral,
+                                            backgroundColor: "#fff",
                                             // color: theme.colors.secondary,
                                             padding: "1.5rem .5rem",
                                             border: "3px solid #fff",

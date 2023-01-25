@@ -4,9 +4,6 @@ export const CarouselItemWrap = styled("div", {
     height: "100vh",
     width: "100%",
     position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "flex-end",
     overflow: "hidden",
 
     ".item__content": {
@@ -17,7 +14,7 @@ export const CarouselItemWrap = styled("div", {
         alignItems: "center",
         zIndex: "2",
         textAlign: "center",
-        padding: "0 2rem",
+        // padding: "0 2rem",
     }
 });
 
@@ -65,5 +62,6 @@ export const ImageBackground = styled("div", {
     "> *": {
         width: "100% !important",
         height: "100% !important",
+        objectFit: "cover",
     }
 });
