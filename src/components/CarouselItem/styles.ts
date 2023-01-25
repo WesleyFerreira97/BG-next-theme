@@ -22,7 +22,13 @@ export const Title = styled("h1", {
     color: "$neutral",
     themeFont: "title",
     fontWeight: 700,
-    fontSize: "7rem",
+    // fontSize: "7rem",
+    themeFontSize: {
+        xs: "2.25rem",
+        sm: "4rem",
+        md: "5rem",
+        lg: "7rem"
+    },
     paddingBottom: "2rem",
 });
 
@@ -30,6 +36,11 @@ export const Text = styled("h1", {
     color: "$neutral",
     themeFont: "text",
     fontWeight: 300,
+    themeFontSize: {
+        xs: "1rem",
+        md: "1.15rem",
+        lg: "1.25rem"
+    },
 });
 
 export const Buttons = styled("div", {

@@ -65,7 +65,6 @@ export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
                                     <Button
                                         css={{
                                             backgroundColor: "#fff",
-                                            // color: theme.colors.secondary,
                                             padding: "1.5rem .5rem",
                                             border: "3px solid #fff",
                                             width: "50px",
