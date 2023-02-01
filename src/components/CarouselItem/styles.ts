@@ -14,7 +14,6 @@ export const CarouselItemWrap = styled("div", {
         alignItems: "center",
         zIndex: "2",
         textAlign: "center",
-        // padding: "0 2rem",
     }
 });
 
@@ -22,6 +21,7 @@ export const Title = styled("h1", {
     color: "$neutral",
     themeFont: "title",
     fontWeight: 700,
+    overflowWrap: "anywhere",
     // fontSize: "7rem",
     themeFontSize: {
         xs: "48.83px",
@@ -37,7 +37,8 @@ export const Text = styled("h1", {
     themeFont: "text",
     fontWeight: 300,
     themeFontSize: {
-        xs: "1rem",
+        xs: ".9rem",
+        sm: "1rem",
         md: "1.15rem",
         lg: "1.25rem"
     },
@@ -46,11 +47,20 @@ export const Text = styled("h1", {
 export const Buttons = styled("div", {
     height: "1rem",
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     gap: "1rem",
     paddingTop: "2.5rem",
+    maxWidth: "50px",
 
-
+    ".carousel-button, .carousel-button__outline": {
+        backgroundColor: "#fff",
+        padding: "1.4rem .3rem",
+        border: "3px solid #fff",
+    },
+    ".carousel-button__outline": {
+        backgroundColor: "transparent"
+    },
     ".button__text": {
         themeFont: "text",
         fontWeight: "400",
@@ -61,10 +71,17 @@ export const Buttons = styled("div", {
             color: "#fff",
         }
     },
-
     "> *": {
         borderRadius: "0",
+    },
+    "@sm": {
+        flexDirection: "row",
+
+        ".carousel-button, .carousel-button__outline": {
+            padding: "1.5rem .5rem",
+        }
     }
+
 });
 
 export const ImageBackground = styled("div", {

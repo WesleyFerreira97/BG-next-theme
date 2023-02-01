@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { CarouselItem } from "../../CarouselItem";
 import { Button, Container, red } from "@nextui-org/react";
+import { CarouselItem } from "../../CarouselItem";
 import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { MainContentWrap } from "./styles";
 import { carouselItemsData } from "src/utils/fakeProducts";
 import Woman1 from "../../../../public/images/woman1.png";
 
@@ -25,7 +25,7 @@ type CarouselDataProps = {
 export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
 
     return (
-        <>
+        <MainContentWrap>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 slidesPerView={1}
@@ -50,10 +50,11 @@ export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
                                     unoptimized={true}
                                 />
                             </CarouselItem.Image>
-                            <CarouselItem.Title>
-                                {item.title}
-                            </CarouselItem.Title>
-                            <Container xs>
+                            <Container xs className="info-container">
+                                <CarouselItem.Title>
+                                    {item.title}
+                                </CarouselItem.Title>
+
                                 <CarouselItem.Text>
                                     {item.text}
                                 </CarouselItem.Text>
@@ -61,23 +62,14 @@ export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
                                     {/* {item.buttons.previewButton}
                                     {item.buttons.seeMore} */}
                                     <Button
-                                        css={{
-                                            backgroundColor: "#fff",
-                                            padding: "1.5rem .5rem",
-                                            border: "3px solid #fff",
-                                            width: "50px",
-                                        }}
+                                        className="carousel-button"
                                     >
                                         <span className='button__text'>
                                             Veja Mais
                                         </span>
                                     </Button>
                                     <Button
-                                        css={{
-                                            backgroundColor: "transparent",
-                                            border: "3px solid #fff",
-                                            padding: "1.5rem .5rem",
-                                        }}
+                                        className="carousel-button__outline"
                                     >
                                         <span className='button__text-outline'>
                                             + Categorias
@@ -90,6 +82,6 @@ export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
                 ))}
 
             </Swiper>
-        </>
+        </MainContentWrap>
     );
 }
