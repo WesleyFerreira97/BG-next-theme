@@ -23,7 +23,7 @@ const aquire = localFont({
     ]
 });
 
-const poppins = Poppins({ weight: ["600"], });
+const poppins = Poppins({ weight: ["300", "400", "500"], });
 
 export const themeSizes: { [key: number]: string } = {
     1: "0.5rem",  // 8px
@@ -120,7 +120,8 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
 
             return {
                 fontFamily: selectedFont,
-                fontSmooth: "always"
+                fontSmooth: "always",
+                fontWeight: 300
             };
         },
         themeFontSize: (value: any) => {

@@ -24,10 +24,10 @@ export const Title = styled("h1", {
     fontWeight: 700,
     // fontSize: "7rem",
     themeFontSize: {
-        xs: "2.25rem",
-        sm: "4rem",
-        md: "5rem",
-        lg: "7rem"
+        xs: "48.83px",
+        sm: "61.04px",
+        md: "76.29px",
+        lg: "95.37px"
     },
     paddingBottom: "2rem",
 });
@@ -50,11 +50,14 @@ export const Buttons = styled("div", {
     gap: "1rem",
     paddingTop: "2.5rem",
 
+
     ".button__text": {
+        themeFont: "text",
         fontWeight: "400",
         color: "#000",
 
         "&-outline": {
+            themeFont: "text",
             color: "#fff",
         }
     },

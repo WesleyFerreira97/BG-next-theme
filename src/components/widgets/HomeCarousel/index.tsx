@@ -47,8 +47,6 @@ export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
                                     alt="Image"
                                     src={Woman1}
                                     quality={100}
-                                    // TEMP TEMP TEMP  TEMP TEMP TEMP 
-                                    // TEMP TEMP TEMP  TEMP TEMP TEMP 
                                     unoptimized={true}
                                 />
                             </CarouselItem.Image>
