@@ -29,13 +29,14 @@ export const Title = styled("h1", {
         md: "76.29px",
         lg: "95.37px"
     },
-    paddingBottom: "2rem",
+    marginBottom: ".75rem",
 });
 
 export const Text = styled("h1", {
     color: "$neutral",
     themeFont: "text",
     fontWeight: 300,
+    marginBottom: "1.25rem",
     themeFontSize: {
         xs: ".9rem",
         sm: "1rem",
@@ -45,18 +46,19 @@ export const Text = styled("h1", {
 });
 
 export const Buttons = styled("div", {
-    height: "1rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    alignItems: "center",
     gap: "1rem",
-    paddingTop: "2.5rem",
-    maxWidth: "50px",
+    paddingTop: "1.5rem",
+
 
     ".carousel-button, .carousel-button__outline": {
         backgroundColor: "#fff",
-        padding: "1.4rem .3rem",
+        padding: "1.1rem .3rem",
         border: "3px solid #fff",
+        maxWidth: "50px",
     },
     ".carousel-button__outline": {
         backgroundColor: "transparent"
@@ -76,6 +78,7 @@ export const Buttons = styled("div", {
     },
     "@sm": {
         flexDirection: "row",
+
 
         ".carousel-button, .carousel-button__outline": {
             padding: "1.5rem .5rem",
