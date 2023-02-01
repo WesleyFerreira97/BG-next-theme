@@ -1,6 +1,9 @@
 import { globalCss } from "stitches.config";
 
 export const globalStyles = globalCss({
+    ":root": {
+        "--swiper-theme-color": "#fff !important"
+    },
     "*, body, html": {
         margin: "0",
         padding: "0",
@@ -19,29 +22,41 @@ export const globalStyles = globalCss({
     "ul, li": {
         margin: "0",
     },
-
+    ".swiper-button-prev:after, .swiper-button-next:after": {
+        fontSize: "25px !important",
+    },
     ".swiper-button-prev, .swiper-button-next": {
         marginTop: "-40px",
         borderRadius: "6px",
         padding: "20px",
-        paddingTop: "40px",
-        paddingBottom: "40px",
+        paddingTop: "25px",
+        paddingBottom: "25px",
         color: "#E4DCCF !important",
         fill: "#E4DCCF 0.5 !important",
-        opacity: ".3",
+        opacity: ".5",
+        top: "unset !important",
+        bottom: ".5rem !important"
+    },
+    ".swiper-pagination": {
+        bottom: "1.25rem !important",
     },
     ".swiper-pagination-bullet": {
-        color: "red !important",
+        // color: "red !important",
+        opacity: ".8 !important",
     },
     "@md": {
-        html: {
-            fontSize: "93.75%",
-        }
+        ".swiper-button-prev, .swiper-button-next": {
+            top: "50% !important",
+            bottom: "unset !important"
+        },
     },
 
     "@sm": {
         html: {
             fontSize: "87.5%",
-        }
-    }
+        },
+        ".swiper-button-prev:after, .swiper-button-next:after": {
+            fontSize: "35px !important",
+        },
+    },
 });
