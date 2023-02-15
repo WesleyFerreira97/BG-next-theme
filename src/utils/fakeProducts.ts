@@ -1,3 +1,6 @@
+import Woman1 from "../../public/images/woman1.png";
+import Woman3 from "../../public/images/woman3.png";
+
 export const fakeProducts = [
     {
         title: "BLUSA SAYUR GREEN",
@@ -97,28 +100,28 @@ export const carouselItemsData = {
     item1: {
         title: "Conjuntos",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
+        image: Woman1,
         buttons: {
             seeMore: "see something",
             previewButton: "preview",
         },
-        image: "Woman1"
     },
     item2: {
         title: "Regatas",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
+        image: Woman3,
         buttons: {
             seeMore: "see something",
             previewButton: "preview",
         },
-        image: "Woman1"
     },
     item3: {
         title: "Camisas",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
+        image: Woman1,
         buttons: {
             seeMore: "see something",
             previewButton: "preview",
         },
-        image: "Woman1"
     },
 };

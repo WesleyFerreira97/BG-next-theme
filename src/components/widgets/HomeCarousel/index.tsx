@@ -13,6 +13,7 @@ type CarouselDataProps = {
         [key: string]: {
             title: string;
             text: string;
+            image: any;
             buttons: {
                 seeMore: string;
                 previewButton?: string;
@@ -23,6 +24,7 @@ type CarouselDataProps = {
 }
 
 export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
+    console.log(carouselItemsData);
 
     return (
         <MainContentWrap>
@@ -45,7 +47,7 @@ export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
                             <CarouselItem.Image>
                                 <Image
                                     alt="Image"
-                                    src={Woman1}
+                                    src={item.image}
                                     quality={100}
                                     unoptimized={true}
                                 />
