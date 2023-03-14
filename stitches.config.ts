@@ -23,7 +23,10 @@ const aquire = localFont({
     ]
 });
 
-const poppins = Poppins({ weight: ["300", "400", "500"], });
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["300", "400", "500"],
+});
 
 export const themeSizes: { [key: number]: string } = {
     1: "0.5rem",  // 8px

@@ -24,7 +24,6 @@ type CarouselDataProps = {
 }
 
 export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
-    console.log(carouselItemsData);
 
     return (
         <MainContentWrap>

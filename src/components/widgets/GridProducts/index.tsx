@@ -8,6 +8,7 @@ import { Grid } from "@theme/layout/Grid";
 import { fakeProducts } from "../../../utils/fakeProducts";
 import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
 import PersonImage from "public/images/people4.jpg";
+import Link from "next/link";
 
 const HeaderGridProducts = () => {
     return (
@@ -20,38 +21,52 @@ const HeaderGridProducts = () => {
 };
 
 export function GridProducts() {
-    // const { selectResponse: products, selectResponseError } = useSelect<ProductProps & BucketProps>({
-    //     select: ["title", "description", "price", "product_categories", "bucket_name"],
-    // });
+    const { selectResponse: products, selectResponseError } = useSelect<ProductProps & BucketProps>({
+        select: ["title", "description", "price", "product_categories", "bucket_name"],
+        match: { title: "Brabo" }
+    });
+
 
     // TEMP
-    const products: any[] = fakeProducts;
+    // const products: any[] = fakeProducts;
 
     return (
         <GridProductWrap>
             <Container sm>
                 <HeaderGridProducts />
                 <Grid columns={{ xs: 2, sm: 3 }} gap={{ xs: 1, sm: 2 }}>
+                    {console.log(products) as any}
                     {products &&
                         products.map((product, index) => (
-                            <Grid.Item
+                            <Link
+                                href={`/single?id=54d6f4sd5`}
                                 key={index}
+
                             >
-                                {/* {product.title} */}
-                                <CardOutsideInfo
-                                    cardInfo={{
-                                        ...product,
-                                        image: PersonImage
-                                    }}
-                                    cardStyle={{
-                                        aspectRatio: "3/4",
-                                    }}
-                                />
-                            </Grid.Item>
+                                <Grid.Item>
+                                    {product.title}
+                                    {/* <CardOutsideInfo
+                                        cardInfo={{
+                                            ...product,
+                                            image: PersonImage,
+                                        }}
+                                        cardStyle={{
+                                            aspectRatio: "3/4",
+                                        }}
+                                    /> */}
+
+                                </Grid.Item>
+                            </Link>
                         ))}
                 </Grid>
             </Container>
         </GridProductWrap>
     );
 }
+
+
+
+
+
+
 

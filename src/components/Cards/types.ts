@@ -2,7 +2,7 @@
 type CardInfoProps = {
     title: string,
     subtitle?: string,
-    image: string,
+    image: HTMLImageElement | string,
     link?: string,
     price?: number,
     monthlyInstallments?: string,

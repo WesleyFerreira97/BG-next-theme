@@ -20,6 +20,7 @@ export type ProductProps = {
     sizes_available: any,
     price?: number,
     available: boolean,
+    image: HTMLImageElement | string,
 }
 
 export type BucketProps = {
