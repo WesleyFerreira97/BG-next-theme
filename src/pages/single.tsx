@@ -17,7 +17,7 @@ export default function Single() {
         <SingleWrap>
             <MainNavbar position="relative" bgColor="#520476" />
             <NavbarCategories />
-            {/* <SingleProduct /> */}
+            <SingleProduct />
         </SingleWrap>
     );
 }

@@ -16,6 +16,8 @@ export function SingleProduct() {
                             <div className='grid-thumbnails__item'>
                                 <Image
                                     src={Woman2.src}
+                                    width={100}
+                                    height={100}
                                     alt="Main product image"
                                 />
                             </div>
@@ -23,12 +25,16 @@ export function SingleProduct() {
                                 <Image
                                     src={Woman2.src}
                                     alt="Main product image"
+                                    width={100}
+                                    height={100}
                                 />
                             </div>
                             <div className='grid-thumbnails__item'>
                                 <Image
                                     src={Woman2.src}
                                     alt="Main product image"
+                                    width={100}
+                                    height={100}
                                 />
                             </div>
                         </div>
@@ -36,6 +42,8 @@ export function SingleProduct() {
                             <Image
                                 src={Woman2.src}
                                 alt="Main product image"
+                                width={100}
+                                height={100}
                             />
                         </div>
 

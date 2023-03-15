@@ -23,7 +23,6 @@ const HeaderGridProducts = () => {
 export function GridProducts() {
     const { selectResponse: products, selectResponseError } = useSelect<ProductProps & BucketProps>({
         select: ["title", "description", "price", "product_categories", "bucket_name"],
-        match: { title: "Brabo" }
     });
 
 
