@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductGallery, ProductInfo, SingleProductWrap } from "./styles";
-import Woman2 from "../../../public/images/woman2.jpg";
+import Woman2 from "../../../public/images/woman3.png";
 import Image from "next/image";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
@@ -16,25 +16,22 @@ export function SingleProduct() {
                             <div className='grid-thumbnails__item'>
                                 <Image
                                     src={Woman2.src}
-                                    width={100}
-                                    height={100}
                                     alt="Main product image"
+                                    fill={true}
                                 />
                             </div>
                             <div className='grid-thumbnails__item'>
                                 <Image
                                     src={Woman2.src}
                                     alt="Main product image"
-                                    width={100}
-                                    height={100}
+                                    fill={true}
                                 />
                             </div>
                             <div className='grid-thumbnails__item'>
                                 <Image
                                     src={Woman2.src}
                                     alt="Main product image"
-                                    width={100}
-                                    height={100}
+                                    fill={true}
                                 />
                             </div>
                         </div>
@@ -42,8 +39,8 @@ export function SingleProduct() {
                             <Image
                                 src={Woman2.src}
                                 alt="Main product image"
-                                width={100}
-                                height={100}
+                                quality={100}
+                                fill={true}
                             />
                         </div>
 
