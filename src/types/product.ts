@@ -11,6 +11,7 @@ export type ProductSizesLetter = {
 export type ProductTypes = ProductSizesNumber | ProductSizesLetter;
 
 export type ProductProps = {
+    id?: string,
     title: string,
     description?: string,
     categories?: string[],

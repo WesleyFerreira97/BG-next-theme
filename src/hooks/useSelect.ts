@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { supaDb } from "../services/supadb";
 
 type UseSelectProps<T> = {
-    select: (keyof T)[] | "*";
+    select?: (keyof T)[] | "*";
     match?: Partial<T>;
 }
 

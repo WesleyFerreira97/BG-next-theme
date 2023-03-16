@@ -49,6 +49,7 @@ export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
                                     src={item.image}
                                     quality={100}
                                     unoptimized={true}
+                                    fill={true}
                                 />
                             </CarouselItem.Image>
                             <Container xs className="info-container">

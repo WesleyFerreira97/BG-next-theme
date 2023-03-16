@@ -22,7 +22,7 @@ const HeaderGridProducts = () => {
 
 export function GridProducts() {
     const { selectResponse: products, selectResponseError } = useSelect<ProductProps & BucketProps>({
-        select: ["title", "description", "price", "product_categories", "bucket_name"],
+        select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
     });
 
 
@@ -38,10 +38,10 @@ export function GridProducts() {
                     {products &&
                         products.map((product, index) => (
                             <Link
-                                href={`/single?id=54d6f4sd5`}
+                                href={`/single?product=${product.bucket_folder}`}
                                 key={index}
-
                             >
+                                {/* {console.log(product.bucket_folder) as any} */}
                                 <Grid.Item>
                                     {product.title}
                                     {/* <CardOutsideInfo
