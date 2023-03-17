@@ -17,11 +17,14 @@ export const globalStyles = globalCss({
     a: {
         color: "inherit",
         textDecoration: "none",
+        padding: "inherit",
+        all: "unset",
     },
 
     "ul, li": {
         margin: "0",
     },
+
     ".swiper-button-prev:after, .swiper-button-next:after": {
         fontSize: "25px !important",
     },

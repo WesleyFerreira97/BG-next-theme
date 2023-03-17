@@ -2,7 +2,7 @@ import { styled } from "stitches.config";
 import { MainNavbarProps } from ".";
 
 export const MainNavbarWrap = styled("div", {
-    height: "60px",
+    height: "70px",
     width: "100%",
     display: "flex",
     justifyContent: "center",
@@ -81,3 +81,27 @@ export const MainNavbarWrap = styled("div", {
 });
 
 
+export const MainMenuWrap = styled("div", {
+    minHeight: "30px",
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    background: "#D9D9D9",
+    padding: "0 1.5rem",
+
+    ".main-menu": {
+        display: "flex",
+
+    },
+    ".main-menu__item": {
+        color: "#7D7D7D",
+        padding: ".75rem",
+        themeFont: "titlee",
+
+        "&:hover": {
+            backgroundColor: "$primary",
+            color: "$neutral",
+            transition: "all .3s ease-in-out",
+        }
+    },
+})

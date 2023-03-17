@@ -1,5 +1,5 @@
 import React from "react";
-import { MainNavbarWrap } from "./styles";
+import { MainMenuWrap, MainNavbarWrap } from "./styles";
 import { List, ShoppingCartSimple } from "phosphor-react";
 import { Container } from "../Layout/Container";
 
@@ -11,24 +11,39 @@ export type MainNavbarProps = {
 export function MainNavbar(props: MainNavbarProps) {
 
     return (
-        <MainNavbarWrap {...props}>
-            <Container>
-                <div className='navbar__menu'>
-                    <div className='menu-icon'>
-                        <List size={25} />
+        <>
+            <MainNavbarWrap {...props}>
+                <Container>
+                    <div className='navbar__menu'>
+                        <div className='menu-icon'>
+                            <List size={25} />
+                        </div>
                     </div>
-                </div>
-                <div className='navbar__brand'>
-                    <span className='brand--desktop'>Bela Garota</span>
-                    <span className='brand--mobile'>BG</span>
-                </div>
-                <div className='navbar__cart'>
-                    <div className='cart-icon'>
-                        <ShoppingCartSimple size={25} />
+                    <div className='navbar__brand'>
+                        <span className='brand--desktop'>Bela Garota</span>
+                        <span className='brand--mobile'>BG</span>
                     </div>
-                </div>
-            </Container>
-        </MainNavbarWrap>
+                    <div className='navbar__cart'>
+                        <div className='cart-icon'>
+                            <ShoppingCartSimple size={25} />
+                        </div>
+                    </div>
+                </Container>
+            </MainNavbarWrap>
+            <MainMenuWrap>
+                <ul className="main-menu">
+                    <li className="main-menu__item">Ínicio</li>
+                    <li className="main-menu__item">
+                        <a href="#">
+                            Camisas
+                        </a>
+                    </li>
+                    <li className="main-menu__item"><a href="#">Regatas</a></li>
+                    <li className="main-menu__item"><a href="#">Conjuntos</a></li>
+                    <li className="main-menu__item"><a href="#">Promoções</a></li>
+                </ul>
+            </MainMenuWrap>
+        </>
     );
 }
 
