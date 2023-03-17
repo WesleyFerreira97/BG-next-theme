@@ -14,7 +14,7 @@ export const SingleWrap = styled("div", {
     display: "flex",
     flexDirection: "column",
 });
-// select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
+
 type SingleData = Partial<ProductProps> & Partial<BucketProps>;
 
 export default function Single() {
@@ -32,11 +32,9 @@ export default function Single() {
 
     return (
         <SingleWrap>
-            <MainNavbar position="relative" bgColor="#520476" />
+            <MainNavbar position="relative" bgColor="primary" />
             <NavbarCategories />
-            {/* {console.log(products)} */}
-            <SingleProduct />
+            {/* <SingleProduct /> */}
         </SingleWrap>
     );
 }
-

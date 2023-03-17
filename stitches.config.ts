@@ -46,7 +46,7 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
     prefix: "bg-theme",
     theme: {
         colors: {
-            primary: "#68B984",
+            primary: "#D22779",
             primaryAlt: "#FF6500",
             secondary: "#3F3351",
             secondaryAlt: "#0060B1",

@@ -4,17 +4,18 @@ import { List, ShoppingCartSimple } from "phosphor-react";
 import { Container } from "../Layout/Container";
 
 export type MainNavbarProps = {
-    bgColor?: string,
-    position?: string,
+    bgColor?: "primary" | "transparent",
+    position?: "absolute" | "relative",
 }
 
 export function MainNavbar(props: MainNavbarProps) {
+
     return (
         <MainNavbarWrap {...props}>
             <Container>
                 <div className='navbar__menu'>
                     <div className='menu-icon'>
-                        <List />
+                        <List size={25} />
                     </div>
                 </div>
                 <div className='navbar__brand'>
@@ -23,7 +24,7 @@ export function MainNavbar(props: MainNavbarProps) {
                 </div>
                 <div className='navbar__cart'>
                     <div className='cart-icon'>
-                        <ShoppingCartSimple />
+                        <ShoppingCartSimple size={25} />
                     </div>
                 </div>
             </Container>
