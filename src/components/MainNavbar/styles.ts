@@ -19,20 +19,20 @@ export const MainNavbarWrap = styled("div", {
         }
     },
 
-    "&:after": {
-        content: "''",
-        position: "absolute",
-        top: "0",
-        height: "100%",
-        width: "100%",
-        opacity: 0.2
-        /* background-color: ${props => props.theme.colors.secondary}; */
-    },
+    // "&:after": {
+    //     content: "''",
+    //     position: "absolute",
+    //     top: "0",
+    //     height: "100%",
+    //     width: "100%",
+    //     opacity: 0.2
+    //     /* background-color: ${props => props.theme.colors.secondary}; */
+    // },
 
     "> *": {
         width: "100%",
         display: "flex",
-        justifyContent: "space-between",
+        // justifyContent: "space-between",
         alignItems: "center",
         gap: ".5rem",
         padding: "0 1.5rem",
@@ -86,12 +86,12 @@ export const MainMenuWrap = styled("div", {
     width: "100%",
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
     background: "#D9D9D9",
     padding: "0 1.5rem",
 
     ".main-menu": {
         display: "flex",
-
     },
     ".main-menu__item": {
         color: "#7D7D7D",

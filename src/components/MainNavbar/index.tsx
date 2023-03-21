@@ -31,17 +31,19 @@ export function MainNavbar(props: MainNavbarProps) {
                 </Container>
             </MainNavbarWrap>
             <MainMenuWrap>
-                <ul className="main-menu">
-                    <li className="main-menu__item">Ínicio</li>
-                    <li className="main-menu__item">
-                        <a href="#">
-                            Camisas
-                        </a>
-                    </li>
-                    <li className="main-menu__item"><a href="#">Regatas</a></li>
-                    <li className="main-menu__item"><a href="#">Conjuntos</a></li>
-                    <li className="main-menu__item"><a href="#">Promoções</a></li>
-                </ul>
+                <Container>
+                    <ul className="main-menu">
+                        <li className="main-menu__item">Ínicio</li>
+                        <li className="main-menu__item">
+                            <a href="#">
+                                Camisas
+                            </a>
+                        </li>
+                        <li className="main-menu__item"><a href="#">Regatas</a></li>
+                        <li className="main-menu__item"><a href="#">Conjuntos</a></li>
+                        <li className="main-menu__item"><a href="#">Promoções</a></li>
+                    </ul>
+                </Container>
             </MainMenuWrap>
         </>
     );
