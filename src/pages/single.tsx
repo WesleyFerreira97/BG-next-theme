@@ -25,16 +25,17 @@ export default function Single() {
         // match: { bucket_folder: product as string, }
     });
 
+
     useEffect(() => {
         console.log("products", products);
 
-    }, [product])
+    }, [products])
 
     return (
         <SingleWrap>
             <MainNavbar position="relative" bgColor="primary" />
             <NavbarCategories />
-            <SingleProduct />
+            {/* <SingleProduct /> */}
         </SingleWrap>
     );
 }
