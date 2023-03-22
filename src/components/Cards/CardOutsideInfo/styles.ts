@@ -2,14 +2,14 @@ import { styled } from "stitches.config";
 
 export const CardWrap = styled("div", {
     position: "relative",
-    aspectRatio: "9/16",
     borderRadius: "15px",
-    // boxShadow: "0px 10px 15px -3px rgba(0,0,0,0.3)",
+    cursor: "pointer",
 });
 
 export const CardImage = styled("div", {
     height: "100%",
     width: "100%",
+    overflow: "hidden",
 
     img: {
         height: "100%",
@@ -34,18 +34,19 @@ export const CardInfoWrap = styled("div", {
             fontWeight: "600",
             themeFontSize: {
                 // default: "$3",
-                xs: "12px",
-                // md: "14px"
+                xs: "13px",
+                md: "15px"
             }
         },
         "&__title": {
             color: "#4F4F4F",
             paddingBottom: "8px",
             paddingTop: "12px",
+            textTransform: "uppercase",
         },
         "&__price": {
-            color: "$primary",
-            fontWeight: "600",
+            color: "#05A428",
+            fontWeight: "500",
             marginBottom: "0.25rem"
         },
         "&__installments": {

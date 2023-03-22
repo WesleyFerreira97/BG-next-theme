@@ -7,7 +7,6 @@ import type { ProductProps, BucketProps } from "../../../types/product";
 import { Grid } from "@theme/layout/Grid";
 import { fakeProducts } from "../../../utils/fakeProducts";
 import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
-import PersonImage from "public/images/people4.jpg";
 import Link from "next/link";
 
 const HeaderGridProducts = () => {
@@ -25,10 +24,6 @@ export function GridProducts() {
         select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
     });
 
-
-    // TEMP
-    // const products: any[] = fakeProducts;
-
     return (
         <GridProductWrap>
             <Container sm>
@@ -41,18 +36,15 @@ export function GridProducts() {
                                 href={`/single?product=${product.bucket_folder}`}
                                 key={index}
                             >
-                                {/* {console.log(product.bucket_folder) as any} */}
                                 <Grid.Item>
-                                    {product.title}
-                                    {/* <CardOutsideInfo
+                                    <CardOutsideInfo
                                         cardInfo={{
                                             ...product,
-                                            image: PersonImage,
                                         }}
                                         cardStyle={{
                                             aspectRatio: "3/4",
                                         }}
-                                    /> */}
+                                    />
 
                                 </Grid.Item>
                             </Link>

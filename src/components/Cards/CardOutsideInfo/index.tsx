@@ -2,7 +2,7 @@ import React from "react";
 import { CardImage, CardInfoWrap, CardWrap } from "./styles";
 import Image from "next/image";
 import { CardProps } from "../types";
-
+import DefaultImage from "public/images/BG-mockup.png";
 
 const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
     return (
@@ -23,6 +23,8 @@ const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
 };
 
 export function CardOutsideInfo({ cardInfo, cardStyle }: CardProps) {
+
+    if (!cardInfo.image) cardInfo.image = DefaultImage;
 
     return (
         <CardWrap css={cardStyle} >

@@ -1,8 +1,9 @@
+import { StaticImageData } from "next/image";
 
 type CardInfoProps = {
     title: string,
     subtitle?: string,
-    image: HTMLImageElement | string,
+    image: HTMLImageElement | string | StaticImageData,
     link?: string,
     price?: number,
     monthlyInstallments?: string,
