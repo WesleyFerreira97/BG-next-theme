@@ -8,6 +8,7 @@ import { GridProducts } from "../components/widgets/GridProducts";
 import { GridProductsSmall } from "../components/widgets/GridProductsSmall";
 import { GridOtherCategories } from "../components/widgets/GridOtherCategories";
 import { carouselItemsData } from "src/utils/fakeProducts";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
     const router = useRouter();

@@ -22,7 +22,7 @@ export default function Single() {
     const { product } = router.query;
     const { selectResponse: products, selectResponseError } = useSelect<SingleData>({
         select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
-        // match: { bucket_folder: product as string, }
+        match: { bucket_folder: product as string }
     });
 
 

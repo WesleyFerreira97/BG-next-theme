@@ -24,9 +24,6 @@ export function useSelect<T>({ select, match }: UseSelectProps<T>) {
 
             setSelectResponse(data as T[]);
             setSelectResponseError(error as PostgrestError);
-            // console.log("Select Hook Error : ", error);
-            console.log("Select Match Data : ", { ...match });
-
         }
 
         selectData();
