@@ -2,7 +2,8 @@ import React from "react";
 import { CardImage, CardInfoWrap, CardWrap } from "./styles";
 import Image from "next/image";
 import { CardProps } from "../types";
-import DefaultImage from "public/images/BG-mockup.png";
+import DefaultImage from "public/images/woman1.png";
+import { ShoppingCartSimple } from "phosphor-react"
 
 const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
     return (
@@ -25,17 +26,26 @@ const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
 export function CardOutsideInfo({ cardInfo, cardStyle }: CardProps) {
 
     if (!cardInfo.image) cardInfo.image = DefaultImage;
+    // console.log("card Info : ", cardInfo);
 
     return (
         <CardWrap css={cardStyle} >
             <CardImage>
-                <Image
-                    src={cardInfo.image}
-                    alt="Woman image"
-                    quality={100}
-                />
+                <div className="card-image__wrap">
+                    <Image
+                        src={cardInfo.image}
+                        alt="Woman image"
+                        quality={100}
+                    />
+                </div>
+                <div className="hover-bar">
+                    <span className="hover-bar__text">
+                        <ShoppingCartSimple size={22} />
+                    </span>
+                </div>
             </CardImage>
             <CardInfo cardInfo={cardInfo} />
         </CardWrap>
     );
 }
+

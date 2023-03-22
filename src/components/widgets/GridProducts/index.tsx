@@ -29,7 +29,7 @@ export function GridProducts() {
             <Container sm>
                 <HeaderGridProducts />
                 <Grid columns={{ xs: 2, sm: 3 }} gap={{ xs: 1, sm: 2 }}>
-                    {console.log(products) as any}
+                    {console.log("this is products : ", products) as any}
                     {products &&
                         products.map((product, index) => (
                             <Link

@@ -4,18 +4,55 @@ export const CardWrap = styled("div", {
     position: "relative",
     borderRadius: "15px",
     cursor: "pointer",
+
+    "&:hover img": {
+        transform: "scale(1.1)",
+        transition: "transform .4s ease-in-out"
+    },
+
+    "&:hover .hover-bar": {
+        display: "flex",
+    }
 });
 
 export const CardImage = styled("div", {
     height: "100%",
     width: "100%",
     overflow: "hidden",
+    background: "$primary",
+    position: "relative",
+
+    ".card-image__wrap": {
+        height: "100%",
+        width: "100%",
+        position: "absolute",
+        top: "0",
+        zIndex: "0",
+    },
 
     img: {
         height: "100%",
         width: "100%",
         objectFit: "cover",
+    },
+
+    ".hover-bar": {
+        width: "100%",
+        minHeight: "30px",
+        display: "none",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "absolute",
+        bottom: "0",
+        zIndex: "1",
+        background: "$secondary",
+        color: "$neutral",
+
+        "&__text": {
+            padding: ".5rem 0",
+        }
     }
+
 });
 
 export const CardInfoWrap = styled("div", {
