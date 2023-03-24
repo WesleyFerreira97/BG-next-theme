@@ -25,12 +25,6 @@ export default function Single() {
         match: { bucket_folder: product as string }
     });
 
-
-    useEffect(() => {
-        console.log("products", products);
-
-    }, [products])
-
     return (
         <SingleWrap>
             <MainNavbar position="relative" bgColor="primary" />
