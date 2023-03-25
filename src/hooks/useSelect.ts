@@ -27,7 +27,7 @@ export function useSelect<T>({ select, match }: UseSelectProps<T>) {
         }
 
         selectData();
-    }, [match, selectedColumns]);
+    }, []);
 
     return { selectResponse, selectResponseError };
 }
