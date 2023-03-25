@@ -4,6 +4,7 @@ import { CSS } from "@nextui-org/react";
 
 export const ContainerWrap = styled("div", {
     maxWidth: "1200px",
+    width: "100%",
     // variants: {
     //     breakpoints: {
     //         xs: (value) => ({

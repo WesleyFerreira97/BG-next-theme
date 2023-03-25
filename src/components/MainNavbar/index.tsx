@@ -14,35 +14,39 @@ export function MainNavbar(props: MainNavbarProps) {
         <>
             <MainNavbarWrap {...props}>
                 <Container>
-                    <div className='navbar__menu'>
-                        <div className='menu-icon'>
-                            <List size={25} />
+                    <div className="navbar">
+                        <div className='navbar__menu'>
+                            <div className='menu-icon'>
+                                <List size={25} />
+                            </div>
                         </div>
-                    </div>
-                    <div className='navbar__brand'>
-                        <span className='brand--desktop'>Bela Garota</span>
-                        <span className='brand--mobile'>BG</span>
-                    </div>
-                    <div className='navbar__cart'>
-                        <div className='cart-icon'>
-                            <ShoppingCartSimple size={25} />
+                        <div className='navbar__brand'>
+                            <span className='brand--desktop'>Bela Garota</span>
+                            <span className='brand--mobile'>BG</span>
+                        </div>
+                        <div className='navbar__cart'>
+                            <div className='cart-icon'>
+                                <ShoppingCartSimple size={25} />
+                            </div>
                         </div>
                     </div>
                 </Container>
             </MainNavbarWrap>
             <MainMenuWrap>
                 <Container>
-                    <ul className="main-menu">
-                        <li className="main-menu__item">Ínicio</li>
-                        <li className="main-menu__item">
-                            <a href="#">
-                                Camisas
-                            </a>
-                        </li>
-                        <li className="main-menu__item"><a href="#">Regatas</a></li>
-                        <li className="main-menu__item"><a href="#">Conjuntos</a></li>
-                        <li className="main-menu__item"><a href="#">Promoções</a></li>
-                    </ul>
+                    <div className="main-menu__behavior">
+                        <ul className="main-menu">
+                            <li className="main-menu__item">Ínicio</li>
+                            <li className="main-menu__item">
+                                <a href="#">
+                                    Camisas
+                                </a>
+                            </li>
+                            <li className="main-menu__item"><a href="#">Regatas</a></li>
+                            <li className="main-menu__item"><a href="#">Conjuntos</a></li>
+                            <li className="main-menu__item"><a href="#">Promoções</a></li>
+                        </ul>
+                    </div>
                 </Container>
             </MainMenuWrap>
         </>

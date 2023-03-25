@@ -2,7 +2,7 @@ import React from "react";
 import { CardImage, CardInfoWrap, CardWrap } from "./styles";
 import Image from "next/image";
 import { CardProps } from "../types";
-import DefaultImage from "public/images/woman1.png";
+import DefaultImage from "public/images/code.jpg";
 import { ShoppingCartSimple } from "phosphor-react"
 
 const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {

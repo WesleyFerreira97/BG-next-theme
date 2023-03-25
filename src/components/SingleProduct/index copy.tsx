@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductGallery, ProductInfo, SingleProductWrap } from "./styles";
-import Woman2 from "../../../public/images/code.jpg";
+import Woman2 from "../../../public/images/woman3.png";
 import Image from "next/image";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
@@ -48,7 +48,7 @@ export function SingleProduct() {
                     <ProductInfo>
                         <div className='product-info__div'>
                             <h1 className='product-info__title'>
-                                Titulo do produto aqui
+                                Top de malha transparente com brilho e borda alface
                             </h1>
                             <span className='product-info__price'>
                                 R$39,90

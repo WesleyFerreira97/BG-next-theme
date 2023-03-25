@@ -42,6 +42,10 @@ export const MainNavbarWrap = styled("div", {
     },
 
     ".navbar": {
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
 
         "&__brand": {
             cursor: "pointer",
@@ -92,6 +96,13 @@ export const MainMenuWrap = styled("div", {
 
     ".main-menu": {
         display: "flex",
+
+        "&__behavior": {
+            padding: "0 1.25rem"
+            // width: "100%",
+            // display: "flex",
+            // justifyContent: "space-between",
+        }
     },
     ".main-menu__item": {
         color: "#7D7D7D",

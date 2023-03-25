@@ -31,4 +31,3 @@ export function useSelect<T>({ select, match }: UseSelectProps<T>) {
 
     return { selectResponse, selectResponseError };
 }
-

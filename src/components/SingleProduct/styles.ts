@@ -3,6 +3,7 @@ import { styled } from "stitches.config";
 export const SingleProductWrap = styled("div", {
     display: "flex",
     justifyContent: "center",
+    padding: "0 1.25rem",
 
     "@lg": {
         margin: "3rem 0 2rem",
@@ -20,15 +21,16 @@ export const ComponentBehavior = styled("div", {
 
 export const ProductGallery = styled("div", {
     height: "75vh",
-    flexGrow: 1,
-    aspectRatio: "9/16",
+    // flexGrow: 1,
     display: "flex",
 
     ".main-image": {
         height: "100%",
         width: "100%",
-        maxWidth: "350px",
+        minWidth: "350px",
+        maxWidth: "450px",
         position: "relative",
+        aspectRatio: "1/1",
 
         "img": {
             height: "100%",
@@ -39,15 +41,15 @@ export const ProductGallery = styled("div", {
 
     ".grid-thumbnails": {
         height: "100%",
-        width: "200px",
+        // width: "auto",
         display: "none",
+        gap: "$1",
 
         "&__item": {
-            /* height: 15%; */
-            width: "55%",
+            height: "100%",
+            width: "150px",
             aspectRatio: "9 / 13",
             position: "relative",
-            marginBottom: "1rem",
 
             "img": {
                 height: "100%",
@@ -61,7 +63,8 @@ export const ProductGallery = styled("div", {
         ".grid-thumbnails": {
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
+            marginRight: "$1",
         }
     }
 });
