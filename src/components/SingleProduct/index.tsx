@@ -61,7 +61,7 @@ export function SingleProduct() {
                         <div className='product-info__div'>
                             <div className='product-info__color'>
                                 <span className='product-info__label'>
-                                    Color: &nbsp;
+                                    Cor: &nbsp;
                                     <span className='product-info__label--thin'>
                                         Preto
                                     </span>

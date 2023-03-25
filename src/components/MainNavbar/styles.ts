@@ -61,8 +61,8 @@ export const MainNavbarWrap = styled("div", {
         },
 
         "&__brand > * ": {
+            fontFamily: "$primaryFont",
             fontSize: "2rem",
-            themeFont: "title",
             fontStyle: "normal",
             fontWeight: 700,
             // color: ${ props => props.theme.colors.neutral };
@@ -107,7 +107,7 @@ export const MainMenuWrap = styled("div", {
     ".main-menu__item": {
         color: "#7D7D7D",
         padding: ".75rem",
-        themeFont: "titlee",
+        fontFamily: "$secondaryFont",
 
         "&:hover": {
             backgroundColor: "$primary",

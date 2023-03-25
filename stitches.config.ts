@@ -25,7 +25,7 @@ const aquire = localFont({
 
 const poppins = Poppins({
     subsets: ["latin"],
-    weight: ["300", "400", "500"],
+    weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const themeSizes: { [key: number]: string } = {
@@ -46,8 +46,7 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
     prefix: "bg-theme",
     theme: {
         colors: {
-            // primary: "#D22779",
-            primary: "#1F1D36",
+            primary: "#D22779",
             primaryAlt: "#FF6500",
             secondary: "#3F3351",
             secondaryAlt: "#0060B1",
@@ -118,14 +117,14 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
             backgroundColor: value
         }),
         themeFont: (fontType: string) => {
-            const selectedFont = (fontType === "title")
+            const selectedFont = (fontType === "primary")
                 ? "$primaryFont"
                 : "$secondaryFont";
 
             return {
                 fontFamily: selectedFont,
                 fontSmooth: "always",
-                fontWeight: 300
+                // fontWeight: 300
             };
         },
         themeFontSize: (value: any) => {

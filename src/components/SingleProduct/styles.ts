@@ -1,4 +1,10 @@
-import { styled } from "stitches.config";
+import { styled, css } from "stitches.config";
+
+const divider = {
+    margin: "0 0 3.75rem",
+    borderBottom: "1px dashed #D7D7D7",
+    paddingBottom: "1rem",
+};
 
 export const SingleProductWrap = styled("div", {
     display: "flex",
@@ -14,21 +20,25 @@ export const ComponentBehavior = styled("div", {
     display: "flex",
     flexDirection: "column",
 
+
     "@lg": {
-        flexDirection: "row"
+        flexDirection: "row",
+        padding: "0 1.25rem",
     }
 });
+
 
 export const ProductGallery = styled("div", {
     height: "75vh",
     // flexGrow: 1,
     display: "flex",
 
+
     ".main-image": {
         height: "100%",
         width: "100%",
-        minWidth: "350px",
-        maxWidth: "450px",
+        minWidth: "400px",
+        maxWidth: "600px",
         position: "relative",
         aspectRatio: "1/1",
 
@@ -71,33 +81,42 @@ export const ProductGallery = styled("div", {
 
 export const ProductInfo = styled("div", {
     flexGrow: "1rem",
-    padding: "1.25rem",
+    padding: "0 1.25rem",
 
     ".product-info": {
 
         "&__div": {
             display: "block",
-            // ${ borderBottomDashed }
+            ...divider,
+        },
+        "&__title, &__price, &__payment-info, &__label, &__label--thin": {
+            fontFamily: "$secondaryFont",
         },
         "&__title": {
-            fontSize: "1.75rem",
-            fontWeight: "600",
+            fontWeight: "500",
+            themeFontSize: {
+                xs: "1.75rem",
+                sm: "2rem",
+            },
+            color: "$secondary",
         },
         "&__price": {
             display: "block",
             fontSize: "1.75rem",
             fontWeight: "600",
             padding: ".75rem 0",
+            color: "$primary",
         },
         "&__payment-info": {
             display: "block",
-            padding: ".75rem 0 1.25rem",
+            color: "$neutralAlt",
         },
         "&__label": {
             fontWeight: "600",
 
             "&--thin": {
                 fontWeight: "300",
+                color: "$neutralAlt",
             }
         },
 
@@ -135,6 +154,7 @@ export const ProductInfo = styled("div", {
                 cursor: "pointer",
                 fontWeight: "500",
                 fontSize: "1.15rem",
+                fontFamily: "$secondaryFont",
             }
         }
     },
