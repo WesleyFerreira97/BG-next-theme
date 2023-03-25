@@ -2,9 +2,28 @@ import { styled, css } from "stitches.config";
 
 const divider = {
     margin: "0 0 3.75rem",
-    borderBottom: "1px dashed #D7D7D7",
+    borderBottom: "1.5px dashed #D7D7D7",
     paddingBottom: "1rem",
 };
+
+export const ColorSelectButton = styled("button", {
+    height: "30px",
+    width: "30px",
+    backgroundColor: "$lightGray",
+    borderRadius: "50%",
+    cursor: "pointer",
+
+    variants: {
+        color: {
+            red: {
+                backgroundColor: "$primary",
+            },
+            blue: {
+                backgroundColor: "$secondary",
+            }
+        }
+    }
+});
 
 export const SingleProductWrap = styled("div", {
     display: "flex",
@@ -127,13 +146,6 @@ export const ProductInfo = styled("div", {
                 gap: "1rem",
                 margin: "1rem 0",
             },
-
-            ".colorButton": {
-                height: "30px",
-                width: "30px",
-                backgroundColor: "#3D087B",
-                borderRadius: "50%",
-            }
         },
 
         "&__size": {
@@ -155,6 +167,7 @@ export const ProductInfo = styled("div", {
                 fontWeight: "500",
                 fontSize: "1.15rem",
                 fontFamily: "$secondaryFont",
+                backgroundColor: "$lightGray",
             }
         }
     },

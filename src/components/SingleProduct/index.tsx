@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "../Layout/Container";
-import { ComponentBehavior, ProductGallery, ProductInfo, SingleProductWrap } from "./styles";
+import { ColorSelectButton, ComponentBehavior, ProductGallery, ProductInfo, SingleProductWrap } from "./styles";
 import Woman2 from "../../../public/images/code.jpg";
 import Image from "next/image";
 import { Button } from "@nextui-org/react";
@@ -67,9 +67,9 @@ export function SingleProduct() {
                                     </span>
                                 </span>
                                 <div className='product-info__color-available'>
-                                    <span className='color-button'> </span>
-                                    <span className='color-button'> </span>
-                                    <span className='color-button'> </span>
+                                    <ColorSelectButton color="red" />
+                                    <ColorSelectButton color="blue" />
+                                    <ColorSelectButton />
                                 </div>
                             </div>
                         </div>

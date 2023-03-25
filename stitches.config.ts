@@ -53,6 +53,7 @@ export const { styled, getCssText, config, css, globalCss, theme } = createStitc
             tertiary: "#D22779",
             neutral: "#fff",
             neutralAlt: "#7a7a7a",
+            lightGray: "#D7D7D7",
         },
         fontSizes: { ...themeSizes },
         sizes: { ...themeSizes },

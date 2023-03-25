@@ -108,6 +108,7 @@ export const MainMenuWrap = styled("div", {
         color: "#7D7D7D",
         padding: ".75rem",
         fontFamily: "$secondaryFont",
+        cursor: "pointer",
 
         "&:hover": {
             backgroundColor: "$primary",
