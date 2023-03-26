@@ -154,40 +154,43 @@ export const ProductInfo = styled("div", {
                 display: "flex",
                 gap: "1rem",
                 margin: "1rem 0",
-            },
 
-            ".size-button": {
-                height: "30px",
-                width: "60px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: "25px",
-                cursor: "pointer",
-                fontWeight: "500",
-                fontSize: "1.15rem",
-                fontFamily: "$secondaryFont",
-                backgroundColor: "$lightGray",
+                "input[type=radio]": {
+                },
+
+                ".size-button": {
+                    height: "30px",
+                    width: "60px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: "25px",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                    fontSize: "1.15rem",
+                    fontFamily: "$secondaryFont",
+                    backgroundColor: "$lightGray",
+                }
             }
+        },
+
+        ".finish-buttons": {
+            display: "flex",
+            gap: "1rem",
+            margin: "1.25rem 0",
+        },
+        ".cart-button": {
+            backgroundColor: "#27AE60!important",
+            borderRadius: "0!important",
+
+            "span": {
+                marginLeft: ".5rem",
+            }
+        },
+
+        "@lg": {
+            maxWidth: "45%",
         }
-    },
-
-    ".finish-buttons": {
-        display: "flex",
-        gap: "1rem",
-        margin: "1.25rem 0",
-    },
-    ".cart-button": {
-        backgroundColor: "#27AE60!important",
-        borderRadius: "0!important",
-
-        "span": {
-            marginLeft: ".5rem",
-        }
-    },
-
-    "@lg": {
-        maxWidth: "45%",
     }
 });
 
