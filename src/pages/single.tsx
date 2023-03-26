@@ -20,16 +20,16 @@ type SingleData = Partial<ProductProps> & Partial<BucketProps>;
 export default function Single() {
     const router = useRouter();
     const { product } = router.query;
-    // const { selectResponse: products, selectResponseError } = useSelect<SingleData>({
-    //     select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
-    //     // match: { bucket_folder: product as string }
-    // });
+    const { selectResponse: products, selectResponseError } = useSelect<SingleData>({
+        // select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
+        match: { bucket_folder: product as string }
+    });
 
     return (
         <SingleWrap>
             <MainNavbar position="relative" bgColor="primary" />
             <NavbarCategories />
-            <SingleProduct />
+            <SingleProduct props={products} />
         </SingleWrap>
     );
 }

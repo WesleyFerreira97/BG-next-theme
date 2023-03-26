@@ -6,25 +6,36 @@ import Image from "next/image";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
 import { ToggleGroup } from "../ToggleGroup";
+import { ProductProps, BucketProps } from "src/types/product";
 
-export function SingleProduct(props: any) {
-    const { title, price, description, images, colors, sizes } = props;
+type SingleProductProps = ProductProps & BucketProps;
 
-    const [orderData, setOrderData] = useState({
+type OrderDataProps = {
+    productTitle: string;
+    price?: number;
+    selectedSize?: string | number;
+    selectedColor?: string;
+}
+
+export function SingleProduct(props: SingleProductProps) {
+    const { title, price, description, sizes_available } = props;
+    console.log("Single Product Props : ", props);
+
+    const [orderData, setOrderData] = useState<OrderDataProps>({
         productTitle: title,
         price: price,
-        selectedSize: sizes,
-        selectedColor: colors,
+        selectedSize: "",
+        selectedColor: "",
     });
 
-    const handleSizeData = (value: string | number) => {
+    const handleSizeData = (value: Pick<OrderDataProps, "selectedSize">) => {
         setOrderData(prevstate => ({
             ...prevstate,
             selectedSize: value
         }))
     };
 
-    const handleColorData = (value: string | number) => {
+    const handleColorData = (value: Pick<OrderDataProps, "selectedColor">) => {
         setOrderData(prevstate => ({
             ...prevstate,
             selectedColor: value
@@ -127,7 +138,15 @@ export function SingleProduct(props: any) {
                             </div>
                         </div>
 
-                        <ToggleGroup changeState={handleSizeData}>
+                        <ToggleGroup
+                            changeState={handleSizeData}
+                        // currentState={orderData.selectedSize}
+                        >
+                            {/* {Object.keys(props.sizes_available).map((item, index) => (
+                                <>
+                                    {console.log(item)}
+                                </>
+                            ))} */}
                             <ToggleGroup.Item value="Outro Valor" itemType="color" color="#fff" />
                             <ToggleGroup.Item value="Bagaça" itemType="color" color="#fff" />
                             <ToggleGroup.Item value="Option1" itemType="color" color="#fff" />
