@@ -39,7 +39,6 @@ export const ComponentBehavior = styled("div", {
     display: "flex",
     flexDirection: "column",
 
-
     "@lg": {
         flexDirection: "row",
         padding: "0 1.25rem",
@@ -47,7 +46,7 @@ export const ComponentBehavior = styled("div", {
 });
 
 
-export const ProductGallery = styled("div", {
+export const ProductGalleryWrap = styled("div", {
     height: "75vh",
     // flexGrow: 1,
     display: "flex",

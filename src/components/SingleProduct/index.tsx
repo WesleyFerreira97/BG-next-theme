@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Container } from "../Layout/Container";
-import { ColorSelectButton, ComponentBehavior, ProductGallery, ProductInfo, SingleProductWrap } from "./styles";
+import { ColorSelectButton, ComponentBehavior, ProductGalleryWrap, ProductInfo, SingleProductWrap } from "./styles";
 import Woman2 from "../../../public/images/code.jpg";
 import Image from "next/image";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
 import { ToggleGroup } from "../ToggleGroup";
 import { ProductProps, BucketProps } from "src/types/product";
+import { Formik } from "formik";
 
 type SingleProductProps = ProductProps & BucketProps;
 
@@ -17,70 +18,68 @@ type OrderDataProps = {
     selectedColor?: string;
 }
 
+const ProductGallery = () => {
+
+    return (
+        <ProductGalleryWrap>
+            <div className='grid-thumbnails'>
+                <div className='grid-thumbnails__item'>
+                    <Image
+                        src={Woman2.src}
+                        alt="Main product image"
+                        fill={true}
+                    />
+                </div>
+                <div className='grid-thumbnails__item'>
+                    <Image
+                        src={Woman2.src}
+                        alt="Main product image"
+                        fill={true}
+                    />
+                </div>
+                <div className='grid-thumbnails__item'>
+                    <Image
+                        src={Woman2.src}
+                        alt="Main product image"
+                        fill={true}
+                    />
+                </div>
+            </div>
+            <div className='main-image'>
+                <Image
+                    src={Woman2.src}
+                    alt="Main product image"
+                    quality={100}
+                    fill={true}
+                />
+            </div>
+        </ProductGalleryWrap>
+    )
+}
+
 export function SingleProduct(props: SingleProductProps) {
     const { title, price, description, sizes_available } = props;
-    console.log("Single Product Props : ", props);
+    console.log(props);
 
-    const [orderData, setOrderData] = useState<OrderDataProps>({
+    // const [orderData, setOrderData] = useState<OrderDataProps>({
+    //     productTitle: title,
+    //     price: price,
+    //     selectedSize: "",
+    //     selectedColor: "",
+    // });
+
+    const FormInitialValues = {
         productTitle: title,
         price: price,
         selectedSize: "",
         selectedColor: "",
-    });
-
-    const handleSizeData = (value: Pick<OrderDataProps, "selectedSize">) => {
-        setOrderData(prevstate => ({
-            ...prevstate,
-            selectedSize: value
-        }))
-    };
-
-    const handleColorData = (value: Pick<OrderDataProps, "selectedColor">) => {
-        setOrderData(prevstate => ({
-            ...prevstate,
-            selectedColor: value
-        }))
-    };
-
-    const getCurrentState = () => console.log(orderData);
+    }
 
     return (
         <SingleProductWrap>
             <Container xs={100}>
                 <ComponentBehavior>
-                    <ProductGallery>
-                        <div className='grid-thumbnails'>
-                            <div className='grid-thumbnails__item'>
-                                <Image
-                                    src={Woman2.src}
-                                    alt="Main product image"
-                                    fill={true}
-                                />
-                            </div>
-                            <div className='grid-thumbnails__item'>
-                                <Image
-                                    src={Woman2.src}
-                                    alt="Main product image"
-                                    fill={true}
-                                />
-                            </div>
-                            <div className='grid-thumbnails__item'>
-                                <Image
-                                    src={Woman2.src}
-                                    alt="Main product image"
-                                    fill={true}
-                                />
-                            </div>
-                        </div>
-                        <div className='main-image'>
-                            <Image
-                                src={Woman2.src}
-                                alt="Main product image"
-                                quality={100}
-                                fill={true}
-                            />
-                        </div>
-                    </ProductGallery>
+                    <ProductGallery />
                     <ProductInfo>
                         <div className='product-info__div'>
                             <h1 className='product-info__title'>
@@ -93,7 +92,17 @@ export function SingleProduct(props: SingleProductProps) {
                                 Parcelamos no cartão em até 12x, aceitamos Pix
                             </span>
                         </div>
+                        <Formik
+                            initialValues={FormInitialValues}
+                            onSubmit={(values) => { console.log(values) }}
+                        >
+                            {({ values, handleChange, handleBlur, handleSubmit }) => (
+                                <>
 
+                                    <Button onClick={handleSubmit as () => void} />
+                                </>
+                            )}
+                        </Formik>
                         <div className='product-info__div'>
                             <div className='product-info__color'>
                                 <span className='product-info__label'>
@@ -120,37 +129,9 @@ export function SingleProduct(props: SingleProductProps) {
                                     <span className='size-button'> M </span>
                                     <span className='size-button'> G </span>
                                     <span className='size-button'> GG </span>
-
                                 </div>
-                                <input
-                                    type="radio"
-                                    name="sizeProduct"
-                                    id="sizeP"
-                                    onClick={() => handleSizeData("P")}
-                                    className="size-button"
-                                />
-                                <input
-                                    type="radio"
-                                    name="sizeProduct"
-                                    id="sizeM"
-                                    onClick={() => handleSizeData("M")}
-                                />
                             </div>
                         </div>
-
-                        <ToggleGroup
-                            changeState={handleSizeData}
-                        // currentState={orderData.selectedSize}
-                        >
-                            {/* {Object.keys(props.sizes_available).map((item, index) => (
-                                <>
-                                    {console.log(item)}
-                                </>
-                            ))} */}
-                            <ToggleGroup.Item value="Outro Valor" itemType="color" color="#fff" />
-                            <ToggleGroup.Item value="Bagaça" itemType="color" color="#fff" />
-                            <ToggleGroup.Item value="Option1" itemType="color" color="#fff" />
-                        </ToggleGroup>
 
                         <div className='finish-buttons'>
                             <Button
@@ -165,12 +146,10 @@ export function SingleProduct(props: SingleProductProps) {
                                 <ShoppingCartSimple size={24} />
                                 <span>Adicionar ao carrinho</span>
                             </Button>
-
                         </div>
-                        <Button onClick={getCurrentState}>Current Data</Button>
                     </ProductInfo>
                 </ComponentBehavior>
             </Container>
-        </SingleProductWrap>
+        </SingleProductWrap >
     );
 }

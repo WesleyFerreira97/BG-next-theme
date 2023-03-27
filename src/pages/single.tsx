@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Container } from "../components/Layout/Container";
 import { MainNavbar } from "../components/MainNavbar";
 import { styled } from "stitches.config";
@@ -22,14 +22,19 @@ export default function Single() {
     const { product } = router.query;
     const { selectResponse: products, selectResponseError } = useSelect<SingleData>({
         // select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
-        match: { bucket_folder: product as string }
+        // match: { bucket_folder: product as string }
+        // match: { bucket_folder: "shorts/Brabo" }
     });
+
+
 
     return (
         <SingleWrap>
             <MainNavbar position="relative" bgColor="primary" />
             <NavbarCategories />
-            <SingleProduct props={products} />
+            {console.dir("Single Log product : ", product)}
+            {console.log("Single Log products : ", products)}
+            <SingleProduct {...products} />
         </SingleWrap>
     );
 }

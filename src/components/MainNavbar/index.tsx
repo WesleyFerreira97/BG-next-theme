@@ -21,7 +21,7 @@ export function MainNavbar(props: MainNavbarProps) {
                             </div>
                         </div>
                         <div className='navbar__brand'>
-                            <span className='brand--desktop'>Bela Garota</span>
+                            <span className='brand--desktop'>Title</span>
                             <span className='brand--mobile'>BG</span>
                         </div>
                         <div className='navbar__cart'>
