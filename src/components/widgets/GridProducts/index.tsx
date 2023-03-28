@@ -32,7 +32,7 @@ export function GridProducts() {
                     {products &&
                         products.map((product, index) => (
                             <Link
-                                href={`/single?product=${product.bucket_folder}`}
+                                href={`/single?product=${product.title}`}
                                 key={index}
                             >
                                 <Grid.Item>

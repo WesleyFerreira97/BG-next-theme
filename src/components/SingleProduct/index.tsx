@@ -59,7 +59,6 @@ const ProductGallery = () => {
 
 export function SingleProduct(props: SingleProductProps) {
     const { title, price, description, sizes_available } = props;
-    console.log(props);
 
     // const [orderData, setOrderData] = useState<OrderDataProps>({
     //     productTitle: title,

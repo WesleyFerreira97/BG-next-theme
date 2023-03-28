@@ -14,7 +14,6 @@ export function useSelect<T>({ select, match }: UseSelectProps<T>) {
     const selectedColumns = Array.isArray(select) ? select.join(",") : select;
 
     useEffect(() => {
-
         async function selectData() {
             const { data, error } = await supaDb
                 .from("products")

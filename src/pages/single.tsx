@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { use, useEffect, useMemo, useState } from "react";
 import { Container } from "../components/Layout/Container";
 import { MainNavbar } from "../components/MainNavbar";
 import { styled } from "stitches.config";
@@ -7,6 +7,7 @@ import { SingleProduct } from "../components/SingleProduct";
 import { useRouter } from "next/router";
 import { useSelect } from "src/hooks/useSelect";
 import { BucketProps, ProductProps } from "src/types/product";
+import { supaDb } from "src/services/supadb";
 
 export const SingleWrap = styled("div", {
     minHeight: "100vh",
@@ -20,21 +21,32 @@ type SingleData = Partial<ProductProps> & Partial<BucketProps>;
 export default function Single() {
     const router = useRouter();
     const { product } = router.query;
-    const { selectResponse: products, selectResponseError } = useSelect<SingleData>({
-        // select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
-        // match: { bucket_folder: product as string }
-        // match: { bucket_folder: "shorts/Brabo" }
-    });
+    // const { selectResponse: products, selectResponseError } = useSelect<SingleData>({
+    // select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
+    // match: { title: product as string }
+    // match: { bucket_folder: "shorts/Brabo" }
+    // });
 
+    const [selectResponse, setSelectResponse] = useState<any[]>([]);
+    useEffect(() => {
+        async function selectData() {
+            const { data, error } = await supaDb
+                .from("products")
+                .select("*")
+                .limit(9)
+                .match({ title: product as string });
 
+            setSelectResponse(data as any);
+        }
+
+        selectData();
+    }, [product]);
 
     return (
         <SingleWrap>
             <MainNavbar position="relative" bgColor="primary" />
             <NavbarCategories />
-            {console.dir("Single Log product : ", product)}
-            {console.log("Single Log products : ", products)}
-            <SingleProduct {...products} />
+            {/* <SingleProduct {...products} /> */}
         </SingleWrap>
     );
 }
