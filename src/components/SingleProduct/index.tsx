@@ -6,10 +6,12 @@ import Image from "next/image";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
 import { ToggleGroup } from "../ToggleGroup";
-import { ProductProps, BucketProps } from "src/types/product";
+import { ProductProps, BucketProps, ProductWithBucketProps } from "src/types/product";
 import { Formik } from "formik";
 
-type SingleProductProps = ProductProps & BucketProps;
+type SingleProductProps = {
+    data: Partial<ProductWithBucketProps>;
+};
 
 type OrderDataProps = {
     productTitle: string;
@@ -58,18 +60,12 @@ const ProductGallery = () => {
 }
 
 export function SingleProduct(props: SingleProductProps) {
-    const { title, price, description, sizes_available } = props;
-
-    // const [orderData, setOrderData] = useState<OrderDataProps>({
-    //     productTitle: title,
-    //     price: price,
-    //     selectedSize: "",
-    //     selectedColor: "",
-    // });
+    const { data } = props;
+    console.log(props);
 
     const FormInitialValues = {
-        productTitle: title,
-        price: price,
+        productTitle: data?.title,
+        price: props.data?.price,
         selectedSize: "",
         selectedColor: "",
     }
@@ -82,7 +78,8 @@ export function SingleProduct(props: SingleProductProps) {
                     <ProductInfo>
                         <div className='product-info__div'>
                             <h1 className='product-info__title'>
-                                Titulo do produto aqui
+                                {/* Titulo do produto aqui */}
+                                {data?.title}
                             </h1>
                             <span className='product-info__price'>
                                 R$39,90
@@ -98,7 +95,7 @@ export function SingleProduct(props: SingleProductProps) {
                             {({ values, handleChange, handleBlur, handleSubmit }) => (
                                 <>
 
-                                    <Button onClick={handleSubmit as () => void} />
+                                    <Button onClick={handleSubmit as () => void}>Check Formik Values</Button>
                                 </>
                             )}
                         </Formik>

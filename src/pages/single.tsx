@@ -6,7 +6,7 @@ import { NavbarCategories } from "../components/NavbarCategories";
 import { SingleProduct } from "../components/SingleProduct";
 import { useRouter } from "next/router";
 import { useSelect } from "src/hooks/useSelect";
-import { BucketProps, ProductProps } from "src/types/product";
+import { BucketProps, ProductProps, ProductWithBucketProps } from "src/types/product";
 import { supaDb } from "src/services/supadb";
 
 export const SingleWrap = styled("div", {
@@ -16,27 +16,23 @@ export const SingleWrap = styled("div", {
     flexDirection: "column",
 });
 
-type SingleData = Partial<ProductProps> & Partial<BucketProps>;
 
 export default function Single() {
     const router = useRouter();
     const { product } = router.query;
-    // const { selectResponse: products, selectResponseError } = useSelect<SingleData>({
-    // select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
-    // match: { title: product as string }
-    // match: { bucket_folder: "shorts/Brabo" }
-    // });
+    const [singleProductData, setSingleProductData] = useState<Partial<ProductWithBucketProps>>({});
 
-    const [selectResponse, setSelectResponse] = useState<any[]>([]);
     useEffect(() => {
         async function selectData() {
             const { data, error } = await supaDb
                 .from("products")
                 .select("*")
-                .limit(9)
+                .limit(1)
                 .match({ title: product as string });
 
-            setSelectResponse(data as any);
+            if (!data) return
+
+            setSingleProductData(data[0] as Partial<ProductWithBucketProps>);
         }
 
         selectData();
@@ -46,7 +42,7 @@ export default function Single() {
         <SingleWrap>
             <MainNavbar position="relative" bgColor="primary" />
             <NavbarCategories />
-            {/* <SingleProduct {...products} /> */}
+            <SingleProduct data={singleProductData} />
         </SingleWrap>
     );
 }

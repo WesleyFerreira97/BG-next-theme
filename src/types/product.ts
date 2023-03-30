@@ -28,3 +28,5 @@ export type BucketProps = {
     bucket_name: string;
     bucket_folder: string;
 }
+
+export type ProductWithBucketProps = ProductProps & BucketProps;
