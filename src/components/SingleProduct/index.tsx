@@ -61,11 +61,10 @@ const ProductGallery = () => {
 
 export function SingleProduct(props: SingleProductProps) {
     const { data } = props;
-    console.log(props);
 
     const FormInitialValues = {
         productTitle: data?.title,
-        price: props.data?.price,
+        price: data?.price,
         selectedSize: "",
         selectedColor: "",
     }
@@ -78,7 +77,6 @@ export function SingleProduct(props: SingleProductProps) {
                     <ProductInfo>
                         <div className='product-info__div'>
                             <h1 className='product-info__title'>
-                                {/* Titulo do produto aqui */}
                                 {data?.title}
                             </h1>
                             <span className='product-info__price'>
@@ -137,7 +135,7 @@ export function SingleProduct(props: SingleProductProps) {
                                     borderRadius: "4px",
                                     padding: "24px 32px",
                                 }}
-                                onClick={() => { }}
+                                onPress={() => { }}
                             >
                                 <ShoppingCartSimple size={24} />
                                 <span>Adicionar ao carrinho</span>

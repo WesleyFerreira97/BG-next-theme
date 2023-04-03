@@ -26,7 +26,6 @@ const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
 export function CardOutsideInfo({ cardInfo, cardStyle }: CardProps) {
 
     if (!cardInfo.image) cardInfo.image = DefaultImage;
-    // console.log("card Info : ", cardInfo);
 
     return (
         <CardWrap css={cardStyle} >
