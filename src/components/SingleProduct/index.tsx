@@ -65,7 +65,7 @@ export function SingleProduct(props: SingleProductProps) {
     const FormInitialValues = {
         productTitle: data?.title,
         price: data?.price,
-        selectedSize: "",
+        selectedSize: "P",
         selectedColor: "",
     }
 
@@ -95,9 +95,33 @@ export function SingleProduct(props: SingleProductProps) {
                                     <ToggleGroup
                                         name="selectedSize"
                                     >
-
+                                        <ToggleGroup.Item
+                                            value="P"
+                                            label="P"
+                                            itemType="label"
+                                            available={true}
+                                        />
+                                        <ToggleGroup.Item
+                                            value="M"
+                                            label="M"
+                                            itemType="label"
+                                            available={true}
+                                        />
+                                        <ToggleGroup.Item
+                                            value="G"
+                                            label="G"
+                                            itemType="label"
+                                            available={true}
+                                        />
+                                        <ToggleGroup.Item
+                                            value="GG"
+                                            label="GG"
+                                            itemType="label"
+                                            available={false}
+                                        />
                                     </ToggleGroup>
-                                    <Button onClick={handleSubmit as () => void}>Check Formik Values</Button>
+
+                                    <Button onPress={handleSubmit as () => void}>Check Formik Values</Button>
                                 </>
                             )}
                         </Formik>
