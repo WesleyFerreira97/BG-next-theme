@@ -92,7 +92,11 @@ export function SingleProduct(props: SingleProductProps) {
                         >
                             {({ values, handleChange, handleBlur, handleSubmit }) => (
                                 <>
+                                    <ToggleGroup
+                                        name="selectedSize"
+                                    >
 
+                                    </ToggleGroup>
                                     <Button onClick={handleSubmit as () => void}>Check Formik Values</Button>
                                 </>
                             )}

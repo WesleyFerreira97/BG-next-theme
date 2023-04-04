@@ -1,4 +1,5 @@
 import { Button } from '@nextui-org/react';
+import { useField } from 'formik';
 import React, { ReactNode, createContext, useContext } from 'react';
 
 type ToggleGroupProps = {
@@ -35,14 +36,16 @@ const Item = (props: GroupItemProps) => {
   )
 }
 
-function ToggleGroup(props: ToggleGroupProps) {
-  const { changeState: externalState } = props;
+function ToggleGroup({ name, ...props }: any) {
+  const [field, meta, helpers] = useField(name);
 
   return (
     <div>
-      <SelectedValue.Provider value={externalState}>
+      {/* <SelectedValue.Provider value={externalState}>
         {props.children}
-      </SelectedValue.Provider>
+      </SelectedValue.Provider> */}
+      <Button onPress={() => helpers.setValue("P")}>Size P</Button>
+      <Button onPress={() => helpers.setValue("M")}>Size M</Button>
     </div>
   )
 }
