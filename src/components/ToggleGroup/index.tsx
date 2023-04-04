@@ -3,7 +3,8 @@ import { useField } from 'formik';
 import React, { ReactNode, createContext, useContext, useState } from 'react';
 
 type ToggleGroupProps = {
-  changeState: (value: string | number) => void;
+  name: string;
+  itemType?: "color" | "label";
   children: ReactNode;
 }
 
@@ -15,18 +16,15 @@ type ColorProps = {
 
 type GroupItemProps = {
   value: string;
-  itemType?: "color" | "label";
   label?: string;
   available?: boolean;
+  itemType?: "color" | "label";
 }
 
 const SelectedValue = createContext<any>("");
 
 const Item = (props: GroupItemProps) => {
   const { helpers, field } = useContext(SelectedValue);
-  const [itemState, setItemState] = useState<string>(
-    props.available === false ? "#000" : "#fdd242"
-  );
 
   const handleItemState = () => {
     if (props.available === false) {
@@ -34,7 +32,7 @@ const Item = (props: GroupItemProps) => {
       return "#BFACE2";
     };
 
-    const currentColorState = props.value === field.value ? "#fdd242" : "#860d0d";
+    const currentColorState = props.value === field.value ? "#D22779" : "#cecece";
 
     return currentColorState;
   }
@@ -68,6 +66,10 @@ const Item = (props: GroupItemProps) => {
         disabled={props.available === false}
         css={{
           backgroundColor: handleItemState(),
+          width: "70px",
+          height: "35px",
+          minWidth: "50px",
+          borderRadius: "50px",
         }}
       >
         {props.label}
@@ -76,13 +78,18 @@ const Item = (props: GroupItemProps) => {
   )
 }
 
-function ToggleGroup({ name, ...props }: any) {
+function ToggleGroup({ name, ...props }: ToggleGroupProps) {
   const [field, meta, helpers] = useField(name);
 
   return (
     <div>
-      <SelectedValue.Provider value={{ helpers, field }}>
-        {props.children}
+      <SelectedValue.Provider value={{ helpers, field, props }}>
+        <div style={{
+          display: "flex",
+          gap: ".5rem",
+        }}>
+          {props.children}
+        </div>
       </SelectedValue.Provider>
 
     </div>

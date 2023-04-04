@@ -92,68 +92,63 @@ export function SingleProduct(props: SingleProductProps) {
                         >
                             {({ values, handleChange, handleBlur, handleSubmit }) => (
                                 <>
-                                    <ToggleGroup
-                                        name="selectedSize"
-                                    >
-                                        <ToggleGroup.Item
-                                            value="P"
-                                            label="P"
-                                            itemType="label"
-                                            available={true}
-                                        />
-                                        <ToggleGroup.Item
-                                            value="M"
-                                            label="M"
-                                            itemType="label"
-                                            available={true}
-                                        />
-                                        <ToggleGroup.Item
-                                            value="G"
-                                            label="G"
-                                            itemType="label"
-                                            available={true}
-                                        />
-                                        <ToggleGroup.Item
-                                            value="GG"
-                                            label="GG"
-                                            itemType="label"
-                                            available={false}
-                                        />
-                                    </ToggleGroup>
+                                    <div className='product-info__div'>
+                                        <div className='product-info__color'>
+                                            <span className='product-info__label'>
+                                                Cor: &nbsp;
+                                                <span className='product-info__label--thin'>
+                                                    Preto
+                                                </span>
+                                            </span>
+                                            <div className='product-info__color-available'>
+                                                <ColorSelectButton color="red" />
+                                                <ColorSelectButton color="blue" />
+                                                <ColorSelectButton />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className='product-info__div'>
+                                        <div className='product-info__size'>
+                                            <span className='product-info__label'>
+                                                Tamanhos :
+                                            </span>
+                                            <ToggleGroup
+                                                name="selectedSize"
+                                                itemType="label"
+                                            >
+                                                <ToggleGroup.Item
+                                                    value="P"
+                                                    label="P"
+                                                    available={true}
+                                                />
+                                                <ToggleGroup.Item
+                                                    value="M"
+                                                    label="M"
+                                                    available={true}
+                                                />
+                                                <ToggleGroup.Item
+                                                    value="G"
+                                                    label="G"
+                                                    available={true}
+                                                />
+                                                <ToggleGroup.Item
+                                                    value="GG"
+                                                    label="GG"
+                                                    available={false}
+                                                />
+                                            </ToggleGroup>
+                                        </div>
+                                    </div>
+
 
                                     <Button onPress={handleSubmit as () => void}>Check Formik Values</Button>
                                 </>
                             )}
                         </Formik>
-                        <div className='product-info__div'>
-                            <div className='product-info__color'>
-                                <span className='product-info__label'>
-                                    Cor: &nbsp;
-                                    <span className='product-info__label--thin'>
-                                        Preto
-                                    </span>
-                                </span>
-                                <div className='product-info__color-available'>
-                                    <ColorSelectButton color="red" />
-                                    <ColorSelectButton color="blue" />
-                                    <ColorSelectButton />
-                                </div>
-                            </div>
-                        </div>
 
-                        <div className='product-info__div'>
-                            <div className='product-info__size'>
-                                <span className='product-info__label'>
-                                    Tamanhos :
-                                </span>
-                                <div className='product-info__size-available'>
-                                    <span className='size-button'> P </span>
-                                    <span className='size-button'> M </span>
-                                    <span className='size-button'> G </span>
-                                    <span className='size-button'> GG </span>
-                                </div>
-                            </div>
-                        </div>
+
+
 
                         <div className='finish-buttons'>
                             <Button
