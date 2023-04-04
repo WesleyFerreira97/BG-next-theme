@@ -59,15 +59,22 @@ const ProductGallery = () => {
     )
 }
 
+
+const fakeColorData: any = {
+    black: "#000",
+    blue: "#0000FF",
+    red: "#FF0000",
+    green: "#00FF00",
+}
+
 export function SingleProduct(props: SingleProductProps) {
     const { data } = props;
-    console.log(data);
 
     const FormInitialValues = {
         productTitle: data?.title,
         price: data?.price,
         selectedSize: "P",
-        selectedColor: "",
+        selectedColor: "blue",
     }
 
     return (
@@ -102,9 +109,23 @@ export function SingleProduct(props: SingleProductProps) {
                                                 </span>
                                             </span>
                                             <div className='product-info__color-available'>
-                                                <ColorSelectButton color="red" />
+                                                {/* <ColorSelectButton color="red" />
                                                 <ColorSelectButton color="blue" />
-                                                <ColorSelectButton />
+                                                <ColorSelectButton /> */}
+
+                                                <ToggleGroup
+                                                    name="selectedColor"
+                                                    itemType="color"
+                                                >
+                                                    {Object.keys(fakeColorData)
+                                                        .map((item: string) => (
+                                                            <ToggleGroup.Item
+                                                                key={item}
+                                                                value={item}
+                                                                color={fakeColorData[item]}
+                                                            />
+                                                        ))}
+                                                </ToggleGroup>
                                             </div>
                                         </div>
                                     </div>
@@ -131,25 +152,23 @@ export function SingleProduct(props: SingleProductProps) {
                                         </div>
                                     </div>
 
-                                    <Button onPress={handleSubmit as () => void}>Check Formik Values</Button>
+                                    <div className='finish-buttons'>
+                                        <Button
+                                            className='cart-button'
+                                            css={{
+                                                background: "#27AE60",
+                                                borderRadius: "4px",
+                                                padding: "24px 32px",
+                                            }}
+                                            onPress={handleSubmit as () => void}
+                                        >
+                                            <ShoppingCartSimple size={24} />
+                                            <span>Adicionar ao carrinho</span>
+                                        </Button>
+                                    </div>
                                 </>
                             )}
                         </Formik>
-
-                        <div className='finish-buttons'>
-                            <Button
-                                className='cart-button'
-                                css={{
-                                    background: "#27AE60",
-                                    borderRadius: "4px",
-                                    padding: "24px 32px",
-                                }}
-                                onPress={() => { }}
-                            >
-                                <ShoppingCartSimple size={24} />
-                                <span>Adicionar ao carrinho</span>
-                            </Button>
-                        </div>
                     </ProductInfo>
                 </ComponentBehavior>
             </Container>

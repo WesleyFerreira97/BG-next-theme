@@ -19,7 +19,6 @@ export const SingleWrap = styled("div", {
 
 function Single(props: SingleProps) {
     const { singleProductData } = props;
-    console.log(singleProductData);
 
     return (
         <SingleWrap>

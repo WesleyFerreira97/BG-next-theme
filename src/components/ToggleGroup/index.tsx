@@ -19,12 +19,13 @@ type GroupItemProps = {
   label?: string;
   available?: boolean;
   itemType?: "color" | "label";
+  color?: string
 }
 
 const SelectedValue = createContext<any>("");
 
 const Item = (props: GroupItemProps) => {
-  const { helpers, field } = useContext(SelectedValue);
+  const { helpers, field, groupProps } = useContext(SelectedValue);
 
   const handleItemState = () => {
     if (props.available === false) {
@@ -32,7 +33,9 @@ const Item = (props: GroupItemProps) => {
       return "#BFACE2";
     };
 
-    const currentColorState = props.value === field.value ? "#D22779" : "#cecece";
+    const currentColorState = props.value === field.value
+      ? "#D22779"
+      : "#cecece";
 
     return currentColorState;
   }
@@ -41,7 +44,7 @@ const Item = (props: GroupItemProps) => {
     return helpers.setValue(props.value)
   };
 
-  if (props.itemType === "color") {
+  if (groupProps.itemType === "color") {
     return (
       <div>
         <Button
@@ -49,8 +52,19 @@ const Item = (props: GroupItemProps) => {
             handleItemState();
             handleValue();
           }}
+          disabled={props.available === false}
+          css={{
+            backgroundColor: props.color,
+            width: "38px",
+            height: "38px",
+            minWidth: "30px",
+            borderRadius: "50%",
+            outline: `2px solid ${handleItemState()}`,
+            border: "4px solid #fff",
+            padding: "10px"
+          }}
         >
-          dsdf
+          {props.label}
         </Button>
       </div>
     )
@@ -78,17 +92,17 @@ const Item = (props: GroupItemProps) => {
   )
 }
 
-function ToggleGroup({ name, ...props }: ToggleGroupProps) {
+function ToggleGroup({ name, children, ...groupProps }: ToggleGroupProps) {
   const [field, meta, helpers] = useField(name);
 
   return (
     <div>
-      <SelectedValue.Provider value={{ helpers, field, props }}>
+      <SelectedValue.Provider value={{ helpers, field, groupProps }}>
         <div style={{
           display: "flex",
           gap: ".5rem",
         }}>
-          {props.children}
+          {children}
         </div>
       </SelectedValue.Provider>
 
