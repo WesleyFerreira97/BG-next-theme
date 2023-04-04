@@ -61,6 +61,7 @@ const ProductGallery = () => {
 
 export function SingleProduct(props: SingleProductProps) {
     const { data } = props;
+    console.log(data);
 
     const FormInitialValues = {
         productTitle: data?.title,
@@ -117,38 +118,23 @@ export function SingleProduct(props: SingleProductProps) {
                                                 name="selectedSize"
                                                 itemType="label"
                                             >
-                                                <ToggleGroup.Item
-                                                    value="P"
-                                                    label="P"
-                                                    available={true}
-                                                />
-                                                <ToggleGroup.Item
-                                                    value="M"
-                                                    label="M"
-                                                    available={true}
-                                                />
-                                                <ToggleGroup.Item
-                                                    value="G"
-                                                    label="G"
-                                                    available={true}
-                                                />
-                                                <ToggleGroup.Item
-                                                    value="GG"
-                                                    label="GG"
-                                                    available={false}
-                                                />
+                                                {Object.keys(data.sizes_available)
+                                                    .map((item) => (
+                                                        <ToggleGroup.Item
+                                                            key={item}
+                                                            value={item}
+                                                            label={item}
+                                                            available={data.sizes_available[item]}
+                                                        />
+                                                    ))}
                                             </ToggleGroup>
                                         </div>
                                     </div>
-
 
                                     <Button onPress={handleSubmit as () => void}>Check Formik Values</Button>
                                 </>
                             )}
                         </Formik>
-
-
-
 
                         <div className='finish-buttons'>
                             <Button
