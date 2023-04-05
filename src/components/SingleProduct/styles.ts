@@ -6,25 +6,6 @@ const divider = {
     paddingBottom: "1rem",
 };
 
-export const ColorSelectButton = styled("button", {
-    height: "30px",
-    width: "30px",
-    backgroundColor: "$lightGray",
-    borderRadius: "50%",
-    cursor: "pointer",
-
-    variants: {
-        color: {
-            red: {
-                backgroundColor: "$primary",
-            },
-            blue: {
-                backgroundColor: "$secondary",
-            }
-        }
-    }
-});
-
 export const SingleProductWrap = styled("div", {
     display: "flex",
     justifyContent: "center",

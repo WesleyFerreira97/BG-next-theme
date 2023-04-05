@@ -4,14 +4,8 @@ import React, { ReactNode, createContext, useContext, useState } from 'react';
 
 type ToggleGroupProps = {
   name: string;
-  itemType?: "color" | "label";
+  itemType: "color" | "label";
   children: ReactNode;
-}
-
-type ColorProps = {
-  selectedColor: string;
-  disabledColor: string;
-  availableColor: string;
 }
 
 type GroupItemProps = {
@@ -22,20 +16,36 @@ type GroupItemProps = {
   color?: string
 }
 
+type StatusColorProps = {
+  [key: string]: {
+    active: string;
+    inactive: string;
+  }
+}
+
 const SelectedValue = createContext<any>("");
 
 const Item = (props: GroupItemProps) => {
   const { helpers, field, groupProps } = useContext(SelectedValue);
 
   const handleItemState = () => {
-    if (props.available === false) {
-      // Inactive Item
-      return "#BFACE2";
-    };
+    // Inactive Item return default color
+    if (props.available === false) return "#BFACE2";
+
+    const colorsByItem: StatusColorProps = {
+      color: {
+        active: props.color as string,
+        inactive: "#fff"
+      },
+      label: {
+        active: "#D22779",
+        inactive: "#cecece"
+      }
+    }
 
     const currentColorState = props.value === field.value
-      ? "#D22779"
-      : "#cecece";
+      ? colorsByItem[groupProps.itemType].active
+      : colorsByItem[groupProps.itemType].inactive;
 
     return currentColorState;
   }

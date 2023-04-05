@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container } from "../Layout/Container";
-import { ColorSelectButton, ComponentBehavior, ProductGalleryWrap, ProductInfo, SingleProductWrap } from "./styles";
+import { ComponentBehavior, ProductGalleryWrap, ProductInfo, SingleProductWrap } from "./styles";
 import Woman2 from "../../../public/images/code.jpg";
 import Image from "next/image";
 import { Button } from "@nextui-org/react";
@@ -61,10 +61,10 @@ const ProductGallery = () => {
 
 
 const fakeColorData: any = {
-    black: "#000",
-    blue: "#0000FF",
-    red: "#FF0000",
-    green: "#00FF00",
+    black: "#1F1D36",
+    blue: "#3F3351",
+    red: "#864879",
+    green: "#E9A6A6",
 }
 
 export function SingleProduct(props: SingleProductProps) {
@@ -109,10 +109,6 @@ export function SingleProduct(props: SingleProductProps) {
                                                 </span>
                                             </span>
                                             <div className='product-info__color-available'>
-                                                {/* <ColorSelectButton color="red" />
-                                                <ColorSelectButton color="blue" />
-                                                <ColorSelectButton /> */}
-
                                                 <ToggleGroup
                                                     name="selectedColor"
                                                     itemType="color"
