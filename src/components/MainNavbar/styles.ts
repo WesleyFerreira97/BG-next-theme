@@ -49,6 +49,7 @@ export const MainNavbarWrap = styled("div", {
 
         "&__brand": {
             cursor: "pointer",
+            themeFont: "primary"
         },
         "&__menu, &__cart": {
             height: "100 %",

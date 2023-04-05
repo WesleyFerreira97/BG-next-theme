@@ -101,7 +101,7 @@ export const ProductInfo = styled("div", {
             fontFamily: "$secondaryFont",
         },
         "&__title": {
-            fontWeight: "500",
+            fontWeight: "900",
             themeFontSize: {
                 xs: "1.75rem",
                 sm: "2rem",

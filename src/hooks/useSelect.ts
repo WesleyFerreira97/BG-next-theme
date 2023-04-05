@@ -18,7 +18,7 @@ export function useSelect<T>({ select, match }: UseSelectProps<T>) {
             const { data, error } = await supaDb
                 .from("products")
                 .select(selectedColumns)
-                .limit(9)
+                .limit(12)
                 .match({ ...match });
 
             setSelectResponse(data as T[]);
