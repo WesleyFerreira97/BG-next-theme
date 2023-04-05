@@ -1,24 +1,19 @@
 import { styled, css } from "stitches.config";
 
-const divider = {
-    margin: "0 0 3.75rem",
-    borderBottom: "1.5px dashed #D7D7D7",
-    paddingBottom: "1rem",
-};
-
 export const SingleProductWrap = styled("div", {
     display: "flex",
     justifyContent: "center",
     padding: "0 1.25rem",
 
     "@lg": {
-        margin: "3rem 0 2rem",
+        // margin: "3rem 0 2rem",
     }
 });
 
 export const ComponentBehavior = styled("div", {
     display: "flex",
     flexDirection: "column",
+    marginTop: "6rem",
 
     "@lg": {
         flexDirection: "row",
@@ -80,13 +75,27 @@ export const ProductGalleryWrap = styled("div", {
 
 export const ProductInfo = styled("div", {
     flexGrow: "1rem",
-    padding: "0 1.25rem",
+    padding: "0 $8",
+    marginTop: "$8",
+
+    ".square": {
+        height: "250px",
+        width: "250px",
+        background: "$neutralAlt",
+    },
 
     ".product-info": {
 
         "&__div": {
             display: "block",
-            ...divider,
+            borderBottom: "1.5px dashed #D7D7D7",
+            padding: "$6 0 $6",
+        },
+        "&__div:first-child": {
+            padding: "0 0 $6",
+        },
+        "&__div:last-child": {
+            padding: "$6 0 0",
         },
         "&__title, &__price, &__payment-info, &__label, &__label--thin": {
             fontFamily: "$secondaryFont",
@@ -112,10 +121,14 @@ export const ProductInfo = styled("div", {
         },
         "&__label": {
             fontWeight: "600",
+            color: "$secondary",
+            paddingBottom: "$1",
+            display: "block",
 
             "&--thin": {
                 fontWeight: "300",
                 color: "$neutralAlt",
+                fontSize: "$3",
             }
         },
 
@@ -124,7 +137,6 @@ export const ProductInfo = styled("div", {
             "&-available": {
                 display: "flex",
                 gap: "1rem",
-                margin: "1rem 0",
             },
         },
 
@@ -133,7 +145,6 @@ export const ProductInfo = styled("div", {
             "&-available": {
                 display: "flex",
                 gap: "1rem",
-                margin: "1rem 0",
 
                 "input[type=radio]": {
                 },
@@ -153,24 +164,23 @@ export const ProductInfo = styled("div", {
                 }
             }
         },
+    },
+    "@lg": {
+        marginTop: "0",
+    },
+    ".finish-buttons": {
+        display: "flex",
+        gap: "1rem",
+        margin: "$6 0",
+    },
+    ".cart-button": {
+        backgroundColor: "#27AE60!important",
+        borderRadius: "0!important",
 
-        ".finish-buttons": {
-            display: "flex",
-            gap: "1rem",
-            margin: "1.25rem 0",
-        },
-        ".cart-button": {
-            backgroundColor: "#27AE60!important",
-            borderRadius: "0!important",
-
-            "span": {
-                marginLeft: ".5rem",
-            }
-        },
-
-        "@lg": {
-            maxWidth: "45%",
+        ".label": {
+            margin: ".5rem",
         }
-    }
+    },
+
 });
 

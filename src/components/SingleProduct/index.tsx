@@ -61,10 +61,10 @@ const ProductGallery = () => {
 
 
 const fakeColorData: any = {
-    black: "#1F1D36",
-    blue: "#3F3351",
-    red: "#864879",
-    green: "#E9A6A6",
+    Preto: "#1F1D36",
+    Roxo: "#3F3351",
+    Vinho: "#864879",
+    Salmão: "#E9A6A6",
 }
 
 export function SingleProduct(props: SingleProductProps) {
@@ -73,8 +73,8 @@ export function SingleProduct(props: SingleProductProps) {
     const FormInitialValues = {
         productTitle: data?.title,
         price: data?.price,
-        selectedSize: "P",
-        selectedColor: "blue",
+        selectedSize: "G",
+        selectedColor: "Preto",
     }
 
     return (
@@ -105,7 +105,7 @@ export function SingleProduct(props: SingleProductProps) {
                                             <span className='product-info__label'>
                                                 Cor: &nbsp;
                                                 <span className='product-info__label--thin'>
-                                                    Preto
+                                                    {values.selectedColor}
                                                 </span>
                                             </span>
                                             <div className='product-info__color-available'>
@@ -159,12 +159,13 @@ export function SingleProduct(props: SingleProductProps) {
                                             onPress={handleSubmit as () => void}
                                         >
                                             <ShoppingCartSimple size={24} />
-                                            <span>Adicionar ao carrinho</span>
+                                            <span className="label">Adicionar ao carrinho</span>
                                         </Button>
                                     </div>
                                 </>
                             )}
                         </Formik>
+                        {/* <div className="square">Center</div> */}
                     </ProductInfo>
                 </ComponentBehavior>
             </Container>

@@ -4,7 +4,7 @@ import React, { ReactNode, createContext, useContext, useState } from 'react';
 
 type ToggleGroupProps = {
   name: string;
-  itemType: "color" | "label";
+  itemType?: "color" | "label";
   children: ReactNode;
 }
 
@@ -27,6 +27,7 @@ const SelectedValue = createContext<any>("");
 
 const Item = (props: GroupItemProps) => {
   const { helpers, field, groupProps } = useContext(SelectedValue);
+  const { itemType } = groupProps;
 
   const handleItemState = () => {
     // Inactive Item return default color
@@ -44,8 +45,8 @@ const Item = (props: GroupItemProps) => {
     }
 
     const currentColorState = props.value === field.value
-      ? colorsByItem[groupProps.itemType].active
-      : colorsByItem[groupProps.itemType].inactive;
+      ? colorsByItem[itemType].active
+      : colorsByItem[itemType].inactive;
 
     return currentColorState;
   }
