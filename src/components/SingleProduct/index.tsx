@@ -8,6 +8,8 @@ import { ShoppingCartSimple } from "phosphor-react";
 import { ToggleGroup } from "../ToggleGroup";
 import { ProductProps, BucketProps, ProductWithBucketProps } from "src/types/product";
 import { Formik } from "formik";
+import * as Yup from 'yup';
+
 
 type SingleProductProps = {
     data: Partial<ProductWithBucketProps>;
@@ -59,6 +61,13 @@ const ProductGallery = () => {
     )
 }
 
+const orderValidation = Yup.object().shape({
+    selectedSize: Yup.string()
+        .required('Selecione um tamanho'),
+    selectedColor: Yup.string()
+        .required('Selecione uma cor'),
+});
+
 
 const fakeColorData: any = {
     Preto: "#1F1D36",
@@ -73,7 +82,7 @@ export function SingleProduct(props: SingleProductProps) {
     const FormInitialValues = {
         productTitle: data?.title,
         price: data?.price,
-        selectedSize: "G",
+        selectedSize: null,
         selectedColor: "Preto",
     }
 
@@ -97,9 +106,11 @@ export function SingleProduct(props: SingleProductProps) {
                         <Formik
                             initialValues={FormInitialValues}
                             onSubmit={(values) => { console.log(values) }}
+                            validationSchema={orderValidation}
                         >
-                            {({ values, handleChange, handleBlur, handleSubmit }) => (
+                            {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
                                 <>
+                                    {console.log(errors)}
                                     <div className='product-info__div'>
                                         <div className='product-info__color'>
                                             <span className='product-info__label'>
