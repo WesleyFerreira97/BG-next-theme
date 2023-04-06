@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "../Layout/Container";
-import { ComponentBehavior, ProductGalleryWrap, ProductInfo, SingleProductWrap } from "./styles";
-import Woman2 from "../../../public/images/code.jpg";
-import Image from "next/image";
+import { ComponentBehavior, ProductInfo, SingleProductWrap } from "./styles";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
 import { ToggleGroup } from "../ToggleGroup";
-import { ProductProps, BucketProps, ProductWithBucketProps } from "src/types/product";
+import { ProductWithBucketProps } from "src/types/product";
 import { Formik } from "formik";
 import * as Yup from 'yup';
+import SingleProductGallery from "../SingleProductGallery";
 
 
 type SingleProductProps = {
@@ -20,45 +19,6 @@ type OrderDataProps = {
     price?: number;
     selectedSize?: string | number;
     selectedColor?: string;
-}
-
-const ProductGallery = () => {
-
-    return (
-        <ProductGalleryWrap>
-            <div className='grid-thumbnails'>
-                <div className='grid-thumbnails__item'>
-                    <Image
-                        src={Woman2.src}
-                        alt="Main product image"
-                        fill={true}
-                    />
-                </div>
-                <div className='grid-thumbnails__item'>
-                    <Image
-                        src={Woman2.src}
-                        alt="Main product image"
-                        fill={true}
-                    />
-                </div>
-                <div className='grid-thumbnails__item'>
-                    <Image
-                        src={Woman2.src}
-                        alt="Main product image"
-                        fill={true}
-                    />
-                </div>
-            </div>
-            <div className='main-image'>
-                <Image
-                    src={Woman2.src}
-                    alt="Main product image"
-                    quality={100}
-                    fill={true}
-                />
-            </div>
-        </ProductGalleryWrap>
-    )
 }
 
 const orderValidation = Yup.object().shape({
@@ -90,7 +50,7 @@ export function SingleProduct(props: SingleProductProps) {
         <SingleProductWrap>
             <Container xs={100}>
                 <ComponentBehavior>
-                    <ProductGallery />
+                    <SingleProductGallery />
                     <ProductInfo>
                         <div className='product-info__div'>
                             <h1 className='product-info__title'>
@@ -110,7 +70,6 @@ export function SingleProduct(props: SingleProductProps) {
                         >
                             {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
                                 <>
-                                    {console.log(errors)}
                                     <div className='product-info__div'>
                                         <div className='product-info__color'>
                                             <span className='product-info__label'>
@@ -176,7 +135,6 @@ export function SingleProduct(props: SingleProductProps) {
                                 </>
                             )}
                         </Formik>
-                        {/* <div className="square">Center</div> */}
                     </ProductInfo>
                 </ComponentBehavior>
             </Container>

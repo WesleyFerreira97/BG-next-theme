@@ -24,5 +24,5 @@ export const ErrorMessageWrap = styled("div", {
     color: "$primary",
     themeFont: "primary",
     fontSize: "$2",
-    padding: "$4 0 $2",
+    padding: "$4 0 0",
 });
