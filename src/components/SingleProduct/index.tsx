@@ -83,7 +83,7 @@ export function SingleProduct(props: SingleProductProps) {
         productTitle: data?.title,
         price: data?.price,
         selectedSize: null,
-        selectedColor: "Preto",
+        selectedColor: null,
     }
 
     return (
