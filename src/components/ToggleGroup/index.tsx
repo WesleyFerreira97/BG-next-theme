@@ -3,6 +3,7 @@ import { useField } from 'formik';
 import React, { createContext } from 'react';
 import { ToggleGroupProps } from './types';
 import { Item } from './Item';
+import { ErrorMessageWrap } from './styles';
 
 export const SelectedValue = createContext<any>("");
 
@@ -19,9 +20,9 @@ function ToggleGroup({ name, children, ...groupProps }: ToggleGroupProps) {
           {children}
         </div>
         {meta.error && meta.touched && (
-          <div style={{ color: "red" }}>
+          <ErrorMessageWrap>
             {meta.error}
-          </div>
+          </ErrorMessageWrap>
         )}
       </SelectedValue.Provider>
 
