@@ -47,21 +47,28 @@ export const ProductInfo = styled("div", {
         "&__title": {
             fontWeight: "900",
             themeFontSize: {
-                xs: "1.75rem",
-                sm: "2rem",
+                xs: "$5",
+                sm: "$6",
             },
             color: "$secondary",
         },
         "&__price": {
             display: "block",
-            fontSize: "1.75rem",
+            themeFontSize: {
+                xs: "$4",
+                sm: "$5",
+            },
             fontWeight: "600",
-            padding: ".75rem 0",
+            padding: "$1 0",
             color: "$primary",
         },
         "&__payment-info": {
             display: "block",
             color: "$neutralAlt",
+            themeFontSize: {
+                xs: "$3",
+                sm: "$3",
+            },
         },
         "&__label": {
             fontWeight: "600",

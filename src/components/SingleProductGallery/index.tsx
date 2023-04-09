@@ -40,9 +40,9 @@ const Gallery = ({ images }: ProductGalleryProps) => {
                             alt="Main product image"
                             fill={true}
                         />
-                    </SwiperSlide>
+                    </SwiperSlide >
                 ))}
-            </Swiper>
+            </Swiper >
         </ProductGalleryWrap >
 
     )

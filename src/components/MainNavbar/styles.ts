@@ -56,7 +56,7 @@ export const MainNavbarWrap = styled("div", {
             display: "flex",
             alignItems: "center",
             padding: "0 .5rem",
-            fontSize: "1.5rem",
+            fontSize: "$3",
             color: "$neutral",
             cursor: "pointer",
         },
