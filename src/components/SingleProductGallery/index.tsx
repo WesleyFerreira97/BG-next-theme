@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { use, useEffect, useRef, useState } from 'react'
 import { ProductGalleryWrap } from './styles'
 import FallbackImage from "../../../public/images/code.jpg";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs, Swiper as SwiperRef } from "swiper";
+
+
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
 type ProductGalleryProps = {
     images: StaticImageData[]
@@ -11,32 +19,35 @@ type ProductGalleryProps = {
 const fallbackImages = [FallbackImage, FallbackImage, FallbackImage, FallbackImage];
 
 const Gallery = ({ images }: ProductGalleryProps) => {
-    console.log(images[0]);
+    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperRef>();
+    const batata = images || fallbackImages;
 
     return (
         <ProductGalleryWrap>
-            <div className='grid-thumbnails'>
-                {images?.map((image, index) => (
-                    <div key={index} className='grid-thumbnails__item'>
+
+            <Swiper
+                spaceBetween={10}
+                navigation={true}
+                thumbs={{ swiper: thumbsSwiper }}
+                modules={[FreeMode, Navigation, Thumbs]}
+                // style={{ width: '100%', height: '100%' }}
+                className='main-image'
+            >
+                {batata.map((image, index) => (
+                    <SwiperSlide key={index}>
                         <Image
                             src={image.src}
                             alt="Main product image"
                             fill={true}
                         />
-                    </div>
+                    </SwiperSlide>
                 ))}
-            </div>
-            <div className='main-image'>
-                <Image
-                    src={images[0].src}
-                    alt="Main product image"
-                    quality={100}
-                    fill={true}
-                />
-            </div>
-        </ProductGalleryWrap>
+            </Swiper>
+        </ProductGalleryWrap >
+
     )
 }
+
 
 export default function SingleProductGallery({ images }: Partial<ProductGalleryProps>) {
 
