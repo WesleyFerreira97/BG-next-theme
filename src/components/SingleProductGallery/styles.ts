@@ -31,7 +31,7 @@ export const ProductGalleryWrap = styled("div", {
         // },
 
         "&__item": {
-            height: "100%",
+            // height: "100%",
             width: "150px",
             aspectRatio: "9 / 13",
             position: "relative",
@@ -50,6 +50,7 @@ export const ProductGalleryWrap = styled("div", {
             flexDirection: "column",
             alignItems: "center",
             marginRight: "$1",
+            gap: "5rem"
         }
     }
 });
