@@ -19,18 +19,33 @@ type ProductGalleryProps = {
 const fallbackImages = [FallbackImage, FallbackImage, FallbackImage, FallbackImage];
 
 const Gallery = ({ images }: ProductGalleryProps) => {
-    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperRef>();
+    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperRef | null>(null);
     const batata = images || fallbackImages;
 
     return (
         <ProductGalleryWrap>
 
             <Swiper
-                spaceBetween={10}
                 navigation={true}
-                thumbs={{ swiper: thumbsSwiper }}
+                thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                 modules={[FreeMode, Navigation, Thumbs]}
-                // style={{ width: '100%', height: '100%' }}
+                className='main-image'
+            >
+                {batata.map((image, index) => (
+                    <SwiperSlide key={index}>
+                        <Image
+                            src={image.src}
+                            alt="Main product image"
+                            fill={true}
+                        />
+                    </SwiperSlide >
+                ))}
+            </Swiper >
+
+            <Swiper
+                modules={[Thumbs]}
+                watchSlidesProgress
+                onSwiper={setThumbsSwiper}
                 className='main-image'
             >
                 {batata.map((image, index) => (
