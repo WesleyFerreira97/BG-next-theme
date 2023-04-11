@@ -8,13 +8,13 @@ import { ProductWithBucketProps } from "src/types/product";
 import { Formik } from "formik";
 import * as Yup from 'yup';
 import SingleProductGallery from "../SingleProductGallery";
-
+import { useSelector } from "react-redux";
 
 type SingleProductProps = {
     data: Partial<ProductWithBucketProps>;
 };
 
-type OrderDataProps = {
+export type OrderDataProps = {
     productTitle: string;
     price?: number;
     selectedSize?: string | number;
@@ -28,16 +28,18 @@ const orderValidation = Yup.object().shape({
         .required('Selecione uma cor'),
 });
 
-
 const fakeColorData: any = {
     Preto: "#1F1D36",
     Roxo: "#3F3351",
     Vinho: "#864879",
     Salmão: "#E9A6A6",
-}
+};
 
 export function SingleProduct(props: SingleProductProps) {
     const { data } = props;
+    const theme = useSelector((state: any) => state.order);
+    console.log(theme);
+
 
     const FormInitialValues = {
         productTitle: data?.title,

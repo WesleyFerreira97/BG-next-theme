@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import { StoreProvider } from "src/providers/StoreProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -20,11 +21,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                     name="viewport"
                 />
             </Head>
-            {/* <NextUIProvider> */}
-            {/* <MainNavbar /> */}
-            <Component {...pageProps} />
-            {/* <Footer /> */}
-            {/* </NextUIProvider> */}
+            <StoreProvider>
+                {/* <NextUIProvider> */}
+                {/* <MainNavbar /> */}
+                <Component {...pageProps} />
+                {/* <Footer /> */}
+                {/* </NextUIProvider> */}
+            </StoreProvider>
         </>
     );
 }
