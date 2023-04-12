@@ -43,21 +43,24 @@ const Gallery = ({ images }: ProductGalleryProps) => {
             </Swiper >
 
             <Swiper
-                modules={[Thumbs]}
+                modules={[FreeMode, Navigation, Thumbs]}
                 onSwiper={setThumbsSwiper}
                 slidesPerView={4}
+                spaceBetween={10}
                 direction="vertical"
                 className='grid-thumbnails'
+
             >
                 {batata.map((image, index) => (
-                    <SwiperSlide key={index}>
-                        <div className='grid-thumbnails__item'>
-                            <Image
-                                src={image.src}
-                                alt="Main product image"
-                                fill={true}
-                            />
-                        </div>
+                    <SwiperSlide
+                        key={index}
+                        className='grid-thumbnails__item'
+                    >
+                        <Image
+                            src={image.src}
+                            alt="Main product image"
+                            fill={true}
+                        />
                     </SwiperSlide >
                 ))}
             </Swiper >
@@ -65,7 +68,6 @@ const Gallery = ({ images }: ProductGalleryProps) => {
 
     )
 }
-
 
 export default function SingleProductGallery({ images }: Partial<ProductGalleryProps>) {
 
