@@ -1,25 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createReducer } from '@reduxjs/toolkit';
 import type { OrderDataProps } from "src/components/SingleProduct";
 
-const initialState: OrderDataProps = {
-    productTitle: "initial Title",
-    price: 0,
-    selectedColor: "initial Color",
-    selectedSize: "initial Size",
+type OrderData = {
+    order: OrderDataProps
+}
+const initialState: OrderData = {
+    order: {
+        productTitle: "initial Title",
+        price: 0,
+        selectedColor: "initial Color",
+        selectedSize: "initial Size",
+    }
 };
 
 const orderSlice = createSlice({
     name: "order",
     initialState,
     reducers: {
-        newOrder(state: any, action) {
-            const order = action.payload;
-            console.log(action);
+        newOrder(state: any, action: any) {
+            // const order = action.payload;
+            console.log(state);
 
-            // return state.push(order);
-            state.order.push(order);
-            // state.order = { ...state, price: 1000666559998 };
-
+            // state.order.push(action.payload);
+            return [...state, action.payload]
         }
     }
 });

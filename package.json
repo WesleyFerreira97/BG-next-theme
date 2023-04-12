@@ -15,6 +15,7 @@
     "@reduxjs/toolkit": "^1.9.3",
     "@stitches/react": "^1.2.8",
     "@supabase/supabase-js": "^2.7.0",
+    "@types/react-redux": "^7.1.25",
     "eslint-plugin-testing-library": "^5.10.0",
     "formik": "^2.2.9",
     "next": "^13.1.6",
