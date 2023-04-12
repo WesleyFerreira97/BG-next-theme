@@ -8,7 +8,8 @@ import { ProductWithBucketProps } from "src/types/product";
 import { Formik } from "formik";
 import * as Yup from 'yup';
 import SingleProductGallery from "../SingleProductGallery";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { newOrder } from "src/reduceres/cartProductReducer";
 
 type SingleProductProps = {
     data: Partial<ProductWithBucketProps>;
@@ -37,8 +38,8 @@ const fakeColorData: any = {
 
 export function SingleProduct(props: SingleProductProps) {
     const { data } = props;
-    const theme = useSelector((state: any) => state.order);
-    console.log(theme);
+    const theme = useSelector((state: any) => state);
+    const dispatch = useDispatch();
 
 
     const FormInitialValues = {
@@ -67,7 +68,10 @@ export function SingleProduct(props: SingleProductProps) {
                         </div>
                         <Formik
                             initialValues={FormInitialValues}
-                            onSubmit={(values) => { console.log(values) }}
+                            onSubmit={(values) => {
+                                console.log(values);
+                                dispatch(newOrder(values));
+                            }}
                             validationSchema={orderValidation}
                         >
                             {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
@@ -137,6 +141,10 @@ export function SingleProduct(props: SingleProductProps) {
                                 </>
                             )}
                         </Formik>
+                        <Button onPress={() => console.log(theme)}>
+                            Check Store Values
+                        </Button>;
+
                     </ProductInfo>
                 </ComponentBehavior>
             </Container>
