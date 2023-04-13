@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductInfo, SingleProductWrap } from "./styles";
 import { Button } from "@nextui-org/react";
@@ -41,6 +41,12 @@ export function SingleProduct(props: SingleProductProps) {
     const theme = useSelector((state: any) => state);
     const dispatch = useDispatch();
 
+    const checkoutNavigate = () => {
+        if (typeof window !== 'undefined') {
+            const wLocation = window.location.href = "/checkout?params=ean";
+            console.log(wLocation);
+        }
+    }
 
     const FormInitialValues = {
         productTitle: data?.title,
@@ -69,8 +75,10 @@ export function SingleProduct(props: SingleProductProps) {
                         <Formik
                             initialValues={FormInitialValues}
                             onSubmit={(values) => {
-                                console.log(values);
+                                if (!values) return;
+
                                 dispatch(newOrder(values));
+                                checkoutNavigate();
                             }}
                             validationSchema={orderValidation}
                         >

@@ -4,25 +4,21 @@ import type { OrderDataProps } from "src/components/SingleProduct";
 type OrderData = {
     order: OrderDataProps
 }
-const initialState: OrderData = {
-    order: {
-        productTitle: "initial Title",
-        price: 0,
-        selectedColor: "initial Color",
-        selectedSize: "initial Size",
-    }
-};
+// const initialState: any = {
+//     productTitle: "initial Title",
+//     price: 0,
+//     selectedColor: "initial Color",
+//     selectedSize: "initial Size",
+// };
 
 const orderSlice = createSlice({
     name: "order",
-    initialState,
+    initialState: [],
     reducers: {
         newOrder(state: any, action: any) {
-            // const order = action.payload;
-            console.log(state);
-
-            // state.order.push(action.payload);
-            return [...state, action.payload]
+            const order = action.payload;
+            console.log("inside reducer: ", order);
+            state.push(action.payload)
         }
     }
 });
@@ -30,3 +26,5 @@ const orderSlice = createSlice({
 export const orderReducer = orderSlice.reducer;
 
 export const { newOrder } = orderSlice.actions;
+
+
