@@ -10,6 +10,8 @@ import * as Yup from 'yup';
 import SingleProductGallery from "../SingleProductGallery";
 import { useSelector, useDispatch } from "react-redux";
 import { newOrder } from "src/reduceres/cartProductReducer";
+import { useRouter } from "next/router";
+import { currentCheckoutData } from "src/reduceres/checkoutReducer";
 
 type SingleProductProps = {
     data: Partial<ProductWithBucketProps>;
@@ -40,12 +42,10 @@ export function SingleProduct(props: SingleProductProps) {
     const { data } = props;
     const theme = useSelector((state: any) => state);
     const dispatch = useDispatch();
+    const router = useRouter();
 
     const checkoutNavigate = () => {
-        if (typeof window !== 'undefined') {
-            const wLocation = window.location.href = "/checkout?params=ean";
-            console.log(wLocation);
-        }
+        router.push('/checkout');
     }
 
     const FormInitialValues = {
@@ -76,9 +76,11 @@ export function SingleProduct(props: SingleProductProps) {
                             initialValues={FormInitialValues}
                             onSubmit={(values) => {
                                 if (!values) return;
+                                console.log(values);
 
                                 dispatch(newOrder(values));
-                                checkoutNavigate();
+                                dispatch(currentCheckoutData(values));
+                                // checkoutNavigate();
                             }}
                             validationSchema={orderValidation}
                         >

@@ -1,4 +1,4 @@
-import { createSlice, createReducer } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import type { OrderDataProps } from "src/components/SingleProduct";
 
 type OrderData = {
