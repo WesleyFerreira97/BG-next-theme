@@ -44,7 +44,12 @@ export function SingleProduct(props: SingleProductProps) {
     const dispatch = useDispatch();
     const router = useRouter();
 
-    const checkoutNavigate = () => {
+    const handleNewOrder = (values) => {
+        dispatch(newOrder(values));
+    }
+
+    const checkoutNavigate = (values) => {
+        dispatch(currentCheckoutData(values));
         router.push('/checkout');
     }
 
@@ -74,15 +79,13 @@ export function SingleProduct(props: SingleProductProps) {
                         </div>
                         <Formik
                             initialValues={FormInitialValues}
+                            validationSchema={orderValidation}
                             onSubmit={(values) => {
                                 if (!values) return;
-                                console.log(values);
 
-                                dispatch(newOrder(values));
-                                dispatch(currentCheckoutData(values));
-                                // checkoutNavigate();
+                                handleNewOrder(values);
+                                checkoutNavigate(values);
                             }}
-                            validationSchema={orderValidation}
                         >
                             {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
                                 <>
@@ -153,7 +156,7 @@ export function SingleProduct(props: SingleProductProps) {
                         </Formik>
                         <Button onPress={() => console.log(theme)}>
                             Check Store Values
-                        </Button>;
+                        </Button>
 
                     </ProductInfo>
                 </ComponentBehavior>
@@ -161,3 +164,4 @@ export function SingleProduct(props: SingleProductProps) {
         </SingleProductWrap >
     );
 }
+

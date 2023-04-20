@@ -17,7 +17,7 @@ const orderSlice = createSlice({
     reducers: {
         newOrder(state: any, action: any) {
             const order = action.payload;
-            console.log("inside reducer: ", order);
+
             state.push(action.payload)
         }
     }
