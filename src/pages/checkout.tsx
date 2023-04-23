@@ -1,14 +1,15 @@
 import React from 'react'
-import {
-    useRouter
-} from 'next/router';
+import { Container } from "@theme/Layout/";
+import { useSelector } from "react-redux";
+import CardCheckout from 'src/components/Cards/CardCheckout';
 
 function Checkout(props: any) {
-    const router = useRouter();
-    const { params } = router.query;
+    const checkoutData = useSelector((state: any) => state.checkoutState.data);
 
     return (
-        <div>Checkout</div>
+        <>
+            <CardCheckout data={checkoutData} />
+        </>
     )
 };
 

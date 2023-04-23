@@ -1,7 +1,7 @@
 import { Grid } from "./Grid";
-import { Component } from "react";
+import { Container } from "./Container";
 
 export {
     Grid,
-    Component
+    Container
 };
