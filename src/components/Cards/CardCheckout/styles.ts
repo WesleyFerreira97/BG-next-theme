@@ -32,7 +32,7 @@ export const CardCheckoutWrap = styled("div", {
                 fontWeight: "bold",
                 display: "flex",
                 alignItems: "center",
-                marginBottom: "$3",
+                marginBottom: "$8",
                 fontSize: "$3",
 
                 // Get Icon
