@@ -25,17 +25,29 @@ export default function CardCheckout(props: any) {
                     <div className='card-checkout__image'>
                         <Image src={image} alt={data.productTitle} fill={true} />
                     </div>
-                    <div className='card-checkout__info'>
-                        <span className='status'>
-                            <CheckCircle size={32} />
-                            Adicionado ao carrinho
-                        </span>
-                        <h3 className='title'>{data.productTitle}</h3>
-                        <span className='price'>R$ {data.price}</span>
-                        <hr className='separator' />
+
+                    <div>
+                        <div className='card-checkout__info'>
+                            <span className='status'>
+                                <CheckCircle size={32} />
+                                Adicionado ao carrinho
+                            </span>
+                            <h3 className='title'>{data.productTitle}</h3>
+                            <span className='price'>R$ {data.price}</span>
+                            <hr className='separator' />
+                        </div>
+                        <div className='card-checkout__info'>
+                            <p className='size'>
+                                <span className='label'>Tamanho Selecionado :  </span>
+                                {data.selectedSize}
+                            </p>
+                            <p className='color'>
+                                <span className='label'>Cor Selecionada :  </span>
+                                {data.selectedColor}
+                            </p>
+                            <hr className='separator' />
+                        </div>
                     </div>
-                    {/* <span className='size'>{data.selectedSize}</span>
-                        <span className='color'>{data.selectedColor}</span> */}
                 </div>
             </Container>
         </CardCheckoutWrap>
