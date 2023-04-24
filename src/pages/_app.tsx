@@ -9,6 +9,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import { StoreProvider } from "src/providers/StoreProvider";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor } from "src/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -22,6 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 />
             </Head>
             <StoreProvider>
+                <PersistGate loading={null} persistor={persistor} />
                 {/* <NextUIProvider> */}
                 {/* <MainNavbar /> */}
                 <Component {...pageProps} />

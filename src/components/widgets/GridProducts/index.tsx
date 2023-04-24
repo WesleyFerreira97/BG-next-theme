@@ -4,7 +4,7 @@ import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
 import { useSelect } from "../../../hooks/useSelect";
 import type { ProductProps, BucketProps } from "../../../types/product";
-import { Grid } from "@theme/Layout/";
+import { Grid } from "@theme/Layout/Grid";
 import { fakeProducts } from "../../../utils/fakeProducts";
 import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
 import Link from "next/link";
