@@ -3,11 +3,20 @@ import { themeColors } from "stitches.config";
 
 export const MainNavbarWrap = styled("div", {
     // background: "$primary",
-    // color: "blue",
+    color: "#fff",
 
     ".navbar": {
+        themeFont: "$secondary",
         // background: "blue",
 
+    },
+
+    ".main-menu": {
+        "li": {
+            color: "$neutral",
+            themeFont: "$secondary",
+            letterSpacing: "0.025rem",
+        }
     }
 });
 
