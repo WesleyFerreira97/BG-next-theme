@@ -5,6 +5,7 @@ import { NavbarCategories } from "../components/NavbarCategories";
 import { SingleProduct } from "../components/SingleProduct";
 import { BucketProps, ProductProps, ProductWithBucketProps } from "src/types/product";
 import { supaDb } from "src/services/supadb";
+import { MainNavbarPreview } from "src/components/MainNavbarPreview";
 
 type SingleProps = {
     singleProductData: ProductWithBucketProps;
@@ -22,7 +23,8 @@ function Single(props: SingleProps) {
 
     return (
         <SingleWrap>
-            <MainNavbar position="relative" bgColor="primary" />
+            {/* <MainNavbar position="relative" bgColor="primary" /> */}
+            <MainNavbarPreview />
             <NavbarCategories />
             <SingleProduct data={singleProductData} />
         </SingleWrap>

@@ -42,21 +42,23 @@ export const themeSizes: { [key: number]: string } = {
     11: "3rem",   // 48px
 };
 
+export const themeColors = {
+    primary: "#D22779",
+    // primary: "#1F1D36",
+    primaryAlt: "#FF6500",
+    secondary: "#3F3351",
+    secondaryAlt: "#0060B1",
+    tertiary: "#D22779",
+    neutral: "#fff",
+    neutralAlt: "#7a7a7a",
+    lightGray: "#D7D7D7",
+    green: "#27AE60"
+}
+
 export const { styled, getCssText, config, css, globalCss, theme } = createStitches({
     prefix: "bg-theme",
     theme: {
-        colors: {
-            primary: "#D22779",
-            // primary: "#1F1D36",
-            primaryAlt: "#FF6500",
-            secondary: "#3F3351",
-            secondaryAlt: "#0060B1",
-            tertiary: "#D22779",
-            neutral: "#fff",
-            neutralAlt: "#7a7a7a",
-            lightGray: "#D7D7D7",
-            green: "#27AE60"
-        },
+        colors: themeColors,
         fontSizes: { ...themeSizes },
         sizes: { ...themeSizes },
         space: { ...themeSizes },
