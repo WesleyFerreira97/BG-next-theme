@@ -2,6 +2,7 @@ import { Button, Navbar } from '@nextui-org/react'
 import React from 'react'
 import { MainNavbarWrap, containerCss } from './style';
 import { ShoppingCartSimple } from 'phosphor-react';
+import { Container } from '../Layout';
 
 const categories = [
     "Início",
@@ -27,27 +28,29 @@ const NavbarCategories = () => {
 export function MainNavbarPreview() {
     return (
         <MainNavbarWrap>
-            <Navbar className='navbar' containerCss={containerCss}>
-                <Navbar.Collapse>
-                    {categories.map((item, index) => (
-                        <Navbar.CollapseItem key={index}>
-                            {item}
-                        </Navbar.CollapseItem>
-                    ))}
-                </Navbar.Collapse>
-                <Navbar.Toggle aria-label="toggle navigation" />
-                <Navbar.Brand>
-                    <span className='brand--desktop navbar'>Title</span>
-                </Navbar.Brand>
+            <Container>
+                <Navbar className='navbar' containerCss={containerCss}>
+                    <Navbar.Collapse>
+                        {categories.map((item, index) => (
+                            <Navbar.CollapseItem key={index}>
+                                {item}
+                            </Navbar.CollapseItem>
+                        ))}
+                    </Navbar.Collapse>
+                    <Navbar.Toggle aria-label="toggle navigation" />
+                    <Navbar.Brand>
+                        <span className='brand--desktop navbar'>Title</span>
+                    </Navbar.Brand>
 
-                <Navbar.Content>
-                    <div className='navbar__cart'>
-                        <div className='cart-icon'>
-                            <ShoppingCartSimple size={25} />
+                    <Navbar.Content>
+                        <div className='navbar__cart'>
+                            <div className='cart-icon'>
+                                <ShoppingCartSimple size={25} />
+                            </div>
                         </div>
-                    </div>
-                </Navbar.Content>
-            </Navbar>
+                    </Navbar.Content>
+                </Navbar>
+            </Container>
         </MainNavbarWrap>
     )
 }

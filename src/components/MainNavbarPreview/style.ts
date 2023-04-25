@@ -2,7 +2,9 @@ import { styled } from "stitches.config";
 import { themeColors } from "stitches.config";
 
 export const MainNavbarWrap = styled("div", {
-    // background: "$primary",
+    display: "flex",
+    justifyContent: "center",
+    background: "$primary",
     color: "#fff",
 
     ".navbar": {
