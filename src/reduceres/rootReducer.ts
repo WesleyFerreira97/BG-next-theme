@@ -7,7 +7,7 @@ import { persistReducer } from "redux-persist";
 export const persistConfig = {
     key: "root",
     storage,
-    whitelist: ["order", "checkoutState"]
+    whitelist: ["order", "checkoutState"],
 }
 
 const reduceres = combineReducers({

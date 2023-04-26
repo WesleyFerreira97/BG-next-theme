@@ -24,8 +24,8 @@ function Single(props: SingleProps) {
     return (
         <SingleWrap>
             {/* <MainNavbar position="relative" bgColor="primary" /> */}
-            <MainNavbarPreview />
-            <NavbarCategories />
+            {/* <MainNavbarPreview /> */}
+            {/* <NavbarCategories /> */}
             <SingleProduct data={singleProductData} />
         </SingleWrap>
     );

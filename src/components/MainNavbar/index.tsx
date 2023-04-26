@@ -2,6 +2,7 @@ import React from "react";
 import { MainMenuWrap, MainNavbarWrap } from "./styles";
 import { List, ShoppingCartSimple } from "phosphor-react";
 import { Container } from "../Layout/Container";
+import { MenuSidebar } from "../MenuSidebar";
 
 export type MainNavbarProps = {
     bgColor?: "primary" | "transparent",
@@ -12,12 +13,19 @@ export function MainNavbar(props: MainNavbarProps) {
 
     return (
         <>
+            {/* <MenuSidebar /> */}
+            {/* <MenuSidebar registerContents={["categories", "cart"]}> */}
             <MainNavbarWrap {...props}>
                 <Container>
                     <div className="navbar">
                         <div className='navbar__menu'>
                             <div className='menu-icon'>
-                                <List size={25} />
+                                {/* <MenuSidebar.ToggleMenu contentId="categories">
+                                        <List size={25} />
+                                    </MenuSidebar.ToggleMenu>
+                                    <MenuSidebar.Toggle contentId="cart">
+                                        <List size={25} />
+                                    </MenuSidebar.Toggle> */}
                             </div>
                         </div>
                         <div className='navbar__brand'>
@@ -34,22 +42,24 @@ export function MainNavbar(props: MainNavbarProps) {
             </MainNavbarWrap>
             <MainMenuWrap>
                 <Container>
-                    <div className="main-menu__behavior">
-                        <ul className="main-menu">
-                            <li className="main-menu__item">Ínicio</li>
-                            <li className="main-menu__item">
-                                <a href="#">
-                                    Camisas
-                                </a>
-                            </li>
-                            <li className="main-menu__item"><a href="#">Regatas</a></li>
-                            <li className="main-menu__item"><a href="#">Conjuntos</a></li>
-                            <li className="main-menu__item"><a href="#">Promoções</a></li>
-                        </ul>
-                    </div>
+                    {/* <MenuSidebar.Content contentId="categories">
+                            <div className="main-menu__behavior">
+                                <ul className="main-menu">
+                                    <li className="main-menu__item">Ínicio</li>
+                                    <li className="main-menu__item">
+                                        <a href="#">
+                                            Camisas
+                                        </a>
+                                    </li>
+                                    <li className="main-menu__item"><a href="#">Regatas</a></li>
+                                    <li className="main-menu__item"><a href="#">Conjuntos</a></li>
+                                    <li className="main-menu__item"><a href="#">Promoções</a></li>
+                                </ul>
+                            </div>
+                        </MenuSidebar.Content> */}
                 </Container>
             </MainMenuWrap>
+            {/* </MenuSidebar> */}
         </>
     );
 }
-

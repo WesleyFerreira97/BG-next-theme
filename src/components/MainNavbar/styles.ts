@@ -117,4 +117,4 @@ export const MainMenuWrap = styled("div", {
             transition: "all .3s ease-in-out",
         }
     },
-})
+});
