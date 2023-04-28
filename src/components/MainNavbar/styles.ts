@@ -87,7 +87,7 @@ export const MainNavbarWrap = styled("div", {
 
 
 export const MainMenuWrap = styled("div", {
-    minHeight: "30px",
+    // minHeight: "30px",
     width: "100%",
     display: "flex",
     alignItems: "center",

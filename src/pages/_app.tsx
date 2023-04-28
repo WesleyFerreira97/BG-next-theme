@@ -25,11 +25,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Head>
             <StoreProvider>
                 <PersistGate loading={null} persistor={persistor}>
-                    {/* <NextUIProvider> */}
-                    {/* <MainNavbar /> */}
-                    <Component {...pageProps} />
-                    {/* <Footer /> */}
-                    {/* </NextUIProvider> */}
+                    <NextUIProvider>
+                        <Component {...pageProps} />
+                        <Footer />
+                    </NextUIProvider>
                 </PersistGate>
             </StoreProvider>
         </>
