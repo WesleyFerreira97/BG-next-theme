@@ -11,12 +11,12 @@ import {
 const aquire = localFont({
     src: [
         {
-            path: "/public/fonts/Aquire-BW0ox.otf",
+            path: "./public/fonts/Aquire-BW0ox.otf",
             style: "normal",
             weight: "600"
         },
         {
-            path: "/public/fonts/AquireBold-8Ma60.otf",
+            path: "./public/fonts/AquireBold-8Ma60.otf",
             style: "normal",
             weight: "800"
         },

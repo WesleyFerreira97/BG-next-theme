@@ -19,7 +19,7 @@ export const CarouselItemWrap = styled("div", {
 
 export const Title = styled("h1", {
     color: "$neutral",
-    themeFont: "title",
+    themeFont: "primary",
     fontWeight: 700,
     overflowWrap: "anywhere",
     // fontSize: "7rem",
@@ -34,7 +34,7 @@ export const Title = styled("h1", {
 
 export const Text = styled("h1", {
     color: "$neutral",
-    themeFont: "text",
+    themeFont: "secondary",
     fontWeight: 300,
     marginBottom: "1.25rem",
     themeFontSize: {
@@ -64,12 +64,12 @@ export const Buttons = styled("div", {
         backgroundColor: "transparent"
     },
     ".button__text": {
-        themeFont: "text",
+        themeFont: "secondary",
         fontWeight: "400",
         color: "#000",
 
         "&-outline": {
-            themeFont: "text",
+            themeFont: "secondary",
             color: "#fff",
         }
     },

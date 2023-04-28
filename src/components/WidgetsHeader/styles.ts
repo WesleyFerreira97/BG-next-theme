@@ -3,7 +3,8 @@ import { styled } from "stitches.config";
 export const TitleWrap = styled("h3", {
     margin: ".25rem auto 1.25rem",
     color: "$secondary",
-    themeFont: "title",
+    themeFont: "primary",
+    fontWeight: "600",
     themeFontSize: {
         xs: "$5",
         sm: "$8",
@@ -11,8 +12,8 @@ export const TitleWrap = styled("h3", {
 });
 
 export const SubTitleWrap = styled("span", {
-    themeFont: "text",
-    color: "$secondary",
+    themeFont: "primary",
+    color: "secondary",
     fontWeight: "500",
     themeFontSize: {
         xs: "$3",
@@ -21,9 +22,9 @@ export const SubTitleWrap = styled("span", {
 });
 
 export const ParagraphWrap = styled("p", {
-    themeFont: "text",
+    themeFont: "secondary",
     color: "$secondary",
-    fontWeight: "300",
+    fontWeight: "500",
     themeFontSize: {
         xs: "14px",
         sm: "$3",
