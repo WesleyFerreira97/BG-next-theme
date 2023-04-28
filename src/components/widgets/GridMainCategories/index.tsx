@@ -4,15 +4,13 @@ import { GridWrap } from "./styles";
 import { CardCategory } from "../../Cards/CardCategory";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Container } from "@nextui-org/react";
+import PersonImage from "public/images/code.jpg";
 import { fakeProducts } from "src/utils/fakeProducts";
-import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
-import PersonImage from "public/images/woman2.jpg";
 
 
 export function GridMainCategories() {
     // TEMP
     const products: any[] = fakeProducts;
-
 
     return (
         <GridWrap>
@@ -48,7 +46,7 @@ export function GridMainCategories() {
                 >
                     {Object.values(products).map((item, index) => (
                         <SwiperSlide key={index}>
-                            <CardOutsideInfo cardInfo={{
+                            <CardCategory cardInfo={{
                                 ...item,
                                 image: PersonImage
                             }} />

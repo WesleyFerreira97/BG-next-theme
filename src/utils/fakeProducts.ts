@@ -1,4 +1,4 @@
-import Woman1 from "../../public/images/woman1.png";
+import Woman1 from "../../public/images/code.jpg";
 import Woman3 from "../../public/images/woman3.png";
 
 export const fakeProducts = [
