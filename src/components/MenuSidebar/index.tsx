@@ -27,7 +27,6 @@ const Content = ({ contentId }: PropsWithChildren<ContentProps>) => {
 
     const scope = useSidebarMenu(contentState);
 
-    console.log(contentState);
 
     return (
         <div ref={scope}>
@@ -45,8 +44,7 @@ const ToggleMenu = ({ children, contentId }: PropsWithChildren<ToggleMenuProps>)
         setIsMenuOpen(prevState => ({
             ...prevState,
             [contentId]: !prevState[contentId]
-        }
-        ));
+        }));
     }
 
     return (
@@ -60,13 +58,8 @@ const ToggleMenu = ({ children, contentId }: PropsWithChildren<ToggleMenuProps>)
 
 function MenuSidebar({ children, registerContents }: PropsWithChildren<MenuSidebarProps>) {
     const mappedContentsToBoolean = registerContents.reduce((prevItem, currentItem) =>
-        ({ ...prevItem, [currentItem]: true }), {})
+        ({ ...prevItem, [currentItem]: false }), {})
     const [isMenuOpen, setIsMenuOpen] = useState(false || mappedContentsToBoolean);
-
-    useEffect(() => {
-        console.log(isMenuOpen);
-
-    }, [isMenuOpen])
 
     return (
         <>
