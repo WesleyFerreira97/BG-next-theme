@@ -18,6 +18,7 @@
     "@types/react-redux": "^7.1.25",
     "eslint-plugin-testing-library": "^5.10.0",
     "formik": "^2.2.9",
+    "framer-motion": "^10.12.4",
     "next": "^13.1.6",
     "phosphor-react": "^1.4.1",
     "react": "18.2.0",

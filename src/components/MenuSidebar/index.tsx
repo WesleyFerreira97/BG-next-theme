@@ -1,4 +1,5 @@
-import React, { useContext, PropsWithChildren } from 'react'
+import React, { useContext, PropsWithChildren, createContext, useState } from 'react'
+import { useSidebarMenu } from 'src/hooks/useSidebarMenu'
 
 type ToggleMenuProps = {
     contentId: string
@@ -15,9 +16,19 @@ type MenuSidebarProps = {
 
 const MenuSidebarContext = createContext({});
 
-const Content = (props: PropsWithChildren<ContentProps>) => {
+const Content = ({ contentId }: PropsWithChildren<ContentProps>) => {
+    const { isMenuOpen } = useContext(MenuSidebarContext);
+    let contentState = isMenuOpen[contentId];
+    const scope = useSidebarMenu(contentState);
+
+    console.log(contentState);
+
     return (
-        <div>Content</div>
+        <div ref={scope}>
+            <div>
+                Content
+            </div>
+        </div>
     )
 }
 
@@ -27,13 +38,10 @@ const ToggleMenu = ({ children }: PropsWithChildren<ToggleMenuProps>) => {
     )
 }
 
-function MenuSidebar({ children }: PropsWithChildren<MenuSidebarProps>) {
-    const [isMenuOpen, setIsMenuOpen] = React.useState({
-        categories: false,
-        cart: true
-    });
-
-    console.log(isMenuOpen);
+function MenuSidebar({ children, registerContents }: PropsWithChildren<MenuSidebarProps>) {
+    const mappedContentsToBoolean = registerContents.reduce((prevItem, currentItem) =>
+        ({ ...prevItem, [currentItem]: true }), {})
+    const [isMenuOpen, setIsMenuOpen] = useState(false || mappedContentsToBoolean);
 
     return (
         <>

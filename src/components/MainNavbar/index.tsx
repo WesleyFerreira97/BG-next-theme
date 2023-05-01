@@ -3,6 +3,8 @@ import { MainMenuWrap, MainNavbarWrap } from "./styles";
 import { List, ShoppingCartSimple } from "phosphor-react";
 import { Container } from "../Layout/Container";
 import { MenuSidebar } from "../MenuSidebar";
+import { Button } from "@nextui-org/react";
+import { useSidebarMenu } from "src/hooks/useSidebarMenu";
 
 export type MainNavbarProps = {
     bgColor?: "primary" | "transparent",
@@ -10,39 +12,40 @@ export type MainNavbarProps = {
 }
 
 export function MainNavbar(props: MainNavbarProps) {
+    const animationScope = useSidebarMenu(false);
 
     return (
         <>
             {/* <MenuSidebar /> */}
-            {/* <MenuSidebar registerContents={["categories", "cart"]}> */}
-            <MainNavbarWrap {...props}>
-                <Container>
-                    <div className="navbar">
-                        <div className='navbar__menu'>
-                            <div className='menu-icon'>
-                                {/* <MenuSidebar.ToggleMenu contentId="categories">
+            <MenuSidebar registerContents={["categories", "cart"]}>
+                <MainNavbarWrap {...props} ref={animationScope}>
+                    <Container>
+                        <div className="navbar ertertetrr">
+                            <div className='navbar__menu'>
+                                <div className='menu-icon'>
+                                    <MenuSidebar.ToggleMenu contentId="categories">
                                         <List size={25} />
                                     </MenuSidebar.ToggleMenu>
-                                    <MenuSidebar.Toggle contentId="cart">
-                                        <List size={25} />
-                                    </MenuSidebar.Toggle> */}
+
+                                </div>
+                            </div>
+                            <div className='navbar__brand'>
+                                <span className='brand--desktop'>Title</span>
+                                <span className='brand--mobile'>BG</span>
+                            </div>
+                            <div className='navbar__cart'>
+                                <div className='cart-icon'>
+                                    <MenuSidebar.ToggleMenu contentId="cart">
+                                        <ShoppingCartSimple size={25} />
+                                    </MenuSidebar.ToggleMenu>
+                                </div>
                             </div>
                         </div>
-                        <div className='navbar__brand'>
-                            <span className='brand--desktop'>Title</span>
-                            <span className='brand--mobile'>BG</span>
-                        </div>
-                        <div className='navbar__cart'>
-                            <div className='cart-icon'>
-                                <ShoppingCartSimple size={25} />
-                            </div>
-                        </div>
-                    </div>
-                </Container>
-            </MainNavbarWrap>
-            <MainMenuWrap>
-                <Container>
-                    {/* <MenuSidebar.Content contentId="categories">
+                    </Container>
+                </MainNavbarWrap>
+                <MainMenuWrap>
+                    <Container>
+                        <MenuSidebar.Content contentId="categories">
                             <div className="main-menu__behavior">
                                 <ul className="main-menu">
                                     <li className="main-menu__item">Ínicio</li>
@@ -56,10 +59,10 @@ export function MainNavbar(props: MainNavbarProps) {
                                     <li className="main-menu__item"><a href="#">Promoções</a></li>
                                 </ul>
                             </div>
-                        </MenuSidebar.Content> */}
-                </Container>
-            </MainMenuWrap>
-            {/* </MenuSidebar> */}
+                        </MenuSidebar.Content>
+                    </Container>
+                </MainMenuWrap>
+            </MenuSidebar>
         </>
     );
 }

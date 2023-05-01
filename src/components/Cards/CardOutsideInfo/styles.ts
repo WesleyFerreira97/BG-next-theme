@@ -45,7 +45,7 @@ export const CardImage = styled("div", {
         position: "absolute",
         bottom: "0",
         zIndex: "1",
-        background: "$secondary",
+        background: "$green",
         color: "$neutral",
 
         "&__text": {

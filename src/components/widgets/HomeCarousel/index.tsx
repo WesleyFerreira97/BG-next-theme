@@ -30,10 +30,10 @@ export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 slidesPerView={1}
-                // autoplay={{
-                //     delay: 7000,
-                //     disableOnInteraction: false,
-                // }}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
                 navigation
                 loop
                 watchOverflow
