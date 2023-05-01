@@ -1,4 +1,4 @@
-import React, { useContext, PropsWithChildren, createContext, useState } from 'react'
+import React, { useContext, PropsWithChildren, createContext, useState, useEffect } from 'react'
 import { useSidebarMenu } from 'src/hooks/useSidebarMenu'
 
 type ToggleMenuProps = {
@@ -14,11 +14,17 @@ type MenuSidebarProps = {
     registerContents: string[];
 }
 
-const MenuSidebarContext = createContext({});
+type MenuContextProps = {
+    isMenuOpen: { [key: string]: boolean };
+    setIsMenuOpen: React.Dispatch<React.SetStateAction<{ [key: string]: boolean }>>;
+}
+
+const MenuSidebarContext = createContext<MenuContextProps>({});
 
 const Content = ({ contentId }: PropsWithChildren<ContentProps>) => {
     const { isMenuOpen } = useContext(MenuSidebarContext);
     let contentState = isMenuOpen[contentId];
+
     const scope = useSidebarMenu(contentState);
 
     console.log(contentState);
@@ -32,9 +38,23 @@ const Content = ({ contentId }: PropsWithChildren<ContentProps>) => {
     )
 }
 
-const ToggleMenu = ({ children }: PropsWithChildren<ToggleMenuProps>) => {
+const ToggleMenu = ({ children, contentId }: PropsWithChildren<ToggleMenuProps>) => {
+    const { setIsMenuOpen } = useContext(MenuSidebarContext);
+
+    const handleMenuToggle = () => {
+        setIsMenuOpen(prevState => ({
+            ...prevState,
+            [contentId]: !prevState[contentId]
+        }
+        ));
+    }
+
     return (
-        <div>{children}</div>
+        <>
+            <div onClick={handleMenuToggle} >
+                {children}
+            </div >
+        </>
     )
 }
 
@@ -42,6 +62,11 @@ function MenuSidebar({ children, registerContents }: PropsWithChildren<MenuSideb
     const mappedContentsToBoolean = registerContents.reduce((prevItem, currentItem) =>
         ({ ...prevItem, [currentItem]: true }), {})
     const [isMenuOpen, setIsMenuOpen] = useState(false || mappedContentsToBoolean);
+
+    useEffect(() => {
+        console.log(isMenuOpen);
+
+    }, [isMenuOpen])
 
     return (
         <>
