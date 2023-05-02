@@ -4,7 +4,7 @@ export const TitleWrap = styled("h3", {
     margin: ".25rem auto 1.25rem",
     color: "$secondary",
     themeFont: "primary",
-    fontWeight: "600",
+    fontWeight: "800",
     themeFontSize: {
         xs: "$5",
         sm: "$8",
@@ -13,7 +13,7 @@ export const TitleWrap = styled("h3", {
 
 export const SubTitleWrap = styled("span", {
     themeFont: "primary",
-    color: "secondary",
+    color: "$secondary",
     fontWeight: "500",
     themeFontSize: {
         xs: "$3",

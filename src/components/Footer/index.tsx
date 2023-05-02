@@ -13,10 +13,14 @@ export function Footer() {
                     </span>
                 </Container>
             </div>
-            <Container css={{ height: "100%", flexGrow: "1" }}>
+            <Container css={{
+                height: "100%",
+                flexGrow: "1",
+                padding: "0 2rem"
+            }}>
                 <FooterContainers>
                     <div className='footer-container container-1'>
-                        <p className='info__text'>Sua loja de moda feminina em Itabuna, encontre aqui produtos de diversas categorais, Condimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturieCondimentum  </p>
+                        <p className='info__text'>Sua loja de moda feminina em Itabuna, encontre aqui produtos de diversas categorais, Condimentum adipiscing vel neque dis nam parturient orci at scelerisque</p>
 
                         <div className='info__item'>
                             <span className='info__icon'>

@@ -29,18 +29,18 @@ export const FooterWrap = styled("div", {
         },
 
         ".title": {
-            fontFamily: "Aquire ,sans-serif",
+            themeFont: "primary",
             fontWeight: "700",
             color: "#333333",
             fontSize: "2.5rem",
         }
-    }
+    },
 
-    // @media(min-width: ${theme.breakpoints.lg}) {
-    //     .footer__logo-wrap {
-    //         justify-content: flex-start !important;
-    //     }
-    // }
+    "@md": {
+        ".footer__logo-wrap": {
+            justifyContent: "flex-start !important",
+        }
+    }
 });
 
 export const FooterContainers = styled("div", {
@@ -68,14 +68,14 @@ export const FooterContainers = styled("div", {
         },
 
         "&__text": {
-            // ${typography.TextSm}
+            themeFont: "secondary",
             lineHeight: "165%",
-            // color: ${theme.colors.neutralAlt};
+            color: "#545454"
         },
 
         "&__icon": {
             paddingRight: "1rem",
-            // color: ${theme.colors.neutralAlt};
+            color: "#545454"
         }
     },
 
@@ -91,12 +91,13 @@ export const FooterContainers = styled("div", {
         "&__container": {
             display: "block",
             padding: "0 2rem",
-            margin: "1.25rem 0",
+            // margin: "1.25rem 0",
         },
 
         "&__title": {
-            // ${typography.Text}
+            themeFont: "secondary",
             fontWeight: "500",
+            textTransform: "uppercase",
         },
 
         "&__wrap": {
@@ -107,21 +108,22 @@ export const FooterContainers = styled("div", {
             },
 
             li: {
-                // ${typography.TextSm}
+                themeFont: "secondary",
                 lineHeight: "165%",
-                // color: ${theme.colors.neutralAlt};
+                color: "$neutralAlt",
+                padding: "0.25rem 0",
             }
         }
+    },
+
+    "@lg": {
+        flexDirection: "row",
+
+        ".container-2": {
+            flexDirection: "row",
+            textAlign: "left"
+        }
     }
-
-    // @media(min-width: ${theme.breakpoints.lg}) {
-    //     flex-direction: row;
-
-    //     .container-2 { 
-    //         flex-direction: row;
-    //         text-align: left;
-    //     }
-    // }
 });
 
 export const FooterCredits = styled("div", {
@@ -138,6 +140,7 @@ export const FooterCredits = styled("div", {
         justifyContent: "center",
         height: "100%",
         color: "#828282",
-        // ${typography.TextSm}
+        themeFont: "secondary",
+        fontSize: "0.85rem",
     }
 });
