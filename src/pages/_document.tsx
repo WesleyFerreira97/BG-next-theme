@@ -16,7 +16,9 @@ export default function MyDocument() {
                     dangerouslySetInnerHTML={{ __html: getCssText() }}
                 />
             </Head>
-            <body>
+            <body style={{
+                // background: "#DBD8EA"
+            }}>
                 <Main />
                 <NextScript />
             </body>

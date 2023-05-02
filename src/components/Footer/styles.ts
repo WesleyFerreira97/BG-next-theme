@@ -39,6 +39,7 @@ export const FooterWrap = styled("div", {
     "@md": {
         ".footer__logo-wrap": {
             justifyContent: "flex-start !important",
+            textAlign: "center",
         }
     }
 });
@@ -49,6 +50,7 @@ export const FooterContainers = styled("div", {
     display: "flex",
     flexDirection: "column",
     padding: "1rem 0",
+    alignItems: "center",
 
     ".footer-container": {
         // flex-grow: 1;
@@ -65,12 +67,14 @@ export const FooterContainers = styled("div", {
             display: "flex",
             alignItems: "center",
             margin: "1.25rem 0",
+            justifyContent: "center",
         },
 
         "&__text": {
             themeFont: "secondary",
             lineHeight: "165%",
-            color: "#545454"
+            color: "#545454",
+            textAlign: "center",
         },
 
         "&__icon": {
@@ -118,10 +122,22 @@ export const FooterContainers = styled("div", {
 
     "@lg": {
         flexDirection: "row",
+        alignItems: "flex-start",
 
         ".container-2": {
             flexDirection: "row",
             textAlign: "left"
+        },
+
+
+        ".info": {
+
+            "&__item": {
+                justifyContent: "flex-start",
+            },
+            "&__text": {
+                textAlign: "left",
+            },
         }
     }
 });

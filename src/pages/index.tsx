@@ -10,7 +10,9 @@ import { carouselItemsData } from "src/utils/fakeProducts";
 const Home: NextPage = () => {
 
     return (
-        <div style={{ background: "#DBD8EA" }}>
+        <div style={{
+            // background: "#DBD8EA"
+        }}>
             <MainNavbar bgColor="transparent" position="absolute" />
             <HomeCarousel carouselItemsData={carouselItemsData} />
             <GridMainCategories />
