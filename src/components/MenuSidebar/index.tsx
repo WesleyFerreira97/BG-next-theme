@@ -1,5 +1,7 @@
-import React, { useContext, PropsWithChildren, createContext, useState, useEffect } from 'react'
+import React, { useContext, PropsWithChildren, createContext, useState, useEffect, SetStateAction } from 'react'
 import { useSidebarMenu } from 'src/hooks/useSidebarMenu'
+import { ContentWrap, OverlayBackground } from './style'
+import { Button } from '@nextui-org/react'
 
 type ToggleMenuProps = {
     contentId: string
@@ -16,24 +18,45 @@ type MenuSidebarProps = {
 
 type MenuContextProps = {
     isMenuOpen: { [key: string]: boolean };
-    setIsMenuOpen: React.Dispatch<React.SetStateAction<{ [key: string]: boolean }>>;
+    setIsMenuOpen: React.Dispatch<SetStateAction<{ [key: string]: boolean }>>;
 }
 
 const MenuSidebarContext = createContext<MenuContextProps>({});
 
 const Content = ({ contentId }: PropsWithChildren<ContentProps>) => {
-    const { isMenuOpen } = useContext(MenuSidebarContext);
+    const { isMenuOpen, setIsMenuOpen } = useContext(MenuSidebarContext);
     let contentState = isMenuOpen[contentId];
 
     const scope = useSidebarMenu(contentState);
 
+    const handleMenuClose = () => {
+        setIsMenuOpen(prevState => ({
+            ...prevState,
+            [contentId]: false
+        }))
+    };
+
+    const handleEscPress = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+            handleMenuClose();
+        }
+    }
 
     return (
-        <div ref={scope}>
-            <div>
+        <ContentWrap
+            ref={scope}
+            onKeyUp={(e) => handleEscPress(e)}
+            tabIndex={0}
+        >
+            <div className='content' >
                 Content
+                <Button onPress={handleMenuClose}>
+                    Close
+                </Button>
             </div>
-        </div>
+            {contentState && <OverlayBackground onClick={handleMenuClose} />}
+
+        </ContentWrap>
     )
 }
 

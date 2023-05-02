@@ -3,22 +3,25 @@ import { MainMenuWrap, MainNavbarWrap } from "./styles";
 import { List, ShoppingCartSimple } from "phosphor-react";
 import { Container } from "../Layout/Container";
 import { MenuSidebar } from "../MenuSidebar";
-import { Button } from "@nextui-org/react";
-import { useSidebarMenu } from "src/hooks/useSidebarMenu";
 
 export type MainNavbarProps = {
     bgColor?: "primary" | "transparent",
     position?: "absolute" | "relative",
 }
-
+const SidebarMenu = () => {
+    return (
+        <MenuSidebar.Content contentId="categories">
+            content
+        </MenuSidebar.Content>
+    )
+}
 export function MainNavbar(props: MainNavbarProps) {
-    const animationScope = useSidebarMenu(false);
 
     return (
         <>
             {/* <MenuSidebar /> */}
             <MenuSidebar registerContents={["categories", "cart"]}>
-                <MainNavbarWrap {...props} ref={animationScope}>
+                <MainNavbarWrap {...props}>
                     <Container>
                         <div className="navbar ertertetrr">
                             <div className='navbar__menu'>
@@ -45,23 +48,22 @@ export function MainNavbar(props: MainNavbarProps) {
                 </MainNavbarWrap>
                 <MainMenuWrap>
                     <Container>
-                        <MenuSidebar.Content contentId="categories">
-                            <div className="main-menu__behavior">
-                                <ul className="main-menu">
-                                    <li className="main-menu__item">Ínicio</li>
-                                    <li className="main-menu__item">
-                                        <a href="#">
-                                            Camisas
-                                        </a>
-                                    </li>
-                                    <li className="main-menu__item"><a href="#">Regatas</a></li>
-                                    <li className="main-menu__item"><a href="#">Conjuntos</a></li>
-                                    <li className="main-menu__item"><a href="#">Promoções</a></li>
-                                </ul>
-                            </div>
-                        </MenuSidebar.Content>
+                        <div className="main-menu__behavior">
+                            <ul className="main-menu">
+                                <li className="main-menu__item">Ínicio</li>
+                                <li className="main-menu__item">
+                                    <a href="#">
+                                        Camisas
+                                    </a>
+                                </li>
+                                <li className="main-menu__item"><a href="#">Regatas</a></li>
+                                <li className="main-menu__item"><a href="#">Conjuntos</a></li>
+                                <li className="main-menu__item"><a href="#">Promoções</a></li>
+                            </ul>
+                        </div>
                     </Container>
                 </MainMenuWrap>
+                <SidebarMenu />
             </MenuSidebar>
         </>
     );
