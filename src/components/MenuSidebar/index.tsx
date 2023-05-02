@@ -23,7 +23,7 @@ type MenuContextProps = {
 
 const MenuSidebarContext = createContext<MenuContextProps>({});
 
-const Content = ({ contentId }: PropsWithChildren<ContentProps>) => {
+const Content = ({ children, contentId }: PropsWithChildren<ContentProps>) => {
     const { isMenuOpen, setIsMenuOpen } = useContext(MenuSidebarContext);
     let contentState = isMenuOpen[contentId];
 
@@ -53,6 +53,7 @@ const Content = ({ contentId }: PropsWithChildren<ContentProps>) => {
                 <Button onPress={handleMenuClose}>
                     Close
                 </Button>
+                {children}
             </div>
             {contentState && <OverlayBackground onClick={handleMenuClose} />}
 

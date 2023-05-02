@@ -11,7 +11,12 @@ export type MainNavbarProps = {
 const SidebarMenu = () => {
     return (
         <MenuSidebar.Content contentId="categories">
-            content
+            <ul>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+            </ul>
         </MenuSidebar.Content>
     )
 }
