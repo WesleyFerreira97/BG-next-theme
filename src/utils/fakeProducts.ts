@@ -3,7 +3,7 @@ import Woman3 from "../../public/images/woman3.png";
 
 export const fakeProducts = [
     {
-        title: "BLUSA SAYUR GREEN",
+        title: "Blusas",
         subTitle: "Other object, you can scale",
         description: "But like any other object, you can scale the object the Image fills.",
         price: 500,
@@ -11,7 +11,7 @@ export const fakeProducts = [
         categories: ["Camisas"]
     },
     {
-        title: "BLUSA PLUM BLACK",
+        title: "Conjuntos",
         subTitle: "Other object, you can scale",
         description: "But like any other object, you can scale the object the Image fills. But like any other object, you can scale the object the Image fills But like any other object, you can scale the object the Image fills But like any other object, you can scale the object the Image fills",
         price: 130,
@@ -19,7 +19,7 @@ export const fakeProducts = [
         categories: ["Camisas"]
     },
     {
-        title: "VESTIDO EMERYT BLUSH PINK",
+        title: "Vestidos",
         subTitle: "Other object, you can scale can scale",
         description: "But like any other object, you can scale the object the Image fills. ",
         price: 250,
