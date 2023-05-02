@@ -1,5 +1,5 @@
 import React from "react";
-import { MainMenuWrap, MainNavbarWrap } from "./styles";
+import { MainMenuWrap, MainNavbarWrap, SidebarRight } from "./styles";
 import { List, ShoppingCartSimple } from "phosphor-react";
 import { Container } from "../Layout/Container";
 import { MenuSidebar } from "../MenuSidebar";
@@ -7,6 +7,7 @@ import { MenuSidebar } from "../MenuSidebar";
 export type MainNavbarProps = {
     bgColor?: "primary" | "transparent",
     position?: "absolute" | "relative",
+    showCategories?: boolean
 }
 const SidebarMenu = () => {
     return (
@@ -24,7 +25,6 @@ export function MainNavbar(props: MainNavbarProps) {
 
     return (
         <>
-            {/* <MenuSidebar /> */}
             <MenuSidebar registerContents={["categories", "cart"]}>
                 <MainNavbarWrap {...props}>
                     <Container>
@@ -34,7 +34,6 @@ export function MainNavbar(props: MainNavbarProps) {
                                     <MenuSidebar.ToggleMenu contentId="categories">
                                         <List size={25} />
                                     </MenuSidebar.ToggleMenu>
-
                                 </div>
                             </div>
                             <div className='navbar__brand'>
@@ -51,7 +50,7 @@ export function MainNavbar(props: MainNavbarProps) {
                         </div>
                     </Container>
                 </MainNavbarWrap>
-                <MainMenuWrap>
+                {props.showCategories && <MainMenuWrap>
                     <Container>
                         <div className="main-menu__behavior">
                             <ul className="main-menu">
@@ -67,9 +66,10 @@ export function MainNavbar(props: MainNavbarProps) {
                             </ul>
                         </div>
                     </Container>
-                </MainMenuWrap>
+                </MainMenuWrap>}
                 <SidebarMenu />
             </MenuSidebar>
+            {/* <SidebarRight /> */}
         </>
     );
 }
