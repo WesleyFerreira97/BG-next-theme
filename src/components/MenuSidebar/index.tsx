@@ -2,6 +2,7 @@ import React, { useContext, PropsWithChildren, createContext, useState, useEffec
 import { useSidebarMenu } from 'src/hooks/useSidebarMenu'
 import { ContentWrap, OverlayBackground } from './style'
 import { Button } from '@nextui-org/react'
+import { motion } from 'framer-motion'
 
 type ToggleMenuProps = {
     contentId: string
@@ -47,6 +48,8 @@ const Content = ({ children, contentId }: PropsWithChildren<ContentProps>) => {
             ref={scope}
             onKeyUp={(e) => handleEscPress(e)}
             tabIndex={0}
+            open={contentState}
+            onClick={handleMenuClose}
         >
             <div className='content' >
                 Content
@@ -55,7 +58,14 @@ const Content = ({ children, contentId }: PropsWithChildren<ContentProps>) => {
                 </Button>
                 {children}
             </div>
-            {contentState && <OverlayBackground onClick={handleMenuClose} />}
+            {/* {contentState && */}
+            {/* <motion.div
+                animate={{ opacity: contentState ? 1 : 0 }}
+                transition={{ duration: 0.5 }}
+            >
+                <OverlayBackground onClick={handleMenuClose} />
+            </motion.div> */}
+
 
         </ContentWrap>
     )

@@ -1,5 +1,5 @@
 import React from "react";
-import { MainMenuWrap, MainNavbarWrap, SidebarRight } from "./styles";
+import { MainMenuWrap, MainNavbarWrap } from "./styles";
 import { List, ShoppingCartSimple } from "phosphor-react";
 import { Container } from "../Layout/Container";
 import { MenuSidebar } from "../MenuSidebar";
@@ -9,16 +9,14 @@ export type MainNavbarProps = {
     position?: "absolute" | "relative",
     showCategories?: boolean
 }
-const SidebarMenu = () => {
+const MenuSidebarCategories = () => {
     return (
-        <MenuSidebar.Content contentId="categories">
-            <ul>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-            </ul>
-        </MenuSidebar.Content>
+        <ul>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+        </ul>
     )
 }
 export function MainNavbar(props: MainNavbarProps) {
@@ -67,9 +65,10 @@ export function MainNavbar(props: MainNavbarProps) {
                         </div>
                     </Container>
                 </MainMenuWrap>}
-                <SidebarMenu />
+                <MenuSidebar.Content contentId="categories">
+                    <MenuSidebarCategories />
+                </MenuSidebar.Content>
             </MenuSidebar>
-            {/* <SidebarRight /> */}
         </>
     );
 }

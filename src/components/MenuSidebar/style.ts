@@ -12,6 +12,27 @@ const ContentWrap = styled("div", {
     height: "100vh",
     background: "$primary",
 
+    variants: {
+        open: {
+            true: {
+                "&:before": {
+                    content: "",
+                    position: "absolute",
+                    height: "100vh",
+                    width: "100vw",
+                    // maxWidth: "0",
+                    background: "$secondary",
+                    opacity: 0.5,
+                    zIndex: 998,
+                },
+            },
+            false: {
+                "&:before": {
+                    content: "",
+                }
+            },
+        },
+    },
 
     ".content": {
         height: "100vh",
@@ -23,8 +44,8 @@ const ContentWrap = styled("div", {
 });
 
 const OverlayBackground = styled("span", {
-    position: "absolute",
     content: "",
+    position: "absolute",
     height: "100vh",
     width: "100vw",
     // maxWidth: "0",

@@ -119,12 +119,3 @@ export const MainMenuWrap = styled("div", {
     },
 });
 
-export const SidebarRight = styled("div", {
-    height: "100vh",
-    width: "300px",
-    position: "absolute",
-    top: "0",
-    right: "0",
-    backgroundColor: "$secondary",
-    zIndex: 10000,
-});
