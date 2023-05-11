@@ -10,7 +10,8 @@ type ToggleMenuProps = {
 }
 
 type ContentProps = {
-    contentId: string
+    contentId: string;
+    side?: "left" | "right";
 }
 
 type MenuSidebarProps = {
@@ -24,7 +25,7 @@ type MenuContextProps = {
 
 const MenuSidebarContext = createContext<MenuContextProps>({});
 
-const Content = ({ children, contentId }: PropsWithChildren<ContentProps>) => {
+const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentProps>) => {
     const { isMenuOpen, setIsMenuOpen } = useContext(MenuSidebarContext);
     let contentState = isMenuOpen[contentId];
 
@@ -48,6 +49,7 @@ const Content = ({ children, contentId }: PropsWithChildren<ContentProps>) => {
             ref={scope}
             onKeyUp={(e) => handleEscPress(e)}
             tabIndex={0}
+            side={props.side || "left"}
         >
             <div className='content' >
                 Content

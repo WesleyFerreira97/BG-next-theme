@@ -65,7 +65,10 @@ export function MainNavbar(props: MainNavbarProps) {
                         </div>
                     </Container>
                 </MainMenuWrap>}
-                <MenuSidebar.Content contentId="categories">
+                <MenuSidebar.Content
+                    contentId="categories"
+                    side="left"
+                >
                     <MenuSidebarCategories />
                 </MenuSidebar.Content>
             </MenuSidebar>

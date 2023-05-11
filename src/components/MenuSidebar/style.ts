@@ -11,13 +11,27 @@ const ContentWrap = styled("div", {
     width: "0px", // Prevent container block
     height: "100vh",
     background: "$primary",
-
+    variants: {
+        side: {
+            left: {
+                ".content": {
+                    left: 0,
+                }
+            },
+            right: {
+                ".content": {
+                    right: 0,
+                }
+            },
+        }
+    },
     ".content": {
         height: "100vh",
         width: "450px",
         position: "fixed",
         zIndex: 9999,
         background: "$primary",
+
     }
 });
 
@@ -44,7 +58,6 @@ const OverlayBackground = styled("span", {
     },
 
 });
-
 
 export {
     MenuSidebarWrap,
