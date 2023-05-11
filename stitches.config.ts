@@ -43,8 +43,8 @@ export const themeSizes: { [key: number]: string } = {
 };
 
 export const themeColors = {
-    primary: "#D22779",
-    // primary: "#1F1D36",
+    // primary: "#D22779",
+    primary: "#1F1D36",
     primaryAlt: "#FF6500",
     secondary: "#3F3351",
     secondaryAlt: "#0060B1",
@@ -55,7 +55,7 @@ export const themeColors = {
     green: "#27AE60"
 }
 
-export const { styled, getCssText, config, css, globalCss, theme } = createStitches({
+export const { styled, getCssText, config, css, globalCss, theme, keyframes } = createStitches({
     prefix: "bg-theme",
     theme: {
         colors: themeColors,

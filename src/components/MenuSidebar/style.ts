@@ -1,4 +1,4 @@
-import { styled } from "stitches.config";
+import { keyframes, styled } from "stitches.config";
 
 const MenuSidebarWrap = styled("div", {
     display: "flex",
@@ -12,28 +12,6 @@ const ContentWrap = styled("div", {
     height: "100vh",
     background: "$primary",
 
-    variants: {
-        open: {
-            true: {
-                "&:before": {
-                    content: "",
-                    position: "absolute",
-                    height: "100vh",
-                    width: "100vw",
-                    // maxWidth: "0",
-                    background: "$secondary",
-                    opacity: 0.5,
-                    zIndex: 998,
-                },
-            },
-            false: {
-                "&:before": {
-                    content: "",
-                }
-            },
-        },
-    },
-
     ".content": {
         height: "100vh",
         width: "450px",
@@ -44,14 +22,27 @@ const ContentWrap = styled("div", {
 });
 
 const OverlayBackground = styled("span", {
-    content: "",
     position: "absolute",
     height: "100vh",
     width: "100vw",
-    // maxWidth: "0",
-    background: "$secondary",
-    opacity: 0.5,
-    zIndex: 998,
+
+    variants: {
+        open: {
+            true: {
+                opacity: 0.5,
+                background: "$secondary",
+                zIndex: 998,
+                transform: "translateX(0)",
+                // transitionDelay: ".5s",
+            },
+            false: {
+                opacity: .3,
+                transform: "translateX(-100%)",
+                transitionDelay: ".6s",
+            },
+        },
+    },
+
 });
 
 

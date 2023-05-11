@@ -48,8 +48,6 @@ const Content = ({ children, contentId }: PropsWithChildren<ContentProps>) => {
             ref={scope}
             onKeyUp={(e) => handleEscPress(e)}
             tabIndex={0}
-            open={contentState}
-            onClick={handleMenuClose}
         >
             <div className='content' >
                 Content
@@ -58,15 +56,10 @@ const Content = ({ children, contentId }: PropsWithChildren<ContentProps>) => {
                 </Button>
                 {children}
             </div>
-            {/* {contentState && */}
-            {/* <motion.div
-                animate={{ opacity: contentState ? 1 : 0 }}
-                transition={{ duration: 0.5 }}
-            >
-                <OverlayBackground onClick={handleMenuClose} />
-            </motion.div> */}
-
-
+            <OverlayBackground
+                open={contentState}
+                onClick={handleMenuClose}
+            />
         </ContentWrap>
     )
 }
