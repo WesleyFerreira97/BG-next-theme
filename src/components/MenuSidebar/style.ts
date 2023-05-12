@@ -6,10 +6,11 @@ const MenuSidebarWrap = styled("div", {
 });
 
 const ContentWrap = styled("div", {
-    position: "fixed",
-    zIndex: 997,
-    width: "0px", // Prevent container block
     height: "100vh",
+    width: "0px", // Prevent container block
+    position: "fixed",
+    top: 0,
+    zIndex: 997,
     background: "$primary",
     variants: {
         side: {

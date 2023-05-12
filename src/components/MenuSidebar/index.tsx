@@ -29,7 +29,10 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
     const { isMenuOpen, setIsMenuOpen } = useContext(MenuSidebarContext);
     let contentState = isMenuOpen[contentId];
 
-    const scope = useSidebarMenu(contentState);
+    const scope = useSidebarMenu({
+        isOpen: contentState,
+        side: props.side
+    });
 
     const handleMenuClose = () => {
         setIsMenuOpen(prevState => ({
@@ -49,7 +52,7 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
             ref={scope}
             onKeyUp={(e) => handleEscPress(e)}
             tabIndex={0}
-            side={props.side || "left"}
+            side={props.side}
         >
             <div className='content' >
                 Content

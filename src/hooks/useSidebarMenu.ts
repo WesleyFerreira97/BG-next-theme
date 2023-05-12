@@ -6,8 +6,18 @@ type AnimationSequence = [
     { [key: string]: string | number },
 ]
 
-export function useSidebarMenu(isOpen: boolean) {
+type SidebarAnimationProps = {
+    isOpen: boolean;
+    side?: "left" | "right";
+}
+
+export function useSidebarMenu({ isOpen, side = "left" }: SidebarAnimationProps) {
     const [scope, animate] = useAnimate();
+    console.log(side);
+
+    const slideOutBySideSelected = side === "left"
+        ? "translateX(-1000%)"
+        : "translateX(1000%)";
 
     useEffect(() => {
         const toggleAnimation = isOpen
@@ -30,7 +40,9 @@ export function useSidebarMenu(isOpen: boolean) {
                     { delay: stagger(0.05, { from: "last" }), at: "<" }
                 ],
                 [
-                    "div", { transform: "translateX(-1000%)" }, { at: "-0.1" }
+                    "div",
+                    { transform: slideOutBySideSelected },
+                    { at: "-0.1" }
                 ]
             ];
 
