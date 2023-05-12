@@ -1,5 +1,6 @@
 import { stagger, useAnimate } from "framer-motion";
 import { useState, useEffect } from "react";
+import { globalCss } from "stitches.config";
 
 type AnimationSequence = [
     string,
@@ -19,7 +20,21 @@ export function useSidebarMenu({ isOpen, side = "left" }: SidebarAnimationProps)
         ? "translateX(-1000%)"
         : "translateX(1000%)";
 
+    const toggleBodyOverflow = () => {
+        // Overlay Hidden when menu is open
+        const getBodyElement = document.querySelector("body") as HTMLElement;
+        const bodyOverflow = isOpen ? "hidden" : "auto";
+
+        const toggleOverlayTimeout = setTimeout(() => {
+            getBodyElement.style.overflow = bodyOverflow;
+        }, 600);
+
+        return toggleOverlayTimeout;
+    }
+
     useEffect(() => {
+        toggleBodyOverflow();
+
         const toggleAnimation = isOpen
             ? [
                 [
@@ -46,7 +61,11 @@ export function useSidebarMenu({ isOpen, side = "left" }: SidebarAnimationProps)
                 ]
             ];
 
-        animate(toggleAnimation as AnimationSequence[]);
+        animate(toggleAnimation as AnimationSequence[])
+
+        return () => {
+            clearTimeout(toggleBodyOverflow());
+        }
     }, [isOpen]);
 
     return scope;

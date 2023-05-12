@@ -32,6 +32,9 @@ export function MainNavbar(props: MainNavbarProps) {
                                     <MenuSidebar.ToggleMenu contentId="categories">
                                         <List size={25} />
                                     </MenuSidebar.ToggleMenu>
+                                    <MenuSidebar.ToggleMenu contentId="cart">
+                                        <List size={25} />
+                                    </MenuSidebar.ToggleMenu>
                                 </div>
                             </div>
                             <div className='navbar__brand'>
@@ -68,6 +71,12 @@ export function MainNavbar(props: MainNavbarProps) {
                 <MenuSidebar.Content
                     contentId="categories"
                     side="right"
+                >
+                    <MenuSidebarCategories />
+                </MenuSidebar.Content>
+                <MenuSidebar.Content
+                    contentId="cart"
+                    side="left"
                 >
                     <MenuSidebarCategories />
                 </MenuSidebar.Content>
