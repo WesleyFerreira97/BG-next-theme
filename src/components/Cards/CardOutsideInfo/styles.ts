@@ -11,7 +11,9 @@ export const CardWrap = styled("div", {
     },
 
     "&:hover .hover-bar": {
-        display: "flex",
+        transform: "translateY(0)",
+        transitionDuration: ".25s",
+        transformOrigin: "bottom top",
     }
 });
 
@@ -37,9 +39,9 @@ export const CardImage = styled("div", {
     },
 
     ".hover-bar": {
+        // height: "35px",
         width: "100%",
-        minHeight: "30px",
-        display: "none",
+        display: "flex",
         justifyContent: "center",
         alignItems: "center",
         position: "absolute",
@@ -47,9 +49,14 @@ export const CardImage = styled("div", {
         zIndex: "1",
         background: "$green",
         color: "$neutral",
+        transform: "translateY(100%)",
+        transition: "transform 0.25s ease-out",
+        transformOrigin: "top bottom",
 
         "&__text": {
-            padding: ".5rem 0",
+            display: "flex",
+            alignItems: "center",
+            padding: ".35rem 0",
         }
     }
 

@@ -44,7 +44,6 @@ export function GridProducts() {
                                             aspectRatio: "3/4",
                                         }}
                                     />
-
                                 </Grid.Item>
                             </Link>
                         ))}
