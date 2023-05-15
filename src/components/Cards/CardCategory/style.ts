@@ -1,17 +1,20 @@
-import { styled } from "stitches.config";
+import { styled, keyframes } from "stitches.config";
+
 
 export const CardCategoryWrap = styled("div", {
-    display: "flex",
     height: "35vh",
-    background: "$primary",
-    position: "relative",
+    width: "100%",
+    display: "flex",
+    position: "absolute",
     overflow: "hidden",
+    background: "$primary",
 
-    "&:hover .card-category__image": {
-        transform: "scale(1.1)",
-        transition: ".25s ease-in-out",
+
+    ".card-category__image": {
+        height: "100%",
+        width: "100%",
+
     },
-
     ".card-category": {
 
         "&__image": {
@@ -24,11 +27,6 @@ export const CardCategoryWrap = styled("div", {
                 objectFit: "cover",
                 height: "100%",
                 width: "100%",
-            },
-
-            "&:hover img": {
-                transform: "scale(1.1)",
-                transition: ".5s ease-in-out",
             },
         },
     }
@@ -67,7 +65,7 @@ export const CardInfoWrap = styled("div", {
         "&__title": {
             themeFont: "primary",
             fontWeight: 700,
-            color: "$neutral",
+            color: "$primary",
             fontSize: "$9",
             // textShadow: "1px 1px #B2B2B2",
 

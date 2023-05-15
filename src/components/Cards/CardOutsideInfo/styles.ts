@@ -47,7 +47,7 @@ export const CardImage = styled("div", {
         position: "absolute",
         bottom: "0",
         zIndex: "1",
-        background: "$green",
+        background: "rgba(39, 174, 96, 0.7)",
         color: "$neutral",
         transform: "translateY(100%)",
         transition: "transform 0.25s ease-out",
@@ -56,10 +56,9 @@ export const CardImage = styled("div", {
         "&__text": {
             display: "flex",
             alignItems: "center",
-            padding: ".35rem 0",
+            padding: ".75rem 0",
         }
     }
-
 });
 
 export const CardInfoWrap = styled("div", {

@@ -3,12 +3,12 @@ import React from "react";
 import { GridProductWrap } from "./styles";
 import { CardCategory } from "../../Cards/CardCategory";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { CardProduct } from "../../Cards/CardProduct";
+// import { CardProduct } from "../../Cards/CardProduct";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
 import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
 import { fakeProducts } from "src/utils/fakeProducts";
-import PersonImage from "public/images/woman2.jpg";
+import PersonImage from "public/images/code.jpg";
 
 export function GridProductsSmall() {
     // TEMP
@@ -42,7 +42,7 @@ export function GridProductsSmall() {
                             slidesPerView: 2
                         },
                         960: {
-                            slidesPerView: 5,
+                            slidesPerView: 6,
                             noSwiping: true,
                             allowSlidePrev: true,
                             allowSlideNext: true
@@ -61,7 +61,11 @@ export function GridProductsSmall() {
                             <CardOutsideInfo cardInfo={{
                                 ...item,
                                 image: PersonImage
-                            }} />
+                            }}
+                                cardStyle={{
+                                    aspectRatio: "3/4",
+                                }}
+                            />
                         </SwiperSlide>
                     ))}
                 </Swiper>

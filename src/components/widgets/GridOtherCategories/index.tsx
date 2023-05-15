@@ -7,7 +7,7 @@ import { Header } from "../../WidgetsHeader";
 import { CardOverlayInfo } from "../../Cards/CardOverlayInfo";
 import { Columns } from "phosphor-react";
 import { fakeCategories } from "src/utils/fakeProducts";
-import PersonImage from "public/images/people3.jpg";
+import PersonImage from "public/images/code.jpg";
 
 export function GridOtherCategories() {
     // TEMP

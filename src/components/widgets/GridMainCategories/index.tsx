@@ -4,7 +4,7 @@ import { GridWrap } from "./styles";
 import { CardCategory } from "../../Cards/CardCategory";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Container } from "@nextui-org/react";
-import PersonImage from "public/images/people1.jpg";
+import PersonImage from "public/images/code.jpg";
 import { fakeProducts } from "src/utils/fakeProducts";
 
 
