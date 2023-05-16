@@ -2,33 +2,28 @@ import { styled, keyframes } from "stitches.config";
 
 
 export const CardCategoryWrap = styled("div", {
+    // background: "$secondary",
+    position: "relative",
     height: "35vh",
     width: "100%",
-    display: "flex",
-    position: "absolute",
     overflow: "hidden",
-    background: "$primary",
-
 
     ".card-category__image": {
         height: "100%",
         width: "100%",
+        position: "absolute",
 
+        "img": {
+            height: "20%",
+            width: "10%",
+            objectFit: "cover",
+        }
     },
-    ".card-category": {
+    "&:hover .card-info__title::after": {
+        content: "",
+        transform: "scaleX(1)",
+        transformOrigin: "bottom left",
 
-        "&__image": {
-            position: "absolute",
-            height: "100%",
-            width: "100%",
-            overflow: "hidden",
-
-            "img": {
-                objectFit: "cover",
-                height: "100%",
-                width: "100%",
-            },
-        },
     }
 });
 
@@ -39,12 +34,11 @@ export const CardInfoWrap = styled("div", {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    // alignItems: "center",
     cursor: "pointer",
 
     "&:hover .card-info__title": {
-        color: "$primary",
-        paddingLeft: "1rem",
+        // color: "$primary",
+        paddingLeft: ".25rem",
         transition: ".25s ease-in-out",
     },
 
@@ -55,7 +49,7 @@ export const CardInfoWrap = styled("div", {
         position: "absolute",
         zIndex: 5,
         background: "#000",
-        opacity: 0.1,
+        opacity: 0.2,
     },
 
     ".card-info": {
@@ -65,9 +59,24 @@ export const CardInfoWrap = styled("div", {
         "&__title": {
             themeFont: "primary",
             fontWeight: 700,
-            color: "$primary",
+            color: "$neutral",
             fontSize: "$9",
+            position: "relative",
+            display: "inline-block",
             // textShadow: "1px 1px #B2B2B2",
+
+            "&::after": {
+                content: "",
+                height: "3px",
+                width: "100%",
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                transform: "scaleX(0)",
+                backgroundColor: "$primary",
+                transformOrigin: "bottom right",
+                transition: "transform .25s ease-in-out",
+            },
 
         }
     }

@@ -27,15 +27,19 @@ export function CardCategory(props: Pick<CardProps, "cardInfo">) {
     const { cardInfo } = props;
 
     return (
-        <motion.div
-            initial={"initial"}
-            animate={"animation"}
-            whileHover={"animation"}
-            className='card-category__image'
-        >
-            <CardCategoryWrap>
+        <CardCategoryWrap>
+            <motion.div
+                initial={"initial"}
+                animate={"initial"}
+                whileHover={"animation"}
+                style={{
+                    width: '100%',
+                    height: '35vh',
+                }}
+            >
                 <motion.div
                     variants={zoomImage}
+                    className='card-category__image'
                 >
                     <Image
                         src={cardInfo.image}
@@ -44,8 +48,8 @@ export function CardCategory(props: Pick<CardProps, "cardInfo">) {
                     />
                 </motion.div>
                 <CardInfo cardInfo={cardInfo} />
-            </CardCategoryWrap>
-        </motion.div>
+            </motion.div>
+        </CardCategoryWrap>
 
     )
 }
