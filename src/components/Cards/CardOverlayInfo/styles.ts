@@ -1,4 +1,4 @@
-import { styled } from "stitches.config";
+import { styled, keyframes } from "stitches.config";
 
 export const CardWrap = styled("div", {
     display: "flex",
@@ -8,25 +8,36 @@ export const CardWrap = styled("div", {
     aspectRatio: "4/5",
     overflow: "hidden",
 
-    "&:hover img": {
-        transform: "scale(1.1)",
+    "img": {
         transition: ".5s ease-in-out",
     },
 
-    "&:hover .card-info__title": {
-        fontSize: "1.7rem"
-    },
+    "&:hover": {
+        "img": {
+            transform: "scale(1.1)",
+        },
 
-    "&:hover .card-overlay": {
-        opacity: .55,
-        transition: ".5s ease-in-out",
+        ".card-info": {
+            "&__title": {
+                fontSize: "1.7rem"
+            },
+            "&__category": {
+                display: "block",
+            }
+        },
+        ".card-overlay": {
+            opacity: .55,
+            transition: ".5s ease-in-out",
+        },
     },
 
     "card-info": {
-
         "&__subtitle": {
             themeFont: "title"
         }
+    },
+    ".card-overlay": {
+        opacity: .85,
     }
 });
 
@@ -37,15 +48,20 @@ export const CardInfoWrap = styled("div", {
     zIndex: 5,
 
 
-    ".card-info__title": {
-        paddingBottom: "$6",
-        themeFont: "text",
-        fontWeight: "800",
-        themeFontSize: {
-            default: "$6"
+    ".card-info": {
+        "&__title": {
+            // paddingBottom: "$6",
+            themeFont: "primary",
+            fontWeight: "800",
+            themeFontSize: {
+                default: "$6"
+            },
+            letterSpacing: "0.1rem"
         },
-        letterSpacing: "0.1rem"
-    }
+        "&__category": {
+            display: "none",
+        }
+    },
 });
 
 export const CardImage = styled("div", {

@@ -5,6 +5,7 @@ import { MainNavbar } from "../components/MainNavbar";
 import { GridProducts } from "../components/widgets/GridProducts";
 import { GridProductsSmall } from "../components/widgets/GridProductsSmall";
 import { GridOtherCategories } from "../components/widgets/GridOtherCategories";
+import { carouselItemsData } from "src/utils/fakeProducts";
 
 const Home: NextPage = () => {
 
@@ -13,10 +14,10 @@ const Home: NextPage = () => {
             // background: "#DBD8EA"
         }}>
             <MainNavbar
-                bgColor="primary"
-            // position="absolute"
+                bgColor="transparent"
+                position="absolute"
             />
-            {/* <HomeCarousel carouselItemsData={carouselItemsData} /> */}
+            <HomeCarousel carouselItemsData={carouselItemsData} />
             <GridMainCategories />
             <GridProducts />
             <GridOtherCategories />

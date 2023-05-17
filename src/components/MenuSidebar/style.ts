@@ -28,11 +28,23 @@ const ContentWrap = styled("div", {
     },
     ".content": {
         height: "100vh",
-        width: "450px",
+        width: "100vw",
         position: "fixed",
         zIndex: 9999,
         background: "$primary",
+    },
 
+    "@xs": {
+        ".content": {
+            width: "50vh",
+            maxWidth: "500px",
+        }
+    },
+    "@lg": {
+        ".content": {
+            width: "100%",
+            maxWidth: "450px",
+        }
     }
 });
 

@@ -41,6 +41,9 @@ export function GridProductsSmall() {
                         0: {
                             slidesPerView: 2
                         },
+                        600: {
+                            slidesPerView: 3,
+                        },
                         960: {
                             slidesPerView: 6,
                             noSwiping: true,
