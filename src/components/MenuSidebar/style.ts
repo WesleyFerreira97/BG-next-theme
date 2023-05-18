@@ -34,16 +34,14 @@ const ContentWrap = styled("div", {
         background: "$primary",
     },
 
-    "@xs": {
+    "@sm": {
         ".content": {
-            width: "50vh",
-            maxWidth: "500px",
+            width: "400px",
         }
     },
     "@lg": {
         ".content": {
-            width: "100%",
-            maxWidth: "450px",
+            width: "450px",
         }
     }
 });
