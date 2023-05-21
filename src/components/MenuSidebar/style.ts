@@ -35,9 +35,13 @@ const ContentWrap = styled("div", {
         background: "$primary",
     },
 
-    "@xs": {
+    "@sm": {
         ".content": {
+<<<<<<< HEAD
             width: "50vh",
+=======
+            width: "400px",
+>>>>>>> 4cf654e69521683b17e3e110b64cc43f11df51cc
         }
     },
     "@lg": {

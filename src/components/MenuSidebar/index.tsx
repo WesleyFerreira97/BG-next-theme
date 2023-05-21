@@ -6,7 +6,6 @@ import { motion } from 'framer-motion'
 
 type ToggleMenuProps = {
     contentId: string
-
 }
 
 type ContentProps = {
@@ -39,7 +38,7 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
             ...prevState,
             [contentId]: false
         }))
-    };
+    }
 
     const handleEscPress = (e: KeyboardEvent) => {
         if (e.key === 'Escape') {
@@ -106,4 +105,4 @@ function MenuSidebar({ children, registerContents }: PropsWithChildren<MenuSideb
 MenuSidebar.ToggleMenu = ToggleMenu;
 MenuSidebar.Content = Content;
 
-export { MenuSidebar }
+export { MenuSidebar };
