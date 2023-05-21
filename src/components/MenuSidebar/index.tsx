@@ -53,6 +53,7 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
             onKeyUp={(e) => handleEscPress(e)}
             tabIndex={0}
             side={props.side}
+            contaienerWrap
         >
             <div className='content' >
                 Content

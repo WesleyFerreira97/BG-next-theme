@@ -7,11 +7,12 @@ const MenuSidebarWrap = styled("div", {
 
 const ContentWrap = styled("div", {
     height: "100vh",
+    // width: "100%",
     width: "0px", // Prevent container block
     position: "fixed",
     top: 0,
     zIndex: 997,
-    background: "$primary",
+
     variants: {
         side: {
             left: {
@@ -28,7 +29,7 @@ const ContentWrap = styled("div", {
     },
     ".content": {
         height: "100vh",
-        width: "100vw",
+        width: "50%",
         position: "fixed",
         zIndex: 9999,
         background: "$primary",
@@ -37,13 +38,11 @@ const ContentWrap = styled("div", {
     "@xs": {
         ".content": {
             width: "50vh",
-            maxWidth: "500px",
         }
     },
     "@lg": {
         ".content": {
-            width: "100%",
-            maxWidth: "450px",
+            width: "450px",
         }
     }
 });
