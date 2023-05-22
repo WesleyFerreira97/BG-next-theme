@@ -19,16 +19,6 @@ export const MainNavbarWrap = styled("div", {
         }
     },
 
-    // "&:after": {
-    //     content: "''",
-    //     position: "absolute",
-    //     top: "0",
-    //     height: "100%",
-    //     width: "100%",
-    //     opacity: 0.2
-    //     /* background-color: ${props => props.theme.colors.secondary}; */
-    // },
-
     "> *": {
         width: "100%",
         display: "flex",
@@ -119,3 +109,20 @@ export const MainMenuWrap = styled("div", {
     },
 });
 
+export const SidebarCategoriesWrap = styled("div", {
+    ".menu-categories": {
+        padding: "0 1.5rem",
+        "li": {
+            fontSize: "$6",
+            padding: ".5rem 0",
+            color: "$primary",
+            themeFont: "secondary",
+            fontWeight: 700,
+            "&::before": {
+                content: "- ",
+                marginRight: ".5rem",
+                fontWeight: "300"
+            }
+        }
+    }
+});

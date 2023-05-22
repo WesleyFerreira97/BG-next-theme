@@ -3,6 +3,7 @@ import { useSidebarMenu } from 'src/hooks/useSidebarMenu'
 import { ContentWrap, OverlayBackground } from './style'
 import { Button } from '@nextui-org/react'
 import { motion } from 'framer-motion'
+import { X } from "phosphor-react"
 
 type ToggleMenuProps = {
     contentId: string
@@ -11,6 +12,7 @@ type ToggleMenuProps = {
 type ContentProps = {
     contentId: string;
     side?: "left" | "right";
+    menuTitle?: string;
 }
 
 type MenuSidebarProps = {
@@ -52,13 +54,22 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
             onKeyUp={(e) => handleEscPress(e)}
             tabIndex={0}
             side={props.side}
-            contaienerWrap
         >
-            <div className='content' >
-                Content
-                <Button onPress={handleMenuClose}>
-                    Close
-                </Button>
+            <div className='content'>
+                <div className='content-header'>
+                    {props.menuTitle &&
+                        <h4 className='content-header__title'>
+                            {props.menuTitle}
+                        </h4>
+                    }
+                    <div
+                        className='content-header__close'
+                        onClick={handleMenuClose}
+                    >
+                        <X size={24} />
+                        {/* Fechar */}
+                    </div>
+                </div>
                 {children}
             </div>
             <OverlayBackground

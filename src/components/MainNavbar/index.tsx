@@ -1,5 +1,5 @@
 import React from "react";
-import { MainMenuWrap, MainNavbarWrap } from "./styles";
+import { MainMenuWrap, MainNavbarWrap, SidebarCategoriesWrap } from "./styles";
 import { List, ShoppingCartSimple } from "phosphor-react";
 import { Container } from "../Layout/Container";
 import { MenuSidebar } from "../MenuSidebar";
@@ -11,12 +11,16 @@ export type MainNavbarProps = {
 }
 const MenuSidebarCategories = () => {
     return (
-        <ul>
-            <li>Home</li>
-            <li>Home</li>
-            <li>Home</li>
-            <li>Home</li>
-        </ul>
+        <SidebarCategoriesWrap>
+            <ul className="menu-categories">
+                <li>Home</li>
+                <li>Camisas</li>
+                <li>Regatas</li>
+                <li>Sandálias</li>
+                <li>Saias</li>
+                <li>Outros</li>
+            </ul>
+        </SidebarCategoriesWrap>
     )
 }
 export function MainNavbar(props: MainNavbarProps) {
@@ -68,6 +72,7 @@ export function MainNavbar(props: MainNavbarProps) {
                 <MenuSidebar.Content
                     contentId="categories"
                     side="left"
+                    menuTitle="Categorias"
                 >
                     <MenuSidebarCategories />
                 </MenuSidebar.Content>

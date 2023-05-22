@@ -29,19 +29,36 @@ const ContentWrap = styled("div", {
     },
     ".content": {
         height: "100vh",
-        width: "50%",
+        width: "100%",
         position: "fixed",
         zIndex: 9999,
-        background: "$primary",
+        background: "#fff",
+
+        "&-header": {
+            background: "$primary",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: ".5rem 1.5rem",
+            color: "#fff",
+
+            "&__title": {
+                themeFont: "primary",
+            },
+            "&__close": {
+                display: "flex",
+                alignItems: "center",
+
+                "> *:first-child": {
+                    marginRight: ".25rem",
+                }
+            }
+        }
     },
 
     "@sm": {
         ".content": {
-<<<<<<< HEAD
-            width: "50vh",
-=======
             width: "400px",
->>>>>>> 4cf654e69521683b17e3e110b64cc43f11df51cc
         }
     },
     "@lg": {

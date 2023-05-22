@@ -25,14 +25,14 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Head>
             <StoreProvider>
                 <PersistGate loading={null} persistor={persistor}>
-                    <NextUIProvider>
-                        <div style={{
-                            overflowX: "hidden"
-                        }}>
-                            <Component {...pageProps} />
-                            <Footer />
-                        </div>
-                    </NextUIProvider>
+                    {/* <NextUIProvider> */}
+                    <div style={{
+                        overflowX: "hidden"
+                    }}>
+                        <Component {...pageProps} />
+                        <Footer />
+                    </div>
+                    {/* </NextUIProvider> */}
                 </PersistGate>
             </StoreProvider>
         </>
