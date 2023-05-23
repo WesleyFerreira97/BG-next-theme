@@ -4,13 +4,13 @@ import { List, ShoppingCartSimple, CaretRight } from "phosphor-react";
 import { Container } from "../Layout/Container";
 import { MenuSidebar } from "../MenuSidebar";
 import { MenuSidebarCategories } from "./MenuSidebarCategories";
+import { MenuSidebarCart } from "./MenuSidebarCart";
 
 export type MainNavbarProps = {
     bgColor?: "primary" | "transparent",
     position?: "absolute" | "relative",
     showCategories?: boolean
 }
-
 
 export function MainNavbar(props: MainNavbarProps) {
 
@@ -68,8 +68,9 @@ export function MainNavbar(props: MainNavbarProps) {
                 <MenuSidebar.Content
                     contentId="cart"
                     side="right"
+                    menuTitle="Carrinho"
                 >
-                    <MenuSidebarCategories />
+                    <MenuSidebarCart />
                 </MenuSidebar.Content>
             </MenuSidebar>
         </>

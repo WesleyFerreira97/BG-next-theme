@@ -114,22 +114,22 @@ export const SidebarCategoriesWrap = styled("div", {
         padding: "0 1.5rem",
 
         "li": {
-            fontSize: "$5",
-            padding: ".5rem 0",
-            color: "$secondary",
-            themeFont: "primary",
-            fontWeight: 500,
-            lineHeight: "160%",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            padding: ".5rem 0",
+            fontSize: "$5",
+            themeFont: "primary",
+            fontWeight: 500,
+            lineHeight: "160%",
             letterSpacing: ".25rem !important",
             cursor: "pointer",
+            color: "$secondary",
 
             "&:hover": {
+                transition: "all .3s ease",
                 background: "$primary",
                 color: "#fff",
-                transition: "all .3s ease",
 
                 "&::before": {
                     content: "",
@@ -138,4 +138,11 @@ export const SidebarCategoriesWrap = styled("div", {
             }
         }
     }
+});
+
+export const MenuSidebarCartWrap = styled("div", {
+    // padding: "0 1.5rem",
+    background: "$primary",
+    height: "100%",
+    width: "100%",
 });

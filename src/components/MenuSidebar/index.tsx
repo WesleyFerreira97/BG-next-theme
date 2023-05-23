@@ -60,7 +60,10 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
                     <X size={27} />
                 </CloseButton>
                 <div style={{
+                    height: "90%",
+                    background: "#000",
                     marginLeft: '3rem',
+                    marginRight: '1rem',
                 }}>
                     <div className='content-header'>
                         {props.menuTitle &&
