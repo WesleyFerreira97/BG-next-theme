@@ -126,20 +126,14 @@ export const SidebarCategoriesWrap = styled("div", {
             letterSpacing: ".25rem !important",
             cursor: "pointer",
 
-            "&::before": {
-                // content: "",
-                // marginRight: ".5rem",
-                // fontWeight: "300"
-            },
-            backroundColor: "$primary",
             "&:hover": {
+                background: "$primary",
+                color: "#fff",
+                transition: "all .3s ease",
 
                 "&::before": {
                     content: "",
-                    // height: "100%",
                     width: "100%",
-                    // zIndex: 10,
-                    // position: "relative",
                 }
             }
         }
