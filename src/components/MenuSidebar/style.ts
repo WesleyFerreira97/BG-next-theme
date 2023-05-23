@@ -33,26 +33,25 @@ const ContentWrap = styled("div", {
         position: "fixed",
         zIndex: 9999,
         background: "#fff",
+        overflow: "hidden",
 
         "&-header": {
-            background: "$primary",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             padding: ".5rem 1.5rem",
-            color: "#fff",
+            color: "$secondary",
+            marginBottom: "3.5rem",
 
             "&__title": {
                 themeFont: "primary",
-            },
-            "&__close": {
-                display: "flex",
-                alignItems: "center",
+                fontSize: "3rem",
 
-                "> *:first-child": {
-                    marginRight: ".25rem",
+                "&:after": {
+                    content: ".",
+                    color: "$primary",
                 }
-            }
+            },
         }
     },
 
@@ -65,6 +64,21 @@ const ContentWrap = styled("div", {
         ".content": {
             width: "450px",
         }
+    }
+});
+
+const CloseButton = styled("div", {
+    height: "60px",
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    // background: "$secondary",
+    color: "$secondary",
+    padding: "0 1.5rem",
+    "> *:hover": {
+        cursor: "pointer",
+        transform: "scale(1.1) rotate(90deg)",
+        transition: "all .4s ease",
     }
 });
 
@@ -95,5 +109,6 @@ const OverlayBackground = styled("span", {
 export {
     MenuSidebarWrap,
     ContentWrap,
-    OverlayBackground
+    OverlayBackground,
+    CloseButton
 }

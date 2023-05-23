@@ -112,16 +112,35 @@ export const MainMenuWrap = styled("div", {
 export const SidebarCategoriesWrap = styled("div", {
     ".menu-categories": {
         padding: "0 1.5rem",
+
         "li": {
-            fontSize: "$6",
+            fontSize: "$5",
             padding: ".5rem 0",
-            color: "$primary",
-            themeFont: "secondary",
-            fontWeight: 700,
+            color: "$secondary",
+            themeFont: "primary",
+            fontWeight: 500,
+            lineHeight: "160%",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            letterSpacing: ".25rem !important",
+            cursor: "pointer",
+
             "&::before": {
-                content: "- ",
-                marginRight: ".5rem",
-                fontWeight: "300"
+                // content: "",
+                // marginRight: ".5rem",
+                // fontWeight: "300"
+            },
+            backroundColor: "$primary",
+            "&:hover": {
+
+                "&::before": {
+                    content: "",
+                    // height: "100%",
+                    width: "100%",
+                    // zIndex: 10,
+                    // position: "relative",
+                }
             }
         }
     }

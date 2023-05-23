@@ -1,6 +1,6 @@
 import React, { useContext, PropsWithChildren, createContext, useState, useEffect, SetStateAction } from 'react'
 import { useSidebarMenu } from 'src/hooks/useSidebarMenu'
-import { ContentWrap, OverlayBackground } from './style'
+import { CloseButton, ContentWrap, OverlayBackground } from './style'
 import { Button } from '@nextui-org/react'
 import { motion } from 'framer-motion'
 import { X } from "phosphor-react"
@@ -56,21 +56,22 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
             side={props.side}
         >
             <div className='content'>
-                <div className='content-header'>
-                    {props.menuTitle &&
-                        <h4 className='content-header__title'>
-                            {props.menuTitle}
-                        </h4>
-                    }
-                    <div
-                        className='content-header__close'
-                        onClick={handleMenuClose}
-                    >
-                        <X size={24} />
-                        {/* Fechar */}
+                <CloseButton onClick={handleMenuClose} >
+                    <X size={27} />
+                </CloseButton>
+                <div style={{
+                    marginLeft: '3rem',
+                }}>
+                    <div className='content-header'>
+                        {props.menuTitle &&
+                            <h4 className='content-header__title'>
+                                {props.menuTitle}
+                            </h4>
+                        }
+
                     </div>
+                    {children}
                 </div>
-                {children}
             </div>
             <OverlayBackground
                 open={contentState}
