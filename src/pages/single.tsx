@@ -1,11 +1,9 @@
 import React from "react";
 import { MainNavbar } from "../components/MainNavbar";
 import { styled } from "stitches.config";
-import { NavbarCategories } from "../components/NavbarCategories";
 import { SingleProduct } from "../components/SingleProduct";
 import { BucketProps, ProductProps, ProductWithBucketProps } from "src/types/product";
 import { supaDb } from "src/services/supadb";
-import { MainNavbarPreview } from "src/components/MainNavbarPreview";
 
 type SingleProps = {
     singleProductData: ProductWithBucketProps;
@@ -29,7 +27,6 @@ function Single(props: SingleProps) {
                 showCategories={true}
             />
             {/* <MainNavbarPreview /> */}
-            {/* <NavbarCategories /> */}
             <SingleProduct data={singleProductData} />
         </SingleWrap>
     );

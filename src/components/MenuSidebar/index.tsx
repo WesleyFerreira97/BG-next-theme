@@ -60,8 +60,10 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
                     <X size={27} />
                 </CloseButton>
                 <div style={{
-                    height: "90%",
-                    background: "#000",
+                    // background: "#000",
+                    flexGrow: 1,
+                    display: "flex",
+                    flexDirection: "column",
                     marginLeft: '3rem',
                     marginRight: '1rem',
                 }}>

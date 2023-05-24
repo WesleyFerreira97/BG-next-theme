@@ -42,7 +42,7 @@ export const MainNavbarWrap = styled("div", {
             themeFont: "primary"
         },
         "&__menu, &__cart": {
-            height: "100 %",
+            height: "100%",
             display: "flex",
             alignItems: "center",
             padding: "0 .5rem",
@@ -77,7 +77,6 @@ export const MainNavbarWrap = styled("div", {
 
 
 export const MainMenuWrap = styled("div", {
-    // minHeight: "30px",
     width: "100%",
     display: "flex",
     alignItems: "center",
@@ -90,9 +89,6 @@ export const MainMenuWrap = styled("div", {
 
         "&__behavior": {
             padding: "0 1.25rem"
-            // width: "100%",
-            // display: "flex",
-            // justifyContent: "space-between",
         }
     },
     ".main-menu__item": {
@@ -142,7 +138,6 @@ export const SidebarCategoriesWrap = styled("div", {
 
 export const MenuSidebarCartWrap = styled("div", {
     // padding: "0 1.5rem",
-    background: "$primary",
     height: "100%",
     width: "100%",
 });

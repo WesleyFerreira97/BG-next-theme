@@ -29,7 +29,9 @@ const ContentWrap = styled("div", {
     },
     ".content": {
         height: "100vh",
-        width: "100%",
+        width: "80%",
+        display: "flex",
+        flexDirection: "column",
         position: "fixed",
         zIndex: 9999,
         background: "#fff",
