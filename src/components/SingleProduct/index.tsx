@@ -12,17 +12,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { newOrder } from "src/reduceres/cartProductReducer";
 import { useRouter } from "next/router";
 import { currentCheckoutData } from "src/reduceres/checkoutReducer";
+import { OrderDataProps } from "src/types/cartTypes";
 
 type SingleProductProps = {
     data: Partial<ProductWithBucketProps>;
 };
-
-export type OrderDataProps = {
-    productTitle: string;
-    price?: number;
-    selectedSize?: string | number;
-    selectedColor?: string;
-}
 
 const orderValidation = Yup.object().shape({
     selectedSize: Yup.string()
@@ -44,7 +38,7 @@ export function SingleProduct(props: SingleProductProps) {
     const dispatch = useDispatch();
     const router = useRouter();
 
-    const handleNewOrder = (values) => {
+    const handleNewOrder = (values: OrderDataProps) => {
         dispatch(newOrder(values));
     }
 
@@ -54,10 +48,11 @@ export function SingleProduct(props: SingleProductProps) {
     }
 
     const FormInitialValues = {
-        productTitle: data?.title,
+        productTitle: data.title,
         price: data?.price,
         selectedSize: null,
         selectedColor: null,
+        image: data?.image,
     }
 
     return (

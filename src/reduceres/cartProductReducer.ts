@@ -1,24 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
-import type { OrderDataProps } from "src/components/SingleProduct";
-
-type OrderData = {
-    order: OrderDataProps
-}
-// const initialState: any = {
-//     productTitle: "initial Title",
-//     price: 0,
-//     selectedColor: "initial Color",
-//     selectedSize: "initial Size",
-// };
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { OrderDataProps } from 'src/types/cartTypes';
 
 const orderSlice = createSlice({
     name: "order",
-    initialState: [],
+    initialState: [] as OrderDataProps[],
     reducers: {
-        newOrder(state: any, action: any) {
+        newOrder(state, action: PayloadAction<OrderDataProps>) {
             const order = action.payload;
 
-            state.push(action.payload)
+            state.push(order)
         }
     }
 });
