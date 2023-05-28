@@ -1,11 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { OrderDataProps } from "src/components/SingleProduct";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import type { OrderDataProps } from "src/types/cartTypes";
+
+type CheckoutProps = {
+    data: OrderDataProps
+}
 
 const checkoutSlice = createSlice({
     name: "checkout",
     initialState: {},
     reducers: {
-        currentCheckoutData(state: any, action: any) {
+        currentCheckoutData(state: any, action: PayloadAction<CheckoutProps>) {
             const checkoutData = action.payload;
 
             state.data = { ...checkoutData };

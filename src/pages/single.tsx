@@ -9,6 +9,12 @@ type SingleProps = {
     singleProductData: ProductWithBucketProps;
 }
 
+type QueryProps = {
+    query: {
+        product: string
+    }
+}
+
 export const SingleWrap = styled("div", {
     minHeight: "100vh",
     height: "100%",
@@ -32,14 +38,14 @@ function Single(props: SingleProps) {
     );
 };
 
-Single.getInitialProps = async ({ query }: any) => {
+Single.getInitialProps = async ({ query }: QueryProps) => {
     const { product } = query;
 
     const { data, error } = await supaDb
         .from("products")
         .select("*")
         .limit(1)
-        .match({ title: product as string })
+        .match({ title: product })
 
     if (!data) return;
 

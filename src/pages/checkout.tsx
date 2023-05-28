@@ -3,9 +3,10 @@ import { Container } from "@theme/Layout/";
 import { useSelector } from "react-redux";
 import CardCheckout from 'src/components/Cards/CardCheckout';
 import { MainNavbar } from 'src/components/MainNavbar';
+import { useAppSelector } from 'src/store';
 
 function Checkout(props: any) {
-    const checkoutData = useSelector((state: any) => state.checkoutState.data);
+    const checkoutData = useAppSelector((state) => state.checkoutState.data);
 
     return (
         <>

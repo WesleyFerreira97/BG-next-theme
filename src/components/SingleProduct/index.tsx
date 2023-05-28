@@ -13,6 +13,7 @@ import { newOrder } from "src/reduceres/cartProductReducer";
 import { useRouter } from "next/router";
 import { currentCheckoutData } from "src/reduceres/checkoutReducer";
 import { OrderDataProps } from "src/types/cartTypes";
+import { useAppSelector } from "src/store";
 
 type SingleProductProps = {
     data: Partial<ProductWithBucketProps>;
@@ -34,7 +35,7 @@ const fakeColorData: any = {
 
 export function SingleProduct(props: SingleProductProps) {
     const { data } = props;
-    const theme = useSelector((state: any) => state);
+    const theme = useAppSelector((state) => state);
     const dispatch = useDispatch();
     const router = useRouter();
 

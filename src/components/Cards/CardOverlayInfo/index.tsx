@@ -24,7 +24,7 @@ const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
     );
 };
 
-export function CardOverlayInfo({ cardInfo, }: any) {
+export function CardOverlayInfo({ cardInfo, }: CardProps) {
     return (
         <CardWrap>
             <CardImage>

@@ -6,7 +6,6 @@ import { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs, Swiper as SwiperRef } from "swiper";
 
-
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";

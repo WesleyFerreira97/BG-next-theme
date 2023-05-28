@@ -5,7 +5,7 @@ import { ToggleGroupProps } from './types';
 import { Item } from './Item';
 import { ErrorMessageWrap } from './styles';
 
-export const SelectedValue = createContext<any>("");
+export const SelectedValue = createContext<unknown>("");
 
 function ToggleGroup({ name, children, ...groupProps }: ToggleGroupProps) {
   const [field, meta, helpers] = useField(name);

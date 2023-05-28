@@ -13,14 +13,13 @@ type CarouselDataProps = {
         [key: string]: {
             title: string;
             text: string;
-            image: any;
+            image: string;
             buttons: {
                 seeMore: string;
                 previewButton?: string;
             }
         }
     }
-
 }
 
 export function HomeCarousel({ carouselItemsData }: CarouselDataProps) {

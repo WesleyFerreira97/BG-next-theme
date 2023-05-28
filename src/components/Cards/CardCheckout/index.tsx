@@ -4,8 +4,13 @@ import { Container } from '@theme/Layout/Container';
 import Image from 'next/image';
 import FallbackImage from "public/images/code.jpg";
 import { CheckCircle } from 'phosphor-react';
+import { OrderDataProps } from 'src/types/cartTypes';
 
-export default function CardCheckout(props: any) {
+type CardCheckoutProps = {
+    data: OrderDataProps;
+}
+
+export default function CardCheckout(props: CardCheckoutProps) {
     const { data } = props;
 
     const image = data?.image ? data.image : FallbackImage;
