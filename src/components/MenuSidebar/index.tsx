@@ -1,8 +1,6 @@
-import React, { useContext, PropsWithChildren, createContext, useState, useEffect, SetStateAction } from 'react'
+import React, { useContext, PropsWithChildren, createContext, useState, SetStateAction, KeyboardEvent } from 'react'
 import { useSidebarMenu } from 'src/hooks/useSidebarMenu'
 import { CloseButton, ContentWrap, OverlayBackground } from './style'
-import { Button } from '@nextui-org/react'
-import { motion } from 'framer-motion'
 import { X } from "phosphor-react"
 
 type ToggleMenuProps = {
@@ -24,7 +22,12 @@ type MenuContextProps = {
     setIsMenuOpen: React.Dispatch<SetStateAction<{ [key: string]: boolean }>>;
 }
 
-const MenuSidebarContext = createContext<MenuContextProps>({});
+const initialValue = {
+    isMenuOpen: {},
+    setIsMenuOpen: () => { },
+}
+
+const MenuSidebarContext = createContext<MenuContextProps>(initialValue);
 
 const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentProps>) => {
     const { isMenuOpen, setIsMenuOpen } = useContext(MenuSidebarContext);
@@ -40,9 +43,9 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
             ...prevState,
             [contentId]: false
         }))
-    }
+    };
 
-    const handleEscPress = (e: KeyboardEvent) => {
+    const handleEscPress = (e: KeyboardEvent<HTMLDivElement>) => {
         if (e.key === 'Escape') {
             handleMenuClose();
         }
@@ -73,7 +76,6 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
                                 {props.menuTitle}
                             </h4>
                         }
-
                     </div>
                     {children}
                 </div>

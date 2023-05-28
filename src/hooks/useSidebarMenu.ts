@@ -14,7 +14,6 @@ type SidebarAnimationProps = {
 
 export function useSidebarMenu({ isOpen, side = "left" }: SidebarAnimationProps) {
     const [scope, animate] = useAnimate();
-    console.log(side);
 
     const slideOutBySideSelected = side === "left"
         ? "translateX(-1000%)"
