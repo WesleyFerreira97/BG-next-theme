@@ -1,5 +1,5 @@
 import React from "react";
-import { MainMenuWrap, MainNavbarWrap, SidebarCategoriesWrap } from "./styles";
+import { MainMenuWrap, MainNavbarWrap } from "./styles";
 import { List, ShoppingCartSimple, CaretRight } from "phosphor-react";
 import { Container } from "../Layout/Container";
 import { MenuSidebar } from "../MenuSidebar";
@@ -19,7 +19,7 @@ export function MainNavbar(props: MainNavbarProps) {
             <MenuSidebar registerContents={["categories", "cart"]}>
                 <MainNavbarWrap {...props}>
                     <Container>
-                        <div className="navbar ertertetrr">
+                        <div className="navbar">
                             <div className='navbar__menu'>
                                 <div className='menu-icon'>
                                     <MenuSidebar.ToggleMenu contentId="categories">
