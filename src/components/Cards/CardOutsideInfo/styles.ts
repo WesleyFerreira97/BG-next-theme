@@ -10,10 +10,15 @@ export const CardWrap = styled("div", {
         transition: "transform .4s ease-in-out"
     },
 
-    "&:hover .hover-bar": {
-        transform: "translateY(0)",
-        transitionDuration: ".25s",
-        transformOrigin: "bottom top",
+    "&:hover": {
+        ".card-image__wrap::before": {
+            opacity: 0.3,
+        },
+        ".hover-bar": {
+            transform: "translateY(0)",
+            transitionDuration: ".25s",
+            transformOrigin: "bottom top",
+        }
     }
 });
 
@@ -30,6 +35,16 @@ export const CardImage = styled("div", {
         position: "absolute",
         top: "0",
         zIndex: "0",
+
+        "&::before": {
+            content: "",
+            height: "100%",
+            width: "100%",
+            position: "absolute",
+            zIndex: 5,
+            background: "#000",
+            opacity: .15,
+        }
     },
 
     img: {

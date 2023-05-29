@@ -2,7 +2,6 @@ import { styled, keyframes } from "stitches.config";
 
 
 export const CardCategoryWrap = styled("div", {
-    // background: "$secondary",
     position: "relative",
     height: "35vh",
     width: "100%",
