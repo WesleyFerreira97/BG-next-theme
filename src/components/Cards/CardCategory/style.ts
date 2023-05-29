@@ -35,6 +35,7 @@ export const CardInfoWrap = styled("div", {
     flexDirection: "column",
     justifyContent: "center",
     cursor: "pointer",
+    zIndex: 10,
 
     "&:hover .card-info__title": {
         // color: "$primary",
@@ -49,7 +50,7 @@ export const CardInfoWrap = styled("div", {
         position: "absolute",
         zIndex: 5,
         background: "#000",
-        opacity: 0.2,
+        opacity: 0.5,
     },
 
     ".card-info": {
@@ -70,7 +71,7 @@ export const CardInfoWrap = styled("div", {
                 height: "3px",
                 width: "100%",
                 position: "absolute",
-                bottom: 0,
+                bottom: -10,
                 left: 0,
                 transform: "scaleX(0)",
                 backgroundColor: "$primary",
@@ -81,3 +82,4 @@ export const CardInfoWrap = styled("div", {
         }
     }
 })
+

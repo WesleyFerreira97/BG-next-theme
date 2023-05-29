@@ -56,7 +56,7 @@ export const CardImage = styled("div", {
         "&__text": {
             display: "flex",
             alignItems: "center",
-            padding: ".75rem 0",
+            padding: ".5rem 0",
         }
     }
 });
@@ -73,17 +73,16 @@ export const CardInfoWrap = styled("div", {
         textAlign: "center",
 
         "&__title, &__price, &__installments": {
-            themeFont: "text",
+            themeFont: "secondary",
             fontWeight: "600",
             themeFontSize: {
-                // default: "$3",
                 xs: "13px",
-                md: "15px"
+                md: "14px"
             }
         },
         "&__title": {
             color: "#4F4F4F",
-            paddingBottom: "8px",
+            paddingBottom: "4px",
             paddingTop: "12px",
             textTransform: "uppercase",
         },

@@ -57,7 +57,7 @@ export function Footer() {
                                 </ul>
                             </div>
                         </div>
-                        <div className='menu__container'>
+                        {/* <div className='menu__container'>
                             <div>
                                 <h5 className='menu__title'>Category Title</h5>
                                 <ul className='menu__wrap'>
@@ -82,7 +82,7 @@ export function Footer() {
                                     <li>Trading Cards</li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className='footer-container'>
                         <div className='menu__container'>

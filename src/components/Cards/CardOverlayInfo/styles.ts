@@ -19,7 +19,8 @@ export const CardWrap = styled("div", {
 
         ".card-info": {
             "&__title": {
-                fontSize: "1.7rem"
+                fontSize: "1.7rem",
+                marginBottom: "1rem",
             },
             "&__category": {
                 display: "block",
@@ -37,7 +38,7 @@ export const CardWrap = styled("div", {
         }
     },
     ".card-overlay": {
-        opacity: .85,
+        opacity: .65,
     }
 });
 
@@ -46,6 +47,7 @@ export const CardInfoWrap = styled("div", {
     color: "#fff",
     textAlign: "center",
     zIndex: 5,
+    overflow: "hidden",
 
 
     ".card-info": {
@@ -54,9 +56,10 @@ export const CardInfoWrap = styled("div", {
             themeFont: "primary",
             fontWeight: "800",
             themeFontSize: {
-                default: "$6"
+                xs: "$4",
+                sm: "$6",
             },
-            letterSpacing: "0.1rem"
+            letterSpacing: "0.1rem",
         },
         "&__category": {
             display: "none",
