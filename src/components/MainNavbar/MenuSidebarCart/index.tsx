@@ -6,6 +6,8 @@ import ImageFallback from "../../../../public/images/code.jpg";
 import { RootReducerTypes } from 'src/reduceres/rootReducer';
 import { RootState, useAppSelector } from 'src/store';
 import Image from 'next/image';
+import { Button } from '@nextui-org/react';
+import { ShoppingCartSimple } from 'phosphor-react';
 
 type OrderItemProps = {
     order: OrderDataProps[];
@@ -16,23 +18,48 @@ export function MenuSidebarCart() {
 
     return (
         <MenuSidebarCartWrap>
-            {order.map((item, index) => {
-                const image = item?.image ? item.image : ImageFallback;
-                return (
-                    <div
-                        className='cart-item'
-                        key={index}
-                    >
-                        <span className='cart-item__title'>
-                            {item.productTitle}
-                        </span>
-                        <span className='cart-item__price'>
-                            {item.price}
-                        </span>
-                        <Image src={image} alt={item.productTitle} width={100} height={100} />
-                    </div>
-                )
-            })}
+            <div className='cart-items'>
+                {order.map((item, index) => {
+                    const image = item?.image ? item.image : ImageFallback;
+                    return (
+                        <div
+                            className='cart-item'
+                            key={index}
+                        >
+                            <div className='cart-item__image'>
+                                <Image
+                                    src={image}
+                                    alt={item.productTitle}
+
+                                />
+                            </div>
+                            <div>
+                                <span className='cart-item__title'>
+                                    {item.productTitle}
+                                </span>
+                                <span className='cart-item__price'>
+                                    {item.price}
+                                </span>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+
+            <div className='finish-buttons'>
+                <Button
+                    className='cart-button'
+                    css={{
+                        background: "#27AE60",
+                        borderRadius: "4px",
+                        padding: "24px 32px",
+                    }}
+                // onPress={handleSubmit as () => void}
+                >
+                    <ShoppingCartSimple size={24} />
+                    <span className="label">Finalizar Compra</span>
+                </Button>
+            </div>
         </MenuSidebarCartWrap>
     )
 }

@@ -6,64 +6,76 @@ const MenuSidebarWrap = styled("div", {
 });
 
 const ContentWrap = styled("div", {
-    height: "100vh",
-    // width: "100%",
-    width: "0px", // Prevent container block
     position: "fixed",
     top: 0,
     zIndex: 997,
+    background: "$primary",
 
     variants: {
         side: {
             left: {
-                ".content": {
+                ".sidebar": {
                     left: 0,
                 }
             },
             right: {
-                ".content": {
+                ".sidebar": {
                     right: 0,
                 }
             },
         }
     },
-    ".content": {
+
+    ".sidebar": {
         height: "100vh",
         width: "80%",
         display: "flex",
         flexDirection: "column",
         position: "fixed",
         zIndex: 9999,
-        background: "#fff",
         overflow: "hidden",
+        background: "#fff",
 
         "&-header": {
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: ".5rem 1.5rem",
             color: "$secondary",
-            marginBottom: "3.5rem",
+            margin: "0 1.5rem 2.5rem 1.5rem",
 
             "&__title": {
                 themeFont: "primary",
-                fontSize: "3rem",
+                fontSize: "2rem",
 
                 "&:after": {
                     content: ".",
                     color: "$primary",
                 }
             },
-        }
+        },
+
+        "&-content": {
+            height: "100%",
+            flexGrow: 1,
+            display: "flex",
+            flexDirection: "column",
+            margin: "0 1.5rem",
+        },
     },
 
     "@sm": {
-        ".content": {
+        ".sidebar": {
             width: "400px",
+
+            "&-header": {
+                marginBottom: "3.5rem",
+
+                "&__title": {
+                    fontSize: "3rem",
+                }
+            }
         }
     },
     "@lg": {
-        ".content": {
+        ".sidebar": {
             width: "450px",
         }
     }
@@ -71,12 +83,13 @@ const ContentWrap = styled("div", {
 
 const CloseButton = styled("div", {
     height: "60px",
+    minHeight: "60px",
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
-    // background: "$secondary",
     color: "$secondary",
-    padding: "0 1.5rem",
+    margin: "0 1.5rem",
+
     "> *:hover": {
         cursor: "pointer",
         transform: "scale(1.1) rotate(90deg)",

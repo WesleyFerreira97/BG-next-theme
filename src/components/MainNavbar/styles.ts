@@ -56,7 +56,6 @@ export const MainNavbarWrap = styled("div", {
             fontSize: "2rem",
             fontStyle: "normal",
             fontWeight: 700,
-            // color: ${ props => props.theme.colors.neutral };
         }
     },
 

@@ -58,25 +58,18 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
             tabIndex={0}
             side={props.side}
         >
-            <div className='content'>
+            <div className='sidebar'>
                 <CloseButton onClick={handleMenuClose} >
                     <X size={27} />
                 </CloseButton>
-                <div style={{
-                    // background: "#000",
-                    flexGrow: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                    marginLeft: '3rem',
-                    marginRight: '1rem',
-                }}>
-                    <div className='content-header'>
-                        {props.menuTitle &&
-                            <h4 className='content-header__title'>
-                                {props.menuTitle}
-                            </h4>
-                        }
-                    </div>
+                <div className='sidebar-header'>
+                    {props.menuTitle &&
+                        <h4 className='sidebar-header__title'>
+                            {props.menuTitle}
+                        </h4>
+                    }
+                </div>
+                <div className='sidebar-content'>
                     {children}
                 </div>
             </div>
