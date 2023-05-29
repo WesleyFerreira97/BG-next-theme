@@ -49,7 +49,7 @@ export const CardInfoWrap = styled("div", {
         position: "absolute",
         zIndex: 5,
         background: "#000",
-        opacity: 0.5,
+        opacity: 0.3,
     },
 
     ".card-info": {
@@ -60,7 +60,10 @@ export const CardInfoWrap = styled("div", {
             themeFont: "primary",
             fontWeight: 700,
             color: "$neutral",
-            fontSize: "$9",
+            themeFontSize: {
+                xs: "$6",
+                md: "$9",
+            },
             position: "relative",
             display: "inline-block",
             // textShadow: "1px 1px #B2B2B2",
