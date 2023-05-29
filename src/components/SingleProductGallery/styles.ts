@@ -8,8 +8,8 @@ export const ProductGalleryWrap = styled("div", {
     ".main-image": {
         height: "100%",
         width: "100%",
-        minWidth: "400px",
-        maxWidth: "600px",
+        minWidth: "250px",
+        maxWidth: "500px",
         position: "relative",
         aspectRatio: "1/1",
 
@@ -41,7 +41,7 @@ export const ProductGalleryWrap = styled("div", {
         }
     },
 
-    "@lg": {
+    "@md": {
         ".grid-thumbnails": {
             display: "flex",
             flexDirection: "column",

@@ -8,7 +8,7 @@ import { ProductWithBucketProps } from "src/types/product";
 import { Formik } from "formik";
 import * as Yup from 'yup';
 import SingleProductGallery from "../SingleProductGallery";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { newOrder } from "src/reduceres/cartProductReducer";
 import { useRouter } from "next/router";
 import { currentCheckoutData } from "src/reduceres/checkoutReducer";
@@ -150,10 +150,6 @@ export function SingleProduct(props: SingleProductProps) {
                                 </>
                             )}
                         </Formik>
-                        <Button onPress={() => console.log(theme)}>
-                            Check Store Values
-                        </Button>
-
                     </ProductInfo>
                 </ComponentBehavior>
             </Container>

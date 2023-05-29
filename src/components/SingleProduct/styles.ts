@@ -3,9 +3,9 @@ import { styled, css } from "stitches.config";
 export const SingleProductWrap = styled("div", {
     display: "flex",
     justifyContent: "center",
-    padding: "0 1.25rem",
 
-    "@lg": {
+    "@sm": {
+        padding: "0 1.25rem",
         // margin: "3rem 0 2rem",
     }
 });
@@ -13,8 +13,11 @@ export const SingleProductWrap = styled("div", {
 export const ComponentBehavior = styled("div", {
     display: "flex",
     flexDirection: "column",
-    marginTop: "6rem",
+    // marginTop: "1rem",
 
+    "@sm": {
+        marginTop: "6rem",
+    },
     "@lg": {
         flexDirection: "row",
         padding: "0 1.25rem",
@@ -116,22 +119,29 @@ export const ProductInfo = styled("div", {
             }
         },
     },
-    "@lg": {
-        marginTop: "0",
-    },
+
     ".finish-buttons": {
         display: "flex",
+        justifyContent: "center",
         gap: "1rem",
         margin: "$6 0",
     },
     ".cart-button": {
-        backgroundColor: "#27AE60!important",
-        borderRadius: "0!important",
+        backgroundColor: "#27AE60 !important",
+        borderRadius: "0 !important",
 
         ".label": {
             margin: ".5rem",
         }
     },
 
+    "@sm": {
+        ".finish-buttons": {
+            justifyContent: "flex-start",
+        }
+    },
+    "@lg": {
+        marginTop: "0",
+    },
 });
 

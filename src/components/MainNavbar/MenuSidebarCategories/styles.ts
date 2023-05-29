@@ -2,7 +2,6 @@ import { styled } from "stitches.config";
 
 export const SidebarCategoriesWrap = styled("div", {
     ".menu-categories": {
-        // padding: "0 1.5rem",
 
         "li": {
             display: "flex",
