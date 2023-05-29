@@ -47,6 +47,41 @@ export const MenuSidebarCartWrap = styled("div", {
             }
         },
     },
+    ".finish-buttons": {
+        "&__subtotal": {
+            display: "flex",
+            justifyContent: "space-between",
+            padding: ".5rem 0",
+
+            ".label, .final-price": {
+                themeFont: "secondary",
+                fontWeight: "600",
+                themeFontSize: {
+                    xs: "$3",
+                    sm: "$5",
+                },
+            },
+
+            ".label": {
+                color: "$secondary",
+            },
+
+            ".final-price": {
+                color: "$green",
+            }
+        },
+        ".cart-button": {
+            background: "#27AE60",
+            borderRadius: "4px",
+            padding: "18px 32px",
+            width: "100%",
+
+            ".label": {
+                marginLeft: ".5rem",
+            }
+        }
+    },
+
     "::-webkit-scrollbar": {
         width: "5px",
         background: "$secondary",

@@ -47,13 +47,12 @@ export function MenuSidebarCart() {
             </div>
 
             <div className='finish-buttons'>
+                <div className='finish-buttons__subtotal'>
+                    <h3 className='label'>Subtotal</h3>
+                    <span className='final-price'>R$ 0,00</span>
+                </div>
                 <Button
                     className='cart-button'
-                    css={{
-                        background: "#27AE60",
-                        borderRadius: "4px",
-                        padding: "24px 32px",
-                    }}
                 // onPress={handleSubmit as () => void}
                 >
                     <ShoppingCartSimple size={24} />
