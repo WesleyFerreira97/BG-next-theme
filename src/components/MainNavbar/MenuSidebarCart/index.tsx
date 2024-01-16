@@ -40,6 +40,11 @@ export function MenuSidebarCart() {
                                 <span className='cart-item__price'>
                                     {item.price}
                                 </span>
+                                <button
+                                    onClick={() => console.log(index)}
+                                >
+                                    Remove Item
+                                </button>
                             </div>
                         </div>
                     )
@@ -53,7 +58,8 @@ export function MenuSidebarCart() {
                 </div>
                 <Button
                     className='cart-button'
-                // onPress={handleSubmit as () => void}
+                    // onPress={handleSubmit as () => void}
+                    onPress={() => console.log(order)}
                 >
                     <ShoppingCartSimple size={24} />
                     <span className="label">Finalizar Compra</span>

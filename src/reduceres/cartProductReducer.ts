@@ -9,12 +9,17 @@ const orderSlice = createSlice({
             const order = action.payload;
 
             state.push(order)
+        },
+        removeItem(state, action: PayloadAction<number>) {
+            const selectedItem = action.payload;
+
+            console.log(state);
+            state.splice(selectedItem, 1);
+
         }
     }
 });
 
 export const orderReducer = orderSlice.reducer;
 
-export const { newOrder } = orderSlice.actions;
-
-
+export const { newOrder, removeItem } = orderSlice.actions;

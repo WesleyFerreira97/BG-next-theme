@@ -9,7 +9,7 @@ import { Formik } from "formik";
 import * as Yup from 'yup';
 import SingleProductGallery from "../SingleProductGallery";
 import { useDispatch } from "react-redux";
-import { newOrder } from "src/reduceres/cartProductReducer";
+import { newOrder, removeItem } from "src/reduceres/cartProductReducer";
 import { useRouter } from "next/router";
 import { currentCheckoutData } from "src/reduceres/checkoutReducer";
 import { OrderDataProps } from "src/types/cartTypes";
@@ -41,6 +41,10 @@ export function SingleProduct(props: SingleProductProps) {
 
     const handleNewOrder = (values: OrderDataProps) => {
         dispatch(newOrder(values));
+    }
+
+    const handleRemoveItem = (index: number) => {
+        dispatch(removeItem(0));
     }
 
     const checkoutNavigate = (values) => {
@@ -147,6 +151,12 @@ export function SingleProduct(props: SingleProductProps) {
                                             <span className="label">Adicionar ao carrinho</span>
                                         </Button>
                                     </div>
+                                    <button
+                                        onClick={handleRemoveItem}
+                                    >
+                                        Remove Item
+                                    </button>
+
                                 </>
                             )}
                         </Formik>
