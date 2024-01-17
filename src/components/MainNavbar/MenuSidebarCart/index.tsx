@@ -8,6 +8,7 @@ import { RootState, useAppSelector } from 'src/store';
 import Image from 'next/image';
 import { Button } from '@nextui-org/react';
 import { ShoppingCartSimple } from 'phosphor-react';
+import { useCart } from 'src/hooks/useCart';
 
 type CartItemProps = {
     cart: CartDataProps[];
@@ -15,6 +16,7 @@ type CartItemProps = {
 
 export function MenuSidebarCart() {
     const { cart }: CartItemProps = useAppSelector((state: RootState) => state);
+    const { removeItem } = useCart();
 
     return (
         <MenuSidebarCartWrap>
@@ -41,7 +43,7 @@ export function MenuSidebarCart() {
                                     {item.price}
                                 </span>
                                 <button
-                                    onClick={() => console.log(index)}
+                                    onClick={() => removeItem(index)}
                                 >
                                     Remove Item
                                 </button>
