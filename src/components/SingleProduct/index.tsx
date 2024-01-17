@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductInfo, SingleProductWrap } from "./styles";
 import { Button } from "@nextui-org/react";
@@ -8,12 +8,9 @@ import { ProductWithBucketProps } from "src/types/product";
 import { Formik } from "formik";
 import * as Yup from 'yup';
 import SingleProductGallery from "../SingleProductGallery";
-import { useDispatch } from "react-redux";
-import { newOrder, removeItem } from "src/reduceres/cartProductReducer";
-import { useRouter } from "next/router";
-import { currentCheckoutData } from "src/reduceres/checkoutReducer";
-import { OrderDataProps } from "src/types/cartTypes";
+import { CartDataProps } from "src/types/cartTypes";
 import { useAppSelector } from "src/store";
+import { useCart } from "src/hooks/useCart";
 
 type SingleProductProps = {
     data: Partial<ProductWithBucketProps>;
@@ -36,23 +33,9 @@ const fakeColorData: any = {
 export function SingleProduct(props: SingleProductProps) {
     const { data } = props;
     const theme = useAppSelector((state) => state);
-    const dispatch = useDispatch();
-    const router = useRouter();
+    const { addItem, removeItem } = useCart();
 
-    const handleNewOrder = (values: OrderDataProps) => {
-        dispatch(newOrder(values));
-    }
-
-    const handleRemoveItem = (index: number) => {
-        dispatch(removeItem(0));
-    }
-
-    const checkoutNavigate = (values) => {
-        dispatch(currentCheckoutData(values));
-        router.push('/checkout');
-    }
-
-    const FormInitialValues = {
+    const FormInitialValues: CartDataProps | any = {
         productTitle: data.title,
         price: data?.price,
         selectedSize: null,
@@ -80,11 +63,11 @@ export function SingleProduct(props: SingleProductProps) {
                         <Formik
                             initialValues={FormInitialValues}
                             validationSchema={orderValidation}
-                            onSubmit={(values) => {
+                            onSubmit={(values: CartDataProps) => {
                                 if (!values) return;
 
-                                handleNewOrder(values);
-                                checkoutNavigate(values);
+                                addItem(values);
+                                // checkoutNavigate(values);
                             }}
                         >
                             {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
@@ -151,12 +134,6 @@ export function SingleProduct(props: SingleProductProps) {
                                             <span className="label">Adicionar ao carrinho</span>
                                         </Button>
                                     </div>
-                                    <button
-                                        onClick={handleRemoveItem}
-                                    >
-                                        Remove Item
-                                    </button>
-
                                 </>
                             )}
                         </Formik>

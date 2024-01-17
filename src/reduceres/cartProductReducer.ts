@@ -1,16 +1,17 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import type { OrderDataProps } from 'src/types/cartTypes';
+import { useDispatch } from 'react-redux';
+import type { CartDataProps } from 'src/types/cartTypes';
 
-const orderSlice = createSlice({
-    name: "order",
-    initialState: [] as OrderDataProps[],
+const cartSlice = createSlice({
+    name: "cart",
+    initialState: [] as CartDataProps[],
     reducers: {
-        newOrder(state, action: PayloadAction<OrderDataProps>) {
+        add(state, action: PayloadAction<CartDataProps>) {
             const order = action.payload;
 
             state.push(order)
         },
-        removeItem(state, action: PayloadAction<number>) {
+        remove(state, action: PayloadAction<number>) {
             const selectedItem = action.payload;
 
             console.log(state);
@@ -20,6 +21,8 @@ const orderSlice = createSlice({
     }
 });
 
-export const orderReducer = orderSlice.reducer;
 
-export const { newOrder, removeItem } = orderSlice.actions;
+const cartReducer = cartSlice.reducer;
+const { add, remove } = cartSlice.actions;
+
+export { cartReducer, add, remove }

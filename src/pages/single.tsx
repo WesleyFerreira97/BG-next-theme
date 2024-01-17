@@ -32,7 +32,6 @@ function Single(props: SingleProps) {
                 bgColor="primary"
                 showCategories={true}
             />
-            {/* <MainNavbarPreview /> */}
             <SingleProduct data={singleProductData} />
         </SingleWrap>
     );

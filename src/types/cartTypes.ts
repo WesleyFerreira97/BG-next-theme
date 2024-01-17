@@ -1,4 +1,4 @@
-export type OrderDataProps = {
+export type CartDataProps = {
     productTitle: string;
     price?: number;
     selectedSize?: string | number;

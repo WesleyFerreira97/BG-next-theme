@@ -1,7 +1,7 @@
 import React from 'react'
 import { MenuSidebarCartWrap } from './styles'
 import { useSelector } from 'react-redux'
-import { OrderDataProps } from 'src/types/cartTypes';
+import { CartDataProps } from 'src/types/cartTypes';
 import ImageFallback from "../../../../public/images/code.jpg";
 import { RootReducerTypes } from 'src/reduceres/rootReducer';
 import { RootState, useAppSelector } from 'src/store';
@@ -9,17 +9,17 @@ import Image from 'next/image';
 import { Button } from '@nextui-org/react';
 import { ShoppingCartSimple } from 'phosphor-react';
 
-type OrderItemProps = {
-    order: OrderDataProps[];
+type CartItemProps = {
+    cart: CartDataProps[];
 }
 
 export function MenuSidebarCart() {
-    const { order }: OrderItemProps = useAppSelector((state: RootState) => state);
+    const { cart }: CartItemProps = useAppSelector((state: RootState) => state);
 
     return (
         <MenuSidebarCartWrap>
             <div className='cart-items'>
-                {order.map((item, index) => {
+                {cart.map((item, index) => {
                     const image = item?.image ? item.image : ImageFallback;
                     return (
                         <div
@@ -59,7 +59,7 @@ export function MenuSidebarCart() {
                 <Button
                     className='cart-button'
                     // onPress={handleSubmit as () => void}
-                    onPress={() => console.log(order)}
+                    onPress={() => console.log(cart)}
                 >
                     <ShoppingCartSimple size={24} />
                     <span className="label">Finalizar Compra</span>
