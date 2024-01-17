@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
 import type { CartDataProps } from 'src/types/cartTypes';
 
 const cartSlice = createSlice({
@@ -7,9 +6,9 @@ const cartSlice = createSlice({
     initialState: [] as CartDataProps[],
     reducers: {
         add(state, action: PayloadAction<CartDataProps>) {
-            const order = action.payload;
+            const cart = action.payload;
 
-            state.push(order)
+            state.push(cart)
         },
         remove(state, action: PayloadAction<number>) {
             const selectedItem = action.payload;
@@ -20,7 +19,6 @@ const cartSlice = createSlice({
         }
     }
 });
-
 
 const cartReducer = cartSlice.reducer;
 const { add, remove } = cartSlice.actions;

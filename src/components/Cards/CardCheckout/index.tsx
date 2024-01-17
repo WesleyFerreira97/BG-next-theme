@@ -4,10 +4,10 @@ import { Container } from '@theme/Layout/Container';
 import Image from 'next/image';
 import FallbackImage from "public/images/code.jpg";
 import { CheckCircle } from 'phosphor-react';
-import { OrderDataProps } from 'src/types/cartTypes';
+import { CartDataProps } from 'src/types/cartTypes';
 
 type CardCheckoutProps = {
-    data: OrderDataProps;
+    data: CartDataProps;
 }
 
 export default function CardCheckout(props: CardCheckoutProps) {

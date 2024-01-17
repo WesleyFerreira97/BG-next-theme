@@ -1,8 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import type { OrderDataProps } from "src/types/cartTypes";
+import type { CartDataProps } from "src/types/cartTypes";
 
 type CheckoutProps = {
-    data: OrderDataProps
+    data: CartDataProps
 }
 
 const checkoutSlice = createSlice({
