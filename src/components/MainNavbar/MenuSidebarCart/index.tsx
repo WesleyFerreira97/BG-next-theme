@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MenuSidebarCartWrap } from './styles'
 import { useSelector } from 'react-redux'
 import { CartDataProps } from 'src/types/cartTypes';
@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { Button } from '@nextui-org/react';
 import { ShoppingCartSimple } from 'phosphor-react';
 import { useCart } from 'src/hooks/useCart';
+import { useInsert } from 'src/hooks/useInsert';
 
 type CartItemProps = {
     cart: CartDataProps[];
@@ -17,6 +18,19 @@ type CartItemProps = {
 export function MenuSidebarCart() {
     const { cart }: CartItemProps = useAppSelector((state: RootState) => state);
     const { removeItem } = useCart();
+    const { dataResponse, setData } = useInsert<any>("orders");
+
+    useEffect(() => {
+        console.log(dataResponse);
+    }, [dataResponse])
+
+    const handleSubmit = () => {
+        setData({
+            client_number: "8",
+            client_name: "Wesley",
+            client_order: cart,
+        });
+    }
 
     return (
         <MenuSidebarCartWrap>
@@ -32,7 +46,6 @@ export function MenuSidebarCart() {
                                 <Image
                                     src={image}
                                     alt={item.productTitle}
-
                                 />
                             </div>
                             <div>
@@ -61,7 +74,7 @@ export function MenuSidebarCart() {
                 <Button
                     className='cart-button'
                     // onPress={handleSubmit as () => void}
-                    onPress={() => console.log(cart)}
+                    onPress={() => handleSubmit()}
                 >
                     <ShoppingCartSimple size={24} />
                     <span className="label">Finalizar Compra</span>
