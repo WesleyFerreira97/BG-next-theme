@@ -6,7 +6,7 @@ import ImageFallback from "../../../../public/images/code.jpg";
 import { RootReducerTypes } from 'src/reduceres/rootReducer';
 import { RootState, useAppSelector } from 'src/store';
 import Image from 'next/image';
-import { Button } from '@nextui-org/react';
+import { Button, Input } from '@nextui-org/react';
 import { ShoppingCartSimple } from 'phosphor-react';
 import { useCart } from 'src/hooks/useCart';
 import { useInsert } from 'src/hooks/useInsert';
@@ -67,6 +67,18 @@ export function MenuSidebarCart() {
             </div>
 
             <div className='finish-buttons'>
+                <div>
+                    <Input
+                        type='text'
+                        label="Nome "
+                        size='sm'
+                    />
+                    <Input
+                        type='tel'
+                        label="Número de Contato"
+                        size='sm'
+                    />
+                </div>
                 <div className='finish-buttons__subtotal'>
                     <h3 className='label'>Subtotal</h3>
                     <span className='final-price'>R$ 0,00</span>
