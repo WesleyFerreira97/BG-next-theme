@@ -81,6 +81,11 @@ export const MenuSidebarCartWrap = styled("div", {
             }
         }
     },
+    ".client-form": {
+        display: "flex",
+        justifyContent: "space-between",
+        marginBottom: "2rem",
+},
 
     "::-webkit-scrollbar": {
         width: "5px",

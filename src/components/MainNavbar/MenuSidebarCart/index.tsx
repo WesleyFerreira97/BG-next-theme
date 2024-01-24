@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MenuSidebarCartWrap } from './styles'
 import { useSelector } from 'react-redux'
 import { CartDataProps } from 'src/types/cartTypes';
@@ -6,7 +6,7 @@ import ImageFallback from "../../../../public/images/code.jpg";
 import { RootReducerTypes } from 'src/reduceres/rootReducer';
 import { RootState, useAppSelector } from 'src/store';
 import Image from 'next/image';
-import { Button, Input } from '@nextui-org/react';
+import { Button, FormElement, Input } from '@nextui-org/react';
 import { ShoppingCartSimple } from 'phosphor-react';
 import { useCart } from 'src/hooks/useCart';
 import { useInsert } from 'src/hooks/useInsert';
@@ -19,15 +19,25 @@ export function MenuSidebarCart() {
     const { cart }: CartItemProps = useAppSelector((state: RootState) => state);
     const { removeItem } = useCart();
     const { dataResponse, setData } = useInsert<any>("orders");
+    const [clientData, setClientData] = useState({
+        client_number: "",
+        client_name: "",
+    })
 
     useEffect(() => {
         console.log(dataResponse);
     }, [dataResponse])
 
+    const onFormChange = (e: React.ChangeEvent<FormElement>) => {
+        const { name, value } = e.target;
+
+        setClientData((prev) => ({ ...prev, [name]: value }));
+    }
+
     const handleSubmit = () => {
         setData({
-            client_number: "8",
-            client_name: "Wesley",
+            client_number: clientData.client_number,
+            client_name: clientData.client_name,
             client_order: cart,
         });
     }
@@ -67,16 +77,23 @@ export function MenuSidebarCart() {
             </div>
 
             <div className='finish-buttons'>
-                <div>
+                <div className='client-form'>
                     <Input
                         type='text'
                         label="Nome "
-                        size='sm'
+                        size='md'
+                        bordered
+                        width='50%'
+                        name='client_name'
+                        onChange={(e) => onFormChange(e)}
                     />
                     <Input
                         type='tel'
                         label="Número de Contato"
-                        size='sm'
+                        size='md'
+                        bordered
+                        name='client_number'
+                        onChange={(e) => onFormChange(e)}
                     />
                 </div>
                 <div className='finish-buttons__subtotal'>
