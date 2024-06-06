@@ -9,6 +9,7 @@ import { carouselItemsData } from "src/utils/fakeProducts";
 
 const Home: NextPage = () => {
 
+
     return (
         <div style={{
             // background: "#DBD8EA"

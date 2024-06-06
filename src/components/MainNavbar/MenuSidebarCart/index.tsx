@@ -35,6 +35,8 @@ export function MenuSidebarCart() {
     }
 
     const handleSubmit = () => {
+        console.log("elçfigkjfdgilj");
+
         setData({
             client_number: clientData.client_number,
             client_name: clientData.client_name,
@@ -102,13 +104,12 @@ export function MenuSidebarCart() {
                 </div>
                 <Button
                     className='cart-button'
-                    // onPress={handleSubmit as () => void}
                     onPress={() => handleSubmit()}
                 >
                     <ShoppingCartSimple size={24} />
                     <span className="label">Finalizar Compra</span>
                 </Button>
             </div>
-        </MenuSidebarCartWrap>
+        </MenuSidebarCartWrap >
     )
 }

@@ -28,7 +28,7 @@ export function useInsert<T>(
             .select("id")
             .then((res: any) => {
                 setDataResponse({
-                    // id: res.data[0].id,
+                    id: res.data[0].id,
                     error: res.error,
                     status: res.status
                 });

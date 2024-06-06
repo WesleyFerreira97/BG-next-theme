@@ -11,6 +11,7 @@ import SingleProductGallery from "../SingleProductGallery";
 import { CartDataProps } from "src/types/cartTypes";
 import { useAppSelector } from "src/store";
 import { useCart } from "src/hooks/useCart";
+import { useCheckout } from "src/hooks/useCheckout";
 
 type SingleProductProps = {
     data: Partial<ProductWithBucketProps>;
@@ -34,6 +35,7 @@ export function SingleProduct(props: SingleProductProps) {
     const { data } = props;
     const theme = useAppSelector((state) => state);
     const { addItem, removeItem } = useCart();
+    const { checkoutNavigate } = useCheckout();
 
     const FormInitialValues: CartDataProps | any = {
         productTitle: data.title,
@@ -67,7 +69,7 @@ export function SingleProduct(props: SingleProductProps) {
                                 if (!values) return;
 
                                 addItem(values);
-                                // checkoutNavigate(values);
+                                checkoutNavigate(values);
                             }}
                         >
                             {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
