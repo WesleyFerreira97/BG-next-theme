@@ -1,5 +1,8 @@
 import Woman1 from "../../public/images/woman1.png";
-import Woman3 from "../../public/images/woman3.png";
+import Woman2 from "../../public/images/woman3.png";
+import People1 from "../../public/images/woman3.png";
+import People2 from "../../public/images/people2.jpg";
+import People3 from "../../public/images/people3.jpg";
 
 export const fakeProducts = [
     {
@@ -8,7 +11,8 @@ export const fakeProducts = [
         description: "But like any other object, you can scale the object the Image fills.",
         price: 500,
         monthlyInstallments: "4x de R$ 122,00",
-        categories: ["Camisas"]
+        categories: ["Camisas"],
+        image: People1
     },
     {
         title: "Conjuntos",
@@ -16,7 +20,8 @@ export const fakeProducts = [
         description: "But like any other object, you can scale the object the Image fills. But like any other object, you can scale the object the Image fills But like any other object, you can scale the object the Image fills But like any other object, you can scale the object the Image fills",
         price: 130,
         monthlyInstallments: "4x de R$ 22,00",
-        categories: ["Camisas"]
+        categories: ["Camisas"],
+        image: People2
     },
     {
         title: "Vestidos",
@@ -24,7 +29,8 @@ export const fakeProducts = [
         description: "But like any other object, you can scale the object the Image fills. ",
         price: 250,
         monthlyInstallments: "4x de R$ 32,00",
-        categories: ["Camisas"]
+        categories: ["Camisas"],
+        image: People3
     },
     {
         title: "VESTIDO DEAN OFF WHITE",
@@ -32,7 +38,8 @@ export const fakeProducts = [
         description: "But like any other object, you can scale the object the Image fills. ",
         price: 180,
         monthlyInstallments: "4x de R$ 40,00",
-        categories: ["Camisas"]
+        categories: ["Camisas"],
+        image: Woman2
     },
     {
         title: "BLUSA GRUMARI THRIFT PINK",
@@ -109,7 +116,7 @@ export const carouselItemsData = {
     item2: {
         title: "Regatas",
         text: "But like any other object, you can scale the object the Image fills. We will scale and position the Image based on the Fill mode you've But like",
-        image: Woman3,
+        image: Woman2,
         buttons: {
             seeMore: "see something",
             previewButton: "preview",

@@ -1,5 +1,5 @@
 import { A11y, Scrollbar, Autoplay } from "swiper";
-import React from "react";
+import React, { useEffect } from "react";
 import { GridWrap } from "./styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Container, Row } from "@nextui-org/react";
@@ -8,10 +8,21 @@ import { CardOverlayInfo } from "../../Cards/CardOverlayInfo";
 import { Columns } from "phosphor-react";
 import { fakeCategories } from "src/utils/fakeProducts";
 import PersonImage from "public/images/code.jpg";
+import { useSelect } from "src/hooks/useSelect";
+import { CategoriesProps } from "src/types/categories";
 
 export function GridOtherCategories() {
     // TEMP
     const products: any[] = fakeCategories;
+    // const { selectResponse, selectResponseError } = useSelect<CategoriesProps>({
+    //     select: ["title", "slug"],
+    //     tableName: "products"
+    // });
+
+    // useEffect(() => {
+    //     console.log(selectResponse, "selectResponse");
+    // }, [selectResponse])
+
 
     return (
         <GridWrap>

@@ -11,6 +11,7 @@ import Link from "next/link";
 
 const HeaderGridProducts = () => {
     return (
+
         <Header>
             <Header.SubTitle>A Subtitle 3</Header.SubTitle>
             <Header.Title>Novidades</Header.Title>
@@ -22,6 +23,7 @@ const HeaderGridProducts = () => {
 export function GridProducts() {
     const { selectResponse: products, selectResponseError } = useSelect<ProductProps & BucketProps>({
         select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
+        tableName: "products"
     });
 
     return (

@@ -4,10 +4,11 @@ import { supaDb } from "../services/supadb";
 
 type UseSelectProps<T> = {
     select?: (keyof T)[] | "*";
+    tableName: string;
     match?: Partial<T>;
 }
 
-export function useSelect<T>({ select, match }: UseSelectProps<T>) {
+export function useSelect<T>({ select, tableName, match }: UseSelectProps<T>) {
     const [selectResponse, setSelectResponse] = useState<T[] | null>(null);
     const [selectResponseError, setSelectResponseError] = useState<PostgrestError>();
 
@@ -16,7 +17,7 @@ export function useSelect<T>({ select, match }: UseSelectProps<T>) {
     useEffect(() => {
         async function selectData() {
             const { data, error } = await supaDb
-                .from("products")
+                .from(tableName)
                 .select(selectedColumns)
                 .limit(12)
                 .match({ ...match });

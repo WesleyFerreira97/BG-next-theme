@@ -48,7 +48,7 @@ export function GridMainCategories() {
                         <SwiperSlide key={index}>
                             <CardCategory cardInfo={{
                                 ...item,
-                                image: PersonImage
+                                // image: PersonImage
                             }} />
                         </SwiperSlide>
                     ))}

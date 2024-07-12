@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                         overflowX: "hidden"
                     }}>
                         <Component {...pageProps} />
-                        <Footer />
+                        {/* <Footer /> */}
                     </div>
                     {/* </NextUIProvider> */}
                 </PersistGate>
