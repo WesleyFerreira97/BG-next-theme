@@ -34,7 +34,7 @@ export function GridProducts() {
                     {products &&
                         products.map((product, index) => (
                             <Link
-                                href={`/single?product=${product.title}`}
+                                href={`/single?productId=${product.id}`}
                                 key={index}
                             >
                                 <Grid.Item>

@@ -1,12 +1,14 @@
 import { ReactNode } from "react";
 
-export type ToggleGroupProps = {
+type ItemTypeProps = "color" | "label";
+
+type ToggleGroupProps = {
     name: string;
-    itemType?: "color" | "label";
+    itemType: ItemTypeProps;
     children: ReactNode;
 }
 
-export type GroupItemProps = {
+type GroupItemProps = {
     value: string;
     label?: string;
     available?: boolean;
@@ -14,9 +16,17 @@ export type GroupItemProps = {
     color?: string
 }
 
-export type StatusColorProps = {
+type StatusColorProps = {
     [key: string]: {
         active: string;
         inactive: string;
     }
+}
+
+
+export type {
+    ItemTypeProps,
+    ToggleGroupProps,
+    GroupItemProps,
+    StatusColorProps
 }

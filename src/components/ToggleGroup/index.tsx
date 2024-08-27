@@ -1,18 +1,36 @@
 import { Button } from '@nextui-org/react';
 import { useField } from 'formik';
-import React, { createContext } from 'react';
+import React, { createContext, useContext } from 'react';
 import { ToggleGroupProps } from './types';
 import { Item } from './Item';
 import { ErrorMessageWrap } from './styles';
+import { FieldHelperProps, FieldInputProps } from 'formik';
+import { ItemTypeProps } from './types';
 
-export const SelectedValue = createContext<unknown>("");
+type ToggleContextProps<T> = {
+  helpers: FieldHelperProps<T>;
+  field: FieldInputProps<T>;
+  itemType: ItemTypeProps
+}
 
-function ToggleGroup({ name, children, ...groupProps }: ToggleGroupProps) {
+export const SelectedValue = createContext<ToggleContextProps<any>>({
+  helpers: {} as FieldHelperProps<any>,
+  field: {} as FieldInputProps<any>,
+  itemType: 'label'
+});
+
+function useToggleContext() {
+  const { helpers, field, itemType } = useContext<ToggleContextProps<any>>(SelectedValue);
+
+  return { helpers, field, itemType }
+}
+
+function ToggleGroup({ name, children, itemType }: ToggleGroupProps) {
   const [field, meta, helpers] = useField(name);
 
   return (
     <div>
-      <SelectedValue.Provider value={{ helpers, field, groupProps }}>
+      <SelectedValue.Provider value={{ field, helpers, itemType }}>
         <div style={{
           display: "flex",
           gap: ".5rem",
@@ -32,5 +50,5 @@ function ToggleGroup({ name, children, ...groupProps }: ToggleGroupProps) {
 
 ToggleGroup.Item = Item;
 
-export { ToggleGroup }
+export { ToggleGroup, useToggleContext }
 

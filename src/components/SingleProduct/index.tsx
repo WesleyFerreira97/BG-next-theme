@@ -14,7 +14,7 @@ import { useCart } from "src/hooks/useCart";
 import { useCheckout } from "src/hooks/useCheckout";
 
 type SingleProductProps = {
-    data: Partial<ProductWithBucketProps>;
+    data: ProductWithBucketProps;
 };
 
 const orderValidation = Yup.object().shape({
@@ -31,8 +31,7 @@ const fakeColorData: any = {
     Salmão: "#E9A6A6",
 };
 
-export function SingleProduct(props: SingleProductProps) {
-    const { data } = props;
+export function SingleProduct({ data }: SingleProductProps) {
     const theme = useAppSelector((state) => state);
     const { addItem, removeItem } = useCart();
     const { checkoutNavigate } = useCheckout();
@@ -45,6 +44,8 @@ export function SingleProduct(props: SingleProductProps) {
         image: data?.image,
     }
 
+    // console.log(data.sizes_available);
+
     return (
         <SingleProductWrap>
             <Container xs={100}>
@@ -56,7 +57,7 @@ export function SingleProduct(props: SingleProductProps) {
                                 {data?.title}
                             </h1>
                             <span className='product-info__price'>
-                                R$39,90
+                                R${data?.price}
                             </span>
                             <span className='product-info__payment-info'>
                                 Parcelamos no cartão em até 12x, aceitamos Pix
@@ -107,17 +108,22 @@ export function SingleProduct(props: SingleProductProps) {
                                             </span>
                                             <ToggleGroup
                                                 name="selectedSize"
-                                                itemType="label"
+                                                itemType="color"
                                             >
-                                                {Object.keys(data.sizes_available)
-                                                    .map((item) => (
-                                                        <ToggleGroup.Item
-                                                            key={item}
-                                                            value={item}
-                                                            label={item}
-                                                            available={data.sizes_available[item]}
-                                                        />
-                                                    ))}
+                                                {data.sizes_available && Object.keys(data.sizes_available)
+                                                    .map((item) => {
+                                                        console.log({ ...data.sizes_available[item] }, "item");
+
+                                                        return (
+                                                            <ToggleGroup.Item
+                                                                key={item}
+                                                                value={item}
+                                                                label={item}
+                                                                available={data.sizes_available[item]}
+                                                            />
+                                                        )
+                                                    }
+                                                    )}
                                             </ToggleGroup>
                                         </div>
                                     </div>

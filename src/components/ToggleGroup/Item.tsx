@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import { GroupItemProps, StatusColorProps } from "./types";
-import { SelectedValue } from ".";
+import { SelectedValue, useToggleContext } from ".";
 import { ColorButtonWrap, SizeButtonWrap } from "./styles";
 import { Button } from "@nextui-org/react";
 
 export const Item = (props: GroupItemProps) => {
-    const { helpers, field, groupProps } = useContext(SelectedValue);
-    const { itemType } = groupProps;
+    const { helpers, field, itemType } = useToggleContext();
 
     const handleItemState = () => {
         // Inactive Item return default color
@@ -34,7 +33,7 @@ export const Item = (props: GroupItemProps) => {
         return helpers.setValue(props.value)
     };
 
-    if (groupProps.itemType === "color") {
+    if (itemType === "color") {
         return (
             <ColorButtonWrap>
                 <Button

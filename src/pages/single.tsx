@@ -11,7 +11,7 @@ type SingleProps = {
 
 type QueryProps = {
     query: {
-        product: string
+        productId: string
     }
 }
 
@@ -24,6 +24,7 @@ export const SingleWrap = styled("div", {
 
 function Single(props: SingleProps) {
     const { singleProductData } = props;
+    console.log(singleProductData);
 
     return (
         <SingleWrap>
@@ -32,19 +33,19 @@ function Single(props: SingleProps) {
                 bgColor="primary"
                 showCategories={true}
             />
-            <SingleProduct data={singleProductData} />
+            {singleProductData && <SingleProduct data={singleProductData} />}
         </SingleWrap>
     );
 };
 
 Single.getInitialProps = async ({ query }: QueryProps) => {
-    const { product } = query;
+    const { productId } = query;
 
     const { data, error } = await supaDb
         .from("products")
         .select("*")
         .limit(1)
-        .match({ title: product })
+        .match({ id: productId })
 
     if (!data) return;
 

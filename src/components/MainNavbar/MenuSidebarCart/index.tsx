@@ -35,7 +35,6 @@ export function MenuSidebarCart() {
     }
 
     const handleSubmit = () => {
-        console.log("elçfigkjfdgilj");
 
         setData({
             client_number: clientData.client_number,
