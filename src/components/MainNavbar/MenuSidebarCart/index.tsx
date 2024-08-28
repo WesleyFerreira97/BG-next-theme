@@ -51,7 +51,7 @@ export function MenuSidebarCart() {
             .required("Digite seu nome")
             .min(3, "O nome deve conter no mínimo 3 caracteres")
             .max(70, "O nome deve conter no máximo 70 caracteres")
-            .matches(/^[A-Za-z\s]+$/, "O nome deve conter apenas letras e espaços")
+            .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/, "O nome deve conter apenas letras e espaços")
     })
 
     return (
@@ -94,9 +94,7 @@ export function MenuSidebarCart() {
                     validationSchema={clientValidation}
                     validateOnChange={true}
                     onSubmit={(value: ClientDataProps) => {
-                        console.log(value, "value");
-
-                        // handleSubmitCart(value)
+                        handleSubmitCart(value)
                     }}
                 >
                     {({ handleSubmit, setFieldValue, errors, touched }) => (

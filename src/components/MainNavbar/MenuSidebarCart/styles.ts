@@ -86,6 +86,7 @@ export const MenuSidebarCartWrap = styled("div", {
         flexDirection: "column",
         gap: "0.5rem",
         marginBottom: "1rem",
+
         "&__text": {
             themeFont: "$secondary",
             fontSize: "0.975rem",
