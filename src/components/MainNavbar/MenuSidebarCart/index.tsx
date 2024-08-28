@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react'
 import { MenuSidebarCartWrap } from './styles'
 import { useSelector } from 'react-redux'
@@ -12,6 +13,8 @@ import { useCart } from 'src/hooks/useCart';
 import { useInsert } from 'src/hooks/useInsert';
 import { Formik } from 'formik';
 import * as Yup from "yup"
+import { useRouter } from 'next/router';
+import Router from "next/router"
 
 type CartItemProps = {
     cart: CartDataProps[];
@@ -23,6 +26,7 @@ type ClientDataProps = {
 }
 
 export function MenuSidebarCart() {
+    const router = useRouter;
     const { cart }: CartItemProps = useAppSelector((state: RootState) => state);
     const { removeItem } = useCart();
     const { dataResponse, setData } = useInsert<any>("orders");
@@ -31,6 +35,14 @@ export function MenuSidebarCart() {
         client_name: "",
         client_number: 0
     }
+
+    useEffect(() => {
+        if (!dataResponse?.error && dataResponse?.status !== 201) return
+
+        setTimeout(() => (
+            Router.push("/")
+        ), 2500)
+    }, [dataResponse])
 
     const handleSubmitCart = (value: ClientDataProps) => {
 
@@ -87,7 +99,6 @@ export function MenuSidebarCart() {
                     )
                 })}
             </div>
-
             <div className='finish-buttons'>
                 <Formik
                     initialValues={clientInitialData}
