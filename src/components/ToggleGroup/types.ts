@@ -13,7 +13,8 @@ type GroupItemProps = {
     label?: string;
     available?: boolean;
     itemType?: "color" | "label";
-    color?: string
+    color?: string;
+    onClick?: (value?: unknown) => void
 }
 
 type StatusColorProps = {

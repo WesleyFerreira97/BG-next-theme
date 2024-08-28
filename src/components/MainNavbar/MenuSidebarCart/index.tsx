@@ -1,4 +1,3 @@
-'use client'
 import React, { useEffect, useState } from 'react'
 import { MenuSidebarCartWrap } from './styles'
 import { useSelector } from 'react-redux'

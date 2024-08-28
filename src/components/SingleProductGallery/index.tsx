@@ -5,43 +5,70 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs, Swiper as SwiperRef } from "swiper";
+import { FilesStrucutreProps } from 'src/hooks/useBucket';
 
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { usePublicUrl } from 'src/hooks/usePublicUrl';
+import { supaDb } from 'src/services/supadb';
 
-type ProductGalleryProps = {
-    images: StaticImageData[]
+export type ProductGalleryProps = {
+    galleryData: FilesStrucutreProps
 }
 
 const fallbackImages = [FallbackImage, FallbackImage, FallbackImage, FallbackImage];
 
-const Gallery = ({ images }: ProductGalleryProps) => {
+export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperRef | null>(null);
-    const batata = images || fallbackImages;
+    const [allUrlImages, setAllUrlImages] = useState<string[]>([]);
+
+    useEffect(() => {
+        if (!galleryData) return
+
+        const getFinalUrl = async (imageUrl) => {
+            const { data } = supaDb
+                .storage
+                .from('photo')
+                .getPublicUrl(imageUrl);
+
+            setAllUrlImages(prevState => [...prevState, data.publicUrl]);
+        }
+
+        galleryData.images.forEach((item, index) => {
+            const fileName = item.name;
+            const imageFullPath = `${galleryData.bucketPath}/${galleryData.slug}/${fileName}`;
+
+            getFinalUrl(imageFullPath)
+        })
+    }, [galleryData])
 
     return (
         <ProductGalleryWrap>
-
             <Swiper
                 navigation={true}
                 thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className='main-image'
             >
-                {batata.map((image, index) => (
-                    <SwiperSlide key={index}>
-                        <Image
-                            src={image.src}
-                            alt="Main product image"
-                            fill={true}
-                        />
-                    </SwiperSlide >
-                ))}
+                {allUrlImages.map((image, index) => {
+
+                    return (
+                        <SwiperSlide key={index}>
+                            <Image
+                                src={image}
+                                alt="Main product image"
+                                fill={true}
+                            />
+                        </SwiperSlide >
+                    )
+                })}
             </Swiper >
 
-            <Swiper
+
+
+            {/* <Swiper
                 modules={[FreeMode, Navigation, Thumbs]}
                 onSwiper={setThumbsSwiper}
                 slidesPerView={4}
@@ -50,29 +77,22 @@ const Gallery = ({ images }: ProductGalleryProps) => {
                 className='grid-thumbnails'
 
             >
-                {batata.map((image, index) => (
+                {images.map((image, index) => (
                     <SwiperSlide
                         key={index}
                         className='grid-thumbnails__item'
                     >
                         <Image
-                            src={image.src}
+                            src={image}
                             alt="Main product image"
                             fill={true}
                         />
                     </SwiperSlide >
                 ))}
-            </Swiper >
+            </Swiper > */}
         </ProductGalleryWrap >
 
     )
 }
 
-export default function SingleProductGallery({ images }: Partial<ProductGalleryProps>) {
 
-    if (!images || images.length === 0) {
-        return <Gallery images={fallbackImages} />;
-    }
-
-    return <Gallery images={fallbackImages} />;
-}

@@ -1,17 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductInfo, SingleProductWrap } from "./styles";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
 import { ToggleGroup } from "../ToggleGroup";
-import { mapDefaultValues, ProductProps, ProductWithBucketProps } from "src/types/product";
 import { Formik } from "formik";
 import * as Yup from 'yup';
-import SingleProductGallery from "../SingleProductGallery";
-import { CartDataProps } from "src/types/cartTypes";
+import { ProductGalleryProps, SingleProductGallery } from "../SingleProductGallery";
 import { useAppSelector } from "src/store";
 import { useCart } from "src/hooks/useCart";
 import { useCheckout } from "src/hooks/useCheckout";
+import { FilesStrucutreProps, useBucket } from "src/hooks/useBucket";
+import type { ProductWithBucketProps } from "src/types/product";
+import type { CartDataProps } from "src/types/cartTypes";
 
 type SingleProductProps = {
     data: ProductWithBucketProps;
@@ -36,6 +37,13 @@ export function SingleProduct({ data }: SingleProductProps) {
     const theme = useAppSelector((state) => state);
     const { addItem, removeItem } = useCart();
     const { checkoutNavigate } = useCheckout();
+    const bucketPath = `product/${data.bucket_folder}/${data.id}`
+    const { filesStructure, selectResponse, selectResponseError } = useBucket({
+        bucketPath: bucketPath,
+        selectInsideFolders: true
+    })
+    const [colorsAvailable, setColorsAvailable] = useState([])
+    const [currentGalleryImages, setCurrentGalleryImages] = useState<FilesStrucutreProps>()
 
     const FormInitialValues: CartDataProps | any = {
         productTitle: data.title,
@@ -45,11 +53,41 @@ export function SingleProduct({ data }: SingleProductProps) {
         image: data?.image,
     }
 
+    useEffect(() => {
+        if (!filesStructure) return
+
+        checkColorsAvailable()
+    }, [filesStructure, currentGalleryImages])
+
+    useEffect(() => {
+        console.log(selectResponseError, "Error response");
+
+    }, [selectResponseError])
+
+    const checkColorsAvailable = () => {
+        const currentColors = [];
+
+        const colorsAvailable = filesStructure.forEach((item) => {
+            if (item.slug === "main") return
+
+            currentColors.push(item.slug)
+        })
+
+        setColorsAvailable(currentColors)
+    }
+
+    const handleChangeGallery = (value: string) => {
+        let selectedImages = filesStructure.filter((item) => item.slug === value)
+
+        setCurrentGalleryImages(selectedImages[0])
+    }
+
+
     return (
         <SingleProductWrap>
             <Container xs={100}>
                 <ComponentBehavior>
-                    <SingleProductGallery />
+                    <SingleProductGallery galleryData={currentGalleryImages} />
                     <ProductInfo>
                         <div className='product-info__div'>
                             <h1 className='product-info__title'>
@@ -87,14 +125,14 @@ export function SingleProduct({ data }: SingleProductProps) {
                                                     name="selectedColor"
                                                     itemType="color"
                                                 >
-                                                    {Object.keys(fakeColorData)
-                                                        .map((item: string) => (
-                                                            <ToggleGroup.Item
-                                                                key={item}
-                                                                value={item}
-                                                                color={fakeColorData[item]}
-                                                            />
-                                                        ))}
+                                                    {colorsAvailable.map((item: string) => (
+                                                        <ToggleGroup.Item
+                                                            key={item}
+                                                            value={item}
+                                                            color={"#1679AB"}
+                                                            onClick={() => handleChangeGallery(item)}
+                                                        />
+                                                    ))}
                                                 </ToggleGroup>
                                             </div>
                                         </div>

@@ -40,6 +40,7 @@ export const Item = (props: GroupItemProps) => {
                     onPress={() => {
                         handleItemState();
                         handleValue();
+                        props?.onClick()
                     }}
                     disabled={props.available === false}
                     className='colorButton'
