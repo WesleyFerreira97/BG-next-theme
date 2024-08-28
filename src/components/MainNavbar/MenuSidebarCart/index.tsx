@@ -10,38 +10,49 @@ import { Button, FormElement, Input } from '@nextui-org/react';
 import { ShoppingCartSimple } from 'phosphor-react';
 import { useCart } from 'src/hooks/useCart';
 import { useInsert } from 'src/hooks/useInsert';
+import { Formik } from 'formik';
+import * as Yup from "yup"
 
 type CartItemProps = {
     cart: CartDataProps[];
+}
+
+type ClientDataProps = {
+    client_number: number;
+    client_name: string;
 }
 
 export function MenuSidebarCart() {
     const { cart }: CartItemProps = useAppSelector((state: RootState) => state);
     const { removeItem } = useCart();
     const { dataResponse, setData } = useInsert<any>("orders");
-    const [clientData, setClientData] = useState({
-        client_number: "",
+
+    const clientInitialData: ClientDataProps = {
         client_name: "",
-    })
-
-    useEffect(() => {
-        console.log(dataResponse);
-    }, [dataResponse])
-
-    const onFormChange = (e: React.ChangeEvent<FormElement>) => {
-        const { name, value } = e.target;
-
-        setClientData((prev) => ({ ...prev, [name]: value }));
+        client_number: 0
     }
 
-    const handleSubmit = () => {
+    const handleSubmitCart = (value: ClientDataProps) => {
 
         setData({
-            client_number: clientData.client_number,
-            client_name: clientData.client_name,
+            client_number: value.client_number,
+            client_name: value.client_name,
             client_order: cart,
         });
     }
+
+    const clientValidation = Yup.object().shape({
+        client_number: Yup.string()
+            .min(8, "O campo deve conter no mínimo 8 números")
+            .max(11, "O campo deve conter no máximo 11 números")
+            .required("Digite um número de contato").
+            matches(/^\d+$/, "O campo deve conter apenas números"),
+        client_name: Yup.string()
+            .required("Digite seu nome")
+            .min(3, "O nome deve conter no mínimo 3 caracteres")
+            .max(70, "O nome deve conter no máximo 70 caracteres")
+            .matches(/^[A-Za-z\s]+$/, "O nome deve conter apenas letras e espaços")
+    })
 
     return (
         <MenuSidebarCartWrap>
@@ -78,36 +89,67 @@ export function MenuSidebarCart() {
             </div>
 
             <div className='finish-buttons'>
-                <div className='client-form'>
-                    <Input
-                        type='text'
-                        label="Nome "
-                        size='md'
-                        bordered
-                        width='50%'
-                        name='client_name'
-                        onChange={(e) => onFormChange(e)}
-                    />
-                    <Input
-                        type='tel'
-                        label="Número de Contato"
-                        size='md'
-                        bordered
-                        name='client_number'
-                        onChange={(e) => onFormChange(e)}
-                    />
-                </div>
-                <div className='finish-buttons__subtotal'>
-                    <h3 className='label'>Subtotal</h3>
-                    <span className='final-price'>R$ 0,00</span>
-                </div>
-                <Button
-                    className='cart-button'
-                    onPress={() => handleSubmit()}
+                <Formik
+                    initialValues={clientInitialData}
+                    validationSchema={clientValidation}
+                    validateOnChange={true}
+                    onSubmit={(value: ClientDataProps) => {
+                        console.log(value, "value");
+
+                        // handleSubmitCart(value)
+                    }}
                 >
-                    <ShoppingCartSimple size={24} />
-                    <span className="label">Finalizar Compra</span>
-                </Button>
+                    {({ handleSubmit, setFieldValue, errors, touched }) => (
+                        <>
+                            <div className='client-form'>
+                                <Input
+                                    type='text'
+                                    label="Nome "
+                                    size='md'
+                                    bordered
+                                    width='50%'
+                                    name='client_name'
+                                    onChange={(e) => setFieldValue("client_name", e.target.value)}
+                                />
+                                <Input
+                                    type='tel'
+                                    label="Número de Contato"
+                                    size='md'
+                                    bordered
+                                    name='client_number'
+                                    onChange={(e) => setFieldValue("client_number", e.target.value)}
+                                />
+                            </div>
+                            <div className='form-error'>
+                                {errors.client_name && touched.client_name
+                                    ? (
+                                        <span className='form-error__text'>
+                                            - {errors.client_name}
+                                        </span>
+                                    ) :
+                                    null}
+                                {errors.client_number && touched.client_number
+                                    ? (
+                                        <span className='form-error__text'>
+                                            - {errors.client_number}
+                                        </span>
+                                    ) :
+                                    null}
+                            </div>
+                            <div className='finish-buttons__subtotal'>
+                                <h3 className='label'>Subtotal</h3>
+                                <span className='final-price'>R$ 0,00</span>
+                            </div>
+                            <Button
+                                className='cart-button'
+                                onPress={handleSubmit as () => void}
+                            >
+                                <ShoppingCartSimple size={24} />
+                                <span className="label">Finalizar Compra</span>
+                            </Button>
+                        </>
+                    )}
+                </Formik>
             </div>
         </MenuSidebarCartWrap >
     )

@@ -81,11 +81,22 @@ export const MenuSidebarCartWrap = styled("div", {
             }
         }
     },
+    ".form-error": {
+        display: "flex",
+        flexDirection: "column",
+        gap: "0.5rem",
+        marginBottom: "1rem",
+        "&__text": {
+            themeFont: "$secondary",
+            fontSize: "0.975rem",
+            color: "$primaryAlt",
+        }
+    },
     ".client-form": {
         display: "flex",
         justifyContent: "space-between",
         marginBottom: "2rem",
-},
+    },
 
     "::-webkit-scrollbar": {
         width: "5px",

@@ -16,26 +16,29 @@ type DefaultSizesValues = Array<string | number>;
 const size_letter = ["P", "M", "G", "GG"];
 const size_numeric = [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43];
 
-function mapDefaultValues(value: DefaultSizesValues) {
-    return value.reduce((prevItem, currentItem) => ({ ...prevItem, [currentItem]: false }), {});
+export function mapDefaultValues(value: DefaultSizesValues): ProductTypes {
+    return value.reduce((prevItem, currentItem) => ({ ...prevItem, [currentItem]: false }), {} as ProductTypes);
 }
 
 
 export type ProductProps = {
-    id?: string,
-    title: string,
-    description?: string,
-    categories?: string[],
-    type_product_sizes?: string,
-    sizes_available: ProductTypes[],
-    product_categories: string | number,
+    id?: string;
+    title: string;
+    description?: string;
+    categories?: string[];
+    type_product_sizes: "letter" | "numeric";
+    sizes_available: {
+        letter: ProductSizesLetter;
+        numeric: ProductSizesNumber
+    },
+    product_categories: string | number;
     // sizes_available: {
     //     letter: { [key: string]: boolean },
     //     numeric: { [key: string]: boolean },
     // },
-    price?: number,
-    available: boolean,
-    image: HTMLImageElement | string,
+    price?: number;
+    available: boolean;
+    image: HTMLImageElement | string;
 }
 
 export type BucketProps = {

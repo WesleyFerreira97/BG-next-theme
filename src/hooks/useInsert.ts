@@ -27,11 +27,13 @@ export function useInsert<T>(
             .insert(data)
             .select("id")
             .then((res: any) => {
-                setDataResponse({
-                    id: res.data[0].id,
-                    error: res.error,
-                    status: res.status
-                });
+                console.log(res, "res");
+
+                // setDataResponse({
+                //     id: res.data[0].id,
+                //     error: res.error,
+                //     status: res.status
+                // });
             });
     }, [data]);
 

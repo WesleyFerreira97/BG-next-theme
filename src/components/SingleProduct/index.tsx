@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductInfo, SingleProductWrap } from "./styles";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
 import { ToggleGroup } from "../ToggleGroup";
-import { ProductWithBucketProps } from "src/types/product";
+import { mapDefaultValues, ProductProps, ProductWithBucketProps } from "src/types/product";
 import { Formik } from "formik";
 import * as Yup from 'yup';
 import SingleProductGallery from "../SingleProductGallery";
@@ -32,6 +32,7 @@ const fakeColorData: any = {
 };
 
 export function SingleProduct({ data }: SingleProductProps) {
+    const { sizes_available, type_product_sizes } = data;
     const theme = useAppSelector((state) => state);
     const { addItem, removeItem } = useCart();
     const { checkoutNavigate } = useCheckout();
@@ -43,8 +44,6 @@ export function SingleProduct({ data }: SingleProductProps) {
         selectedColor: null,
         image: data?.image,
     }
-
-    // console.log(data.sizes_available);
 
     return (
         <SingleProductWrap>
@@ -108,18 +107,19 @@ export function SingleProduct({ data }: SingleProductProps) {
                                             </span>
                                             <ToggleGroup
                                                 name="selectedSize"
-                                                itemType="color"
+                                                itemType="label"
                                             >
-                                                {data.sizes_available && Object.keys(data.sizes_available)
+                                                {sizes_available && Object.entries(sizes_available[type_product_sizes])
                                                     .map((item) => {
-                                                        console.log({ ...data.sizes_available[item] }, "item");
+                                                        const currentValue = item[0]
+                                                        const isAvailable = item[1] as boolean
 
                                                         return (
                                                             <ToggleGroup.Item
-                                                                key={item}
-                                                                value={item}
-                                                                label={item}
-                                                                available={data.sizes_available[item]}
+                                                                key={currentValue}
+                                                                value={currentValue}
+                                                                label={currentValue}
+                                                                available={isAvailable}
                                                             />
                                                         )
                                                     }
