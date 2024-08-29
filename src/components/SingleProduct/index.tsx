@@ -3,7 +3,7 @@ import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductInfo, SingleProductWrap } from "./styles";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
-import { ToggleGroup } from "../ToggleGroup";
+import { SelectedValue, ToggleGroup } from "../ToggleGroup";
 import { Formik } from "formik";
 import * as Yup from 'yup';
 import { ProductGalleryProps, SingleProductGallery } from "../SingleProductGallery";
@@ -58,6 +58,11 @@ export function SingleProduct({ data }: SingleProductProps) {
 
         checkColorsAvailable()
     }, [filesStructure, currentGalleryImages])
+
+    useEffect(() => {
+        console.log(currentGalleryImages);
+
+    }, [currentGalleryImages])
 
     useEffect(() => {
         console.log(selectResponseError, "Error response");

@@ -27,22 +27,37 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
     useEffect(() => {
         if (!galleryData) return
 
+        setAllUrlImages([])
+
+
+        // const urlImages = [];
+
         const getFinalUrl = async (imageUrl) => {
             const { data } = supaDb
                 .storage
                 .from('photo')
                 .getPublicUrl(imageUrl);
 
-            setAllUrlImages(prevState => [...prevState, data.publicUrl]);
+            setAllUrlImages(prev => [...prev, data.publicUrl]);
         }
 
         galleryData.images.forEach((item, index) => {
             const fileName = item.name;
             const imageFullPath = `${galleryData.bucketPath}/${galleryData.slug}/${fileName}`;
 
+            // urlImages.push(imageFullPath)
             getFinalUrl(imageFullPath)
         })
+
+        console.log(allUrlImages, "all url images");
+        // console.log(urlImages, "url images");
+
     }, [galleryData])
+
+    useEffect(() => {
+        console.log(allUrlImages, "gallery data");
+
+    }, [galleryData, allUrlImages])
 
     return (
         <ProductGalleryWrap>
@@ -65,10 +80,7 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
                     )
                 })}
             </Swiper >
-
-
-
-            {/* <Swiper
+            <Swiper
                 modules={[FreeMode, Navigation, Thumbs]}
                 onSwiper={setThumbsSwiper}
                 slidesPerView={4}
@@ -77,7 +89,7 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
                 className='grid-thumbnails'
 
             >
-                {images.map((image, index) => (
+                {allUrlImages.map((image, index) => (
                     <SwiperSlide
                         key={index}
                         className='grid-thumbnails__item'
@@ -89,7 +101,7 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
                         />
                     </SwiperSlide >
                 ))}
-            </Swiper > */}
+            </Swiper >
         </ProductGalleryWrap >
 
     )
