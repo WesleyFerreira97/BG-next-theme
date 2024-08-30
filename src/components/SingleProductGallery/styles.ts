@@ -3,9 +3,8 @@ import { styled } from "stitches.config";
 export const ProductGalleryWrap = styled("div", {
     height: "75vh",
     display: "flex",
-    // justifyContent: "center",
+    justifyContent: "center",
     gap: "$2",
-    background: "gray",
     ".main-image": {
         height: "100%",
         width: "100%",
@@ -20,7 +19,10 @@ export const ProductGalleryWrap = styled("div", {
             objectFit: "cover",
         }
     },
-
+    "& > *": {
+        marginLeft: "inherit !important",
+        marginRight: "inherit !important",
+    },
     ".grid-thumbnails": {
         width: "auto",
         display: "none",
@@ -41,7 +43,6 @@ export const ProductGalleryWrap = styled("div", {
             }
         }
     },
-
     "@md": {
         ".grid-thumbnails": {
             display: "flex",

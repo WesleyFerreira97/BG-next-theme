@@ -65,7 +65,7 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
                 navigation={true}
                 thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className='main-image'
+                className='main-image gallery-swiper'
             >
                 {allUrlImages.map((image, index) => {
 
@@ -86,7 +86,7 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
                 slidesPerView={4}
                 spaceBetween={10}
                 direction="vertical"
-                className='grid-thumbnails'
+                className='grid-thumbnails gallery-swiper'
 
             >
                 {allUrlImages.map((image, index) => (

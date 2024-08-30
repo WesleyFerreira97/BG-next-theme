@@ -33,7 +33,7 @@ function ToggleGroup({ name, children, itemType }: ToggleGroupProps) {
       <SelectedValue.Provider value={{ field, helpers, itemType }}>
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
+          gridTemplateColumns: "repeat(4, 70px)",
           gap: ".5rem",
         }}>
           {children}
