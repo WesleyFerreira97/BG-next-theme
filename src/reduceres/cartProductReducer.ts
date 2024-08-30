@@ -13,9 +13,7 @@ const cartSlice = createSlice({
         remove(state, action: PayloadAction<number>) {
             const selectedItem = action.payload;
 
-            console.log(state);
             state.splice(selectedItem, 1);
-
         }
     }
 });

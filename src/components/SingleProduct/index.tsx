@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductInfo, SingleProductWrap } from "./styles";
 import { Button } from "@nextui-org/react";
@@ -62,20 +62,26 @@ export function SingleProduct({ data }: SingleProductProps) {
     useEffect(() => {
         if (!filesStructure) return
 
+        const checkColorsAvailable = () => {
+            const currentColors = [];
+
+            filesStructure.forEach((item) => {
+                if (item.slug === "main") return
+                let firstInteraction = true
+
+                if (firstInteraction) {
+                    handleChangeGallery(item.slug)
+                    firstInteraction = false
+                }
+
+                currentColors.push(item.slug)
+            })
+
+            setColorsAvailable(currentColors);
+        }
+
         checkColorsAvailable()
-    }, [filesStructure, currentGalleryImages])
-
-    const checkColorsAvailable = () => {
-        const currentColors = [];
-
-        const colorsAvailable = filesStructure.forEach((item) => {
-            if (item.slug === "main") return
-
-            currentColors.push(item.slug)
-        })
-
-        setColorsAvailable(currentColors)
-    }
+    }, [filesStructure])
 
     const handleChangeGallery = (value: string) => {
         let selectedImages = filesStructure.filter((item) => item.slug === value)

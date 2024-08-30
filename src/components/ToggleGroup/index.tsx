@@ -27,13 +27,14 @@ function useToggleContext() {
 
 function ToggleGroup({ name, children, itemType }: ToggleGroupProps) {
   const [field, meta, helpers] = useField(name);
+  let inputSize = itemType === "color" ? "1fr" : "70px";
 
   return (
     <div>
       <SelectedValue.Provider value={{ field, helpers, itemType }}>
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 70px)",
+          gridTemplateColumns: `repeat(4, ${inputSize})`,
           gap: ".5rem",
         }}>
           {children}

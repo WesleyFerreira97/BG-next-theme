@@ -19,11 +19,6 @@ export function GridOtherCategories() {
     //     tableName: "products"
     // });
 
-    // useEffect(() => {
-    //     console.log(selectResponse, "selectResponse");
-    // }, [selectResponse])
-
-
     return (
         <GridWrap>
             <Container fluid css={{ padding: ".3rem !important" }}>

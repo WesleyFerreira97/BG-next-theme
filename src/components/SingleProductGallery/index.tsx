@@ -29,9 +29,6 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
 
         setAllUrlImages([])
 
-
-        // const urlImages = [];
-
         const getFinalUrl = async (imageUrl) => {
             const { data } = supaDb
                 .storage
@@ -45,19 +42,10 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
             const fileName = item.name;
             const imageFullPath = `${galleryData.bucketPath}/${galleryData.slug}/${fileName}`;
 
-            // urlImages.push(imageFullPath)
             getFinalUrl(imageFullPath)
         })
 
-        console.log(allUrlImages, "all url images");
-        // console.log(urlImages, "url images");
-
     }, [galleryData])
-
-    useEffect(() => {
-        console.log(allUrlImages, "gallery data");
-
-    }, [galleryData, allUrlImages])
 
     return (
         <ProductGalleryWrap>
