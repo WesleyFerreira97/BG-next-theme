@@ -15,6 +15,7 @@ export const SubTitleWrap = styled("span", {
     themeFont: "primary",
     color: "$secondary",
     fontWeight: "500",
+    marginBottom: "0.5rem",
     themeFontSize: {
         xs: "$3",
         sm: "$4",
@@ -38,6 +39,6 @@ export const WidgetHeaderWrap = styled("div", {
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    margin: "1.5rem auto",
+    margin: "3.5rem auto",
 });
 

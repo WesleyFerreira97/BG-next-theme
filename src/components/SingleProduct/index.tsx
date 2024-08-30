@@ -25,9 +25,15 @@ const orderValidation = Yup.object().shape({
         .required('Selecione uma cor'),
 });
 
-const fakeColorData: any = {
-    Preto: "#1F1D36",
-    Roxo: "#3F3351",
+const colorsData: any = {
+    preto: {
+        label: "Preto",
+        hex: "#1F1D36"
+    },
+    purple: {
+        label: "Roxo",
+        hex: "#3F3351"
+    },
     Vinho: "#864879",
     Salmão: "#E9A6A6",
 };
@@ -124,7 +130,7 @@ export function SingleProduct({ data }: SingleProductProps) {
                                                         <ToggleGroup.Item
                                                             key={item}
                                                             value={item}
-                                                            color={"#1679AB"}
+                                                            color={colorsData["preto"].hex}
                                                             onClick={() => handleChangeGallery(item)}
                                                         />
                                                     ))}

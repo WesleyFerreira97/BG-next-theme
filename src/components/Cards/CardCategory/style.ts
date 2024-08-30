@@ -48,8 +48,8 @@ export const CardInfoWrap = styled("div", {
         width: "100%",
         position: "absolute",
         zIndex: 5,
-        background: "#000",
-        opacity: 0.3,
+        // background: "#000",
+        // opacity: 0.3,
     },
 
     ".card-info": {
@@ -70,11 +70,11 @@ export const CardInfoWrap = styled("div", {
 
             "&::after": {
                 content: "",
-                height: "3px",
+                height: "6px",
                 width: "100%",
                 position: "absolute",
-                bottom: -10,
-                left: 0,
+                bottom: -15,
+                left: "6px",
                 transform: "scaleX(0)",
                 backgroundColor: "$primary",
                 transformOrigin: "bottom right",

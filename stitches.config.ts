@@ -43,8 +43,7 @@ export const themeSizes: { [key: number]: string } = {
 };
 
 export const themeColors = {
-    // primary: "#D22779",
-    primary: "#1F1D36",
+    primary: "#D22779",
     primaryAlt: "#FF6500",
     secondary: "#3F3351",
     secondaryAlt: "#0060B1",
