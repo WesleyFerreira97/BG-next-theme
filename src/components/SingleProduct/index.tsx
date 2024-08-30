@@ -59,16 +59,6 @@ export function SingleProduct({ data }: SingleProductProps) {
         checkColorsAvailable()
     }, [filesStructure, currentGalleryImages])
 
-    useEffect(() => {
-        console.log(currentGalleryImages);
-
-    }, [currentGalleryImages])
-
-    useEffect(() => {
-        console.log(selectResponseError, "Error response");
-
-    }, [selectResponseError])
-
     const checkColorsAvailable = () => {
         const currentColors = [];
 

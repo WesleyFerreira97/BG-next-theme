@@ -3,8 +3,9 @@ import { styled } from "stitches.config";
 export const ProductGalleryWrap = styled("div", {
     height: "75vh",
     display: "flex",
+    // justifyContent: "center",
     gap: "$2",
-
+    background: "gray",
     ".main-image": {
         height: "100%",
         width: "100%",
