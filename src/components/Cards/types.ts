@@ -7,7 +7,10 @@ type CardInfoProps = {
     link?: string,
     price?: number,
     monthlyInstallments?: string,
-    categories?: string[]
+    categories?: string[],
+    bucket_folder?: string,
+    bucket_path?: string,
+    id?: string,
 }
 
 type StyleProps =

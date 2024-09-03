@@ -1,17 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { GridProductWrap } from "./styles";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
 import { useSelect } from "../../../hooks/useSelect";
 import type { ProductProps, BucketProps } from "../../../types/product";
 import { Grid } from "@theme/Layout/Grid";
-import { fakeProducts } from "../../../utils/fakeProducts";
 import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
 import Link from "next/link";
 
 const HeaderGridProducts = () => {
     return (
-
         <Header>
             <Header.SubTitle>A Subtitle 3</Header.SubTitle>
             <Header.Title>Novidades</Header.Title>
@@ -25,11 +23,6 @@ export function GridProducts() {
         select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
         tableName: "products",
     });
-
-    useEffect(() => {
-        console.log(products, "products");
-
-    }, [products])
 
     return (
         <GridProductWrap>
