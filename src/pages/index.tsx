@@ -19,7 +19,7 @@ const Home: NextPage = () => {
                 position="absolute"
             />
             <HomeCarousel carouselItemsData={carouselItemsData} />
-            <GridMainCategories />
+            {/* <GridMainCategories /> */}
             <GridProducts />
             <GridOtherCategories />
             <GridProductsSmall />

@@ -27,7 +27,7 @@ export function useSelect<T>({ select, tableName, match }: UseSelectProps<T>) {
         }
 
         selectData();
-    }, [select]);
+    }, []);
 
     return { selectResponse, selectResponseError };
 }

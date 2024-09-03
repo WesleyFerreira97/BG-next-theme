@@ -17,7 +17,7 @@ export default function MyDocument() {
                 />
             </Head>
             <body style={{
-                // background: "#DBD8EA"
+                background: "#DBD8EA"
             }}>
                 <Main />
                 <NextScript />

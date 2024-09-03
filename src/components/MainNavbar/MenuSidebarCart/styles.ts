@@ -3,16 +3,19 @@ import { styled } from "stitches.config";
 export const MenuSidebarCartWrap = styled("div", {
     height: "100%",
     width: "100%",
-    // backgroundColor: "$primary",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    paddingBottom: "5rem",
 
     ".cart-items": {
         maxHeight: "55vh",
+        height: "100a%",
         overflowY: "auto",
         marginBottom: "1.5rem",
     },
 
     ".cart-item": {
-        // background: "$secondary",
         marginBottom: ".75rem",
         display: "flex",
         alignItems: "center",
@@ -48,7 +51,10 @@ export const MenuSidebarCartWrap = styled("div", {
         },
     },
     ".finish-buttons": {
+        flexGrow: 0,
+
         "&__subtotal": {
+            height: "",
             display: "flex",
             justifyContent: "space-between",
             padding: ".5rem 0",
@@ -81,18 +87,6 @@ export const MenuSidebarCartWrap = styled("div", {
             }
         }
     },
-    ".form-error": {
-        display: "flex",
-        flexDirection: "column",
-        gap: "0.5rem",
-        marginBottom: "1rem",
-
-        "&__text": {
-            themeFont: "$secondary",
-            fontSize: "0.975rem",
-            color: "$primaryAlt",
-        }
-    },
     ".client-form": {
         display: "flex",
         justifyContent: "space-between",
@@ -107,15 +101,32 @@ export const MenuSidebarCartWrap = styled("div", {
         background: "$green",
         borderRadius: "5px"
     },
+    ".status": {
+        color: "$primary",
+        themeFont: "$secondary",
+        fontWeight: "bold",
+        display: "flex",
+        alignItems: "center",
+        fontSize: "$2",
 
-    "@sm": {
-        ".cart-items": {
-            maxHeight: "60vh",
+        // Get Icon
+        "& > *:first-child": {
+            marginRight: "$1",
         },
     },
-    "@xl": {
+    ".sidebar-cart__item": {
+        display: "flex",
+        justifyContent: "space-between",
+        width: "100%",
+    },
+    "@md": {
         ".cart-items": {
-            maxHeight: "70vh",
+            maxHeight: "65vh",
         },
-    }
+    },
+    // "@xl": {
+    //     ".cart-items": {
+    //         maxHeight: "70vh",
+    //     },
+    // }
 });

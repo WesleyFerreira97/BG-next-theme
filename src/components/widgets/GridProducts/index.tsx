@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GridProductWrap } from "./styles";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
@@ -23,8 +23,13 @@ const HeaderGridProducts = () => {
 export function GridProducts() {
     const { selectResponse: products, selectResponseError } = useSelect<ProductProps & BucketProps>({
         select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
-        tableName: "products"
+        tableName: "products",
     });
+
+    useEffect(() => {
+        console.log(products, "products");
+
+    }, [products])
 
     return (
         <GridProductWrap>

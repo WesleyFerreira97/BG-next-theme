@@ -8,7 +8,8 @@ export const FooterWrap = styled("div", {
     justifyContent: "center",
     alignItems: "center",
     marginTop: "5rem",
-    backgroundColor: "#E2E2E2",
+    // backgroundColor: "#E2E2E2",
+    backgroundColor: "#1E1E2F",
 
     ".footer__logo-bar": {
         height: "100px",
@@ -17,8 +18,8 @@ export const FooterWrap = styled("div", {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        borderTop: "15px solid #D4D4D4",
-        borderBottom: "1px solid #D4D4D4",
+        borderTop: "15px solid $primary",
+        // borderBottom: "1px solid #D4D4D4",
         paddingTop: "1.75rem",
         paddingBottom: "1rem",
 
@@ -31,7 +32,7 @@ export const FooterWrap = styled("div", {
         ".title": {
             themeFont: "primary",
             fontWeight: "700",
-            color: "#333333",
+            color: "#fff",
             fontSize: "2.5rem",
         }
     },
@@ -73,13 +74,13 @@ export const FooterContainers = styled("div", {
         "&__text": {
             themeFont: "secondary",
             lineHeight: "165%",
-            color: "#545454",
+            color: "#fff",
             textAlign: "center",
         },
 
         "&__icon": {
             paddingRight: "1rem",
-            color: "#545454"
+            color: "#fff"
         }
     },
 
@@ -148,8 +149,8 @@ export const FooterCredits = styled("div", {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#D2D2D2",
-    borderTop: "1px solid #fff",
+    backgroundColor: "#1E1E2F",
+    borderTop: "1px solid $secondary",
 
     ".footer-credits__text": {
         display: "flex",
