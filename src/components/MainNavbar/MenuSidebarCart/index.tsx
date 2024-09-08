@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MenuSidebarCartWrap } from './styles'
 import { CartDataProps } from 'src/types/cartTypes';
 import ImageFallback from "../../../../public/images/code.jpg";
@@ -20,6 +20,11 @@ export function MenuSidebarCart() {
     const handleSubmit = () => {
         Router.push("/finish")
     }
+
+    useEffect(() => {
+        console.log(cart, "cart ");
+    }, [cart])
+
 
     return (
         <MenuSidebarCartWrap>

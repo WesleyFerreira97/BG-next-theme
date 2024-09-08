@@ -14,11 +14,14 @@ const cartSlice = createSlice({
             const selectedItem = action.payload;
 
             state.splice(selectedItem, 1);
+        },
+        clear() {
+            return []
         }
     }
 });
 
 const cartReducer = cartSlice.reducer;
-const { add, remove } = cartSlice.actions;
+const { add, remove, clear } = cartSlice.actions;
 
-export { cartReducer, add, remove }
+export { cartReducer, add, remove, clear }

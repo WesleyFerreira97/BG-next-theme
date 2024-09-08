@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { add, remove } from 'src/reduceres/cartProductReducer';
+import { add, remove, clear } from 'src/reduceres/cartProductReducer';
 import { CartDataProps } from 'src/types/cartTypes';
 
 export function useCart() {
@@ -13,5 +13,9 @@ export function useCart() {
         dispatch(add(values));
     }
 
-    return { addItem, removeItem }
+    const clearCart = () => {
+        dispatch(clear())
+    }
+
+    return { addItem, removeItem, clearCart }
 }

@@ -40,6 +40,7 @@ const clientValidation = Yup.object().shape({
 function finish() {
     const { cart }: CartItemProps = useAppSelector((state: RootState) => state);
     const { dataResponse, setData } = useInsert<any>("orders");
+    const { clearCart } = useCart();
 
     useEffect(() => {
         if (!dataResponse?.error && dataResponse?.status !== 201) return
@@ -161,6 +162,11 @@ function finish() {
                                     </>
                                 )}
                             </Formik>
+                            <Button
+                                onClick={() => clearCart()}
+                            >
+                                Clear Cart
+                            </Button>
                         </div>
                     </div>
                 </div>

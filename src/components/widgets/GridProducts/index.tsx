@@ -52,10 +52,3 @@ export function GridProducts() {
         </GridProductWrap>
     );
 }
-
-
-
-
-
-
-
