@@ -3,26 +3,25 @@ import { useSelect } from 'src/hooks/useSelect'
 import { ProductProps } from 'src/types/product';
 
 type ScreenCategorieProps = {
-  categorieName?: string
+  query: {
+    id: string
+  }
 }
 
 // Single page query url props
-export default function categorie(props: ScreenCategorieProps) {
+function categorie(props: ScreenCategorieProps) {
+  console.log(props.query?.id, " dentro do componente props");
+
   const { selectResponse, selectResponseError } = useSelect<ProductProps>({
     select: ["*"],
     tableName: "products",
-    match: { product_categories: props.categorieName || "shorts" }
+    // match: { product_categories: id || "shorts" }
   })
   const { selectResponse: categoriesResponse, selectResponseError: categoriesError } = useSelect<any>({
     select: ["title", "slug"],
     tableName: "categories",
   })
 
-  useEffect(() => {
-    console.log(categoriesResponse, "categoriesResponse");
-    console.log(categoriesError, "categoriesError");
-
-  }, [categoriesResponse, categoriesError])
   return (
     <div>categorie
 
@@ -35,3 +34,15 @@ export default function categorie(props: ScreenCategorieProps) {
     </div>
   )
 }
+
+categorie.getStaticProps = ({ query }: ScreenCategorieProps) => {
+  const { id } = query;
+
+  if (!id) return;
+
+  return {
+    id: id
+  }
+}
+
+export default categorie

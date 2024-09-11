@@ -5,12 +5,12 @@ import { CardCategory } from "../../Cards/CardCategory";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Container } from "@nextui-org/react";
 import PersonImage from "public/images/code.jpg";
-import { fakeProducts } from "src/utils/fakeProducts";
+import { gridMainCategoriesData } from "src/utils/fakeProducts";
+import Link from "next/link";
 
 
 export function GridMainCategories() {
-    // TEMP
-    const products: any[] = fakeProducts;
+    const products = gridMainCategoriesData;
 
     return (
         <GridWrap>
@@ -46,10 +46,15 @@ export function GridMainCategories() {
                 >
                     {Object.values(products).map((item, index) => (
                         <SwiperSlide key={index}>
-                            <CardCategory cardInfo={{
-                                ...item,
-                                // image: PersonImage
-                            }} />
+                            <Link
+                                href={`/categorie?id=${item.id}`}
+                                key={index}
+                            >
+                                <CardCategory cardInfo={{
+                                    ...item,
+                                    // image: PersonImage
+                                }} />
+                            </Link>
                         </SwiperSlide>
                     ))}
                 </Swiper>

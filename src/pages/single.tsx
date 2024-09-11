@@ -2,7 +2,7 @@ import React from "react";
 import { MainNavbar } from "../components/MainNavbar";
 import { styled } from "stitches.config";
 import { SingleProduct } from "../components/SingleProduct";
-import { BucketProps, ProductProps, ProductWithBucketProps } from "src/types/product";
+import { ProductWithBucketProps } from "src/types/product";
 import { supaDb } from "src/services/supadb";
 
 type SingleProps = {

@@ -14,15 +14,15 @@ const Home: NextPage = () => {
         <div style={{
             background: "#DBD8EA"
         }}>
-            <MainNavbar
+            {/* <MainNavbar
                 bgColor="transparent"
                 position="absolute"
             />
-            <HomeCarousel carouselItemsData={carouselItemsData} />
+            <HomeCarousel carouselItemsData={carouselItemsData} /> */}
             <GridMainCategories />
-            <GridProducts />
+            {/* <GridProducts />
             <GridOtherCategories />
-            <GridProductsSmall />
+            <GridProductsSmall /> */}
         </div>
     );
 };

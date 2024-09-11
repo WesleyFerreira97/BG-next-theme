@@ -3,6 +3,31 @@ import Woman2 from "../../public/images/woman3.png";
 import People1 from "../../public/images/woman3.png";
 import People2 from "../../public/images/people2.jpg";
 import People3 from "../../public/images/people3.jpg";
+import { StaticImageData } from "next/image";
+
+type CategorieDataProps = {
+    title: string;
+    id: string;
+    image: StaticImageData;
+}
+
+export const gridMainCategoriesData: CategorieDataProps[] = [
+    {
+        title: "Blusas",
+        image: People1,
+        id: "76749818-dc90-4289-b199-506307c726ec"
+    },
+    {
+        title: "Conjuntos",
+        image: People2,
+        id: "18c5b8cb-daa7-428c-9b8e-66217623b91a"
+    },
+    {
+        title: "Vestidos",
+        image: People3,
+        id: "cb2336f6-cf61-42b5-a763-9618164e5c4d"
+    }
+]
 
 export const fakeProducts = [
     {

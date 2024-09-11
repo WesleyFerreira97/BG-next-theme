@@ -76,15 +76,3 @@ export function GridProductsSmall() {
         </GridProductWrap>
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-{/* <CardProduct /> */ }
