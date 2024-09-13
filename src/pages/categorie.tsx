@@ -37,9 +37,11 @@ function categorie(props: ScreenCategorieProps) {
     </div>
   )
 }
+// getStaticProps
+// export const getInitialProps = async (pqp) => {
+categorie.getInitialProps = async ({ query }: any) => {
 
-export const getStaticProps = async (pqp) => {
-  console.log(pqp, "pqp");
+  console.log(query, "pqp");
 
   return {
     props: {

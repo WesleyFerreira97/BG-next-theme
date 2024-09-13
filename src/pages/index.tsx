@@ -20,8 +20,8 @@ const Home: NextPage = () => {
                     />
             <HomeCarousel carouselItemsData={carouselItemsData} /> */}
             <GridMainCategories />
-            {/* <GridProducts />
-            <GridOtherCategories />
+            <GridProducts />
+            {/* <GridOtherCategories />
             <GridProductsSmall /> */}
         </div>
     );
