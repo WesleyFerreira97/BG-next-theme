@@ -52,6 +52,7 @@ export const FooterContainers = styled("div", {
     flexDirection: "column",
     padding: "1rem 0",
     alignItems: "center",
+    justifyContent: "space-between",
 
     ".footer-container": {
         // flex-grow: 1;

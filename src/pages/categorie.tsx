@@ -1,3 +1,4 @@
+import { useSearchParams } from 'next/navigation';
 import React, { useEffect } from 'react'
 import { useSelect } from 'src/hooks/useSelect'
 import { ProductProps } from 'src/types/product';
@@ -10,12 +11,14 @@ type ScreenCategorieProps = {
 
 // Single page query url props
 function categorie(props: ScreenCategorieProps) {
-  console.log(props.query?.id, " dentro do componente props");
+  const idParams = useSearchParams()
+  const id = idParams.get('id')
+  console.log(props, 'props');
 
-  const { selectResponse, selectResponseError } = useSelect<ProductProps>({
+  const { selectResponse, selectResponseError } = useSelect<ProductProps | any>({
     select: ["*"],
     tableName: "products",
-    // match: { product_categories: id || "shorts" }
+    match: { product_categories: id }
   })
   const { selectResponse: categoriesResponse, selectResponseError: categoriesError } = useSelect<any>({
     select: ["title", "slug"],
@@ -35,13 +38,13 @@ function categorie(props: ScreenCategorieProps) {
   )
 }
 
-categorie.getStaticProps = ({ query }: ScreenCategorieProps) => {
-  const { id } = query;
-
-  if (!id) return;
+export const getStaticProps = async (pqp) => {
+  console.log(pqp, "pqp");
 
   return {
-    id: id
+    props: {
+      data: "swdfs"
+    }
   }
 }
 

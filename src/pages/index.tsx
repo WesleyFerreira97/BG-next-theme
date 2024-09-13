@@ -17,7 +17,7 @@ const Home: NextPage = () => {
             {/* <MainNavbar
                 bgColor="transparent"
                 position="absolute"
-            />
+                    />
             <HomeCarousel carouselItemsData={carouselItemsData} /> */}
             <GridMainCategories />
             {/* <GridProducts />
