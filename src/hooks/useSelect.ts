@@ -2,32 +2,67 @@ import { PostgrestError } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import { supaDb } from "../services/supadb";
 
-type UseSelectProps<T> = {
-    select?: (keyof T)[] | "*";
+export type UseSelectProps = {
     tableName: string;
-    match?: Partial<T>;
+    selectColumns: string[];
+    match?: {
+        [key: string]: string | number | boolean
+    };
+    limit?: number;
+    single?: boolean
 }
 
-export function useSelect<T>({ select, tableName, match }: UseSelectProps<T>) {
-    const [selectResponse, setSelectResponse] = useState<T[] | null>(null);
+type SelectedProps = { select: string } & Omit<UseSelectProps, "selectColumns">;
+
+export function useSelect<T>({ tableName, selectColumns, ...props }: UseSelectProps) {
+    const [selectResponse, setSelectResponse] = useState<T | null>(null);
     const [selectResponseError, setSelectResponseError] = useState<PostgrestError>();
-
-    const selectedColumns = Array.isArray(select) ? select.join(",") : select;
-
-    useEffect(() => {
-        async function selectData() {
-            const { data, error } = await supaDb
-                .from(tableName)
-                .select(selectedColumns)
-                .limit(12)
-                .match({ ...match });
-
-            setSelectResponse(data as T[]);
-            setSelectResponseError(error as PostgrestError);
+    const arrToString = (arr?: string[]) => (arr ? arr.join(',') : '');
+    const [selectProps, setSelectProps] = useState<SelectedProps>(() => {
+        const initialValue = {
+            tableName: tableName,
+            select: arrToString(selectColumns),
+            match: props.match || {},
+            limit: props.limit || 10,
+            single: props.single || false,
         }
 
-        selectData();
-    }, []);
+        return initialValue
+    })
 
-    return { selectResponse, selectResponseError };
+    useEffect(() => {
+        async function useSelect(values: SelectedProps) {
+            const { select, tableName } = values;
+
+            let query = supaDb
+                .from(tableName)
+                .select(select)
+                .match(values.match)
+                .limit(props.limit)
+
+            if (values.single == true) {
+                query.single()
+            }
+
+            const { data, error } = await query
+
+            setSelectResponse(data as T);
+            setSelectResponseError(error);
+        }
+
+        useSelect(selectProps);
+    }, [selectProps]);
+
+
+    const selectData = (value: UseSelectProps) => {
+        const selectedColumns = arrToString(value.selectColumns)
+
+        setSelectProps(prevState => ({
+            select: selectedColumns,
+            ...value,
+            ...prevState
+        }))
+    }
+
+    return { selectResponse, selectResponseError, selectData };
 }
