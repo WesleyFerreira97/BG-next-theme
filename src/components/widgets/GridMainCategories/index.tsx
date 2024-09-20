@@ -47,7 +47,7 @@ export function GridMainCategories() {
                     {Object.values(products).map((item, index) => (
                         <SwiperSlide key={index}>
                             <Link
-                                href={`/categorie/${item.id.toString()}`}
+                                href={`/categorie/${item.slug.toString()}`}
                                 key={item.id}
                             >
                                 <CardCategory cardInfo={{

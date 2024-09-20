@@ -18,7 +18,6 @@ type CategoriesProps = {
   slug: string;
 }
 
-
 // Single page query url props
 function categorie(props: ScreenCategorieProps) {
   console.log(props, "props");
@@ -56,28 +55,26 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const res = await getAllCategories();
 
   const paths = res.data.map((item: CategoriesProps) => {
-    return { params: { id: item.id, title: item.title, slug: item.slug } }
+    return { params: { slug: item.slug } }
   })
-  // console.log(paths);
 
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params, }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   console.log(params, " query static props");
 
-  // const { data, error } = await supaDb
-  //   .from("products")
-  //   .select("*")
-  //   .limit(1)
-  //   .match({ id: query.id })
+  const { data, error } = await supaDb
+    .from("products")
+    .select("*")
+    .match({ product_categories: params.slug })
 
   return {
     props: {
-      data: "params"
+      data: data
     },
     revalidate: 10
   }

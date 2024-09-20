@@ -7,6 +7,7 @@ import { StaticImageData } from "next/image";
 
 type CategorieDataProps = {
     title: string;
+    slug: string;
     id: string;
     image: StaticImageData;
 }
@@ -14,16 +15,19 @@ type CategorieDataProps = {
 export const gridMainCategoriesData: CategorieDataProps[] = [
     {
         title: "Blusas",
+        slug: "blusas",
         image: People1,
         id: "76749818-dc90-4289-b199-506307c726ec"
     },
     {
         title: "Conjuntos",
+        slug: "conjuntos",
         image: People2,
         id: "18c5b8cb-daa7-428c-9b8e-66217623b91a"
     },
     {
         title: "Vestidos",
+        slug: "vestidos",
         image: People3,
         id: "cb2336f6-cf61-42b5-a763-9618164e5c4d"
     }
