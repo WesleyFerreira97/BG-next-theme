@@ -1,6 +1,11 @@
+import { Container } from '@nextui-org/react';
+import { Grid } from '@theme/Layout/Container';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect } from 'react'
+import { CardOutsideInfo } from 'src/components/Cards/CardOutsideInfo';
+import { GridProductWrap } from 'src/components/widgets/GridProducts/styles';
 import { useSelect } from 'src/hooks/useSelect'
 import { supaDb } from 'src/services/supadb';
 import { ProductProps } from 'src/types/product';
@@ -22,36 +27,47 @@ type CategoriesProps = {
 function categorie(props: ScreenCategorieProps) {
   console.log(props, "props");
 
-  // const { selectResponse: categoriesResponse, selectResponseError: categoriesError } = useSelect<any>({
-  //   select: ["title", "slug"],
-  //   tableName: "categories",
-  // })
-  // console.log(props);
-
   return (
-    <div>categorie
-      {/* 
-      {selectResponse &&
-        selectResponse.map((item, index) => (
-          <h1>
-            {item.title}
-          </h1>
-        ))} */}
+    <div>
+      <GridProductWrap>
+        <Container sm>
+          {/* <HeaderGridProducts /> */}
+          <Grid columns={{ xs: 2, sm: 3 }} gap={{ xs: 1, sm: 2 }}>
+            {props.currentProducts &&
+              props.currentProducts.map((product, index) => (
+                <Link
+                  href={`/single?productId=${product.id}`}
+                  key={index}
+                >
+                  <Grid.Item>
+                    <CardOutsideInfo
+                      cardInfo={{
+                        ...product,
+                      }}
+                      cardStyle={{
+                        aspectRatio: "3/4",
+                      }}
+                    />
+                  </Grid.Item>
+                </Link>
+              ))}
+          </Grid>
+        </Container>
+      </GridProductWrap>
     </div>
   )
 }
 
 export default categorie
 
-
+async function getAllCategories() {
+  const data = await supaDb
+    .from('categories')
+    .select();
+  return data;
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  async function getAllCategories() {
-    const data = await supaDb
-      .from('categories')
-      .select();
-    return data;
-  }
   const res = await getAllCategories();
 
   const paths = res.data.map((item: CategoriesProps) => {
@@ -65,7 +81,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log(params, " query static props");
+  const allCategories = await getAllCategories();
 
   const { data, error } = await supaDb
     .from("products")
@@ -74,7 +90,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      data: data
+      currentProducts: data,
+      allCategories: allCategories.data
     },
     revalidate: 10
   }
