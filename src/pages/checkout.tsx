@@ -4,9 +4,10 @@ import { useSelector } from "react-redux";
 import CardCheckout from 'src/components/Cards/CardCheckout';
 import { MainNavbar } from 'src/components/MainNavbar';
 import { useAppSelector } from 'src/store';
+import { CartDataProps } from 'src/types/cartTypes';
 
 function Checkout(props: any) {
-    const checkoutData = useAppSelector((state) => state.checkoutState.data);
+    const checkoutData: CartDataProps = useAppSelector((state) => state.checkoutState.data);
 
     return (
         <>
@@ -15,6 +16,5 @@ function Checkout(props: any) {
         </>
     )
 };
-
 
 export default Checkout;

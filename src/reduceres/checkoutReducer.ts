@@ -5,9 +5,13 @@ type CheckoutProps = {
     data: CartDataProps
 }
 
+const initialState: CheckoutProps = {
+    data: null
+}
+
 const checkoutSlice = createSlice({
     name: "checkout",
-    initialState: {},
+    initialState,
     reducers: {
         currentCheckoutData(state: any, action: PayloadAction<CheckoutProps>) {
             const checkoutData = action.payload;

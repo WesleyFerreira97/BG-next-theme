@@ -19,8 +19,8 @@ const HeaderGridProducts = () => {
 };
 
 export function GridProducts() {
-    const { selectResponse: products, selectResponseError } = useSelect<ProductProps & BucketProps>({
-        select: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
+    const { selectResponse: products, selectResponseError } = useSelect<(ProductProps & BucketProps)[]>({
+        selectColumns: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
         tableName: "products",
     });
 

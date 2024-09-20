@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect } from 'react'
 import { useSelect } from 'src/hooks/useSelect'
@@ -11,42 +11,17 @@ type ScreenCategorieProps = {
   }
 }
 
-export const getStaticPaths = async (ctx) => {
-  console.log(ctx, " Context");
-
-  return {
-    paths: [
-      { params: { id: "ctx.id" } },
-    ],
-    fallback: true
-  }
+type CategoriesProps = {
+  id: string;
+  created_at: Date;
+  title: string;
+  slug: string;
 }
 
-export const getStaticProps = (async (context) => {
-  console.log(context, " Context static props");
-
-  return { props: { repo: "fdfs" } }
-})
-
-// export async function getStaticProps(query: GetStaticProps) {
-//   console.log(query);
-
-//   // const { data, error } = await supaDb
-//   //   .from("products")
-//   //   .select("*")
-//   //   .limit(1)
-//   //   .match({ id: query.id })
-
-//   return {
-//     props: {
-//       data: 'data'
-//     }
-//   }
-// }
 
 // Single page query url props
 function categorie(props: ScreenCategorieProps) {
-  console.log(props);
+  console.log(props, "props");
 
   // const { selectResponse: categoriesResponse, selectResponseError: categoriesError } = useSelect<any>({
   //   select: ["title", "slug"],
@@ -68,3 +43,42 @@ function categorie(props: ScreenCategorieProps) {
 }
 
 export default categorie
+
+
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  async function getAllCategories() {
+    const data = await supaDb
+      .from('categories')
+      .select();
+    return data;
+  }
+  const res = await getAllCategories();
+
+  const paths = res.data.map((item: CategoriesProps) => {
+    return { params: { id: item.id, title: item.title, slug: item.slug } }
+  })
+  // console.log(paths);
+
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params, }) => {
+  console.log(params, " query static props");
+
+  // const { data, error } = await supaDb
+  //   .from("products")
+  //   .select("*")
+  //   .limit(1)
+  //   .match({ id: query.id })
+
+  return {
+    props: {
+      data: "params"
+    },
+    revalidate: 10
+  }
+}
