@@ -48,7 +48,7 @@ export function CardOutsideInfo({ cardInfo, cardStyle }: CardProps) {
         const pathImage = `${public_storage}/photo/product/${cardInfo.bucket_folder}/${cardInfo.id}/main/${selectResponse[0]?.name}`;
 
         setThumbnail(pathImage as any);
-    }, [selectResponse, filesStructure, cardInfo.bucket_folder, cardInfo.id]);
+    }, [selectResponse, filesStructure]);
 
     return (
         <CardWrap css={cardStyle} >

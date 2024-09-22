@@ -28,6 +28,7 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
     });
 
     const selectFolders = useCallback(async (data: FileObject[]) => {
+        if (!selectBucketProps.bucketPath) return;
         let out: FilesStrucutreProps[] = [];
 
         async function useSelect(item: FileObject) {
@@ -56,7 +57,7 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
         await Promise.all(data.map(useSelect));
 
         setFilesStructure(out);
-    }, [selectBucketProps]);
+    }, [selectBucketProps.bucketPath]);
 
     const select = useCallback(async () => {
         const { data, error } = await supaDb
@@ -78,14 +79,16 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
         if (selectBucketProps.selectInsideFolders) {
             selectFolders(data);
         }
-    }, [selectBucketProps, selectFolders]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [selectBucketProps]);
 
 
     useEffect(() => {
         if (!selectBucketProps.bucketPath) return;
 
         select();
-    }, [selectBucketProps, select]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [selectBucketProps]);
 
 
 

@@ -1,9 +1,7 @@
 import { A11y, Scrollbar, Autoplay } from "swiper";
 import React from "react";
 import { GridProductWrap } from "./styles";
-import { CardCategory } from "../../Cards/CardCategory";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { CardProduct } from "../../Cards/CardProduct";
 import { Container, Row } from "@nextui-org/react";
 import { Header } from "../../WidgetsHeader";
 import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
@@ -65,9 +63,9 @@ export function GridProductsSmall() {
                                 ...item,
                                 image: PersonImage
                             }}
-                            cardStyle={{
-                                aspectRatio: "3/4",
-                            }}
+                                cardStyle={{
+                                    aspectRatio: "3/4",
+                                }}
                             />
                         </SwiperSlide>
                     ))}
