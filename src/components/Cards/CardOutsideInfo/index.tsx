@@ -39,7 +39,7 @@ export function CardOutsideInfo({ cardInfo, cardStyle }: CardProps) {
             selectInsideFolders: false,
             limit: 1
         });
-    }, []);
+    }, [cardInfo, selectBucket]);
 
     useEffect(() => {
         let hasNoImage = selectResponse && selectResponse[0]?.name === undefined;
@@ -48,7 +48,7 @@ export function CardOutsideInfo({ cardInfo, cardStyle }: CardProps) {
         const pathImage = `${public_storage}/photo/product/${cardInfo.bucket_folder}/${cardInfo.id}/main/${selectResponse[0]?.name}`;
 
         setThumbnail(pathImage as any);
-    }, [selectResponse, filesStructure]);
+    }, [selectResponse, filesStructure, cardInfo.bucket_folder, cardInfo.id]);
 
     return (
         <CardWrap css={cardStyle} >

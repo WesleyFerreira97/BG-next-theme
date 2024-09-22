@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductInfo, SingleProductWrap } from "./styles";
 import { Button } from "@nextui-org/react";
@@ -59,6 +59,13 @@ export function SingleProduct({ data }: SingleProductProps) {
         image: data?.image,
     };
 
+    const handleChangeGallery = useCallback((value: string) => {
+        let selectedImages = filesStructure.filter((item) => item.slug === value);
+
+        setCurrentGalleryImages(selectedImages[0]);
+
+    }, [filesStructure]);
+
     useEffect(() => {
         if (!filesStructure) return;
 
@@ -81,13 +88,7 @@ export function SingleProduct({ data }: SingleProductProps) {
         };
 
         checkColorsAvailable();
-    }, [filesStructure]);
-
-    const handleChangeGallery = (value: string) => {
-        let selectedImages = filesStructure.filter((item) => item.slug === value);
-
-        setCurrentGalleryImages(selectedImages[0]);
-    };
+    }, [filesStructure, handleChangeGallery]);
 
 
     return (

@@ -37,7 +37,7 @@ const clientValidation = Yup.object().shape({
 });
 
 
-function finish() {
+function Finish() {
     const { cart }: CartItemProps = useAppSelector((state: RootState) => state);
     const { dataResponse, setData } = useInsert<any>("orders");
     const { clearCart } = useCart();
@@ -82,6 +82,7 @@ function finish() {
                                         data={item}
                                         id={index}
                                         image={image}
+                                        key={index}
                                     />
                                 );
                             })}
@@ -175,4 +176,4 @@ function finish() {
     );
 }
 
-export default finish;
+export default Finish;

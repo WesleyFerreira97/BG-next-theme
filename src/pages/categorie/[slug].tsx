@@ -9,31 +9,31 @@ import { GridProductWrap } from "src/components/widgets/GridProducts/styles";
 import { Header } from "src/components/WidgetsHeader";
 import { supaDb } from "src/services/supadb";
 import { ProductProps } from "src/types/product";
-import { GridNavbar } from "./style";
+import { GridNavbar } from "../../styles/styleCategorySlug";
 import { MenuSidebar } from "src/components/MenuSidebar";
 
 type CategoryProps = {
-  created_at: Date;
-  id: string;
-  slug: string;
-  title: string;
+    created_at: Date;
+    id: string;
+    slug: string;
+    title: string;
 }
 
 type ScreenCategorieProps = {
-  allCategroies: CategoryProps[];
-  currentProducts: ProductProps[];
-  categorie: string;
+    allCategroies: CategoryProps[];
+    currentProducts: ProductProps[];
+    categorie: string;
 }
 
 type CategoriesProps = {
-  id: string;
-  created_at: Date;
-  title: string;
-  slug: string;
+    id: string;
+    created_at: Date;
+    title: string;
+    slug: string;
 }
 
 type HeaderProps = {
-  title: string;
+    title: string;
 }
 
 const HeaderGridProducts = (props: HeaderProps) => {
@@ -59,23 +59,23 @@ function categorie(props: ScreenCategorieProps) {
                     </GridNavbar>
                     <Grid columns={{ xs: 2, sm: 3 }} gap={{ xs: 1, sm: 2 }}>
                         {props.currentProducts &&
-              props.currentProducts.map((product, index) => (
-                  <Link
-                      href={`/single?productId=${product.id}`}
-                      key={index}
-                  >
-                      <Grid.Item>
-                          <CardOutsideInfo
-                              cardInfo={{
-                                  ...product,
-                              }}
-                              cardStyle={{
-                                  aspectRatio: "3/4",
-                              }}
-                          />
-                      </Grid.Item>
-                  </Link>
-              ))}
+                            props.currentProducts.map((product, index) => (
+                                <Link
+                                    href={`/single?productId=${product.id}`}
+                                    key={index}
+                                >
+                                    <Grid.Item>
+                                        <CardOutsideInfo
+                                            cardInfo={{
+                                                ...product,
+                                            }}
+                                            cardStyle={{
+                                                aspectRatio: "3/4",
+                                            }}
+                                        />
+                                    </Grid.Item>
+                                </Link>
+                            ))}
                     </Grid>
                 </Container>
             </GridProductWrap>

@@ -33,7 +33,7 @@ export function useInsert<T>(
                     status: res.status
                 });
             });
-    }, [data]);
+    }, [data, table]);
 
     return { dataResponse, setData };
 }

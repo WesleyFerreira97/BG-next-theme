@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Button, Container, red } from "@nextui-org/react";
 import { CarouselItem } from "../../CarouselItem";
 import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
@@ -13,7 +13,7 @@ type CarouselDataProps = {
         [key: string]: {
             title: string;
             text: string;
-            image: string;
+            image: StaticImageData;
             buttons: {
                 seeMore: string;
                 previewButton?: string;

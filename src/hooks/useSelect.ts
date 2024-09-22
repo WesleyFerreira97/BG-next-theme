@@ -31,7 +31,7 @@ export function useSelect<T>({ tableName, selectColumns, ...props }: UseSelectPr
     });
 
     useEffect(() => {
-        async function useSelect(values: SelectedProps) {
+        async function select(values: SelectedProps) {
             const { select, tableName } = values;
 
             let query = supaDb
@@ -50,8 +50,8 @@ export function useSelect<T>({ tableName, selectColumns, ...props }: UseSelectPr
             setSelectResponseError(error);
         }
 
-        useSelect(selectProps);
-    }, [selectProps]);
+        select(selectProps);
+    }, [selectProps, props.limit]);
 
 
     const selectData = (value: UseSelectProps) => {

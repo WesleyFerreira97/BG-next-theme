@@ -1,5 +1,5 @@
 import { PostgrestError } from "@supabase/supabase-js";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { supaDb } from "../services/supadb";
 import { FileObject } from "@supabase/storage-js";
 // import { SectionColorsNames } from "../screens/AddProduct/AddImages/sectionColors";
@@ -27,38 +27,10 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
         limit: props.limit || 3
     });
 
-    useEffect(() => {
-        if (!selectBucketProps.bucketPath) return;
-
-        async function useSelect() {
-            const { data, error } = await supaDb
-                .storage
-                .from("photo")
-                .list(`${selectBucketProps.bucketPath}`, {
-                    limit: selectBucketProps.limit || 20,
-                    offset: 0,
-                    sortBy: { column: "name", order: "asc" },
-                });
-
-            if (error) {
-                setSelectResponseError(error as unknown as PostgrestError);
-                return;
-            }
-
-            setSelectResponse(data);
-
-            if (selectBucketProps.selectInsideFolders) {
-                selectFolders(data);
-            }
-        }
-
-        useSelect();
-    }, [selectBucketProps]);
-
-    async function selectFolders(data) {
+    const selectFolders = useCallback(async (data: FileObject[]) => {
         let out: FilesStrucutreProps[] = [];
 
-        async function useSelect(item) {
+        async function useSelect(item: FileObject) {
             try {
                 const { data, error } = await supaDb
                     .storage
@@ -69,11 +41,13 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
                         sortBy: { column: "name", order: "asc" },
                     });
 
-                out.push({
-                    slug: item.name,
-                    images: data,
-                    bucketPath: selectBucketProps.bucketPath
-                });
+                if (data) {
+                    out.push({
+                        slug: item.name,
+                        images: data,
+                        bucketPath: selectBucketProps.bucketPath
+                    });
+                }
             } catch (err) {
                 console.error("Erro ao buscar dados:", err);
             }
@@ -82,7 +56,38 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
         await Promise.all(data.map(useSelect));
 
         setFilesStructure(out);
-    }
+    }, [selectBucketProps]);
+
+    const select = useCallback(async () => {
+        const { data, error } = await supaDb
+            .storage
+            .from("photo")
+            .list(`${selectBucketProps.bucketPath}`, {
+                limit: selectBucketProps.limit || 20,
+                offset: 0,
+                sortBy: { column: "name", order: "asc" },
+            });
+
+        if (error) {
+            setSelectResponseError(error as unknown as PostgrestError);
+            return;
+        }
+
+        setSelectResponse(data);
+
+        if (selectBucketProps.selectInsideFolders) {
+            selectFolders(data);
+        }
+    }, [selectBucketProps, selectFolders]);
+
+
+    useEffect(() => {
+        if (!selectBucketProps.bucketPath) return;
+
+        select();
+    }, [selectBucketProps, select]);
+
+
 
     const selectBucket = (value: UseSelectProps) => {
         setSelectBucketProps(prevState => ({
