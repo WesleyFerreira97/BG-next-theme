@@ -1,7 +1,7 @@
 import { PostgrestError } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import { supaDb } from "../services/supadb";
-import { FileObject } from '@supabase/storage-js'
+import { FileObject } from "@supabase/storage-js";
 // import { SectionColorsNames } from "../screens/AddProduct/AddImages/sectionColors";
 
 type UseSelectProps = {
@@ -25,7 +25,7 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
         bucketPath: bucketPath,
         selectInsideFolders: props.selectInsideFolders || true,
         limit: props.limit || 3
-    })
+    });
 
     useEffect(() => {
         if (!selectBucketProps.bucketPath) return;
@@ -37,7 +37,7 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
                 .list(`${selectBucketProps.bucketPath}`, {
                     limit: selectBucketProps.limit || 20,
                     offset: 0,
-                    sortBy: { column: 'name', order: 'asc' },
+                    sortBy: { column: "name", order: "asc" },
                 });
 
             if (error) {
@@ -51,7 +51,6 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
                 selectFolders(data);
             }
         }
-        console.log("bateu no select");
 
         useSelect();
     }, [selectBucketProps]);
@@ -67,16 +66,16 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
                     .list(`${selectBucketProps.bucketPath}/${item.name}`, {
                         limit: selectBucketProps.limit,
                         offset: 0,
-                        sortBy: { column: 'name', order: 'asc' },
+                        sortBy: { column: "name", order: "asc" },
                     });
 
                 out.push({
                     slug: item.name,
                     images: data,
                     bucketPath: selectBucketProps.bucketPath
-                })
+                });
             } catch (err) {
-                console.error('Erro ao buscar dados:', err);
+                console.error("Erro ao buscar dados:", err);
             }
         }
 
@@ -88,8 +87,8 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
     const selectBucket = (value: UseSelectProps) => {
         setSelectBucketProps(prevState => ({
             ...value,
-        }))
-    }
+        }));
+    };
 
 
     return { selectResponse, selectResponseError, filesStructure, selectBucket };

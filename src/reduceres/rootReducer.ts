@@ -8,7 +8,7 @@ const persistConfig = {
     key: "root",
     storage,
     whitelist: ["cart", "checkoutState"],
-}
+};
 
 const reduceres = combineReducers({
     cart: cartReducer,

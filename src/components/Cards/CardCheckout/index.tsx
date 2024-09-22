@@ -1,10 +1,10 @@
-import React from 'react'
-import { CardCheckoutWrap } from './styles';
-import { Container } from '@theme/Layout/Container';
-import Image from 'next/image';
+import React from "react";
+import { CardCheckoutWrap } from "./styles";
+import { Container } from "@theme/Layout/Container";
+import Image from "next/image";
 import FallbackImage from "public/images/code.jpg";
-import { CheckCircle } from 'phosphor-react';
-import { CartDataProps } from 'src/types/cartTypes';
+import { CheckCircle } from "phosphor-react";
+import { CartDataProps } from "src/types/cartTypes";
 
 type CardCheckoutProps = {
     data: CartDataProps;
@@ -23,8 +23,8 @@ export default function CardCheckout(props: CardCheckoutProps) {
         <CardCheckoutWrap>
             <Container
                 css={{
-                    display: 'flex',
-                    justifyContent: 'center',
+                    display: "flex",
+                    justifyContent: "center",
                 }}>
                 <div className='card-checkout'>
                     <div className='card-checkout__image'>
@@ -56,5 +56,5 @@ export default function CardCheckout(props: CardCheckoutProps) {
                 </div>
             </Container>
         </CardCheckoutWrap>
-    )
+    );
 }

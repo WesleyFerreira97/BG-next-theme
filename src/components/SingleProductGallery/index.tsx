@@ -1,18 +1,18 @@
-import React, { use, useEffect, useRef, useState } from 'react'
-import { ProductGalleryWrap } from './styles'
+import React, { use, useEffect, useRef, useState } from "react";
+import { ProductGalleryWrap } from "./styles";
 import FallbackImage from "../../../public/images/code.jpg";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs, Swiper as SwiperRef } from "swiper";
-import { FilesStrucutreProps } from 'src/hooks/useBucket';
+import { FilesStrucutreProps } from "src/hooks/useBucket";
 
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { usePublicUrl } from 'src/hooks/usePublicUrl';
-import { supaDb } from 'src/services/supadb';
+import { usePublicUrl } from "src/hooks/usePublicUrl";
+import { supaDb } from "src/services/supadb";
 
 export type ProductGalleryProps = {
     galleryData: FilesStrucutreProps
@@ -25,27 +25,27 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
     const [allUrlImages, setAllUrlImages] = useState<string[]>([]);
 
     useEffect(() => {
-        if (!galleryData) return
+        if (!galleryData) return;
 
-        setAllUrlImages([])
+        setAllUrlImages([]);
 
         const getFinalUrl = async (imageUrl) => {
             const { data } = supaDb
                 .storage
-                .from('photo')
+                .from("photo")
                 .getPublicUrl(imageUrl);
 
             setAllUrlImages(prev => [...prev, data.publicUrl]);
-        }
+        };
 
         galleryData.images.forEach((item, index) => {
             const fileName = item.name;
             const imageFullPath = `${galleryData.bucketPath}/${galleryData.slug}/${fileName}`;
 
-            getFinalUrl(imageFullPath)
-        })
+            getFinalUrl(imageFullPath);
+        });
 
-    }, [galleryData])
+    }, [galleryData]);
 
     return (
         <ProductGalleryWrap>
@@ -65,7 +65,7 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
                                 fill={true}
                             />
                         </SwiperSlide >
-                    )
+                    );
                 })}
             </Swiper >
             <Swiper
@@ -92,7 +92,7 @@ export const SingleProductGallery = ({ galleryData }: ProductGalleryProps) => {
             </Swiper >
         </ProductGalleryWrap >
 
-    )
-}
+    );
+};
 
 

@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react'
-import { MainNavbar } from 'src/components/MainNavbar'
-import { useInsert } from 'src/hooks/useInsert';
-import Router from "next/router"
-import * as Yup from "yup"
-import { RootState, useAppSelector } from 'src/store';
-import { CartDataProps } from 'src/types/cartTypes';
+import React, { useEffect } from "react";
+import { MainNavbar } from "src/components/MainNavbar";
+import { useInsert } from "src/hooks/useInsert";
+import Router from "next/router";
+import * as Yup from "yup";
+import { RootState, useAppSelector } from "src/store";
+import { CartDataProps } from "src/types/cartTypes";
 import ImageFallback from "../../public/images/code.jpg";
-import { useCart } from 'src/hooks/useCart';
-import { FinishWrap } from 'src/styles/styleFinish';
-import { Formik } from 'formik';
-import { Button, Input, Textarea } from '@nextui-org/react';
-import { ShoppingCartSimple } from 'phosphor-react';
-import CardFinish from 'src/components/Cards/CardFinish';
+import { useCart } from "src/hooks/useCart";
+import { FinishWrap } from "src/styles/styleFinish";
+import { Formik } from "formik";
+import { Button, Input, Textarea } from "@nextui-org/react";
+import { ShoppingCartSimple } from "phosphor-react";
+import CardFinish from "src/components/Cards/CardFinish";
 
 type ClientDataProps = {
     client_number: number;
@@ -34,7 +34,7 @@ const clientValidation = Yup.object().shape({
         .min(3, "O nome deve conter no mínimo 3 caracteres")
         .max(70, "O nome deve conter no máximo 70 caracteres")
         .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/, "O nome deve conter apenas letras e espaços")
-})
+});
 
 
 function finish() {
@@ -43,17 +43,17 @@ function finish() {
     const { clearCart } = useCart();
 
     useEffect(() => {
-        if (!dataResponse?.error && dataResponse?.status !== 201) return
+        if (!dataResponse?.error && dataResponse?.status !== 201) return;
 
         setTimeout(() => (
             Router.push("/")
-        ), 2500)
-    }, [dataResponse])
+        ), 2500);
+    }, [dataResponse]);
 
     const clientInitialData: ClientDataProps = {
         client_name: "",
         client_number: 0
-    }
+    };
 
     const handleSubmitCart = (value: ClientDataProps) => {
         setData({
@@ -62,7 +62,7 @@ function finish() {
             client_order: cart,
             comments: value?.comment
         });
-    }
+    };
 
     return (
         <>
@@ -83,7 +83,7 @@ function finish() {
                                         id={index}
                                         image={image}
                                     />
-                                )
+                                );
                             })}
                         </div>
                         <div className='finish-form'>
@@ -92,7 +92,7 @@ function finish() {
                                 validationSchema={clientValidation}
                                 validateOnChange={true}
                                 onSubmit={(value: ClientDataProps) => {
-                                    handleSubmitCart(value)
+                                    handleSubmitCart(value);
                                 }}
                             >
                                 {({ handleSubmit, setFieldValue, errors, touched }) => (
@@ -172,7 +172,7 @@ function finish() {
                 </div>
             </FinishWrap>
         </>
-    )
+    );
 }
 
-export default finish
+export default finish;

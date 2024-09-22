@@ -126,4 +126,4 @@ export {
     ContentWrap,
     OverlayBackground,
     CloseButton
-}
+};

@@ -7,7 +7,7 @@ type CheckoutProps = {
 
 const initialState: CheckoutProps = {
     data: null
-}
+};
 
 const checkoutSlice = createSlice({
     name: "checkout",

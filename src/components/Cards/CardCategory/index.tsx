@@ -1,8 +1,8 @@
-import React from 'react'
-import { CardProps } from '../types'
-import { CardCategoryWrap, CardInfoWrap } from './style'
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import React from "react";
+import { CardProps } from "../types";
+import { CardCategoryWrap, CardInfoWrap } from "./style";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
     return (
@@ -15,13 +15,13 @@ const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
                 </div>
             </CardInfoWrap>
         </>
-    )
-}
+    );
+};
 
 const zoomImage = {
     initial: { scale: 1 },
     animation: { scale: 1.2 },
-}
+};
 
 export function CardCategory(props: Pick<CardProps, "cardInfo">) {
     const { cardInfo } = props;
@@ -33,8 +33,8 @@ export function CardCategory(props: Pick<CardProps, "cardInfo">) {
                 animate={"initial"}
                 whileHover={"animation"}
                 style={{
-                    width: '100%',
-                    height: '35vh',
+                    width: "100%",
+                    height: "35vh",
                 }}
             >
                 <motion.div
@@ -51,5 +51,5 @@ export function CardCategory(props: Pick<CardProps, "cardInfo">) {
             </motion.div>
         </CardCategoryWrap>
 
-    )
+    );
 }

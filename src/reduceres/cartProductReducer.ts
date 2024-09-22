@@ -1,5 +1,5 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import type { CartDataProps } from 'src/types/cartTypes';
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import type { CartDataProps } from "src/types/cartTypes";
 
 const cartSlice = createSlice({
     name: "cart",
@@ -8,7 +8,7 @@ const cartSlice = createSlice({
         add(state, action: PayloadAction<CartDataProps>) {
             const cart = action.payload;
 
-            state.push(cart)
+            state.push(cart);
         },
         remove(state, action: PayloadAction<number>) {
             const selectedItem = action.payload;
@@ -16,7 +16,7 @@ const cartSlice = createSlice({
             state.splice(selectedItem, 1);
         },
         clear() {
-            return []
+            return [];
         }
     }
 });
@@ -24,4 +24,4 @@ const cartSlice = createSlice({
 const cartReducer = cartSlice.reducer;
 const { add, remove, clear } = cartSlice.actions;
 
-export { cartReducer, add, remove, clear }
+export { cartReducer, add, remove, clear };

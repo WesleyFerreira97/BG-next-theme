@@ -1,7 +1,7 @@
-import React, { useContext, PropsWithChildren, createContext, useState, SetStateAction, KeyboardEvent } from 'react'
-import { useSidebarMenu } from 'src/hooks/useSidebarMenu'
-import { CloseButton, ContentWrap, OverlayBackground } from './style'
-import { X } from "phosphor-react"
+import React, { useContext, PropsWithChildren, createContext, useState, SetStateAction, KeyboardEvent } from "react";
+import { useSidebarMenu } from "src/hooks/useSidebarMenu";
+import { CloseButton, ContentWrap, OverlayBackground } from "./style";
+import { X } from "phosphor-react";
 
 type ToggleMenuProps = {
     contentId: string
@@ -25,7 +25,7 @@ type MenuContextProps = {
 const initialValue = {
     isMenuOpen: {},
     setIsMenuOpen: () => { },
-}
+};
 
 const MenuSidebarContext = createContext<MenuContextProps>(initialValue);
 
@@ -42,14 +42,14 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
         setIsMenuOpen(prevState => ({
             ...prevState,
             [contentId]: false
-        }))
+        }));
     };
 
     const handleEscPress = (e: KeyboardEvent<HTMLDivElement>) => {
-        if (e.key === 'Escape') {
+        if (e.key === "Escape") {
             handleMenuClose();
         }
-    }
+    };
 
     return (
         <ContentWrap
@@ -78,8 +78,8 @@ const Content = ({ children, contentId, ...props }: PropsWithChildren<ContentPro
                 onClick={handleMenuClose}
             />
         </ContentWrap>
-    )
-}
+    );
+};
 
 const ToggleMenu = ({ children, contentId }: PropsWithChildren<ToggleMenuProps>) => {
     const { setIsMenuOpen } = useContext(MenuSidebarContext);
@@ -89,7 +89,7 @@ const ToggleMenu = ({ children, contentId }: PropsWithChildren<ToggleMenuProps>)
             ...prevState,
             [contentId]: !prevState[contentId]
         }));
-    }
+    };
 
     return (
         <>
@@ -97,12 +97,12 @@ const ToggleMenu = ({ children, contentId }: PropsWithChildren<ToggleMenuProps>)
                 {children}
             </div >
         </>
-    )
-}
+    );
+};
 
 function MenuSidebar({ children, registerContents }: PropsWithChildren<MenuSidebarProps>) {
     const mappedContentsToBoolean = registerContents.reduce((prevItem, currentItem) =>
-        ({ ...prevItem, [currentItem]: false }), {})
+        ({ ...prevItem, [currentItem]: false }), {});
     const [isMenuOpen, setIsMenuOpen] = useState(false || mappedContentsToBoolean);
 
     return (
@@ -111,7 +111,7 @@ function MenuSidebar({ children, registerContents }: PropsWithChildren<MenuSideb
                 {children}
             </MenuSidebarContext.Provider>
         </>
-    )
+    );
 };
 
 MenuSidebar.ToggleMenu = ToggleMenu;

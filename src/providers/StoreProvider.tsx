@@ -10,5 +10,5 @@ export function StoreProvider({ children }: StoreProviderTypes) {
         <Provider store={store}>
             {children}
         </Provider>
-    )
+    );
 }

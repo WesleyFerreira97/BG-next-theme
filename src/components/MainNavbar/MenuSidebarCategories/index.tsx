@@ -1,5 +1,5 @@
-import { CaretRight } from "phosphor-react"
-import { SidebarCategoriesWrap } from "./styles"
+import { CaretRight } from "phosphor-react";
+import { SidebarCategoriesWrap } from "./styles";
 
 const menuItems = [
     { label: "Ínicio", link: "/" },
@@ -24,5 +24,5 @@ export const MenuSidebarCategories = () => {
                 ))}
             </ul>
         </SidebarCategoriesWrap>
-    )
-}
+    );
+};

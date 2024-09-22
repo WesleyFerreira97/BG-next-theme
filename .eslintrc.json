@@ -27,6 +27,13 @@
     "indent"           : [1, 4],
     "no-else-return"   : 1,
     "semi"             : [2, "always"],
-    "quotes": ["error", "double", "backticks"]
-}
+    "quotes": ["error", "double"],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

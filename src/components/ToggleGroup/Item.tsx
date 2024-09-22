@@ -20,17 +20,17 @@ export const Item = (props: GroupItemProps) => {
                 active: "#D22779",
                 inactive: "#cecece"
             }
-        }
+        };
 
         const currentColorState = props.value === field.value
             ? colorsByItem[itemType].active
             : colorsByItem[itemType].inactive;
 
         return currentColorState;
-    }
+    };
 
     const handleValue = () => {
-        return helpers.setValue(props.value)
+        return helpers.setValue(props.value);
     };
 
     if (itemType === "color") {
@@ -40,7 +40,7 @@ export const Item = (props: GroupItemProps) => {
                     onPress={() => {
                         handleItemState();
                         handleValue();
-                        props?.onClick()
+                        props?.onClick();
                     }}
                     disabled={props.available === false}
                     className='colorButton'
@@ -52,7 +52,7 @@ export const Item = (props: GroupItemProps) => {
                     {props.label}
                 </Button>
             </ColorButtonWrap>
-        )
+        );
     }
 
     return (
@@ -72,5 +72,5 @@ export const Item = (props: GroupItemProps) => {
             </Button>
 
         </SizeButtonWrap>
-    )
-}
+    );
+};

@@ -30,4 +30,4 @@ export type {
     ToggleGroupProps,
     GroupItemProps,
     StatusColorProps
-}
+};

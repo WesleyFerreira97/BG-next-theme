@@ -6,4 +6,4 @@ const public_storage = "https://qelkbubgpdwwhqzoqphu.supabase.co/storage/v1/obje
 
 export const supaDb = createClient(SUPABASE_URL as string, SUPABASE_ANON_KEY as string);
 
-export { public_storage }
+export { public_storage };

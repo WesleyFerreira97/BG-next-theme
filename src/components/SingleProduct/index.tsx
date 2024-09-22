@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "../Layout/Container";
 import { ComponentBehavior, ProductInfo, SingleProductWrap } from "./styles";
 import { Button } from "@nextui-org/react";
 import { ShoppingCartSimple } from "phosphor-react";
 import { SelectedValue, ToggleGroup } from "../ToggleGroup";
 import { Formik } from "formik";
-import * as Yup from 'yup';
+import * as Yup from "yup";
 import { ProductGalleryProps, SingleProductGallery } from "../SingleProductGallery";
 import { useAppSelector } from "src/store";
 import { useCart } from "src/hooks/useCart";
@@ -20,9 +20,9 @@ type SingleProductProps = {
 
 const orderValidation = Yup.object().shape({
     selectedSize: Yup.string()
-        .required('Selecione um tamanho'),
+        .required("Selecione um tamanho"),
     selectedColor: Yup.string()
-        .required('Selecione uma cor'),
+        .required("Selecione uma cor"),
 });
 
 const colorsData: any = {
@@ -43,13 +43,13 @@ export function SingleProduct({ data }: SingleProductProps) {
     const theme = useAppSelector((state) => state);
     const { addItem, removeItem } = useCart();
     const { checkoutNavigate } = useCheckout();
-    const bucketPath = `product/${data.bucket_folder}/${data.id}`
+    const bucketPath = `product/${data.bucket_folder}/${data.id}`;
     const { filesStructure, selectResponse, selectResponseError } = useBucket({
         bucketPath: bucketPath,
         selectInsideFolders: true
-    })
-    const [colorsAvailable, setColorsAvailable] = useState([])
-    const [currentGalleryImages, setCurrentGalleryImages] = useState<FilesStrucutreProps>()
+    });
+    const [colorsAvailable, setColorsAvailable] = useState([]);
+    const [currentGalleryImages, setCurrentGalleryImages] = useState<FilesStrucutreProps>();
 
     const FormInitialValues: CartDataProps | any = {
         productTitle: data.title,
@@ -57,37 +57,37 @@ export function SingleProduct({ data }: SingleProductProps) {
         selectedSize: null,
         selectedColor: null,
         image: data?.image,
-    }
+    };
 
     useEffect(() => {
-        if (!filesStructure) return
+        if (!filesStructure) return;
 
         const checkColorsAvailable = () => {
             const currentColors = [];
 
             filesStructure.forEach((item) => {
-                if (item.slug === "main") return
-                let firstInteraction = true
+                if (item.slug === "main") return;
+                let firstInteraction = true;
 
                 if (firstInteraction) {
-                    handleChangeGallery(item.slug)
-                    firstInteraction = false
+                    handleChangeGallery(item.slug);
+                    firstInteraction = false;
                 }
 
-                currentColors.push(item.slug)
-            })
+                currentColors.push(item.slug);
+            });
 
             setColorsAvailable(currentColors);
-        }
+        };
 
-        checkColorsAvailable()
-    }, [filesStructure])
+        checkColorsAvailable();
+    }, [filesStructure]);
 
     const handleChangeGallery = (value: string) => {
-        let selectedImages = filesStructure.filter((item) => item.slug === value)
+        let selectedImages = filesStructure.filter((item) => item.slug === value);
 
-        setCurrentGalleryImages(selectedImages[0])
-    }
+        setCurrentGalleryImages(selectedImages[0]);
+    };
 
 
     return (
@@ -156,8 +156,8 @@ export function SingleProduct({ data }: SingleProductProps) {
                                             >
                                                 {sizes_available && Object.entries(sizes_available[type_product_sizes])
                                                     .map((item) => {
-                                                        const currentValue = item[0]
-                                                        const isAvailable = item[1] as boolean
+                                                        const currentValue = item[0];
+                                                        const isAvailable = item[1] as boolean;
 
                                                         return (
                                                             <ToggleGroup.Item
@@ -166,7 +166,7 @@ export function SingleProduct({ data }: SingleProductProps) {
                                                                 label={currentValue}
                                                                 available={isAvailable}
                                                             />
-                                                        )
+                                                        );
                                                     }
                                                     )}
                                             </ToggleGroup>

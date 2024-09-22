@@ -65,9 +65,9 @@ export function GridProductsSmall() {
                                 ...item,
                                 image: PersonImage
                             }}
-                                cardStyle={{
-                                    aspectRatio: "3/4",
-                                }}
+                            cardStyle={{
+                                aspectRatio: "3/4",
+                            }}
                             />
                         </SwiperSlide>
                     ))}

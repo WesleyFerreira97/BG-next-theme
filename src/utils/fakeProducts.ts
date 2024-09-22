@@ -31,7 +31,7 @@ export const gridMainCategoriesData: CategorieDataProps[] = [
         image: People3,
         id: "cb2336f6-cf61-42b5-a763-9618164e5c4d"
     }
-]
+];
 
 export const fakeProducts = [
     {

@@ -29,7 +29,7 @@ export function useSidebarMenu({ isOpen, side = "left" }: SidebarAnimationProps)
         }, 600);
 
         return toggleOverlayTimeout;
-    }
+    };
 
     useEffect(() => {
         toggleBodyOverflow();
@@ -60,11 +60,11 @@ export function useSidebarMenu({ isOpen, side = "left" }: SidebarAnimationProps)
                 ]
             ];
 
-        animate(toggleAnimation as AnimationSequence[])
+        animate(toggleAnimation as AnimationSequence[]);
 
         return () => {
             clearTimeout(toggleBodyOverflow());
-        }
+        };
     }, [isOpen]);
 
     return scope;

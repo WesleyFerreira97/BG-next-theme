@@ -18,15 +18,15 @@ export const usePublicUrl = () => {
         const getFinalUrl = async () => {
             const { data } = supaDb
                 .storage
-                .from('photo')
+                .from("photo")
                 .getPublicUrl(`${imageData.bucketPath}/${imageData.fileName}`);
 
             setImageUrl(data.publicUrl);
-        }
+        };
 
-        getFinalUrl()
+        getFinalUrl();
 
-    }, [imageData])
+    }, [imageData]);
 
-    return { imageUrl, setImageData }
-}
+    return { imageUrl, setImageData };
+};

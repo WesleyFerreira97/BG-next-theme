@@ -111,4 +111,4 @@ export const FinishWrap = styled("div", {
             gridTemplateColumns: "repeat(2, 1fr)"
         },
     }
-})
+});

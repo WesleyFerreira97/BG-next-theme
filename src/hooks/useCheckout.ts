@@ -8,8 +8,8 @@ export function useCheckout() {
 
     const checkoutNavigate = (values) => {
         dispatch(currentCheckoutData(values));
-        router.push('/checkout');
-    }
+        router.push("/checkout");
+    };
 
-    return { checkoutNavigate }
+    return { checkoutNavigate };
 }

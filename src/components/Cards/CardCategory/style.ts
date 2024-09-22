@@ -83,5 +83,5 @@ export const CardInfoWrap = styled("div", {
 
         }
     }
-})
+});
 

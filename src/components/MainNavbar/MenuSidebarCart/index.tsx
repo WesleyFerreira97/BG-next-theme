@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react'
-import { MenuSidebarCartWrap } from './styles'
-import { CartDataProps } from 'src/types/cartTypes';
+import React, { useEffect } from "react";
+import { MenuSidebarCartWrap } from "./styles";
+import { CartDataProps } from "src/types/cartTypes";
 import ImageFallback from "../../../../public/images/code.jpg";
-import { RootState, useAppSelector } from 'src/store';
-import Image from 'next/image';
-import { Button } from '@nextui-org/react';
-import { ShoppingCartSimple, Trash } from 'phosphor-react';
-import { useCart } from 'src/hooks/useCart';
-import Router from "next/router"
+import { RootState, useAppSelector } from "src/store";
+import Image from "next/image";
+import { Button } from "@nextui-org/react";
+import { ShoppingCartSimple, Trash } from "phosphor-react";
+import { useCart } from "src/hooks/useCart";
+import Router from "next/router";
 
 type CartItemProps = {
     cart: CartDataProps[];
@@ -18,13 +18,8 @@ export function MenuSidebarCart() {
     const { removeItem } = useCart();
 
     const handleSubmit = () => {
-        Router.push("/finish")
-    }
-
-    useEffect(() => {
-        console.log(cart, "cart ");
-    }, [cart])
-
+        Router.push("/finish");
+    };
 
     return (
         <MenuSidebarCartWrap>
@@ -59,7 +54,7 @@ export function MenuSidebarCart() {
                                 </div>
                             </div>
                         </div>
-                    )
+                    );
                 })}
             </div>
             <div className='finish-buttons'>
@@ -76,5 +71,5 @@ export function MenuSidebarCart() {
                 </Button>
             </div>
         </MenuSidebarCartWrap >
-    )
+    );
 }

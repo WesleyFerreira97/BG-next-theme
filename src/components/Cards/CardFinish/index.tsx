@@ -1,11 +1,11 @@
-import React from 'react'
-import { CardFinishWrap } from './styles';
-import { Container } from '@theme/Layout/Container';
-import Image from 'next/image';
+import React from "react";
+import { CardFinishWrap } from "./styles";
+import { Container } from "@theme/Layout/Container";
+import Image from "next/image";
 import FallbackImage from "public/images/code.jpg";
-import { CheckCircle, Trash } from 'phosphor-react';
-import { CartDataProps } from 'src/types/cartTypes';
-import { useCart } from 'src/hooks/useCart';
+import { CheckCircle, Trash } from "phosphor-react";
+import { CartDataProps } from "src/types/cartTypes";
+import { useCart } from "src/hooks/useCart";
 
 type CardFinishProps = {
     id?: number;
@@ -26,8 +26,8 @@ export default function CardFinish(props: CardFinishProps) {
         <CardFinishWrap>
             <Container
                 css={{
-                    display: 'flex',
-                    justifyContent: 'center',
+                    display: "flex",
+                    justifyContent: "center",
                 }}>
                 <div className='card-finish'>
                     <div className='card-finish__image'>
@@ -65,5 +65,5 @@ export default function CardFinish(props: CardFinishProps) {
                 </div>
             </Container>
         </CardFinishWrap>
-    )
+    );
 }

@@ -4,4 +4,4 @@ type CategoriesProps = {
     slug: string
 }
 
-export type { CategoriesProps }
+export type { CategoriesProps };

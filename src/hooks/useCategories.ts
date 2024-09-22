@@ -20,7 +20,7 @@ export function useCategories() {
     useEffect(() => {
         async function getAllCategories() {
             const data = await supaDb
-                .from('categories')
+                .from("categories")
                 .select();
             return data;
         }
@@ -32,7 +32,7 @@ export function useCategories() {
                 categoriesError: res.error
             });
         });
-    }, [])
+    }, []);
 
     return { ...categoriesResponse };
 }

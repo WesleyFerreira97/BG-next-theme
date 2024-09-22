@@ -44,13 +44,13 @@ Single.getInitialProps = async ({ query }: QueryProps) => {
         .from("products")
         .select("*")
         .limit(1)
-        .match({ id: productId })
+        .match({ id: productId });
 
     if (!data) return;
 
     return {
         singleProductData: data[0],
-    }
-}
+    };
+};
 
 export default Single;
