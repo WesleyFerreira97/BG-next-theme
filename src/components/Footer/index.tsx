@@ -44,7 +44,7 @@ export function Footer() {
 
                     </div>
                     <div className='footer-container container-2'>
-                        <div className='menu__container'>
+                        {/* <div className='menu__container'>
                             <div>
                                 <h5 className='menu__title'>Category Title</h5>
                                 <ul className='menu__wrap'>
@@ -56,7 +56,7 @@ export function Footer() {
                                     <li>Utility</li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                         {/* <div className='menu__container'>
                             <div>
                                 <h5 className='menu__title'>Category Title</h5>
@@ -84,7 +84,7 @@ export function Footer() {
                             </div>
                         </div> */}
                     </div>
-                    <div className='footer-container'>
+                    {/* <div className='footer-container'>
                         <div className='menu__container'>
                             <div>
                                 <h5 className='menu__title'>Category Title</h5>
@@ -98,7 +98,7 @@ export function Footer() {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </FooterContainers>
             </Container>
             <FooterCredits>

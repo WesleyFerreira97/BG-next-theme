@@ -8,7 +8,6 @@ export const FooterWrap = styled("div", {
     justifyContent: "center",
     alignItems: "center",
     marginTop: "5rem",
-    // backgroundColor: "#E2E2E2",
     backgroundColor: "#1E1E2F",
 
     ".footer__logo-bar": {
@@ -37,10 +36,12 @@ export const FooterWrap = styled("div", {
         }
     },
 
-    "@md": {
-        ".footer__logo-wrap": {
-            justifyContent: "flex-start !important",
-            textAlign: "center",
+    "@lg": {
+        ".footer__logo-bar": {
+            ".footer__logo-wrap": {
+                justifyContent: "flex-start",
+                textAlign: "center",
+            }
         }
     }
 });
