@@ -34,7 +34,6 @@ export function CardOutsideInfo({ cardInfo, cardStyle }: CardProps) {
         if (!cardInfo) return;
 
         const bucketPath = `product/${cardInfo.bucket_folder}/${cardInfo.id}/main`;
-        console.log(bucketPath, "bucket path");
         
         selectBucket({
             bucketPath: bucketPath,

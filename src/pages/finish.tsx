@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { MainNavbar } from "src/components/MainNavbar";
 import { useInsert } from "src/hooks/useInsert";
@@ -45,9 +46,11 @@ function Finish() {
     useEffect(() => {
         if (!dataResponse?.error && dataResponse?.status !== 201) return;
 
-        setTimeout(() => (
-            Router.push("/")
-        ), 2500);
+        setTimeout(() => {
+            clearCart();
+            Router.push("/");
+        }, 2500);
+        
     }, [dataResponse]);
 
     const clientInitialData: ClientDataProps = {
@@ -163,11 +166,6 @@ function Finish() {
                                     </>
                                 )}
                             </Formik>
-                            <Button
-                                onClick={() => clearCart()}
-                            >
-                                Clear Cart
-                            </Button>
                         </div>
                     </div>
                 </div>

@@ -46,7 +46,6 @@ const HeaderGridProducts = (props: HeaderProps) => {
 
 // Single page query url props
 function categorie(props: ScreenCategorieProps) {
-    console.log(props, "props");
 
     return (
         <>

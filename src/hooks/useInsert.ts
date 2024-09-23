@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import type { PostgrestError, PostgrestResponse, PostgrestSingleResponse } from "@supabase/supabase-js";
 import React, { useEffect, useState } from "react";
 import { supaDb } from "../services/supadb";
@@ -22,7 +23,7 @@ export function useInsert<T>(
 
     useEffect(() => {
         if (!data) return;
-
+        
         supaDb.from(table)
             .insert(data)
             .select("id")
@@ -32,8 +33,9 @@ export function useInsert<T>(
                     error: res.error,
                     status: res.status
                 });
+                
             });
-    }, [data, table]);
+    }, [data]);
 
     return { dataResponse, setData };
 }
