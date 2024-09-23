@@ -16,6 +16,7 @@ export function GridProductsSmall() {
     const { selectResponse: products, selectResponseError } = useSelect<(ProductProps & BucketProps)[]>({
         selectColumns: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
         tableName: "products",
+        match: { product_available: true}
     });
     // const products: any[] = fakeProducts;
 

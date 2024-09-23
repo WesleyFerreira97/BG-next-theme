@@ -14,10 +14,10 @@ type CategorieDataProps = {
 
 export const gridMainCategoriesData: CategorieDataProps[] = [
     {
-        title: "Blusas",
-        slug: "blusas",
+        title: "Shorts",
+        slug: "shorts",
         image: People1,
-        id: "76749818-dc90-4289-b199-506307c726ec"
+        id: "2e890581-4eb6-48e4-b80e-d5b48864bd28"
     },
     {
         title: "Conjuntos",
