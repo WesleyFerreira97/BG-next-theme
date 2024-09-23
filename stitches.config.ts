@@ -52,7 +52,7 @@ export const themeColors = {
     neutralAlt: "#7a7a7a",
     lightGray: "#D7D7D7",
     green: "#27AE60"
-}
+};
 
 export const { styled, getCssText, config, css, globalCss, theme, keyframes } = createStitches({
     prefix: "bg-theme",

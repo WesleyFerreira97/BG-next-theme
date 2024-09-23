@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { CardImage, CardInfoWrap, CardWrap } from "./styles";
 import Image from "next/image";
 import { CardProps } from "../types";
 import DefaultImage from "public/images/code.jpg";
 import { ShoppingCartSimple } from "phosphor-react";
-import { useBucket } from "src/hooks/useBucket";
 import { public_storage } from "src/services/supadb";
+import { useBucket } from "src/hooks/useBucket";
 
 const CardInfo = ({ cardInfo }: Pick<CardProps, "cardInfo">) => {
     return (
@@ -33,13 +34,15 @@ export function CardOutsideInfo({ cardInfo, cardStyle }: CardProps) {
         if (!cardInfo) return;
 
         const bucketPath = `product/${cardInfo.bucket_folder}/${cardInfo.id}/main`;
-
+        console.log(bucketPath, "bucket path");
+        
         selectBucket({
             bucketPath: bucketPath,
             selectInsideFolders: false,
             limit: 1
         });
-    }, [cardInfo, selectBucket]);
+        
+    }, []);
 
     useEffect(() => {
         let hasNoImage = selectResponse && selectResponse[0]?.name === undefined;

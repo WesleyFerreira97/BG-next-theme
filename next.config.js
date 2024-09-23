@@ -5,8 +5,8 @@ const nextConfig = {
         // styledComponents: true,
     },
     images: {
-        domains: ['qelkbubgpdwwhqzoqphu.supabase.co'],
-      },
+        domains: ["qelkbubgpdwwhqzoqphu.supabase.co"],
+    },
 };
 
 module.exports = nextConfig;

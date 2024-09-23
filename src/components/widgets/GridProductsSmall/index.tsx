@@ -7,10 +7,17 @@ import { Header } from "../../WidgetsHeader";
 import { CardOutsideInfo } from "src/components/Cards/CardOutsideInfo";
 import { fakeProducts } from "src/utils/fakeProducts";
 import PersonImage from "public/images/code.jpg";
+import { useSelect } from "src/hooks/useSelect";
+import { BucketProps, ProductProps } from "src/types/product";
+import Link from "next/link";
 
 export function GridProductsSmall() {
     // TEMP
-    const products: any[] = fakeProducts;
+    const { selectResponse: products, selectResponseError } = useSelect<(ProductProps & BucketProps)[]>({
+        selectColumns: ["id", "title", "description", "price", "product_categories", "bucket_name", "bucket_folder"],
+        tableName: "products",
+    });
+    // const products: any[] = fakeProducts;
 
     return (
         <GridProductWrap>
@@ -56,19 +63,24 @@ export function GridProductsSmall() {
                         // }
                     }}
                 >
-                    {Object.values(products).map((item, index) => (
-                        <SwiperSlide key={index}>
-                            {/* <CardProduct /> */}
-                            <CardOutsideInfo cardInfo={{
-                                ...item,
-                                image: PersonImage
-                            }}
-                                cardStyle={{
-                                    aspectRatio: "3/4",
-                                }}
-                            />
-                        </SwiperSlide>
-                    ))}
+                    {products &&
+                        products.map((product, index) => (
+                            <SwiperSlide key={index}>
+                                <Link
+                                    href={`/single?productId=${product.id}`}
+                                    key={index}
+                                >
+                                    <CardOutsideInfo cardInfo={{
+                                        ...product,
+                                        image: PersonImage
+                                    }}
+                                    cardStyle={{
+                                        aspectRatio: "3/4",
+                                    }}
+                                    />
+                                </Link>
+                            </SwiperSlide>
+                        ))}
                 </Swiper>
             </Container>
         </GridProductWrap>

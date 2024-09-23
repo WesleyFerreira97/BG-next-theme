@@ -24,7 +24,7 @@
   ],
   "rules": {
     "consistent-return": "off",
-    "indent"           : [1, 4],
+    "indent"           : ["error", 4],
     "no-else-return"   : 1,
     "semi"             : [2, "always"],
     "quotes": ["error", "double"],

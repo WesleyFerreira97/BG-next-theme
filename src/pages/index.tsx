@@ -21,7 +21,7 @@ const Home: NextPage = () => {
             <HomeCarousel carouselItemsData={carouselItemsData} />
 
             <GridMainCategories />
-            {/* <GridProducts /> */}
+            <GridProducts />
             <GridOtherCategories />
             <GridProductsSmall />
         </div>

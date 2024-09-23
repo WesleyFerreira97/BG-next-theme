@@ -28,6 +28,7 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
     });
 
     const selectFolders = useCallback(async (data: FileObject[]) => {
+        console.log("bateu no select FOLDERS");
         if (!selectBucketProps.bucketPath) return;
         let out: FilesStrucutreProps[] = [];
 
@@ -57,9 +58,12 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
         await Promise.all(data.map(useSelect));
 
         setFilesStructure(out);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectBucketProps.bucketPath]);
 
     const select = useCallback(async () => {
+        console.log("bateu no select");
+        
         const { data, error } = await supaDb
             .storage
             .from("photo")
@@ -85,7 +89,8 @@ export function useBucket<T>({ bucketPath, ...props }: Partial<UseSelectProps>) 
 
     useEffect(() => {
         if (!selectBucketProps.bucketPath) return;
-
+        console.log(selectBucketProps, "select bucket props");
+        
         select();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectBucketProps]);
