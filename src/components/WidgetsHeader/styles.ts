@@ -39,6 +39,6 @@ export const WidgetHeaderWrap = styled("div", {
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    margin: "3.5rem auto",
+    margin: "6rem auto",
 });
 

@@ -24,13 +24,13 @@ export function GridProductsSmall() {
         <GridProductWrap>
             <Container md>
 
-                <Row style={{ margin: "0 auto 1.5rem" }}>
-                    <Header>
-                        <Header.SubTitle>A Subtitle</Header.SubTitle>
-                        <Header.Title>Novidades</Header.Title>
-                        <Header.Paragraph>Veja nossas principais ofertas separadas para você</Header.Paragraph>
-                    </Header>
-                </Row>
+                {/* <Row style={{ margin: "0 auto 1.5rem" }}> */}
+                <Header>
+                    <Header.SubTitle>A Subtitle</Header.SubTitle>
+                    <Header.Title>Novidades</Header.Title>
+                    <Header.Paragraph>Veja nossas principais ofertas separadas para você</Header.Paragraph>
+                </Header>
+                {/* </Row> */}
 
                 <Swiper
                     modules={[Scrollbar, A11y, Autoplay]}

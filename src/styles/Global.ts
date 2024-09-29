@@ -56,7 +56,7 @@ export const globalStyles = globalCss({
 
     "@sm": {
         html: {
-            fontSize: "87.5%",
+            // fontSize: "87.5%",
         },
         ".swiper-button-prev:after, .swiper-button-next:after": {
             fontSize: "35px !important",
